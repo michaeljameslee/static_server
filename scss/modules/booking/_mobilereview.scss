@@ -1,0 +1,85 @@
+.bookingview-mobilereview {
+  @include breakpoint(large) { display: none; }
+  .bookingview-full-header { position: relative; }
+  .progress {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-color: transparent;
+    z-index: 4;
+    .progress-meter {
+      background: $primary-color;
+      transition: width 0.9s cubic-bezier(.35, 0, 0, 1);
+      top: 2px;
+      max-width: 100%;
+    }
+  }
+  .bookingview-full-body {
+    background: $gray-lightest;
+    padding-bottom: 30px;
+  }
+  .reviewnav {
+    list-style-type: none;
+    margin: 0;
+  }
+  .reviewnav-step {
+    @include get-font('light');
+    padding: 33px 15px 32px;
+    border-top: 1px solid $gray-light;
+  }
+  .reviewnav-step:first-child, .step-addroom { border-top: 0; }
+  .stepnav-previous { background: #fff; }
+  .stepnav-name { color: $gray-dark; margin-bottom: 8px; }
+  .reviewnav-edit { margin-top: 16px; clear: both; }
+  .button { padding: 13px 31px; }
+
+  // Individual steps
+  .step-hotel .hotelname {
+    font-size: rem-calc(24);
+    line-height: rem-calc(28);
+    margin: 0 0 4px;
+  }
+  .step-hotel .hoteladdress {
+    font-size: rem-calc(16);
+    line-height: rem-calc(24);
+  }
+  .datesstep-date {
+    font-size: rem-calc(24);
+    line-height: rem-calc(28);
+  }
+  .datesstep-year { color: $gray-dark; }
+  .datesstep-hyphen { margin: 0 2px; }
+  .stepnav-guests { @include get-font('paragraph'); }
+  .step-rooms { padding: 33px 15px 14px; }
+  .room-unselected {
+    padding: 33px 15px 34px;
+    .button.secondary { background: transparent; }
+  }
+  .step-rooms-wrapper {
+    &:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+  }
+  .stepnav-room-desc { margin-left: 152px; }
+  .stepnav-room-name {
+    font-size: rem-calc(16);
+    line-height: rem-calc(20);
+    margin-bottom: 4px;
+    display: inline-block;
+  }
+  .label-text {
+    @include label-text;
+    color: $gray-medium;
+    display: inline-block;
+    margin-bottom: 2px;
+  }
+  .stepnav-room-rate {
+    @include get-font('light');
+    font-size: 18px;
+    color: #000;
+  }
+  .step-addroom { padding-top: 19px; }
+}

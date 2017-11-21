@@ -1,0 +1,622 @@
+.ways-to-redeem {
+  .icon {
+    max-width: none;
+    max-height: none;
+  }
+  h2 {
+    font-family: $proxima-nova-thin;
+    font-size: 30px;
+  }
+  p {
+    font-family: $proxima-nova-reg;
+    font-size: 16px;
+    color: $gray-dark;
+  }
+  .side-padding {
+    padding: 0 16px;
+  }
+  button {
+    font-family: $proxima-nova-semibold;
+  }
+  .row {
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  @media screen and (min-width: 64em) {
+    .side-padding {
+      padding: 0 60px;
+    }
+    h2 {
+      font-size: 52px;
+      line-height: 56px;
+      margin-bottom: 15px;
+    }
+  }
+
+  .first-block {
+    padding-top: 24px;
+    .sub-text {
+      margin-top: 24px;
+      margin-left: 16px;
+      font-family: $proxima-nova-semibold;
+      font-size: 12px;
+      color: black;
+      letter-spacing: 1px;
+      &:hover {
+        color: #ee2d24;
+        transition: color .4s;
+        text-decoration: none;
+      }
+    }
+    .main-desc {
+      margin-bottom: 0px;
+    }
+    .sub-text i {
+      margin-right: 8px;
+    }
+    .logo-cover {
+      margin-top: 13px;
+    }
+    .main-image {
+      margin-top: 24px;
+      text-align: center;
+    }
+    .pbutton {
+      position: fixed;
+      bottom: 0px;
+      margin-left: -16px;
+      button {
+        width: 100vw;
+        padding: 21px 0;
+        font-family: $proxima-nova-semibold;
+        font-size: 14px;
+        color: black;
+      }
+    }
+    @media screen and (min-width: 64em) {
+      height: 600px;
+      border-bottom: 1px solid #cdcdcd;
+      .sub-text {
+        margin-left: 60px;
+      }
+      .main-image {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        margin-top: 129px;
+      }
+      .image-file {
+        width: 620px;
+        height: 540px;
+      }
+      .main-desc {
+        margin-bottom: 30px;
+      }
+      .pbutton {
+        position: relative;
+        margin-left: 0;
+      }
+      .pbutton button {
+        width: 136px;
+      }
+      .logo-cover {
+        margin: 40px 0;
+      }
+    }
+    @media screen and (min-width: 80em) {
+      .image-file {
+        width: 720px;
+      }
+    }
+  }
+
+  .second-block {
+    padding: 56px 0;
+    border-bottom: 1px solid #cdcdcd;
+    margin-left: 0px;
+    margin-right: 0px;
+    .second-block-body {
+      margin-top: 32px;
+    }
+    .second-block-heading {
+      font-family: $proxima-nova-light;
+      font-size: 30px;
+      margin-bottom: 16px;
+    }
+    .second-block-button {
+      text-align: center;
+      font-family: $proxima-nova-semibold;
+
+      button {
+        width: 100%;
+        padding: 16px 0;
+      }
+    }
+    .second-block-image {
+      text-align: center;
+    }
+    @media screen and (min-width: 40em) {
+      .second-block-image {
+        text-align: left;
+        padding-left: 16px;
+      }
+    }
+    @media screen and (min-width: 64em) {
+      padding: 60px 60px;
+      .second-block-image {
+        text-align: left;
+      }
+      .second-desc {
+        width: 440px;
+      }
+      .second-block-image img {
+        width: 560px;
+        height: 420px;
+      }
+      .second-block-body {
+        margin-top: 99px;
+        margin-bottom: 108px;
+      }
+      .second-block-button {
+        margin-top: 30px;
+        text-align: left;
+      }
+      .second-block-button button {
+        width: 241px;
+        padding: 12px 0;
+      }
+      .second-block-heading {
+        font-size: 38px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  .third-block {
+    padding-top: 40px;
+    padding-bottom: 56px;
+    text-align: center;
+    border-bottom: 1px solid #cdcdcd;
+
+    h2 {
+      font-family: $proxima-nova-light;
+      font-size: 22px;
+    }
+    .button {
+      width: 100%;
+      padding: 16px 0;
+    }
+    .icon {
+      width: 64px;
+      height: 64px;
+      margin: auto;
+    }
+    .st0 {
+      fill: #ee2d24;
+    }
+    .third-block-body-icon {
+      margin-top: 47px;
+      margin-bottom: 24px;
+    }
+    .third-block-body-heading {
+      font-size: 16px;
+      h3 {
+        font-size: 16px;
+      }
+    }
+    .third-block-body-desc p {
+      font-size: 12px;
+      font-family: $proxima-nova-reg;
+      color: $gray-dark;
+      padding: 5px 30px 24px 30px;
+    }
+    @media screen and (min-width: 64em) {
+      padding: 60px 0;
+      h2 {
+        font-size: 32px;
+      }
+      .button {
+        width: 167px;
+        padding: 12px 0;
+      }
+      .topmargin {
+        position: relative;
+        top: 21px;
+      }
+      .third-block-body-heading,
+      .third-block-body-heading h3 {
+        font-size: 22px;
+        font-family: $proxima-nova-reg;
+      }
+      .third-block-body-desc p {
+        font-size: 14px;
+        width: 260px;
+        padding: 10px 0 20px 0;
+        text-align: center;
+        margin: auto;
+      }
+      .icon {
+        margin: auto;
+      }
+    }
+  }
+
+  .fourth-block {
+    padding: 40px 32px;
+    text-align: center;
+    h2 {
+      font-size: 22px;
+      font-family: $proxima-nova-light;
+    }
+    .fourth-block-body {
+      max-width: none;
+      padding-top: 40px;
+    }
+    .fourth-sub-title a {
+      text-decoration: none;
+      transition: color .4s;
+      font-family: $proxima-nova-reg;
+      font-size: 16px;
+      line-height: 20px;
+      margin-bottom: 32px;
+      color: $true-black;
+
+      &:hover {
+        color: #ee2d24;
+        transition: color .4s;
+      }
+      &:after {
+        content: '';
+        display: inline-block;
+        position: relative;
+        border-style: solid;
+        border-width: 3px 3px 0 0;
+        border-color: #ee2d24;
+        height: 8px;
+        width: 8px;
+        top: 9px;
+        left: 8px;
+        vertical-align: top;
+        transform: rotate(45deg);
+      }
+    }
+    .fourth-border {
+      border-bottom: 1px solid #cdcdcd;
+      margin-bottom: 32px;
+      margin-top: 32px;
+    }
+    .fourth-sub-title {
+      margin-top: 32px;
+    }
+    .icon {
+      height: 150px;
+    }
+    @media screen and (min-width: 64em) {
+      padding: 60px 0px;
+      height: 420px;
+      border-bottom: 1px solid #cdcdcd;
+      h2 {
+        font-size: 32px;
+      }
+      img {
+        width: 300px;
+        height: 200px;
+      }
+      .fourth-border {
+        border-left: 1px solid #cdcdcd;
+        float: right;
+        height: 199px;
+        position: relative;
+        top: -235px;
+      }
+      .icon {
+        width: 250px;
+      }
+      .visa {
+        width: 200px;
+        height: 130px;
+        margin-top: 20px;
+      }
+    }
+  }
+
+  .fifth-block {
+    border-bottom: 1px solid #cdcdcd;
+    .nomargin {
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+    .fifth-block-body {
+      padding: 40px 46px 16px 33px;
+      .fifth-heading {
+        font-size: 22px;
+        font-family: $proxima-nova-light;
+      }
+      .fifth-sub {
+        font-size: 14px;
+        font-family: $proxima-nova-reg;
+        color: $gray-dark;
+        margin-top: 5px;
+      }
+      .icon {
+        width: 64px;
+        height: 64px;
+      }
+    }
+    .fifth-heading h2 {
+      font-size: 22px;
+      font-family: $proxima-nova-light;
+    }
+    .fifth-body {
+      padding-top: 16px;
+      text-align: center;
+
+      .fifth-text {
+        color: $true-black;
+        font-family: $proxima-nova-semibold;
+        font-size: 12px;
+        margin-bottom: 24px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 16px;
+        text-transform: uppercase;
+      }
+    }
+    .fifth-block-image {
+      text-align: center;
+    }
+    .s-size {
+      width: 75px;
+    }
+    @media screen and (min-width: 40em) {
+      .fifth-block-image {
+        text-align: left;
+        margin-left: -35px;
+      }
+    }
+    @media screen and (min-width: 64em) {
+      padding: 60px 60px;
+      .fifth-block-body {
+        padding-left: 60px;
+      }
+      .fifth-block-body .fifth-heading,
+      .fifth-heading h2 {
+        font-size: 32px;
+      }
+      .fifth-block-body .fifth-sub {
+        font-size: 16px;
+        width: 340px;
+      }
+      .fifth-body {
+        padding-top: 30px;
+        margin-left: 0px;
+        margin-right: 0px;
+      }
+      .fifth-icon-block {
+        margin-left: -5px;
+      }
+      .s-size {
+        width: 75px;
+        margin-left: 33px;
+      }
+      .fifth-block-image-file {
+        width: 560px;
+        height: 420px;
+      }
+    }
+  }
+
+  .sixth-block {
+    padding-bottom: 56px;
+    text-align: center;
+    border-bottom: 1px solid #cdcdcd;
+    .sixth-heading {
+      font-size: 22px;
+      font-family: $proxima-nova-light;
+      margin-top: 40px;
+    }
+    .sixth-desc p {
+      font-size: 12px;
+      font-family: $proxima-nova-reg;
+      color: $gray-dark;
+      margin-top: 5px;
+      padding: 0 30px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .sixth-button {
+      margin-top: 24px;
+      a {
+        width: 100%;
+        padding: 16px 0;
+      }
+    }
+    .sixth-border {
+      display: none;
+    }
+    @media screen and (min-width: 64em) {
+      padding: 60px 0;
+      .sixth-heading {
+        font-size: 32px;
+        margin-top: 0;
+      }
+      .sixth-desc p {
+        font-size: 16px;
+        font-family: $proxima-nova-reg;
+        width: 360px;
+        padding: 0;
+      }
+      .sixth-button a {
+        width: 146px;
+        padding: 12px 0;
+        margin-left: -10px;
+      }
+      .sixth-border {
+        display: inherit;
+        border-left: 1px solid #cdcdcd;
+        float: left;
+        height: 154px;
+        position: relative;
+        top: 0px;
+      }
+    }
+  }
+
+  .seventh-block {
+    padding: 40px 16px 56px 16px;
+    text-align: center;
+    border-bottom: 1px solid #cdcdcd;
+    .seventh-heading {
+      font-size: 22px;
+      font-family: $proxima-nova-light;
+    }
+    .seventh-desc p {
+      font-size: 12px;
+      font-family: $proxima-nova-reg;
+      padding: 0 13px 16px 15px;
+      color: $gray-dark;
+    }
+    .border {
+      border-bottom: 2px solid #ffc324;
+      height: 1px;
+      width: 30px;
+      margin-top: 16px;
+      margin-bottom: 16px;
+      position: relative;
+      left: 45%;
+    }
+    label {
+      text-align: left;
+      color: black;
+      font-family: $proxima-nova-semibold;
+      margin-bottom: 10px;
+    }
+    button {
+      width: 100%;
+      padding: 16px 0;
+    }
+    input {
+      margin-bottom: 10px;
+    }
+    .field-errors {
+      display: none;
+    }
+    .seventh-block-image {
+      display: none;
+    }
+    @media screen and (min-width: 40em) {
+      .border {
+        left: 47%;
+      }
+      .seventh-desc p {
+        padding-bottom: 20px;
+      }
+    }
+    @media screen and (min-width: 64em) {
+      text-align: left;
+      padding: 60px 0 60px 60px;
+      .seventh-heading {
+        font-size: 32px;
+      }
+      .seventh-desc p {
+        font-size: 16px;
+        padding-left: 0;
+      }
+      .seventh-block-image-file {
+        height: 314px;
+        width: 518px;
+        float: right;
+      }
+      .seventh-block-image {
+        display: inline;
+        position: relative;
+        bottom: -60px;
+      }
+      .border {
+        left: 0;
+      }
+    }
+    @media screen and (min-width: 80em) {
+      .seventh-block-image-file {
+        width: 718px;
+      }
+    }
+  }
+
+  .last-block {
+    text-align: center;
+    padding: 20px 46px 0 35px;
+
+    .last-heading p {
+      font-size: 22px;
+      font-family: $proxima-nova-light;
+      line-height: 36px;
+    }
+    .border {
+      border-bottom: 2px solid #ffc324;
+      height: 1px;
+      width: 30px;
+      margin-top: 16px;
+      margin-bottom: 16px;
+      position: relative;
+      left: 45%;
+    }
+    .last-desc p {
+      font-size: 12px;
+      font-family: $proxima-nova-reg;
+      color: $gray-dark;
+      margin-bottom: 17px;
+    }
+    .appstore {
+      width: 114px;
+      height: 37px;
+    }
+    .googleplay {
+      margin-left: 10px;
+      width: 128px;
+      height: 50px;
+    }
+    .mobile-img {
+      margin-top: 24px;
+    }
+    @media screen and (min-width: 40em) {
+      .border {
+        left: 47%;
+      }
+    }
+    @media screen and (min-width: 64em) {
+      padding: 60px;
+      text-align: left;
+      height: 414px;
+      .last-heading p {
+        font-size: 32px;
+        width: 430px;
+        margin-top: 10px;
+      }
+      .border {
+        left: 0;
+        margin: 30px 0;
+      }
+      .last-desc p {
+        font-size: 16px;
+        width: 400px;
+        margin-bottom: 12px;
+      }
+      .mobile-img {
+        position: relative;
+        top: -20px;
+        margin-top: 0px;
+      }
+      .mobile-img img {
+        width: 467px;
+        height: 373px;
+      }
+      .googleplay {
+        margin-left: 20px;
+      }
+
+    }
+  }
+
+}

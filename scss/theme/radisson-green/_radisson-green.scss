@@ -1,0 +1,591 @@
+// ------------------------------------//
+// ------------------------------------//
+//    Buttons
+// ------------------------------------//
+.breadcrumb {
+  background-color: $nav-grey;
+
+  li {
+    margin-bottom: -2px;
+    // margin-top: -21px;
+    // &:hover, &:focus {
+    //   margin-bottom: -20px;
+    //   margin-top: -21px;
+    // }
+  }
+
+  a {
+    font-size: rem-calc(12);
+    letter-spacing: 1px;
+    outline: 0;
+    transition: 200ms ease-in-out;
+    
+    &:hover, &:focus {
+      text-decoration: none;
+      margin-bottom: -20px;
+      margin-top: -21px;
+      border-bottom: 5px solid #ffffff;
+      padding-bottom: -8px;
+      transition-property: border-bottom;
+      transition-duration: .2s;
+      transition-timing-function: ease-out;
+      @media screen and (max-width: 63em) {
+        border-bottom: none;
+      }
+    }
+
+    .active {
+      margin-bottom: -20px;
+      margin-top: -21px;
+      &:hover, &:focus {
+        margin-bottom: -20px;
+        margin-top: -21px;
+      }
+    }
+  }
+}
+
+// ------------------------------------//
+//    Base
+// ------------------------------------//
+
+// a, a:hover { color: $secondary-color; }
+
+// ------------------------------------//
+//    Arrows
+// ------------------------------------//
+.dropdown-titleicon .fill, .bookingview-datepicker .datepick-month-header .dropdown-titleicon .fill, .datepick-month-header-copy .dropdown-titleicon .fill, .toolbar-switcher .svg .fill { fill: $camo-green; }
+
+.radisson-green {
+  //HEADINGS & HIGHTLIGHTS
+  h1, ._h1 {
+    @include heading-1;
+    font-size: rem-calc(30);
+    line-height: 1.13;
+    @include breakpoint(medium) {
+      font-size: rem-calc(32);
+      @include get-font('regular');
+    }
+  }
+  h2, ._h2 {
+    @include heading-2;
+    font-size: rem-calc(22);
+    line-height: 1.18;
+    @include breakpoint(medium) {
+      font-size: rem-calc(38);
+      line-height: 1.11;
+    }
+  }
+  .svg-fill {
+    fill: $primary-color;
+  }
+  .content-area .p_subt {
+    color: black;
+    font-size: rem-calc(12);
+    letter-spacing: 1px;
+    line-height: 1.33;
+    text-transform: uppercase;
+  }
+
+  .footer .column ul, .footer .columns ul {
+    list-style: none;
+    font-size: rem-calc(12);
+    margin: 0 0 10px 0;
+    font-weight: 600;
+    color: $gray-dark;
+    font-family: $proxima-nova-semibold;
+  }
+
+  .footer .column a:not(.email-signup-trigger):hover,
+  .footer .columns a:not(.email-signup-trigger):hover {
+    color: $anchor-color;
+  }
+
+  //CTAs
+  .cta {
+    border-radius: 2px;
+    color: $black;
+    @include get-font('semibold');
+    font-size: rem-calc(12);
+    text-transform: uppercase;
+    &:hover, &:focus {
+      text-decoration: none;
+    }
+  }
+  @include breakpoint(medium) {
+    .cta {
+      padding: rem-calc(12 30);
+    }
+  }
+  @include breakpoint(small only) {
+    .cta {
+      padding: rem-calc(16 0);
+    }
+  }
+  .cta-2 {
+    background-color: transparent;
+    border-color: $primary-color;
+    &:hover {
+      background-color: $primary-color;
+    }
+  }
+  .cta-big {
+    font-size: rem-calc(14);
+    padding: 20px 0;
+    &:hover {
+      background-color: $primary-hover-cta;
+      transition: background .4s;
+    }
+  }
+  .cta-full {
+    font-size: rem-calc(14);
+    letter-spacing: 1px;
+    line-height: 1.29;
+    padding: 20px 0 22px;
+  }
+  .large-text-link {
+    @include large-text-link;
+  }
+  .searchconsole {
+    .submit {
+      @include get-font('semibold');
+      font-size: rem-calc(14);
+      @include breakpoint(medium) {
+        padding: 25.5px 10px;
+      }
+    }
+  }
+  .book-now-mobile {
+    .cta_bnm {
+      @include get-font('semibold');
+      font-size: rem-calc(14);
+      letter-spacing: 1px;
+      line-height: 1.57;
+      padding: 20px 0;
+    }
+  }
+  .info-expander {
+    &.active {
+      &::after {
+        top: 5px;
+      }
+    }
+    &::after {
+      top: 2px;
+    }
+  }
+
+  //CONTAINERS
+  .spaced-panel {
+    @include breakpoint(small only) {
+      padding-bottom: 32px;
+      padding-top: 24px;
+    }
+  }
+
+  //HEADER
+  .search-dates .spacer {
+    @include breakpoint(medium) {
+      line-height: 62px;
+    }
+  }
+
+  .header-dropdowns .selected-language:hover,
+  .header-dropdowns .selected-currency:hover {
+    color: $camo-green;
+  }
+
+  //WEBEXTRA
+  .hero {
+    .gallery-loader {
+      i {
+        color: $nav-grey;
+      }
+    }
+  }
+  .hero:not(._dining, ._rooms, ._featured-offer, .standard-hero, .home-hero, .home-brand-hero) {
+    height: auto;
+
+    @include breakpoint(medium) {
+      min-height: 600px;
+    }
+
+    @include breakpoint(small only) {
+      min-height: 510px;
+    }
+
+    .property-name {
+      font-size: rem-calc(30);
+      @include breakpoint(large) {
+        font-size: rem-calc(32);
+      }
+    }
+  }
+  .hotel-info {
+    margin-left: 0;
+    margin-right: 0;
+    ._h1 {
+      line-height: 1.13;
+      margin-bottom: 10px;
+    }
+  }
+  .hotel-about {
+    @include breakpoint(large) { padding: rem-calc(30 60 25); }
+    /* stylelint-disable selector-no-qualifying-type */
+    /* only used for the phone type link */
+    a {
+      &:hover {
+        text-decoration: underline;
+      }
+      &[href^="tel:"] {
+        color: $gray-dark;
+      }
+    }
+    /* stylelint-enable selector-no-qualifying-type */
+    p:not(.p_subt, ._h1, ._h2, .ta-info) {
+      color: $gray-dark;
+      font-size: rem-calc(14);
+    }
+    .ta-info:not(.p_subt) {
+      color: #00659b;
+      font-size: rem-calc(12);
+      img {
+        margin-top: 3px;
+        @include breakpoint(small only) {
+          width: rem-calc(101);
+        }
+      }
+    }
+  }
+  h1, ._h1-1 {
+    font-size: rem-calc(22);
+    line-height: 1.18;
+    @include breakpoint(medium) {
+      font-size: rem-calc(38);
+      line-height: 1.11;
+    }
+  }
+  .property-name {
+    margin-bottom: 20px;
+    text-transform: none;
+  }
+
+  //WEBEXTRA - MAP
+  .map-block {
+    h3 {
+      font-size: rem-calc(22);
+      @include breakpoint(medium) {
+        font-size: rem-calc(32);
+        padding-top: 20px;
+      }
+    }
+    h6 {
+      color: black;
+      font-size: rem-calc(16);
+      @include breakpoint(medium) {
+        font-size: rem-calc(18);
+      }
+    }
+    .map-container {
+      .map {
+        max-height: none;
+      }
+    }
+  }
+  .map-intro {
+    border-bottom: 1px solid $gray-light;
+    padding-bottom: 32px;
+    padding-top: 40px;
+    @include breakpoint(medium) {
+      border-bottom: none;
+      padding-bottom: 50px;
+      padding-top: 60px;
+    }
+  }
+  .map-lmarker {
+    transform: translate(-50%, -50%);
+    .map-marker-title {
+      border: 1px solid $primary-color;
+      border-radius: 2px;
+      padding: 16px 30px 17px;
+      &:hover {
+        background-color: $primary-color;
+        transition: background .4s;
+      }
+      a {
+        @include get-font('semibold');
+        font-size: rem-calc(14);
+        letter-spacing: 1px;
+        line-height: 1.29;
+        text-transform: uppercase;
+      }
+    }
+  }
+  .map-pois {
+    padding-top: 32px;
+    @include breakpoint(medium) {
+      padding-top: 0;
+    }
+  }
+
+  //WEBEXTRA - ATTRACTIONS
+  .poi-locations {
+    .poi-panel.is-match {
+      flex-wrap: wrap;
+    }
+    .poi-bullet-container {
+      display: inline;
+      height: auto;
+      @media screen and (max-width: 64em) {
+        display: none;
+      }
+    }
+    .poi-bullet {
+      background-color: transparent;
+      font-size: rem-calc(18);
+      height: auto;
+      line-height: 1.22;
+      text-align: left;
+      width: auto;
+    }
+    .poi-img-container {
+      @include breakpoint(large) {
+        display: none;
+      }
+    }
+    .poi-location-name {
+      text-transform: none;
+    }
+    .poi-desc {
+      width: 100%;
+    }
+  }
+
+  //WEBEXTRA - CONTACT
+  .mobile-btn {
+    .lblmob {
+      @include get-font('regular');
+      font-size: rem-calc(16);
+      line-height: 1.25;
+      margin-bottom: 0;
+      text-transform: none;
+      @include breakpoint(small only) {
+        text-transform: uppercase;
+      }
+    }
+  }
+  //WEBEXTRA OVERVIEW
+  .about-info {
+    h1 {
+      font-size: rem-calc(22);
+      line-height: 1.18;
+      margin-bottom: 10px;
+      @include breakpoint(medium) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+  .ln-amenitie {
+    font-size: rem-calc(12);
+    @include breakpoint(medium) {
+      font-size: rem-calc(16);
+    }
+    @include breakpoint(small only) {
+      margin-bottom: 8px;
+    }
+    &.nospaced {
+      @include breakpoint(medium) {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .amenitie-icon img {
+    color: $primary-color;
+  }
+  .amenities {
+    h2 {
+      @include breakpoint(small only){
+        margin-bottom: rem-calc(18);
+      }
+    }
+    .info-expander {
+      @include breakpoint(small only) {
+        margin-top: rem-calc(21);
+      }
+    }
+  }
+
+  //WEBEXTRA - CONTENT
+  .content-area {
+    p {
+      color: $gray-dark;
+    }
+  }
+  .short-desc {
+    @include get-font('paragraph');
+  }
+  //WEBEXTRA - TABS
+  .tabs-title a h3 {
+    @include get-font('semibold');
+    font-size: rem-calc(12);
+    letter-spacing: 1px;
+    line-height: 1.33;
+    padding-bottom: 12px;
+    text-transform: uppercase;
+  }
+  .tabs-panel {
+    margin-bottom: 0;
+    @include breakpoint(medium) {
+      margin-bottom: rem-calc(60);
+    }
+  }
+  .mosaic {
+    margin-bottom: 0;
+    @include breakpoint(medium) {
+      margin-bottom: 28px;
+    }
+  }
+  .green-mob-restaurant-list {
+    list-style-type: none;
+    margin: 0px auto;
+    padding: 0;
+    a {
+      &:hover, &:focus {
+        text-decoration: none;
+      }
+    }
+    h4 {
+      color: $black;
+      font-size: rem-calc(16);
+      margin-bottom: 4px;
+    }
+    li {
+      border-bottom: 1px solid $gray-light;
+      padding: 27px 16px;
+      position: relative;
+      &:first-child {
+        border-top: 1px solid $gray-light;
+      }
+      &::after {
+        border-right: 3px solid $primary-color;
+        border-top: 3px solid $primary-color;
+        content: "";
+        display: inline-block;
+        height: 8px;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: rotate(45deg) translateY(-50%);
+        width: 8px;
+      }
+
+    }
+    p {
+      color: $gray-dark;
+      font-size: rem-calc(12);
+      margin: 0 auto;
+    }
+  }
+
+  //WEBEXTRA - PROPERTIES
+  .related-properties {
+    padding-bottom: 48px;
+    padding-top: 40px;
+    @include breakpoint(medium) {
+      padding-bottom: 60px;
+      padding-top: 60px;
+    }
+    h2 {
+      margin-bottom: 10px;
+      @include breakpoint(medium) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  //WEBEXTRA - OFFERS
+  .we-offers {
+    .card-content {
+      h3 {
+        font-size: rem-calc(22);
+        line-height: 1.18;
+      }
+      p {
+        line-height: 1.57;
+      }
+    }
+  }
+
+  //CARDS
+  .card {
+    a {
+      &:focus {
+        text-decoration: none;
+      }
+      h4 {
+        color: $black;
+      }
+    }
+    .logo-brand-container {
+      img {
+        height: rem-calc(25);
+      }
+    }
+    .ta-logo {
+      bottom: 89px;
+      width: 88px;
+    }
+  }
+  .sm-card {
+    .card-content {
+      @include breakpoint(small only) {
+        h4, ._h4 {
+          font-size: rem-calc(22);
+        }
+      }
+    }
+  }
+  .card-content {
+    &._pc1 {
+      height: 192px;
+    }
+    h4, ._h4 {
+      font-size: rem-calc(18);
+      line-height: 1.22;
+      margin: rem-calc(0 0 11 0);
+      text-transform: capitalize;
+      width: 100%;
+      @include breakpoint(small only){
+        font-size: rem-calc(22);
+      }
+    }
+    .card-spacer-related-prop {
+      height: 9px;
+    }
+    .card-label1-related-prop {
+      @include breakpoint(small only) {
+        color: black;
+      }
+    }
+    .card-price {
+      color: $black;
+      font-size: rem-calc(26);
+      line-height: 1.15;
+    }
+  }
+
+
+
+  // _SEARCH RESULTS PAGE
+  .popular-cities .popular-cities-list li {
+    font-family: $lola-regular;
+  }
+}
+
+
+.img-container {
+  background-color: $primary-color;
+  & img {
+    color: #aed17f;
+  }
+}

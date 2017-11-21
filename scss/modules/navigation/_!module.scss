@@ -1,0 +1,41 @@
+//_____________________________________
+// Header Nav => navigation @1024px animation
+.primarynav a:before,
+.primarynav a:after {
+  content: none;
+
+  @include breakpoint(large) {
+    content: "";
+    height: 0;
+    // width: 100%;
+    position: absolute;
+    // right: 0;
+    bottom: 0;
+    // left: 0;
+    z-index: -1;
+    transition: 200ms ease-in-out;
+  }
+}
+
+.primarynav a:after { background-color: $true-black; }
+
+.primarynav a:hover,
+.primarynav a:focus {
+  &:before { 
+    height: 100%;
+  }
+
+  &:after { 
+    height: 4px;
+    right: 10px;
+    left: 10px;
+  }
+}
+
+.primarynav .active a:after {
+  @include breakpoint(large) {
+    height: 4px;
+    right: 0;
+    left: 0;
+  }
+}

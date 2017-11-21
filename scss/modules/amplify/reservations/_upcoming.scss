@@ -1,0 +1,471 @@
+.reservations-upcoming {
+  position: relative;
+
+  article {
+    width: 100vw;
+  }
+
+  .row {
+    margin: 0;
+    max-width: none;
+  }
+
+  .columns { padding: 0; }
+
+  .modal-close {
+    @include breakpoint(large) {
+      background-color: $white;
+      border-radius: 50%;
+      height: rem-calc(40);
+      width: rem-calc(40);
+    }
+
+    &::before,
+    &::after {
+      @include breakpoint(large) {
+        left: 50%;
+        margin-left: -8px;
+        width: rem-calc(16);
+      }
+    }
+  }
+
+  h2 {
+    font-size: rem-calc(26);
+    font-weight: 300;
+    line-height: 1.15;
+    margin: 0 0 rem-calc(40) 10%;
+  }
+
+  figure { border-radius: 0; }
+}
+
+.reservations-upcoming-next {
+  position: relative;
+  @include breakpoint(large) {
+    flex: 0 0 64.625%;
+    max-height: rem-calc(540);
+    max-width: 64.625%;
+  }
+
+
+  img {
+    @include breakpoint(large) {
+      display: block;
+      height: 100%;
+      max-height: rem-calc(540);
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  &.hotel-location {
+    border-top: 1px solid $white;
+    @include breakpoint(large) {
+      border-left: 1px solid $white;
+      border-top: 0;
+      display: flex;
+      flex: 35.375%;
+      max-width: 35.375%;
+    }
+  }
+
+  .travel {
+    @media (min-width: 64.0625em) {
+      height: 60%;
+    }
+  }
+
+  .hotel-location-map {
+    > a {
+      display: block;
+      height: 100%;
+      max-height: 33.75rem;
+      width: 100%;
+    }
+
+    img {
+      @include breakpoint(large) { height: rem-calc(340); }
+      @media (min-width: 64.0625em) { height: 100%; }
+    }
+
+    .map-panel.bottom {
+      background: #fff;
+      bottom: 11px;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.07);
+      color: #767676;
+      left: 11px;
+      min-width: rem-calc(335);
+      padding: 20px 20px 11px;
+      position: absolute;
+      right: 11px;
+
+      .icon {
+        display: inline-block;
+        float: left;
+        font-size: 20px;
+        height: auto;
+        margin: 0 11px 0 0;
+        text-align: center;
+        width: 18px;
+      }
+      .fa-envelope-o { font-size: 18px; }
+    }
+
+    .map-panel-element {
+      font-size: rem-calc(14);
+      @include breakpoint(large) { font-size: rem-calc(12); }
+      @include breakpoint(xlarge) { font-size: rem-calc(14); }
+
+      p {
+        display: inline-block;
+        margin-bottom: 8px;
+      }
+      a { color: #767676; }
+    }
+
+    .map-lmarker img { height: auto; }
+  }
+  .hotel-location-guide {
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    top: 60%;
+    figure {
+      height: 100%;
+    }
+    figure figcaption {
+      position: relative;
+      bottom: 67px;
+      color: white;
+    }
+  }
+  .hotel-location-guide img {
+    height: 100%;
+    @include breakpoint(large) { max-height: rem-calc(260); }
+  }
+}
+
+.hotel-location-travel-guide {
+  figure {
+    max-height: 300px;
+  }
+  figure img {
+    max-height: 100%;
+    height: 300px;
+  }
+  figure figcaption {
+    position: relative;
+    bottom: 85px;
+    left: 30px;
+    color: white;
+  }
+}
+
+.hotel-location-map,
+.reservations-map {
+  position: relative;
+  .map-lmarker {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    img { width: 60px; }
+    p { margin: 0; }
+    .map-marker-title {
+      background: #fff;
+      padding: 12px 14px;
+    }
+    .map-marker-tip {
+      background-image: url(../../assets/images/temporary/pic-cloud-tip.png);
+      background-repeat: no-repeat;
+      background-position: top center;
+      background-size: auto 100%;
+      height: 6px;
+    }
+  }
+}
+
+.reservations-upcoming-details {
+  > .row {
+    margin: 0;
+    border-bottom: 1px solid $gray-light;
+  }
+  .columns {
+    padding: rem-calc(16 24);
+    @include breakpoint(large) { padding: rem-calc(8 0); }
+    &:first-child {
+      border-right: 1px solid $gray-light;
+      @include breakpoint(large) { border-right: 0; }
+    }
+  }
+  h4 {
+    @include label-text;
+    line-height: 1.33;
+    color: $gray-medium;
+    margin-bottom: rem-calc(4);
+    @include breakpoint(large) { margin-bottom: rem-calc(10); }
+  }
+  h5 {
+    font-size: rem-calc(22);
+    line-height: 1.18;
+    margin-bottom: 0;
+  }
+  p {
+    font-size: rem-calc(16);
+    line-height: 1.22;
+    margin-bottom: 0;
+    @include breakpoint(xlarge) { font-size: rem-calc(18); }
+  }
+}
+
+.reservation-cancel-link {
+  @include label-text;
+}
+
+.reservations-upcoming-buttons {
+  @include flex;
+  flex-direction: column;
+  @include breakpoint(medium) { flex-direction: row; }
+  @include breakpoint(large) {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  &.columns { padding-bottom: rem-calc(16); }
+  form {
+    width: 100%;
+    @include breakpoint(large) {
+      max-width: rem-calc(260);
+      font-size: rem-calc(10);
+      line-height: 2;
+    }
+  }
+  .button {
+    display: block;
+    margin-bottom: rem-calc(10);
+    line-height: 1.5;
+    @include breakpoint(medium) {
+      width: 90%;
+      height: rem-calc(40);
+    }
+    @include breakpoint(large) {
+      width: 100%;
+      max-width: rem-calc(260);
+      font-size: rem-calc(10);
+      line-height: 2;
+    }
+    @include breakpoint(xlarge) {
+      font-size: rem-calc(12);
+      line-height: 1.5;
+    }
+    &.secondary {
+      background-color: $white;
+      border: 1px solid $primary-color;
+      @include breakpoint(medium) { margin-left: rem-calc(10); }
+      @include breakpoint(large) { margin-left: 0; }
+    }
+  }
+}
+
+.reservations-upcoming-rooms,
+.reservations-guest-info,
+.reservations-upcoming-total,
+.reservations-upcoming-enhance,
+.reservations-upcoming-other,
+.reservations-previous {
+  padding: rem-calc(0 16 40);
+  @include breakpoint(large) { padding: 0 rem-calc(20) rem-calc(40) 5%; }
+  h3 {
+    font-family: $proxima-nova-reg;
+    font-size: rem-calc(22);
+    line-height: 1.18;
+    margin: rem-calc(0 0 40);
+  }
+}
+
+.reservations-upcoming-rooms,
+.reservations-guest-info {
+  .button {
+    width: 100%;
+    padding: rem-calc(15 0);
+  }
+}
+
+.reservations-upcoming-rooms {
+  padding-top: rem-calc(32);
+  @include breakpoint(large) { padding-top: 0; }
+  h4 {
+    color: $gray-dark;
+    span {
+      font-family: $proxima-nova-reg;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+  }
+  .reservations-card {
+    figure, img { border-radius: 4px; }
+    figure {
+      @include breakpoint(xlarge) {
+        width: rem-calc(138);
+        height: rem-calc(104);
+      }
+    }
+    .room-card-info { padding-left: rem-calc(22); }
+  }
+}
+
+.reservations-upcoming-enhance {
+  padding: rem-calc(40 0 0 16);
+  @include breakpoint(large) { padding: rem-calc(0) rem-calc(20) rem-calc(40) 5%; }
+  .row.slideshow-container {
+    @include breakpoint(xlarge) { padding-right: 4%; }
+  }
+}
+
+.reservations-guest-info {
+  h3 { margin-bottom: rem-calc(24); }
+
+  h4 {
+    @include label-text;
+    color: $gray-dark;
+    margin-bottom: rem-calc(8);
+    @include breakpoint(large) { margin-bottom: rem-calc(10); }
+  }
+
+  p {
+    margin-bottom: 0;
+    @include breakpoint(large) {
+      font-size: rem-calc(18);
+      line-height: 1.22;
+      margin-bottom: rem-calc(30);
+    }
+  }
+  .reservations-separator { margin-top: rem-calc(10); }
+}
+
+
+.guest-info-button {
+  order: 4;
+  margin-top: rem-calc(32);
+  @include breakpoint(large) {
+    order: 0;
+    @include flex;
+    justify-content: flex-end;
+    margin-top: 0;
+  }
+  &.columns {
+    @include breakpoint(large) { padding-right: rem-calc(40); }
+  }
+  form {
+    width: 100%;
+    @include breakpoint(large) {
+      order: 0;
+      @include flex;
+      justify-content: flex-end;
+      margin-top: 0;
+    }
+  }
+  .button {
+    @include breakpoint(large) {
+      width: 78.5%;
+      max-height: rem-calc(40);
+      padding: rem-calc(12 0);
+      background-color: blue;
+    }
+  }
+}
+
+.reservations-upcoming-total {
+  padding: 0;
+  @include breakpoint(medium) { padding: rem-calc(0 16 40); }
+  @include breakpoint(large) { padding: rem-calc(0) rem-calc(20) rem-calc(40) 5%; }
+  h3, h4 {
+    margin-left: 5%;
+    @include breakpoint(medium) { margin-left: 0; }
+  }
+  h3 {
+    font-family: $proxima-nova-reg;
+    margin-bottom: rem-calc(4);
+    @include breakpoint(medium) { margin-bottom: rem-calc(5); }
+  }
+  h4 {
+    @include label-text;
+    color: $gray-medium;
+    margin-bottom: rem-calc(32);
+    @include breakpoint(large) { margin-bottom: 0; }
+  }
+  .reservations-separator { margin-top: rem-calc(40); }
+}
+
+.reservation-total-buttons {
+  @include breakpoint(medium) {
+    @include flex;
+    justify-content: flex-end;
+  }
+  .button {
+    @include breakpoint(small only) {
+      display: block;
+      border-top: 1px solid $gray-light;
+      border-right: 0;
+      border-bottom: 0;
+      border-left: 0;
+      font-family: $proxima-nova-reg;
+      font-size: rem-calc(16);
+      text-transform: none;
+      text-align: left;
+      padding: rem-calc(22) 0 rem-calc(22) 5%;
+      &:last-child { border-bottom: 1px solid $gray-light; }
+    }
+
+    @include breakpoint(medium) {
+      padding: rem-calc(8);
+      line-height: 1.75;
+      max-height: rem-calc(40);
+    }
+
+    @include breakpoint(xlarge) { padding: rem-calc(8 29); }
+
+    &:not(:last-child) {
+      @include breakpoint(medium) { margin-right: rem-calc(10); }
+    }
+  }
+
+  &.columns {
+    @include breakpoint(large) { padding-right: rem-calc(40); }
+  }
+}
+
+.static-map {
+  display: block;
+  width: 100%;
+}
+
+.reservations-contact .columns,
+.reservations-upcoming-enhance .columns {
+  padding: 0;
+}
+
+.reservations-contact-buttons {
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 1px solid $gray-light;
+    border-left: 0;
+    padding: rem-calc(32 0);
+    font-family: $proxima-nova-semibold;
+    font-size: rem-calc(12);
+    line-height: 1.33;
+    color: $black;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+  > div:last-child a { border-right: 0; }
+  i {
+    display: block;
+    font-size: rem-calc(32);
+    color: $secondary-color;
+    margin-bottom: rem-calc(16);
+  }
+}

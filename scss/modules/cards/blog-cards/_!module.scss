@@ -1,0 +1,60 @@
+.blog-card {
+  min-height: auto;
+  
+  @include breakpoint(medium) {
+    min-height: 380px;
+  }
+}
+
+.blog-card.blog-large-card {
+  min-height: 400px;
+}
+
+.blog-card a:hover,
+.blog-card a:focus {
+  .label {
+    border-bottom: 0;
+  }
+}
+
+.blog-card .card-img-cover {
+  height: 195px;
+
+  @include breakpoint(large) {
+    height: 146px;
+  }
+}
+
+.blog-card .no-img {
+  height: 35px;
+}
+
+.blog-card .card-header {
+  height: auto;
+  min-height: 140px;
+  justify-self: flex-start;
+  margin-bottom: auto;
+  top: -35px;
+
+  @include breakpoint(large) {
+    max-height: 140px;
+  }
+}
+
+.blog-card .label {
+  background-color: $primary-color;
+  color: $true-black;
+  display: inline-block;
+  line-height: 1;
+  padding: .325rem 1rem;
+}
+
+.blog-card .card-title {
+  margin-top: 1rem;
+}
+
+.blog-card .card-footer {
+  border-top: 0;
+  position: absolute;
+  bottom: 0;
+}

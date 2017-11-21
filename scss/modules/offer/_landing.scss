@@ -1,0 +1,439 @@
+/* CSS Document */
+
+.offers-main {
+  position: relative;
+  .hero {
+    position: relative;
+    background-color: #f1f1f1;
+    @include breakpoint(small only) {
+      height: 541px;
+    }
+    @include breakpoint(medium only) {
+      height: 635px;
+    }
+  }
+
+  .featured-offer {
+    background-color: white;
+    border-radius: 4px;
+    height: 330px;
+    left: 60px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 360px;
+    color: #000;
+    @include breakpoint(medium down) {
+      height: 268px;
+      left: 50%;
+      position: absolute;
+      padding: 32px 24px;
+      top: 217px;
+      transform: translateX(-50%);
+      width: 91.46%;
+      border: 1px solid $gray-light;
+    }
+
+    &:hover, &:hover .label {
+      text-decoration: none;
+    }
+    &:hover .label {
+      border: 0;
+    }
+    h2, ._h2 {
+      font-size: rem-calc(32);
+      line-height: 1.13;
+      @include breakpoint(medium down) {
+        font-size: rem-calc(30);
+      }
+    }
+    p {
+      color: $gray-dark;
+      font-size: rem-calc(16);
+    }
+    .brands {
+      @include label-text;
+      color: $gray-medium;
+      border-top: 1px solid $gray-light;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      left: 0;
+      padding: 21px 40px;
+      position: absolute;
+      width: 100%;
+      @include breakpoint(small only) {
+        padding: 21px 24px;
+      }
+      img {
+        height: 25px;
+        margin-right: 20px;
+        width: auto;
+      }
+    }
+    .label {
+      font-size: rem-calc(12);
+      letter-spacing: 1px;
+      line-height: 1.33;
+      margin-bottom: 10px;
+    }
+
+    .card-label1 { line-height: 1; margin-left: 3px; }
+  }
+
+  .finder {
+    background-color: $gray-lightest;
+    border-bottom: 1px solid $gray-light;
+    overflow: auto;
+    padding: 40px 60px;
+    @include breakpoint(small only) {
+      padding: 40px 16px 56px;
+    }
+    h3, ._h3 {
+      font-size: rem-calc(22);
+      line-height: 1.13;
+      text-transform: capitalize;
+      @include breakpoint(large) {
+        font-size: rem-calc(32);
+      }
+    }
+    p {
+      color: $gray-dark;
+      @include breakpoint(small only) {
+        color: $near-black;
+      }
+    }
+    .content {
+      float: left;
+      max-width: 560px;
+    }
+    .cta {
+      text-align: center;
+      @include breakpoint(small only) {
+        font-size: rem-calc(14);
+        padding-bottom: 23px;
+        padding-top: 23px;
+        width: 100%;
+      }
+      @include breakpoint(medium) {
+        float: right;
+        font-size: rem-calc(12);
+        margin-top: 17px;
+        padding: 22px 75px;
+      }
+    }
+  }
+
+  .offers-back {
+    color: black;
+    @include get-font('semibold');
+    font-size: rem-calc(12);
+    letter-spacing: 1px;
+    line-height: 1.33;
+    margin: 40px 16px;
+    padding-left: 24px;
+    position: relative;
+    text-transform: uppercase;
+
+    @include breakpoint(large) {
+      margin: 40px 60px;
+      padding-left: 24px;
+    }
+
+    &::before {
+      border-top: 3px solid $primary-color;
+      border-right: 3px solid $primary-color;
+      content: "";
+      display: inline-block;
+      position: absolute;
+      height: 8px;
+      margin-right: 12px;
+      top: 4px;
+      transform: rotate(225deg);
+      left: 0px;
+      width: 8px;
+    }
+    a {
+      color: black;
+    }
+  }
+  .offers-results-title {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 60px;
+    padding-top: 30px;
+    @include breakpoint(medium down) {
+      display: block;
+      margin: 0 16px;
+    }
+    @include breakpoint (large) {
+      padding-top: 86px;
+    }
+    .current-filter {
+      color: black;
+      @include get-font('light');
+      font-size: rem-calc(32);
+      line-height: 1.13;
+      margin: 0;
+
+      @include breakpoint(medium down) { margin-bottom: 24px; }
+
+      .divider { padding: 0 22px; border-bottom: none; }
+    }
+  }
+  .offers-refine {
+    font-size: rem-calc(12);
+    @include get-font('semibold');
+    letter-spacing: 1px;
+    line-height: 1.33;
+    margin: 10px 60px 0;
+    text-transform: uppercase;
+
+    &.downspace-60 {
+      margin-bottom: 60px;
+    }
+
+    &.hide-for-large {
+      margin: 10px 0 24px;
+    }
+  }
+
+  .offer-blocks {
+    overflow: auto;
+    padding: 60px 0;
+    @include breakpoint(small only) {
+      padding: 40px 0;
+    }
+    &._results {
+      border-top: 1px solid $gray-light;
+      margin: 40px 0 60px;
+      padding: 0;
+
+      @include breakpoint(medium down) {
+        margin: 32px 0 0;
+      }
+
+      .search-results {
+        padding: 0;
+
+        @include breakpoint(medium down) {
+          padding: 0 16px 32px;
+        }
+
+        @include breakpoint(small only) {
+          text-align: center;
+
+          .search-result-card {
+            text-align: start;
+          }
+        }
+      }
+    }
+    h4, ._h4 {
+      font-size: rem-calc(26);
+      margin-bottom: 40px;
+      line-height: 1.15;
+      @include breakpoint(small only) {
+        font-size: rem-calc(22);
+        margin-bottom: 24px;
+      }
+    }
+
+    .applied-filters {
+      @include breakpoint(medium down) {
+        margin: 0 16px 32px;
+      }
+
+      span {
+        @include breakpoint(medium down) {
+          display: block;
+          width: 100%;
+          margin-bottom: 8px;
+          font-size: rem-calc(12);
+          letter-spacing: 1px;
+        }
+      }
+    }
+  }
+
+  .top-offers .offers-gallery.cards-wrapper{
+    @include breakpoint (medium only){
+      display: block;
+    }
+  }
+
+
+  .card-big {
+    background-color: white;
+    border: 1px solid $gray-light;
+    border-radius: 4px;
+    float: left;
+    margin-right: rem-calc(40);
+    width: 50%;
+    @include breakpoint(medium down) {
+      margin-right: 0;
+      margin-bottom: 24px;
+      width: 100%;
+      display: block;
+      overflow: hidden;
+    }
+    @include breakpoint(medium) {
+      transition: all 125ms ease;
+      &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.1);
+      }
+    }
+    &:nth-of-type(even) {
+      margin-bottom: 0;
+      margin-right: 0;
+    }
+    .card-cover {
+      border-top-left-radius: $card-border-radius;
+      border-top-right-radius: $card-border-radius;
+      height: 315px;
+      // background-color: $gray-dark;
+
+      @include breakpoint(small only) {
+        height: 193px;
+      }
+      img {
+        border-top-left-radius: rem-calc(4);
+        border-top-right-radius: rem-calc(4);
+        width: 100%;
+        min-height: rem-calc(315);
+        @include breakpoint (medium down){
+          min-height: rem-calc(234);
+        }
+      }
+      .expiration{
+        @include label-text;
+        background: linear-gradient(to bottom, rgba(0,0,0,0), black);
+        bottom: 0;
+        color: white;
+        font-size: rem-calc(12);
+        font-stretch: normal;
+        font-style: normal;
+        font-weight: 600;
+        letter-spacing: 1px;
+        line-height: rem-calc(16);
+        padding: 28px 40px 16px;
+        position: absolute;
+        text-transform: uppercase;
+        width: 100%;
+      }
+    }
+    .card-content {
+      h4, ._h4 {
+        font-size: rem-calc(32);
+        line-height: 1.13;
+        margin-bottom: 8px;
+        color: $true-black;
+        @include breakpoint(medium down){
+          font-size: rem-calc(22);
+          line-height: 26px;
+        }
+      }
+      &._pc1 {
+        height: 176px;
+        padding: 24px 40px;
+      }
+      &._pc2 {
+        border-top: 1px solid $gray-light;
+        height: 72px;
+        padding: 0 40px 0;
+        display: flex;
+        align-items: center;
+      }
+      @include breakpoint(small only) {
+        &._pc1 {
+          height: 206px;
+          padding: 24px;
+        }
+        &._pc2 {
+          padding: 0 24px 0;
+        }
+      }
+      p {
+        color: $gray-dark;
+        line-height: 1.5;
+        @include breakpoint(small only) {
+          color: $near-black;
+        }
+      }
+
+      .brand-img{
+        height: rem-calc(24);
+        width: auto;
+        max-width: rem-calc(90);
+        float: left;
+        margin: 0 25px 0 0;
+      }
+
+      .brand-label{
+        @include label-text;
+        color: $gray-medium;
+        margin: 0px auto;
+        position: relative;
+        @include breakpoint(large) {
+          float: left;
+          max-width: 35%;
+          margin: 0;
+          padding: 0;
+        }
+      }
+    }
+    .card-label1 {
+      @include label-text;
+      color: $gray-medium;
+      /*margin: 0px auto;*/
+    }
+  }
+  .top-offers {
+    max-width: $container-max-width;
+    overflow: auto;
+    padding: 0 60px;
+    margin: 0 auto;
+    @include breakpoint(small only) {
+      padding: 0 16px;
+    }
+
+  }
+  .medium-offers {
+    max-width: $container-max-width;
+    padding: 60px 0 0;
+    margin: 0 auto;
+    > h2, > a {
+      max-width: calc(100% - 120px);
+      margin-left: 60px;
+      margin-right: 60px;
+      @include breakpoint(medium down) {
+        margin-left: 16px;
+        margin-right: 16px;
+        max-width: calc(100% - 32px);
+      }
+    }
+  }
+  .offer-gallery{
+    padding: 0px;
+  }
+}
+
+/*.card-content .brand-img {
+  display: none;
+}*/
+
+.cards-hidden-placeholder {
+  display: none;
+}
+
+
+.livebox {
+  .searchwrapper {
+    @include breakpoint(medium) {
+      top: 0;
+    }
+  }
+}

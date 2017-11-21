@@ -1,0 +1,67 @@
+.room-card .expiration {
+  font-size: .625rem;
+}
+
+.room-card .expiration svg {
+  margin-right: 8px;
+  &:last-child { margin-right: 0; }
+}
+
+.room-card .expiration svg path {
+  stroke: #fff;
+}
+
+.room-card .card-img-cover img {
+  transform: translateY(0);
+  @media (min-width: 425px) { transform: translateY(-8%); }
+  @media (min-width: 500px) { transform: translateY(-15%); }
+  @media (min-width: 525px) { transform: translateY(-22%); }
+  @media (min-width: 560px) { transform: translateY(0); }
+  @media (min-width: 1024px) { transform: translateY(-4%); }
+  @media (min-width: 1100px) { transform: translateY(-10%); }
+  @media (min-width: 1200px) { transform: translateY(-20%); }
+  @media (min-width: 1280px) { transform: translateY(0); }
+  @media (min-width: 1440px) { transform: translateY(-8%); }
+}
+
+.room-card .card-header {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.room-card .card-header .card-details {
+  font-size: .875rem;
+}
+
+.room-card .card-header-logo {
+  flex: initial;
+  margin-bottom: 1rem;
+}
+
+.room-card .card-title {
+  font-size: rem-calc(26);
+  line-height: 1.22;
+  word-wrap: break-word;
+}
+
+.room-card .card-tripadvisor-logo {
+  flex: initial;
+}
+
+.room-card .card-footer {
+  height: auto;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.room-card .card-footer .card-title {
+  font-size: rem-calc(26px);
+  line-height: 1;
+  flex: initial;
+  margin-bottom: 0;
+}

@@ -1,0 +1,85 @@
+$theme: 'green';
+
+// ------------------------------------//
+//    Sizes
+// ------------------------------------//
+$active-border-width: 1px;
+$border-radius: 2px;
+$card-border-radius: 4px;
+
+// ------------------------------------//
+//    Colors
+// ------------------------------------//
+
+// Theme colors
+$pale-olive-green: #aed17f;
+$nav-grey: #3a3745;
+$tan-green: #a0bf77;
+$camo-green: #517028;
+$wild-sand: #f5f5f5;
+
+// General
+$primary-color: $pale-olive-green;
+$secondary-color: $camo-green;
+$black: #000000;
+$white: #ffffff;
+$gray-dark: #454545 !default;
+
+// Color Settings
+$anchor-color: $secondary-color !default;
+$active-input-color: $primary-color;  // border color for active inputs
+$shopping-cart: $black;
+
+$primary-text-cta: #000;
+$primary-text-hover-cta: #000;
+$primary-hover-cta: $tan-green;
+$secondary-text-cta: #000;
+$secondary-text-hover-cta: #000;
+$secondary-hover-cta: $pale-olive-green;
+$breadcrumb-template-arrow: $camo-green;
+
+// ------------------------------------//
+//    Fonts
+// ------------------------------------//
+$proxima-nova-thin: 'Proxima N W01 Thin Reg',  Arial, sans-serif !default;
+$proxima-nova-light: 'Proxima N W01 Light',  Arial, sans-serif !default;
+$proxima-nova-reg: 'Proxima N W01 Reg',  Arial, sans-serif !default;
+$proxima-nova-semibold: 'Proxima N W01 Smbd',  Arial, sans-serif !default;
+
+// This is not the real Lola font. This is a placeholder font that matches the old Radisson Green style
+$lola-light: 'FSLola Light',  Arial, sans-serif !default;
+$lola-regular: 'FSLola Regular',  Arial, sans-serif !default;
+
+$georgia: "Georgia", serif;
+$arial: Arial,"Helvetica Neue",Helvetica,sans-serif;
+
+$fonts:(
+  'thin': $lola-light,
+  'light': $lola-light,
+  'regular': $lola-regular,
+  'semibold': $proxima-nova-semibold,
+  'paragraph': $proxima-nova-reg,
+  'secondary-paragraph': $proxima-nova-reg,
+);
+
+@font-face {
+  font-family: 'FSLola Regular';
+  src: url('/templates/main/fonts/fslola/FSLolaWeb-Regular.eot'); /* IE9 */
+  src: url('/templates/main/fonts/fslola/FSLolaWeb-Regular.eot?#ie x') format('embedded-opentype'), /* IE6-IE8 */ url('/templates/main/fonts/fslola/FSLolaWeb-Regular.woff') format('woff'); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FSLola Light';
+  src: url('/templates/main/fonts/fslola/FSLolaWeb-Light.eot'); /* IE9 */
+  src: url('/templates/main/fonts/fslola/FSLolaWeb-Light.eot?#ie x') format('embedded-opentype'), /* IE6-IE8 */ url('/templates/main/fonts/fslola/FSLolaWeb-Light.woff') format('woff'); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+
+// ------------------------------------//
+//    Links
+// ------------------------------------//
+$anchor-decoration: none;
+$anchor-decoration-hover: underline;

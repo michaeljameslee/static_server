@@ -1,0 +1,23 @@
+/*doc
+---
+title: .svg-fill
+name: svg-fill
+category: Utilities
+author: William Pansky [SG0301235]
+---
+
+<p class="label loc">File location</p>
+scss/utilities/_svg-fill.scss
+
+Fill an SVG with this utility class.
+
+```
+.svg-fill-primary { fill: $primary-color; }
+.svg-fill-secondary { fill: $secondary-color; }
+.svg-fill-shopping-cart { fill: $shopping-cart; }
+```
+*/
+
+.svg-fill-primary { fill: $primary-color; }
+.svg-fill-secondary { fill: $secondary-color; }
+.svg-fill-shopping-cart { fill: $shopping-cart; }

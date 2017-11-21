@@ -1,0 +1,406 @@
+// ------------------------------------//
+//    Booking Funnel
+// ------------------------------------//
+
+.bookingfunnel-open {
+  .footer, .footer-logos, .footer-social { display: none; }
+  @include breakpoint(medium down) {
+    .header { position: absolute; }
+    .wrapper {
+      /* stylelint-disable declaration-no-important */
+      /* some JS shenanigans adding padding-top to the booking funnel*/
+      padding-top: 0 !important;
+      /* stylelint-enable declaration-no-important */
+    }
+  }
+  .wrapper {
+    /* stylelint-disable declaration-no-important */
+    /* some JS shenanigans adding padding-top to the booking funnel*/
+    // padding-top: map-get($header-height, small) !important;
+    @include breakpoint(large) {
+      padding-top: map-get($header-height, large) !important;
+      margin-bottom: 0;
+    }
+    /* stylelint-enable declaration-no-important */
+  }
+  .searchapp {
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+}
+.bookingfunnel-open.show-banner {
+  .header {
+    top: 48px;
+    @include breakpoint(large) { top: map-get($header-height, large); }
+  }
+  .wrapper {
+    @include breakpoint(large) {
+      /* stylelint-disable declaration-no-important */
+      /* some JS shenanigans adding padding-top to the booking funnel*/
+      padding-top: (map-get($header-height, large) * 2) !important;
+      /* stylelint-enable declaration-no-important */
+    }
+  }
+  .stepnav-wrapper {
+    @include breakpoint(medium down) { padding-top: map-get($header-height, large) + 48px; }
+  }
+  .stepnav {
+    @include breakpoint(large) { top: (map-get($header-height, large) * 2); }
+  }
+}
+// Show footer only on confirmation step
+.show-search {
+  .footer { display: flex; }
+  .footer-logos, .footer-social { display: block; }
+  .wrapper {
+    @include breakpoint(large) {
+      /* stylelint-disable declaration-no-important */
+      /* some JS shenanigans adding padding-top to the booking funnel*/
+      padding-top: 128px !important;
+      /* stylelint-enable declaration-no-important */
+    }
+  }
+  .searchapp {
+    transform: none;
+    opacity: 1;
+  }
+  .header {
+    @include breakpoint(medium down) { position: fixed; }
+  }
+  /* stylelint-disable declaration-no-important */
+  /* make sure toolbar goes away */
+  .scrollmagic-pin-spacer, .stepnav-toolbar, .scrollmagic-progress-spacer, .progress { display: none !important; }
+  /* stylelint-enable declaration-no-important */
+}
+
+.bookingfunnel {
+  position: relative;
+  @include breakpoint(large) {
+    min-height: calc(100vh - 60px);
+  }
+  .on-step-cancel &, .on-step-modify & {
+    @include breakpoint(large) {
+      min-height: 0;
+    }
+  }
+  .iwttab-full-clubcarlson-app {
+    display: none;
+    padding: 0;
+    width: 100%;
+    & > .row { margin: 0; }
+    .has-upgrades & .iwttab-full-clubcarlson-app__app-image {
+      @include breakpoint(large) { right: 5.5%; }
+    }
+    .iwttab-full-clubcarlson-app__content {
+      @include breakpoint(large) { padding: 1.875rem 0 0; }
+    }
+    .iwttab-full-clubcarlson-app__header:after { content: initial; }
+    .iwttab-full-clubcarlson-app__app-image {
+      @include breakpoint(large) { right: 7.5%; }
+    }
+  }
+  .on-step-confirmation & .iwttab-full-clubcarlson-app { display: block; }
+}
+
+.bookingview {
+  overflow: hidden;
+  border-top: 1px solid $gray-light;
+  @include breakpoint(large) {
+    margin-right: 325px;
+    border-top: 0;
+    transition: margin-right 0.3s 0.6s;
+  }
+  .on-step-review &, .on-step-guest-info &, .on-step-confirmation &, .on-step-cancel &, .on-step-modify & {
+    @include breakpoint(large) {
+      margin-right: 0;
+    }
+  }
+}
+
+.bookingfunnel .scrollmagic-pin-spacer {
+  /* stylelint-disable declaration-no-important */
+  /* always display pin spacers on mobile/tablet */
+  @include breakpoint(medium down) { display: inherit !important; }
+  /* stylelint-enable declaration-no-important */
+}
+
+// ------------------------------------//
+//    Full Screen Booking Menus
+// ------------------------------------//
+.bookingview-full, .lgoverlay-full {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: zIndex(modal);
+  @include breakpoint(large) { position: absolute; z-index: 99; }
+}
+.lgoverlay-full:not(.visible) { display: none; }
+.bookingview-full-header, .lgoverlay-full-header {
+  height: 64px;
+  padding: 19px 0;
+  border-bottom: 1px solid $gray-lightest;
+  position: relative;
+  @include breakpoint(large) {
+    border: 0;
+    margin: 0 auto;
+    padding: 30px;
+    height: auto;
+  }
+  @include breakpoint(1270px) { max-width: $global-width; padding: 30px 0; }
+  h1 {
+    font-size: 22px;
+    line-height: 26px;
+    text-align: center;
+    margin: 0;
+    @include breakpoint(large) {
+      font-size: 26px;
+      line-height: 30px;
+      text-align: left;
+    }
+  }
+  .close-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 25px;
+    @include breakpoint(large) {
+      left: auto;
+      right: -10px;
+      top: -4px;
+    }
+    @include breakpoint(1270px) { right: -54px; }
+    svg {
+      @include breakpoint(large) { width: 14px; height: 14px; }
+    }
+    .fill {
+      fill: $secondary-color;
+    }
+  }
+  .text-btn {
+    @include text-link;
+    padding: 25px 16px;
+  }
+  .reset-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: $secondary-color;
+  }
+  .cancel-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: $black;
+  }
+}
+.bookingview-full-body, .lgoverlay-full-body {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  height: calc(100vh - 64px);
+  background: #fff;
+  @include breakpoint(large) { height: auto; padding: 0 30px; }
+  @include breakpoint(1270px) { padding: 0; }
+  h1 {
+    font-size: 30px;
+    line-height: 34px;
+    margin: 40px 16px;
+  }
+  a:not(.button) {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+// Fake modals
+.bookingview-error {
+  display: none;
+  padding: 32px;
+  position: fixed;
+  left: 24px;
+  right: 24px;
+  top: 50%;
+  bottom: auto;
+  transform: translateY(-50%);
+  z-index: zIndex(modal);
+  background: #fff;
+  @include breakpoint(large) {
+    max-width: 600px;
+    padding: 60px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    transform: translate(-50%, -50%);
+  }
+  &.is-open { display: block; height: auto; }
+  .bookingview-full-body {
+    padding-top: 16px;
+    height: auto;
+    max-height: 70vh;
+    button {
+      width: 100%;
+    }
+    @include breakpoint(large) {
+      padding-top: 0;
+      button {
+        width: auto;
+      }
+    }
+  }
+  .bookingview-full-header {
+    border-bottom: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 0;
+    @include breakpoint(large) {
+      top: 16px;
+      left: auto;
+      right: 16px;
+    }
+  }
+  .bookingview-full-header .close-btn {
+    position: static;
+    padding: 16px;
+    svg { width: 15px; height: 15px; }
+    .fill { fill: $secondary-color; }
+  }
+  .cancelres-buttons {
+    margin-top: 1rem;
+    @include breakpoint(large) {
+      display: flex;
+    }
+    .button {
+      @include breakpoint(large) {
+        flex: 1 1 100%;
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+  .bookingview-error-buttons .button {
+    width: 100%;
+    margin-bottom: 8px;
+    @include breakpoint(large) {
+      width: auto;
+      margin-right: 6px;
+      margin-bottom: 0;
+    }
+  }
+  .bookingview-error-buttons .button:last-child { margin-bottom: 0; margin-right: 0; }
+  h2 {
+    font-size: rem-calc(24px);
+    line-height: rem-calc(28px);
+    margin-bottom: 15px;
+    @include breakpoint(large) {
+      font-size: rem-calc(22px);
+      line-height: rem-calc(26px);
+      margin-bottom: 15px;
+    }
+  }
+  p:last-child, .bookingview-full-body p:last-child { margin-bottom: 0; }
+  .bookingview-loading .loader {
+    top: 43%;
+  }
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(32, 32, 32, 0.9);
+  overflow-y: scroll;
+  z-index: zIndex(modal-overlay);
+}
+
+
+// ------------------------------------//
+//    Loading
+// ------------------------------------//
+.bookingview-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 3;
+  .loader {
+    opacity: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .bookingview-dates & .loader {
+    top: 40vh;
+  }
+}
+
+// ------------------------------------//
+//    Add room button
+// ------------------------------------//
+.book-addroom {
+  @include get-font('regular');
+  width: 100%;
+  border: dashed 2px $gray-light;
+  padding: 22px 0;
+  text-align: center;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.5px;
+  @include breakpoint(large) {
+    padding: 29px 0;
+  }
+  .plus-circle {
+    width: 32px;
+    height: 32px;
+    padding: 3px 0;
+    margin-right: 5px;
+    border: 2px solid $primary-color;
+    border-radius: 100%;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+  }
+  .svg-plus {
+    vertical-align: middle;
+    position: relative;
+    top: -2px;
+    width: 10px;
+    height: 10px;
+  }
+}
+
+.book-bottom-msg {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-family: map-get($fonts, 'paragraph');
+  color: $gray-dark;
+  font-size: 12px;
+  line-height: 20px;
+  @include breakpoint(large) {
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .bookingview-rooms & {
+    @include breakpoint(large) { width: 88.2%; }
+    .column {
+      @include breakpoint(large) { padding: 0; }
+    }
+  }
+  .bookingview-roomselection & {
+    padding: 0 8px;
+    @include breakpoint(large) { 
+      margin: 30px 45px 30px; 
+      padding: 0; 
+    }
+  }
+}

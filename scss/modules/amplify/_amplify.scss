@@ -1,0 +1,92 @@
+// Main Amplify Stylesheet
+
+// Global overrides
+.club-carlson {
+  .wrapper {
+    @include breakpoint(large) {
+      padding-top: map-get($header-area-height, large); // changed from $header-height
+    }
+  }
+}
+
+// Import components
+@import 'landing-page/landing-page';
+@import 'earn/earn';
+@import 'login/login';
+@import 'signup/signup';
+@import 'reservations/reservations';
+@import 'account-info/account-info';
+@import 'ecerts/landing';
+@import 'member-benefits/member-benefits';
+@import 'dashboard/dashboard';
+
+// helper classes
+.spacer {
+  width: 2.5%;
+  height: 100%;
+}
+
+
+.slide-left {
+  left: -100%;
+  transition: left 500ms ease-out;
+}
+
+.no-scroll {
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+.modal-close {
+  display: block;
+  width: rem-calc(18);
+  height: rem-calc(18);
+  position: absolute;
+  z-index: 130;
+  left: 20px;
+  top: 75px;
+  transition: all 250ms ease-out;
+  overflow: hidden;
+
+  &.modal-close-statement,
+  &.modal-close-reservations {
+    position: absolute;
+    z-index: 1;
+  }
+
+  &.modal-close-reservations {
+    top: 30px;
+  }
+
+  @include breakpoint(medium) {
+    position: fixed;
+    width: rem-calc(20);
+    height: rem-calc(20);
+    left: auto;
+    right: 16px;
+    top: 160px;
+  }
+  
+  @include breakpoint(large) { right: 30px; }
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    margin-top: -1px;
+    background: black;
+  }
+
+  &::before { transform: rotate(45deg); }
+
+  &::after { transform: rotate(-45deg); }
+}
+
+a, .button {
+  &:hover, &:focus { text-decoration: none; }
+}
+
+.button { @include small-button; }

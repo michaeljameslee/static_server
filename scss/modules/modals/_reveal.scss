@@ -1,0 +1,116 @@
+
+// Modal code forked via UIkit
+// https://getuikit.com/docs/modal#modal-overflow
+.reveal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1010;
+  overflow-y: auto;
+  padding: 15px 15px;
+  background: rgba(0,0,0,0.6);
+  opacity: 0;
+  transition: opacity .15s linear;
+  max-width: none;
+}
+
+/* stylelint-disable declaration-no-important */
+.reveal {
+  height: auto;
+  min-height: 0;
+  position: relative;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0 auto;
+  width: 600px;
+  max-width: calc(100% - 0.01px);
+  background: #fff;
+  opacity: 0;
+  transform: translateY(-100px);
+  transition: .3s linear;
+  transition-property: opacity, transform;
+  top: 0 !important;
+  box-shadow: 0 28px 50px rgba(0,0,0,0.16);
+}
+/* stylelint-enable */
+
+.reveal-overlay[style*='display: block'],
+.reveal[style*='display: block'] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: linear-gradient(to top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 10%);
+  pointer-events: none;
+}
+
+.reveal-header {
+  border-bottom: 1px solid #cdcdcd;
+  padding: 30px;
+  margin-bottom: 0;
+  
+  @include breakpoint(medium) {
+    padding: 17px 30px 15px;
+  }
+}
+
+.reveal .label {
+  margin-bottom: 0;
+}
+
+.reveal-header-title {
+  font-family: "Proxima N W01 Light",Arial,sans-serif;
+  font-size: 1.625rem;
+  line-height: 1.1;
+  margin-bottom: 0;
+  position: relative;
+  left: -1px; // left-side alignment fix with .label
+}
+
+.reveal-scroll {
+  height: 100%;
+  max-height: 70vh;
+  padding: 30px;
+  overflow-y: scroll;
+  
+  @include breakpoint(medium) {
+    padding: 30px 60px;
+  }
+
+  & a {
+    word-break: break-all;
+  }
+}
+
+.reveal-scroll li {
+  line-height: 1.125;
+  margin-bottom: .625rem;
+}
+
+.reveal-close {
+  position: absolute;
+  z-index: 1010;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  transition: $card-cart-transition;
+
+  &:hover, &:focus {
+    transform: scale(1.5);
+  }
+
+  .svg-close .fill {
+    fill: $secondary-color;
+  }
+}

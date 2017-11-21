@@ -1,0 +1,103 @@
+/* Locations Cards */
+.home {
+  .destinations {
+    h1 {
+      @include get-font('light');
+      font-size: rem-calc(36);
+      font-weight: 300;
+      line-height: 1.13;
+      width: calc(100vw - 30px);
+      @include breakpoint(large) {
+        width: calc(100vw - 120px);
+      }
+      margin: 0 auto 20px;
+    }
+    h2 {
+      @include breakpoint(small) {
+        margin-right: 10px;
+      }
+      @include breakpoint(large) {
+        margin-right: 60px;
+      }
+    }
+  }
+  .row.dest-card-wrapper {
+    display: block;
+    height: rem-calc(485);
+    @include breakpoint(large) {
+      display: flex;
+      height: auto;
+      /*margin-right: 20px;*/
+      max-width: calc(100vw - 120px);
+      margin: 0 auto;
+    }
+  }
+  .dest-card-wrapper {
+    &::after {
+      content: 'flickity';
+      display: none;
+      @include breakpoint(large) { content: ''; }
+    }
+  }
+  .dest-card.card {
+    @include breakpoint(medium down) {
+      // margin-right: 2.5%;
+    }
+
+    h3 { 
+      color: white;
+      margin: 0;
+    }
+  }
+  .card .card-cover.card-cover-travel-guide {
+    height: 26.75rem;
+  }
+  .dest-card-content { 
+    bottom: 0; 
+    color: white;
+    padding: 20px;
+    > div { 
+      padding: 0;
+      @include get-font('regular');
+      height: auto;
+    }
+  }
+
+
+  .destcard, .card, .of-card, .card-spacer {
+    // background-color: #000000;
+
+  }
+
+  .dest-card-content.card-explore-location-bottom.info-wrapper {
+    .location-title {
+      color: white;
+      z-index: 100;
+    }
+    .location-hotels {
+      color: white;
+      z-index: 100;
+    }
+    .dest-card-rate {
+      color: white;
+      z-index: 100;
+    }
+  }
+  .dest-card-cover { border-radius: 4px; }
+  .dest-card-heading {
+    h3 {
+      font-size: rem-calc(22);
+      text-transform: none;
+      line-height: 1.18;
+    }
+  }
+  .dest-card-hotel-count {
+    font-size: rem-calc(10);
+    font-weight: 600;
+    line-height: 1.6;
+  }
+  .dest-card-rate {
+    font-size: rem-calc(16);
+    line-height: 1.5;
+  }
+}

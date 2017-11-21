@@ -1,0 +1,189 @@
+// Personal Information styles
+.user-profile {
+  > .row { margin: 0; }
+}
+.user-edit-link {
+  color: $secondary-color;
+  font-family: $proxima-nova-semibold;
+  font-size: rem-calc(12);
+  letter-spacing: 1px;
+  line-height: 1.33;
+  margin-top: rem-calc(1);
+  text-transform: uppercase;
+  &.user-edit-picture {
+    display: block;
+    text-align: center;
+  }
+  &.user-edit-password {
+    display: block;
+    width: 100%;
+  }
+}
+.user-edit-icon {
+  width: auto;
+  font-size: rem-calc(12);
+  color: $secondary-color;
+  transition: transform 300ms ease-out;
+  &.active { transform: rotate(90deg); }
+}
+.user-profile-picture {
+  padding: rem-calc(16 0 12);
+  text-align: center;
+  @include breakpoint(small) {
+    figure {
+      display: none;
+    }
+    a {
+      position: absolute;
+      width: 90%;
+      color: $true-black;
+      top: 74%;
+      left: 5%;
+    }
+  }
+  @include breakpoint(medium) { padding: rem-calc(48 40); }
+  @include breakpoint(large) {
+    figure {
+      display: block;
+    }
+    padding-top: rem-calc(60);
+  }
+  figure {
+    width: rem-calc(96);
+    height: rem-calc(96);
+    border-radius: 50%;
+    background-color: $gray-lightest;
+    margin: 0 auto rem-calc(4);
+    background-size: cover;
+    @include breakpoint(large) {
+      width: rem-calc(260);
+      height: rem-calc(260);
+      margin: 0;
+    }
+  }
+  .red, .Red { background-image: url(../images/dashboard/avatars/red.svg); }
+  .silver, .Silver { background-image: url(../images/dashboard/avatars/silver.svg); }
+  .gold, .Gold { background-image: url(../images/dashboard/avatars/gold.svg); }
+  .concierge, .Concierge { background-image: url(../images/dashboard/avatars/concierge.svg); }
+}
+.user-profile-info {
+  padding: rem-calc(12 0 0);
+  @include breakpoint(large) {
+    position: relative;
+    padding: rem-calc(60 60 0 100);
+  }
+  @include breakpoint(small) {
+    padding-left: rem-calc(16);
+    padding-right: rem-calc(16);
+  }
+  .row {
+    margin: 0;
+    @include breakpoint(large) {
+      margin: rem-calc(0 0 24);
+      padding: 0;
+    }
+    > .columns {
+      @include flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: rem-calc(24 16);
+      position: relative;
+      @include breakpoint(large) {
+        display: block;
+        padding: 0;
+        border-bottom: 0;
+      }
+    }
+  }
+  header {
+    @include clearfix;
+  }
+  h2 {
+    font-family: $proxima-nova-reg;
+    font-size: rem-calc(22);
+    line-height: 1.18;
+    margin-bottom: rem-calc(40);
+  }
+  hr {
+    border-color: $gray-light;
+    display: block;
+    margin: rem-calc(40 0 12);
+    @include breakpoint(large) { margin: rem-calc(40 0); }
+  }
+  .edit-profile-button {
+    margin-bottom: rem-calc(20);
+  }
+}
+.user-name {
+  .first-name {
+    margin-bottom: rem-calc(20);
+    @include breakpoint(large) { margin-bottom: 0; }
+  }
+}
+.user-field-title {
+  float: left;
+  font-family: $proxima-nova-semibold;
+  font-size: rem-calc(12);
+  line-height: 1.33;
+  color: $near-black;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0;
+  @include breakpoint(large) {
+    flex: 0 0 100%;
+    float: none;
+    color: $gray-medium;
+    margin-bottom: rem-calc(10);
+  }
+}
+.mob-user-field-title {
+  font-family: $proxima-nova-semibold;
+  font-size: rem-calc(12);
+  line-height: 1.33;
+  color: $near-black;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: rem-calc(7);
+}
+.user-field-info {
+  float: right;
+  font-size: rem-calc(18);
+  line-height: 1.33;
+  margin-bottom: 0px;
+  @include breakpoint(large) { float: none; }
+}
+.mob-user-field-info {
+  font-size: rem-calc(18);
+  line-height: 1.22;
+  margin-bottom: rem-calc(20);
+}
+.mob-user-address > span {
+  display: block;
+}
+.user-address {
+  .user-field-title {
+    flex: 0 0 25%;
+    align-self: flex-start;
+  }
+  .user-field-info {
+    width: 75%;
+    text-align: right;
+    @include breakpoint(large) {
+      width: auto;
+      text-align: left;
+    }
+    @include breakpoint(small) { float: left; text-align: left; }
+  }
+}
+.user-phone label {
+  color: $gray-medium;
+  margin-bottom: 0;
+  padding-bottom: rem-calc(2);
+}
+
+.success-message {
+  color: $success-green;
+}
+
+@import 'edit-info';
+@import 'preferences';

@@ -1,0 +1,27 @@
+/*doc
+---
+title: .no-scroll
+name: no-scroll
+category: Utilities
+author: William Pansky [SG0301235]
+---
+
+<p class="label loc">File location</p>
+scss/utilities/_activators.scss
+
+This class is placed on the `<body>` when opening fullscreen menus and modals to prevent the background from scrolling while scrolling inside said menus or modals.
+
+```
+.no-scroll {
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+}
+```
+*/
+
+.no-scroll {
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+}

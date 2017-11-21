@@ -1,0 +1,338 @@
+.home-featured-offers {
+  @include breakpoint(medium down) {
+    // margin-bottom: 40px;
+    // padding-bottom: 40px;
+  }
+  .row.featured-offers-cards {
+    display: block;
+    height: rem-calc(485);
+    @include breakpoint(large) {
+      display: flex;
+      height: auto;
+      justify-content: space-between;
+    }
+  }
+  .featured-offers-cards {
+    // margin-bottom: 40px;
+    &::after {
+      content: 'flickity';
+      display: none;
+      @include breakpoint(large) { content: ''; }
+    }
+  }
+  .account-special-offer {
+    @include breakpoint(medium down) {
+      // margin-right: 2.5%;
+      // flex: 0 0 89%;
+      // width: 89%;
+    }
+
+    @include breakpoint(large) {
+      // margin-right: 3.4%;
+      // flex: 0 0 22.4%;
+      // width: 22.4%;
+    }
+    // &:last-of-type { margin-right: 0; }
+
+    h3 {
+      @include get-font('regular');
+      font-size: rem-calc(22);
+      line-height: 1.18;
+      color: black;
+    }
+    .offer-hotel-title {
+      padding: 0 .5rem 0 1.1875rem;
+      font-size: rem-calc(12);
+      color: $gray-medium;
+      text-transform: uppercase;
+      @include get-font('semibold');
+    }
+    .offer-hotel-info { padding: 0 1.25rem; }
+
+    figure {
+      min-height: rem-calc(165);
+      max-height: rem-calc(165);
+
+      img {
+        height: 100%;
+        object-fit: cover;
+        max-height: initial;
+        min-height: rem-calc(165);
+        //transform: translateY(-15%);
+      }
+    }
+  }
+  .button.expanded {
+    padding: 1.3125rem 0;
+    font-size: .875rem;
+    margin: 0 auto;
+    // @include breakpoint(large) {
+    //   width: calc(100vw - 120px);
+    //   max-width: calc(100vw - 120px);
+    // }
+    // @include breakpoint(medium down) {
+    //   width: calc(100vw - 32px);
+    //   max-width: calc(100vw - 32px);
+    // }
+  }
+}
+
+// Offers Search
+.offer-search-form {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: zIndex(modal);
+  overflow: hidden;
+  height: 0;
+  opacity: 0;
+  transition: opacity .3s;
+  @include breakpoint(large) {
+    max-height: calc(100vh - 60px);
+    overflow: auto;
+    top: map-get($header-height, 'large');
+    z-index: -1;
+  }
+  &.is-open {
+    height: 100%;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    z-index: 110;
+  }
+  .row {
+    flex: none;
+    max-width: none;
+  }
+  form {
+    @include breakpoint(large) {
+      padding: 104px 0 11px;
+      margin: 0 15px;
+    }
+  }
+  .icon {
+    font-size: rem-calc(13px);
+    vertical-align: middle;
+    display: inline;
+    position: absolute;
+    left: 18px;
+    top: 48%;
+    transform: translateY(-50%);
+    @include breakpoint(large) {
+      color: $gray-light;
+      font-size: rem-calc(22px);
+      left: 15px;
+      top: 37%;
+    }
+  }
+  h3 {
+    @include label-text;
+    background: $gray-lightest;
+    border-top: 1px solid $gray-light;
+    border-bottom: 1px solid $gray-light;
+    padding: 7px 0 7px 17px;
+    margin: 0;
+    width: 100%;
+    max-height: 32px;
+    position: fixed;
+    @include breakpoint(large) { padding: 11px 60px 12px; max-height: 41px; }
+  }
+}
+.offer-search-header {
+  width: 100%;
+  height: 64px;
+  padding: 19px 0;
+  border-bottom: 1px solid $gray-light;
+  position: relative;
+  @include breakpoint(large) {
+    position: absolute;
+    top: 4px;
+    right: 6px;
+    border: 0;
+    margin: 0 auto;
+    padding: 0;
+    height: auto;
+    width: auto;
+    flex: none;
+  }
+  h1 {
+    font-size: 22px;
+    line-height: 26px;
+    text-align: center;
+    margin: 0;
+    @include breakpoint(large) {
+      font-size: 26px;
+      line-height: 30px;
+      text-align: left;
+    }
+  }
+  .close-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 25px;
+    @include breakpoint(large) {
+      position: static;
+    }
+    svg {
+      @include breakpoint(large) { width: 18px; height: 18px; }
+    }
+  }
+  .text-btn {
+    @include text-link;
+    padding: 25px 16px;
+  }
+}
+.offer-search-input {
+  position: relative;
+  border-bottom: 1px solid $gray-light;
+  padding: 16px 0 19px;
+  @include breakpoint(large) {
+    border-bottom: 0;
+    border-right: 1px solid $gray-light;
+    height: 60px;
+    padding: 0;
+  }
+  input, input:focus, input:hover { border: 0; }
+  input {
+    @include get-font('regular');
+    font-size: rem-calc(16px);
+    line-height: rem-calc(20px);
+    margin: 0;
+    padding-left: 43px;
+    @include breakpoint(large) {
+      @include get-font('light');
+      color: $gray-medium;
+      font-size: rem-calc(26px);
+      line-height: rem-calc(30px);
+      display: inline-block;
+      padding: 8px 55px;
+      height: auto;
+    }
+  }
+}
+.offer-search-dates {
+  padding: 0;
+  border-bottom: 1px solid $gray-light;
+  position: relative;
+  @include breakpoint(large) { border: 0; }
+  .search-dates {
+    position: static;
+    width: 100%;
+    padding-left: 43px;
+    @include breakpoint(large) { height: auto; padding: 0 0 0 40px; }
+  }
+  .search-arrive, .search-depart, .spacer {
+    @include get-font('regular');
+    font-size: rem-calc(16px);
+    line-height: rem-calc(20px);
+    margin: 0;
+    height: auto;
+    padding: 30px 0;
+    @include breakpoint(large) {
+      @include get-font('light');
+      font-size: rem-calc(26px);
+      line-height: rem-calc(30px);
+      padding: 8px 0 19px;
+    }
+  }
+  .spacer {
+    @include breakpoint(large) { 
+      padding: 0 19px;
+      line-height: 0;
+      margin-top: 20px;
+    }
+  }
+}
+.offer-search-button {
+  padding: 32px 16px;
+  text-align: right;
+  @include breakpoint(large) { padding: 0 15px 0 10px; }
+  .button {
+    max-width: 183px;
+    padding: 14px 30px;
+    width: 100%;
+    @include breakpoint(large) {
+      padding: 20px 30px;
+      transform: translateY(-5px);
+    }
+    .fa {
+      margin-right: 4px;
+    }
+  }
+}
+.offer-search-panel {
+  width: 100%;
+  @include breakpoint(large) { padding: 0; margin-top: 44px; }
+  &.offer-search-results { padding: 0; flex: auto; }
+  .bookingview-datepicker { width: 100%; position: relative; }
+  .datepick-weekheader { opacity: 1; }
+  .list-group {
+    margin: 0;
+    list-style-type: none;
+    width: 100%;
+    overflow-y: scroll;
+    li:first-child + li {
+      margin-top: 32px;
+      @include breakpoint(large) { margin-top: 41px; }
+    }
+    button {
+      @include get-font('regular');
+      font-size: rem-calc(14px);
+      line-height: rem-calc(22px);
+      width: 100%;
+      text-align: left;
+      padding: 18px 17px;
+      transition: padding 0.4s, border-width 0.4s;
+      @include breakpoint(large) {
+        @include get-font('light');
+        font-size: rem-calc(26px);
+        line-height: rem-calc(30px);
+        padding: 24px 60px;
+      }
+    }
+    button:hover {
+      @include breakpoint(large) {
+        border-left: 10px solid $primary-color;
+        padding-left: 70px;
+      }
+    }
+  }
+}
+.offer-search-panel.offer-search-dates {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background: #fff;
+
+  @include breakpoint(medium down) { 
+    position: fixed;
+    overflow-y: scroll;
+    height: 100vh;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .offer-search-header {
+    @include breakpoint(medium down) { 
+      position: absolute;
+      top: 0;
+      z-index: 10;
+      background: white;
+    }
+  }
+
+  .bookingview-datepicker {
+    @include breakpoint(medium down) {
+      width: 100%;
+      position: fixed;
+      top: 64px;
+      overflow-y: scroll;
+      height: calc(100vh - 64px);
+      padding-bottom: 40px;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+}

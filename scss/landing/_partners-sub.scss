@@ -1,0 +1,263 @@
+//all partners
+.partners-sub {
+  .row {
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  h2 {
+    font-family: $proxima-nova-light;
+    font-size: 30px;
+    line-height: 34px;
+  }
+  p {
+    font-family: $proxima-nova-reg;
+    font-size: 16px;
+    color: $gray-dark;
+  }
+  @media screen and (min-width: 64em) {
+    h2 {
+      font-size: 52px;
+    }
+  }
+  .first-block {
+    padding: 0px 16px;
+    padding-bottom: 40px;
+    padding-top: 24px;
+    .logo-cover {
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+    .ways-redeem {
+      margin-left: 0;
+    }
+
+    @media screen and (min-width: 64em) {
+      padding: 40px 60px;
+      h2 {
+        font-size: 52px;
+      }
+      .logo-cover {
+        margin-bottom: 30px;
+        margin-top: 40px;
+      }
+    }
+  }
+  .second-block {
+    .card-cover {
+      border: solid 1px #cdcdcd;
+      height: 257px;
+      position: relative;
+    }
+    .card-logo {
+      height: 40px;
+      margin-left: 12px;
+      margin-top: 30px;
+    }
+    .card-name {
+      margin-left: 12px;
+      margin-top: 12px;
+      margin-bottom: 8px;
+      font-size: 16px;
+      font-family: $proxima-nova-reg;
+    }
+    .card-description {
+      margin-left: 12px;
+      color: #454545;
+      font-size: 12px;
+    }
+    .card-links {
+      color: black;
+      position: absolute;
+      bottom: 20px;
+      left: 12px;
+      font-size: 10px;
+      font-family: $proxima-nova-semibold;
+      text-transform: uppercase;
+      &::after {
+        content: "";
+        display: inline-block;
+        transform: rotate(45deg);
+        width: rem-calc(8);
+        height: rem-calc(8);
+        border-top: rem-calc(3) solid $secondary-color;
+        border-right: rem-calc(3) solid $secondary-color;
+        transition: transform .4s;
+        margin-left: rem-calc(8);
+        margin-bottom: rem-calc(1);
+      }
+    }
+    @media screen and (min-width: 64em) {
+      .card-cover {
+        max-width: 260px;
+        height: 260px;
+      }
+      .card-logo {
+        height: 50px;
+        margin-left: 30px;
+        margin-top: 30px;
+      }
+      .card-name {
+        margin-left: 30px;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        font-size: 26px;
+      }
+      .card-description {
+        margin-left: 30px;
+        font-size: 14px;
+      }
+      .card-links {
+        left: 30px;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+//airline
+.partners-airline {
+  .second-block {
+    padding: 0px 16px;
+    padding-right: 1px;
+    border-bottom: 1px solid #cdcdcd;
+    .airline-card {
+      padding-right: 15px;
+      margin-bottom: 15px;
+    }
+    @media screen and (min-width: 64em) {
+      padding: 0px 60px;
+      padding-right: 20px;
+      .airline-card {
+        padding-right: 40px;
+        margin-bottom: 40px;
+      }
+    }
+  }
+  .third-block {
+    padding: 40px 16px;
+    .left-content {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .right-content {
+      text-align: center;
+      .title {
+        margin-top: 40px;
+      }
+    }
+    .border2 {
+      border-bottom: 1px solid #cdcdcd;
+      margin: 0 16px;
+    }
+    h3 {
+      font-size: 22px;
+      line-height: 26px;
+    }
+    @media screen and (min-width: 64em) {
+      padding: 60px 0;
+      .right-content .title {
+        margin-top: 0;
+      }
+      .left-content {
+        margin-bottom: 0;
+      }
+      .border2 {
+        border-bottom: 0;
+        border-right: 1px solid #cdcdcd;
+        margin: 0;
+        height: 280px;
+        float: left;
+      }
+      .title {
+        padding: 0 60px;
+      }
+      .desc {
+        padding: 0 60px;
+      }
+
+    }
+  }
+
+}
+
+//financial
+.partners-financial {
+  .second-block {
+    padding: 0px 16px;
+    padding-right: 1px;
+    border-bottom: 1px solid #cdcdcd;
+    .financial-card {
+      padding-right: 15px;
+      margin-bottom: 15px;
+    }
+
+    @media screen and (min-width: 64em) {
+      padding: 0px 60px;
+      padding-right: 20px;
+      .financial-card {
+        padding-right: 40px;
+        margin-bottom: 40px;
+      }
+      .card-cover {
+        max-width: 360px;
+      }
+      .card-description {
+        padding-right: 10px;
+      }
+    }
+  }
+}
+
+//car
+.partners-car {
+  .first-block {
+    @media screen and (min-width: 64em) {
+      padding-top: 110px;
+    }
+  }
+  .second-block {
+    padding: 0px 16px;
+
+    .rental-company {
+      border-bottom: 1px solid #cdcdcd;
+      padding: 40px 0;
+    }
+    .company-name {
+      font-family: $proxima-nova-semibold;
+      font-size: 16px;
+      line-height: 24px;
+      margin-top: 24px;
+      margin-bottom: 16px;
+    }
+    .company-description {
+      margin-bottom: 30px;
+      font-size: 16px;
+      font-family: $proxima-nova-reg;
+      line-height: 24px;
+      color: #696969;
+    }
+    .rental-company a {
+      width: 100%;
+    }
+    :last-child {
+      border-bottom: none;
+    }
+    @media screen and (min-width: 64em) {
+      padding: 20px 60px;
+      width: 760px;
+      .rental-company a {
+        width: inherit;
+      }
+      .company-name {
+        font-size: 18px;
+        margin-top: 30px;
+        margin-bottom: 10px;
+      }
+      .company-logo {
+        max-height: 50px;
+      }
+
+    }
+  }
+}

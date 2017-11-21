@@ -1,0 +1,213 @@
+// ========================================================================
+// MODULES => Cards
+// ========================================================================
+
+/*doc
+---
+title: Description
+name: description
+author: William Pansky [SG0301235]
+category: Cards
+---
+
+<p class="label loc">File location</p>
+scss/modules/cards/_!config.scss
+
+A card is a sheet of material that serves as an entry point to more detailed information. Cards may contain a photo, text, and a link about a single subject. They may display content containing elements of varying size, such as photos with captions of variable length. [— material.io](https://material.io/guidelines/components/cards.html)
+
+<p class="label loc">File structure</p>
+- _!config.scss
+- _!module.scss
+- _flickity.scss
+- offer-cards
+- offer-cards-feat
+- offer-cards-fw
+- large-cards
+- bg-img-cards
+- card-grid
+*/
+
+/***
+CONFIG
+TABLE OF CONTENTS
+==============================
+|-- Cards
+|  |-- Globals
+|  |-- Offer Cards
+|  |-- Offer Cards Featured
+|  |-- Offer Cards Full-Width
+|  |-- TwoUp (Large) Cards
+|  |-- Background-Image Cards
+
+SOURCES & FORKS
+==============================
+|-- Box-shadows forked via: https://codepen.io/sdthornton/pen/wBZdXq
+|-- Button transition forked via: https://codepen.io/townivan/pen/OyPWjm
+***/
+
+
+
+// MODULES => Cards => Conditional Switches
+// ========================================================================
+// PRE-HOVER BOX-SHADOW
+// Do you want a pre-hover dropshadow per Google's https://material.io specs?
+// https://material.io/guidelines/material-design/elevation-shadows.html#elevation-shadows-shadows
+// If yes, set 'true'
+$card-box-shadow-active:          true !default;
+
+//_____________________________________
+// TINT
+// Do you want a brand primary color tint over card images in the room selection?
+// If yes, set 'true'
+$card-img-tint-active:            false !default;
+
+//_____________________________________
+// BORDER COLOR HOVER
+// Do you want the border-color of cards to darken slightly when hovering?
+// If yes, set 'true'
+$card-img-tint-active:            false !default;
+
+
+
+// MODULES => Cards => Globals
+// ========================================================================
+$card-border:                     1px solid $global-border-color;
+$card-border-hover-color:         $global-border-color;
+$card-border-radius:              $global-border-radius;
+
+$card-box-shadow:                 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+$card-box-shadow-hover:           0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
+$card-filter-hover:               saturate(1.5);
+$card-text-shadow:                $global-text-shadow;
+$card-img-tint-bg-color:          transparent;
+
+$card-transition:                 all 0.3s cubic-bezier(.25,.8,.25,1);
+$card-cart-transition:            all .425s cubic-bezier(0.68, -0.95, 0.27, 1.55);
+$card-transform-hover:            translateY(-10px);
+
+$card-focus-style:                2px solid $golden-yellow;
+
+$card-width:                      100%;
+$card-max-width:                  278px;
+
+$card-padding-sm:                 $global-padding-interior-sm; // interior padding mobile/tablet
+$card-padding-lg:                 $global-padding-interior-lg; // interior padding on desktops
+
+$card-wrapper-spacing:            0 0 0 1rem; // spacing flickity items
+$card-wrapper-spacing-last:       0 1rem; // used on :last-child
+$card-wrapper-transition:         600ms ease-in-out; // flickity-swiping
+
+
+
+// MODULES => Cards => Offer Cards (Small image on top)
+// ========================================================================
+// Image height
+$card-img-height:                 177px; // as defined via Zeplin
+$card-img-height-lg:              146px; // as defined via Zeplin
+
+//_____________________________________
+// Expiration date
+$card-exp-color:                  white;
+$card-exp-font-family:            $global-font-family-semibold;
+$card-exp-font-size:              .625rem;
+$card-exp-line-height:            1;
+$card-exp-letter-spacing:         1px;
+$card-exp-text-transform:         uppercase;
+$card-exp-shadow-height:          50%;
+
+//_____________________________________
+// Header (Title and description) height
+$card-header-height:              180px;
+$card-header-height-md:           auto;
+
+//_____________________________________
+// Title 
+$card-title-color:              black;
+$card-title-font-size:            1.25rem;
+$card-title-line-height:          1.18;
+$card-title-margin-bottom:        .5rem;
+
+//_____________________________________
+// Description
+$card-desc-color:                 $gray-medium;
+$card-desc-font-size:             .875rem;
+$card-desc-line-height:           1.2625;
+$card-desc-margin:                0;
+
+//_____________________________________
+// Footer
+$card-footer-height:              72px;
+$card-footer-border-top:          $card-border;
+
+//_____________________________________
+// Details (# of hotels / brand)
+$card-details-color:              $gray-medium;
+$card-details-font-family:        $global-font-family-semibold;
+$card-details-font-size:          .75rem;
+$card-details-line-height:        1;
+$card-details-letter-spacing:     1px;
+$card-details-text-transform:     uppercase;
+$card-details-padding:            0;
+$card-details-margin:             0;
+
+//_____________________________________
+// Flickity-Enabled Card-Wrapper
+$flickity-card-display-type:      inline-block;
+$flickity-card-width:             $card-width;
+$flickity-card-max-width:         $card-max-width;
+$flickity-card-max-width-tablet:  300px;
+$flickity-card-padding:           $card-wrapper-spacing;
+$flickity-card-margin:            0 auto;
+$flickity-card-padding-last:      0 1rem 0 0;
+$flickity-card-margin-last:       0 auto 0 1rem;
+
+
+
+// MODULES => Cards => TwoUp (Large) Cards
+// ========================================================================
+$card-lg-height:                  193px;
+$card-lg-height-lg:               315px;
+$card-lg-title-font-size:         1.625rem;
+$card-lg-title-line-height:       1;
+$card-lg-desc-font-size:          1rem;
+$card-lg-desc-line-height:        1.425;
+
+
+
+// MODULES => Cards => Background-image cards
+// ========================================================================
+$bgCard-image-height:             410px;
+$bgCard-header-height:            auto;
+$bgCard-header-min-height:        0;
+$bgCard-header-position:          absolute;
+$bgCard-header-position-bottom:   0;
+$bgCard-text-color:             white;
+$bgCard-text-shadow:              $global-text-shadow;              
+$bgCard-desc-margin:              0;
+
+
+
+// GRID
+// ========================================================================
+
+
+
+
+// ========================================================================
+// CONDITIONAL SWITCH PROPS
+// ========================================================================
+// box-shadow
+@if $card-box-shadow-active == false {
+  $card-box-shadow:               0;
+}
+
+// tint
+@if $card-img-tint-active == true {
+  $card-img-tint-bg-color:        $primary-color;
+}
+
+// border-color hover
+@if $card-img-tint-active == true {
+  $card-border-hover-color:       mix(black, $global-border-color, 14%);
+}

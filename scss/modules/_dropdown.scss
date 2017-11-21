@@ -1,0 +1,110 @@
+// ------------------------------------//
+//    Header Dropdowns
+// ------------------------------------//
+
+.dropdown-titleicon {
+  color: $secondary-color;
+  margin-left: 5px;
+  display: inline-block;
+  transition: transform .3s;
+  .active & { transform: rotate(-180deg); }
+  .fill { fill: $secondary-color; }
+}
+
+.dropdown-menu {
+  opacity: 0;
+  margin: 0;
+  background: #fff;
+  z-index: 10;
+  transform: translate(0,-100%);
+  transition: all .6s cubic-bezier(.35, 0, 0, 1);
+}
+.dropdown-menu.is-open {
+  opacity: 1;
+  transform: translate(0,0);
+  top: map-get($header-height, small);
+  display: flex;
+  @include breakpoint(large) { top: map-get($header-height, large); }
+}
+
+.dropdown-menu-full {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  flex-wrap: wrap;
+  text-align: center;
+  display: flex;
+
+
+  &.is-open {
+    height: calc(100vh - #{map-get($header-height, small)});
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    @include breakpoint(large) { height: calc(100vh - #{map-get($header-height, large)}); }
+  }
+
+  li {
+    display: flex;
+    width: 50vw;
+    height: 25vw;
+    position: relative;
+    border-bottom: 1px solid $gray-light;
+    border-right: 1px solid $gray-light;
+    @include breakpoint(large) {
+      width: 25%;
+    }
+  }
+  a {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 22px;
+    line-height: 26px;
+    text-transform: none;
+    justify-content: center;
+    flex-direction: column;
+    transition: background 500ms ease;
+  }
+  a:hover { text-decoration: none; }
+  a:hover:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border: 2px solid $primary-color;
+  }
+  a:active, .active a {
+    background: $primary-color;
+
+  }
+  .small-text {
+    @include label-text;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+}
+
+.selector-currency {
+  @include breakpoint(large) {
+    li { height: 12.5vw; }
+  }
+  @include breakpoint(medium down) {
+    a:hover:after {
+      border: none;
+    }
+  }
+  .small-text {
+    font-size: rem-calc(12);
+    text-transform: uppercase;
+  }
+}
+/*.dropdown-menu-full.is-open {
+  display: flex;
+}*/
+
+/* Hide currency and language dropdown after the review step in the booking funnel */
+.hide-currency-lang .js-open-dropdown { opacity: 0; visibility: hidden; }
+.js-open-dropdown { transition: opacity 0.3s ease, visibility 0.3s; }

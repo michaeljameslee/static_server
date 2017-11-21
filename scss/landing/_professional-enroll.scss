@@ -1,0 +1,474 @@
+.professional-enroll {
+  .icon {
+    max-width: none;
+    max-height: none;
+  }
+  h2 {
+    font-family: $proxima-nova-thin;
+    font-size: 30px;
+  }
+  p {
+    font-family: $proxima-nova-reg;
+    font-size: 16px;
+    color: $gray-dark;
+  }
+  .side-padding {
+    padding: 0 16px;
+  }
+  button {
+    font-family: $proxima-nova-semibold;
+  }
+  .row {
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  @media screen and (min-width: 64em) {
+    .side-padding {
+      padding: 0 60px;
+    }
+    h2 {
+      font-size: 52px;
+      line-height: 56px;
+      margin-bottom: 15px;
+    }
+  }
+
+  .first-block {
+    padding-top: 24px;
+    .ways-redeem {
+      margin-left: 16px;
+      margin-top: 24px;
+      text-transform: uppercase;
+    }
+    .main-desc {
+      margin-bottom: 0px;
+    }
+    .sub-text i {
+      margin-right: 8px;
+    }
+    .logo-cover {
+      margin-top: 13px;
+    }
+    .main-image {
+      margin-top: 24px;
+      text-align: center;
+    }
+    .pbutton {
+      position: fixed;
+      bottom: 0px;
+      margin-left: -16px;
+      z-index: 2;
+      button {
+        width: 100vw;
+        padding: 21px 0;
+        font-family: $proxima-nova-semibold;
+        font-size: 14px;
+        color: black;
+      }
+    }
+    .secondary {
+      padding: 16px 0;
+      width: 100%;
+    }
+    @media screen and (min-width: 64em) {
+      height: 600px;
+      border-bottom: 1px solid #cdcdcd;
+      .ways-redeem {
+        margin-left: 72px;
+      }
+      .main-image {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        margin-top: 129px;
+      }
+      .image-file {
+        width: 620px;
+        height: 540px;
+      }
+      .main-desc {
+        margin-bottom: 30px;
+      }
+      .pbutton {
+        position: relative;
+        margin-left: 0;
+      }
+      .pbutton button {
+        width: 227px;
+      }
+      .logo-cover {
+        margin: 40px 0;
+      }
+      .secondary {
+        padding: 21px 30px;
+        margin-left: 20px;
+        width: 147px;
+      }
+      .video {
+        width: 191px;
+      }
+      .arran {
+        width: 147px;
+      }
+    }
+    @media screen and (min-width: 80em) {
+      .image-file {
+        width: 720px;
+      }
+    }
+  }
+
+  .third-block {
+    padding-top: 40px;
+    padding-bottom: 56px;
+    text-align: center;
+
+    h2 {
+      font-family: $proxima-nova-light;
+      font-size: 22px;
+    }
+    button {
+      width: 100%;
+      padding: 16px 0;
+    }
+    .icon {
+      width: 64px;
+      height: 64px;
+      margin: auto;
+    }
+    .st0 {
+      fill: #ee2d24;
+    }
+    .third-block-body-icon {
+      margin-top: 47px;
+      margin-bottom: 24px;
+    }
+    .third-block-body-heading {
+      font-size: 16px;
+      color: black;
+    }
+    .third-block-body-desc p {
+      font-size: 12px;
+      font-family: $proxima-nova-reg;
+      color: $gray-dark;
+      padding: 5px 30px 24px 30px;
+    }
+    @media screen and (min-width: 64em) {
+      padding: 60px 0;
+      h2 {
+        font-size: 32px;
+      }
+      button {
+        width: 167px;
+        padding: 12px 0;
+      }
+      .topmargin {
+        position: relative;
+        top: 21px;
+      }
+      .third-block-body-heading {
+        font-size: 22px;
+      }
+      .third-block-body-desc p {
+        font-size: 14px;
+        width: 260px;
+        padding: 10px 0 20px 0;
+        text-align: center;
+        margin: auto;
+      }
+      .icon {
+        margin: auto;
+      }
+    }
+  }
+
+  .fifth-block {
+    .nomargin {
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+    .fifth-block-body {
+      padding: 40px 46px 16px 33px;
+      .fifth-heading {
+        font-size: 22px;
+        font-family: $proxima-nova-light;
+      }
+      .fifth-sub {
+        font-size: 14px;
+        font-family: $proxima-nova-reg;
+        color: $gray-dark;
+        margin-top: 5px;
+      }
+      .icon {
+        width: 64px;
+        height: 64px;
+      }
+    }
+    .fifth-body {
+      padding-top: 16px;
+      text-align: center;
+
+      .fifth-text {
+        font-size: 12px;
+        font-family: $proxima-nova-semibold;
+        margin-top: 16px;
+        margin-bottom: 24px;
+        margin-left: auto;
+        margin-right: auto;
+        color: $true-black;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+    .fifth-block-image {
+      text-align: center;
+    }
+    .s-size {
+      width: 75px;
+    }
+    @media screen and (min-width: 40em) {
+      .fifth-block-image {
+        text-align: left;
+        margin-left: -35px;
+      }
+    }
+    @media screen and (min-width: 64em) {
+      padding: 60px 60px;
+      .fifth-block-body {
+        padding-left: 60px;
+      }
+      .fifth-block-body .fifth-heading {
+        font-size: 32px;
+      }
+      .fifth-block-body .fifth-sub {
+        font-size: 16px;
+        width: 340px;
+      }
+      .fifth-body {
+        padding-top: 30px;
+        margin-left: 0px;
+        margin-right: 0px;
+      }
+      .fifth-icon-block {
+        margin-left: -5px;
+      }
+      .s-size {
+        width: 120px;
+        margin-left: 33px;
+      }
+      .fifth-block-image-file {
+        width: 560px;
+        height: 420px;
+      }
+      .fifth-body .button {
+        float: left;
+        width: auto;
+      }
+    }
+  }
+
+  .quote {
+    padding: 60px 16px;
+    text-align: center;
+    .label {
+      font-family: $proxima-nova-semibold;
+      font-size: rem-calc(12);
+      line-height: rem-calc(16);
+      margin-bottom: 24px;
+    }
+    .text p {
+      font-family: $proxima-nova-reg;
+      font-size: rem-calc(22);
+      line-height: rem-calc(26);
+      margin: auto;
+      margin-bottom: 24px;
+      max-width: 960px;
+    }
+    .image {
+      border-radius: 50%;
+      margin-bottom: 8px;
+    }
+    @media screen and (min-width: 64em) {
+      background-image: url("/templates/main/images/quotation-bg.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      .text p {
+        font-size: rem-calc(38);
+        line-height: rem-calc(42);
+      }
+    }
+  }
+
+  .facility {
+    padding-bottom: 40px;
+    border-bottom: 1px solid #cdcdcd;
+    .left {
+      position: relative;
+    }
+    .grid-icon {
+      width: 32px;
+      background-color: $primary-color;
+      position: absolute;
+      top: 18px;
+      right: 16px;
+      padding: 5px 5px 0px 5px;
+    }
+    .desc {
+      padding: 0 16px;
+    }
+    .label {
+      font-family: $proxima-nova-reg;
+      font-size: rem-calc(12);
+      line-height: rem-calc(20);
+      color: #454545;
+      margin-top: 8px;
+      margin-bottom: 16px;
+      text-transform: none;
+    }
+    @media screen and (min-width: 64em) {
+      padding: 60px;
+      border-bottom: none;
+      .left {
+        padding-right: 20px;
+      }
+      .right {
+        padding-left: 20px;
+      }
+      .desc {
+        padding: 0;
+      }
+      img {
+        width: 560px;
+        height: 420px;
+      }
+    }
+    @media screen and (max-width: 64em) {
+      .right {
+        display: none;
+      }
+    }
+  }
+
+
+
+  .last-block {
+    display: none;
+    @media screen and (min-width: 64em) {
+      display: block;
+      padding: 60px;
+      text-align: center;
+      .heading {
+        font-family: $proxima-nova-light;
+        font-size: rem-calc(32);
+        line-height: rem-calc(36);
+        padding-bottom: 30px;
+        width: 570px;
+        margin: auto;
+      }
+    }
+  }
+
+  .professional-enroll-overlay {
+    .column {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    .lgoverlay-full-body { padding-top: 16px; }
+    input:checked + label::after, input:not(:checked) + label::after { top: 0; }
+    label { line-height: 22px; }
+    .button-wrapper {
+      @include breakpoint(medium down) { padding: 0; }
+      &:hover {
+        color: #454545;
+      }
+    }
+    .button {
+      margin-top: 1rem;
+      @include breakpoint(medium down) {
+        padding: 21px 0;
+        width: 100%;
+      }
+    }
+  }
+  // .professional-enroll-overlay {
+  //   height: 100%;
+  //   width: 0;
+  //   position: fixed;
+  //   z-index: 5;
+  //   top: 60px;
+  //   left: 0;
+  //   background-color: white;
+  //   overflow-x: hidden;
+  //   max-width: 100vw;
+  //
+  //   .overlay-content {
+  //     position: relative;
+  //     top: 5%;
+  //     width: 100%;
+  //     margin-top: 30px;
+  //     padding: 20px 60px;
+  //   }
+  //   .closebtn {
+  //     position: absolute;
+  //     top: 20px;
+  //     right: 3rem;
+  //     font-size: 30px;
+  //     color: black;
+  //   }
+  //   .sel {
+  //     width: 383px;
+  //     margin-top: 8px;
+  //   }
+  //
+  //   @media screen and (max-width: 63em) {
+  //     border-top: none;
+  //     margin-top: 0;
+  //     padding-top: 0;
+  //     .closebtn {
+  //       left: 20px;
+  //       top: 0.6rem;
+  //       font-size: 27px;
+  //       font-weight: 600;
+  //     }
+  //   }
+  // }
+
+  // .terms-agree {
+  //   margin-left: -8px;
+  //   margin-top: -7px;
+  // }
+  .agree-text {
+    position: relative;
+    top: -3px;
+    margin-left: 20px;
+    font-family: $proxima-nova-reg;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.57;
+    letter-spacing: normal;
+    color: $gray-dark;
+
+    a {
+      color: $anchor-color;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .lgoverlay-full-header .checkbox-field input:focus, .lgoverlay-full-header select:focus {
+    outline: solid  $primary-color $active-border-width;
+  }
+
+  .button:focus {
+    outline: solid $active-border-width  black;
+    margin-bottom: rem-calc(20);
+  }
+
+}

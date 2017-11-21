@@ -1,0 +1,415 @@
+// ------------------------------------//
+//    Step - Dates
+// ------------------------------------//
+.datesstep-date {
+  display: inline-block;
+  vertical-align: top;
+}
+.datesstep-year {
+  @include label-text;
+  display: block;
+  color: $gray-medium;
+}
+
+// ------------------------------------//
+//    Datepick
+// ------------------------------------//
+.bookingview-dates {
+  @include get-font('regular');
+  position: relative;
+  min-height: 90vh;
+  &.monthpickerOpen {
+    @include breakpoint(large) { min-height: 1863px; }
+  }
+  .promo-code-wrapper {
+    @include breakpoint(medium down) { display: none; }
+    @include breakpoint(large) {
+      max-width: 860px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .promo-code {
+      padding: 20px 18px 16px;
+      @include breakpoint(large) {
+        position: absolute;
+        top: 47px;
+        max-width: 257px;
+        padding: 16px 0;
+        left: 15px;
+      }
+      @include breakpoint(1205px) {
+        left: 1px;
+        max-width: 348px;
+      }
+    }
+    .promo-code-trigger { margin-bottom: 0; }
+  }
+  .datepick-weekheader-wrapper {
+    display: flex;
+    justify-content: space-around;
+
+  }
+  &.v-leave-active, &.v-enter-active, &.monthpickerOpen {
+    .datepick-weekheader-copy { opacity: 0; }
+    .datepick-weekheader { opacity: 0; }
+  }
+  .datepick-weekheader {
+    @include label-text;
+    border-bottom: 1px solid $gray-light;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 3;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    @include breakpoint(large) { opacity: 1; }
+    .bookingfunnel-open & {
+      @include breakpoint(large) {
+        position: fixed;
+        top: 60px;
+        width: auto;
+        left: 0;
+        right: 325px;
+      }
+    }
+    span {
+      display: inline-block;
+      padding: 8px 0;
+      flex: 1 1 14%;
+      text-align: center;
+      @include breakpoint(large) { padding: 6px 0; }
+    }
+  }
+  .datepick-weekheader-copy {
+    opacity: 1;
+    @include breakpoint(large) { display: none; }
+  }
+}
+// Select Month text
+.bookingview-datepicker .datepick-month-header, .datepick-month-header-copy {
+  @include get-font('regular');
+  font-size: rem-calc(16px);
+  line-height: rem-calc(20px);
+  padding: 24px 6%;
+  min-width: 183px;
+  @include breakpoint(large) {
+    font-size: rem-calc(20px);
+    line-height: rem-calc(24px);
+    text-align: center;
+    padding: 30px 0;
+    cursor: pointer;
+  }
+  .fliptext {
+    @include breakpoint(large) { min-width: 127px; }
+  }
+  .dropdown-titleicon {
+    margin: 0;
+    transform: translate(8px, 1px);
+    width: 11px;
+    @include breakpoint(large) {
+      transform: translate(7px, 1px);
+      width: 15px;
+    }
+    .fill {
+      fill: $secondary-color;
+    }
+  }
+}
+.datepick-month-header-copy {
+  display: none;
+  @include breakpoint(large) {
+    display: block;
+    padding: 68px 0 25px;
+    margin: 0 auto;
+    max-width: 183px;
+    opacity: 0;
+  }
+  &.show { opacity: 1; }
+}
+
+.bookingview-datepicker {
+  .datepick {
+    max-width: 100%;
+    /* stylelint-disable declaration-no-important */
+    /* Width set by JS gets stuck on resize */
+    width: 100% !important;
+    /* stylelint-enable declaration-no-important */
+  }
+  .datepick-weekheader-wrapper, .datepick-month {
+    @include breakpoint(large) {
+      margin: 0 auto;
+      max-width: 860px;
+    }
+  }
+  .datepick-month-row {
+    @include breakpoint(medium down) { padding-top: 70px; }
+  }
+  .datepick-month {
+    &.first {
+      @include breakpoint(medium down) { border-bottom: 1px solid $gray-light; padding-bottom: 32px; }
+      @include breakpoint(large) { padding-top: 123px; }
+    }
+    td {
+      width: 14%;
+      position: relative;
+    }
+    td:after {
+      content: '';
+      display: block;
+      margin-top: 100%;
+    }
+    table { width: 100%; border-collapse: separate; }
+  }
+
+  .datepick-day {
+    @include get-font('light');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    color: rgb(118, 118, 118);
+    @include breakpoint(large) {
+      border: $active-border-width solid #fff;
+      font-size: 32px;
+      transition: border-color 0.3s;
+    }
+    &:hover, &:focus { text-decoration: none; }
+    &:focus { outline: none; }
+    .svg-close {
+      opacity: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width: 50%;
+      height: 50%;
+      z-index: -1;
+      transition: opacity 0.3s;
+      .fill { fill: darken($primary-color, 10%); }
+    }
+  }
+  .datepick-arrive:hover, .datepick-depart:hover {
+    $primary-color-dark: darken($primary-color, 10%);
+    @include breakpoint(large) {
+      background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2214%22%20height%3D%2214%22%20viewBox%3D%220%200%2068%2068%22%20class%3D%22svg%20svg-close%22%3E%3Cpath%20class%3D%22fill%22%20fill%3D%22%23#{removeHash($primary-color-dark)}%22%20d%3D%22M43.9%2034l23.334-23.335-9.9-9.9L34%2024.1%2010.666.766l-9.9%209.9L24.1%2034%20.767%2057.334l9.9%209.9L34%2043.9l23.335%2023.334%209.9-9.9L43.9%2034z%22%2F%3E%3C%2Fsvg%3E');
+      background-repeat: no-repeat;
+      background-size: 57%;
+      background-position: center;
+    }
+  }
+  .datepick-selectable { color: #000; }
+  td a { transition: border-color 0.3s; }
+  .datepick-highlight {
+    color: #000;
+    @include breakpoint(large) {
+      border: $active-border-width solid $primary-color;
+      outline: 0;
+    }
+    .svg-close {
+      @include breakpoint(large) {
+        opacity: 1;
+      }
+    }
+  }
+  .datepick-range {
+    background-color: $gray-lightest;
+    @include breakpoint(large) {
+      background-color: #fff;
+    }
+    &:before, &:after {
+      @include breakpoint(large) {
+        content: "";
+        position: absolute;
+        width: auto;
+        height: $active-border-width;
+        background-color: $primary-color;
+        top: -($active-border-width);
+        left: -($active-border-width);
+        right: -($active-border-width);
+      }
+    }
+    &:after {
+      @include breakpoint(large) { top: auto; bottom: -($active-border-width); }
+    }
+  }
+  td:last-child .datepick-range, .month-end.datepick-range {
+    @include breakpoint(large) { border-right-color: $primary-color; }
+  }
+  td:first-child .datepick-range, .month-start.datepick-range {
+    @include breakpoint(large) { border-left-color: $primary-color; }
+  }
+  .datepick-rangeend {
+    @include breakpoint(large) {
+      border-right-color: $primary-color;
+      border-left-color: #fff;
+    }
+  }
+  .datepick-selected {
+    color: $primary-text-cta;
+    background-color: $primary-color;
+    @include breakpoint(large) {
+      border: $active-border-width solid $primary-color;
+    }
+  }
+  .datepick-nights {
+    @include label-text;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    opacity: 0;
+  }
+  .datepick-depart .datepick-nights, .datepick-selectable.datepick-highlight .datepick-nights {
+    @include breakpoint(large) { opacity: 1; }
+  }
+
+  .datepick-unavailable {
+    border: $active-border-width solid $gray-light;
+    color: $gray-light;
+    overflow: hidden;
+    &:before, &:after {
+      content: "";
+      width: 140%;
+      height: 1px;
+      background: $gray-light;
+      position: absolute;
+      z-index: -1;
+    }
+    &:before {
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%) translateX(-15%) rotate(135deg);
+    }
+    &:after {
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%) translateX(-15%) rotate(45deg);
+    }
+  }
+}
+
+// ------------------------------------//
+//    Datepick - Months
+// ------------------------------------//
+// Mobile stepnav
+.monthpicker-year {
+  border-bottom: 1px solid $gray-light;
+  padding: 24px 0;
+  @include breakpoint(large) { border-bottom: 0; }
+  h2 {
+    font-size: 24px;
+    line-height: 28px;
+    padding: 0 17px;
+    margin: 0 auto 11px;
+    max-width: 860px;
+    @include breakpoint(large) { font-size: 20px; }
+  }
+}
+.monthpicker {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  @include breakpoint(large) {
+    position: absolute;
+    z-index: 1;
+  }
+  &.bookingview-full {
+    @include breakpoint(large) { z-index: 1; }
+  }
+  .bookingview-full-header {
+    @include breakpoint(large) { display: none; }
+  }
+  .datepick {
+    max-width: 100%;
+    margin: 0 auto;
+    /* stylelint-disable declaration-no-important */
+    /* Width set by JS gets stuck on resize */
+    width: 100% !important;
+    /* stylelint-enable declaration-no-important */
+    @include breakpoint(large) {
+      max-width: 860px;
+    }
+  }
+  .datepick-month {
+    width: 33%;
+    display: inline-block;
+    padding: 0 8px;
+    border: $active-border-width solid #fff;
+    cursor: pointer;
+    transition: border-color 0.7s cubic-bezier(.35, 0, 0, 1);
+    margin-bottom: 1px;
+    @include breakpoint(large) { padding: 28px 32px; }
+    table { width: 100%; }
+    thead {
+      @include breakpoint(medium down) { display: none; }
+    }
+    td, th {
+      width: 14%;
+      position: relative;
+      font-size: 10px;
+      font-weight: normal;
+      color: $gray-dark;
+    }
+    th { color: $gray-medium; }
+    td:after, th:after {
+      content: '';
+      display: block;
+      margin-top: 100%;
+    }
+    &:hover {
+      @include breakpoint(large) {
+        border-color: $primary-color;
+        transition: border-color .5s;
+      }
+    }
+  }
+  .datepick-month-row {
+    padding: 0 8px;
+  }
+  .datepick-month .datepick-month-header {
+    font-size: 18px;
+    padding: 13px 0 0;
+    @include breakpoint(large) { font-size: 16px; padding: 13px 0 0 11px; }
+  }
+  /* stylelint-disable no-descending-specificity */
+  /* Want this seperate from .bookingview-datepicker */
+  .datepick-day, th span {
+    @include get-font('semibold');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $gray-dark;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    outline: 0;
+    &:hover { text-decoration: none; }
+  }
+  th span { color: $gray-medium; }
+  /* stylelint-enable no-descending-specificity */
+}
+
+.bookingview-datepicker .first .datepick-month-header {
+  @include breakpoint(medium down) { padding-top: 0; }
+  @include breakpoint(large) {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: (30px + 38px) 0 25px;
+    transition: background 0.5s;
+  }
+}
+
+.monthpickerOpen .bookingview-datepicker .first .datepick-month-header {
+  @include breakpoint(large) {
+    background: #fff;
+  }
+}

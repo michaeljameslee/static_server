@@ -1,0 +1,58 @@
+/*doc
+---
+title: Large Cards (TwoUp)
+name: large-cards
+author: William Pansky [SG0301235]
+category: Cards
+---
+
+<p class="label loc">File location</p>
+scss/modules/cards/large-cards/*.scss
+
+```html_example
+<div class="grid _2card">
+  <div class="card-wrapper">
+      <article class="card large-card" itemtype="http://schema.org/Offer" tabindex="0" data-card-type="Large TwoUp Offer Card">
+          <meta itemprop="name" content="">
+          <meta itemprop="description" content="<p>Treat your family on your next vacation with our great value family getaway package.&nbsp;Kids stay and eat breakfast for free!</p>">
+          <meta itemprop="seller" content="Carlson Rezidor Hotel Group">
+          <meta itemprop="category" content="special offer">
+          <meta itemprop="priceCurrency" content="USD">
+          <meta itemprop="validFrom" content="2017-05-08 18:42:00">
+          <meta itemprop="validThrough" content="2018-05-08 18:42:00">
+          <meta itemprop="priceValidUntil" content="2018-05-08 18:42:00">
+          <a itemprop="url" href="/en/hotel-deals/family-getaway-package">
+              <div class="card-img-cover">
+                  <picture>
+                      <source media="(min-width: 1080px)" srcset="/uploads/377/75/special-offer-family-getaway-placeholder.jpg">
+                      <source media="(min-width: 769px)" srcset="/uploads/377/74/special-offer-family-getaway-placeholder.jpg">
+                      <source media="(min-width: 375px)" srcset="/uploads/377/73/special-offer-family-getaway-placeholder.jpg">
+                      <source media="(min-width: 320px)" srcset="/uploads/377/72/special-offer-family-getaway-placeholder.jpg">
+                      <img itemprop="image" src="/uploads/377/0/special-offer-family-getaway-placeholder.jpg" alt="Family Getaway Package" class="cover-img" data-type="card-lg-img" data-picture="content/card/mediafile">
+                  </picture>
+                  <time class="expiration">Expires May 08, 2018</time>
+                  <div class="shadow"></div>
+              </div>
+              <header class="card-header">
+                  <h3 class="card-title" itemprop="name">Family Getaway Package</h3>
+                  <div class="card-description" itemprop="description">
+                      <p>Treat your family on your next vacation with our great value family getaway package.&nbsp;Kids ...</p>
+                  </div>
+              </header>
+              <footer class="card-footer">
+                  <img src="/uploads/354/0/logo-club-carlson.svg" alt="Club Carlson" class="card-footer-logo" data-test="is_club_carlson = 1">
+                  <div class="card-details">Club Carlson</div>
+              </footer>
+          </a>
+      </article>
+  </div>
+</div>
+```
+
+<p class="label rel-links">Relevant links</p>
+- [Design Mockups](https://app.zeplin.io/projects?q=card)
+- [Atlassian Docs](https://radisson.atlassian.net/wiki/spaces/SD/pages/19693570/Card+Styling)
+*/
+
+@import 'layout';
+@import 'typography';

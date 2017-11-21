@@ -1,0 +1,35 @@
+// ========================================================================
+// CARDS => LARGE CARDS
+// Similar to offer cards, but larger in size;
+// often referred to as "TwoUp" cards
+// ========================================================================
+
+/***
+| Table of Contents
+__________________________
+|-- LARGE-CARD (TwoUp)
+|-- card-img-cover
+|-- card-img-cover img
+|-- card-header
+|-- card-footer
+***/
+
+.large-card .card-img-cover {
+  height: $card-lg-height;
+
+  @include breakpoint(large) {
+    height: $card-lg-height-lg;
+  }
+}
+
+// .large-card .card-img-cover img {
+
+// }
+
+// .large-card .card-header {
+
+// }
+
+// .large-card .card-footer {
+
+// }

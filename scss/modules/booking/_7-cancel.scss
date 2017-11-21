@@ -1,0 +1,25 @@
+.bookingview-cancel {
+  max-width: none;
+  padding-top: 31px;
+  padding-bottom: 25px;
+  @include breakpoint(large) { padding-top: 56px; padding-bottom: 37px; }
+  .column {
+    padding: 0 16px;
+    @include breakpoint(large) {
+      padding: 0 60px;
+      flex: 0 0 60%;
+      max-width: 60%;
+    }
+    @include breakpoint(xlarge) {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  }
+  h1 {
+    @include get-font('heading-1');
+  }
+  p {
+    @include secondary-paragraph;
+    color: $gray-dark;
+  }
+}

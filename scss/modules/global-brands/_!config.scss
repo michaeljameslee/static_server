@@ -1,0 +1,129 @@
+/*doc
+---
+title: Description
+name: description
+author: William Pansky [SG0301235]
+category: Global Brands
+---
+
+<p class="label loc">File location</p>
+scss/modules/global-brands/_!config.scss
+
+##### The global brands carousel has two seperate view instances.
+- Showing the properties on mobile devices with the text overlaying the image.
+- Expanding the component into four sections (2 images, text on a brand-specific colored background, and logo navigation) on desktops.
+
+Both instances use flickity.js; and thus both use `.flickity-enabled`.
+
+<p class="label loc">File structure</p>
+- _!config.scss
+- _!module.scss
+- _flickity.scss
+- _layout.scss
+- _navigation.scss
+- _typography.scss
+*/
+
+/***
+TABLE OF CONTENTS
+==============================
+|-- Global Brands
+|  |-- Globals
+|  |-- Logo Nav (desktop only)
+|  |  |-- <li>
+|  |  |-- <img>
+|  |-- Content Wrapper
+|  |-- Content Item Properties (mobile+)
+|  |-- Content Item Properties (desktop+)
+***/
+
+// ========================================================================
+// COMPONENTS => Global Brands
+// ========================================================================
+// Global Brands => Globals
+$gbrands-text-sm:                 rem-calc(12px);
+$gbrands-text-md:                 1rem;
+
+//_____________________________________
+// Global Brands => Logo Nav (desktop only)
+$gbrands-nav-list-style:          none; 
+$gbrands-nav-display-type:        flex;
+$gbrands-nav-flex-direction:      row;
+$gbrands-nav-flex-wrap:           nowrap;
+$gbrands-nav-align-items:         center;
+$gbrands-nav-justify-content:     space-between;
+$gbrands-nav-text-align:          center;
+$gbrands-nav-padding:             0;
+$gbrands-nav-margin:              $global-margin-lg 0;
+
+//_____________________________________
+// Global Brands => Logo Nav <li>'s
+$gbrands-nav-li-cursor:           pointer;
+$gbrands-nav-li-display-type:     inline-block;
+$gbrands-nav-li-width:            95px;
+$gbrands-nav-li-width-tablet:     80px;
+$gbrands-nav-li-margin:           0 4% 0 0;
+$gbrands-nav-li-margin-last-child:0;
+
+//_____________________________________
+// Global Brands => Logo Nav Image Properties
+$gbrands-nav-img-width:           100%;
+$gbrands-nav-img-transition:      400ms ease-in-out;
+$gbrands-nav-img-filter:          grayscale(100%);
+$gbrands-nav-img-filter-hover:    grayscale(0);
+$gbrands-nav-img-opacity:         .3265;
+$gbrands-nav-img-opacity-hover:   1;
+$gbrands-nav-img-transform-hover: scale(1.25);
+
+//_____________________________________
+// Global Brands => Content Wrapper
+$gbrands-wrapper-display-type:    block;
+$gbrands-wrapper-height-sm:       450px;
+$gbrands-wrapper-height-lg:       550px;
+$gbrands-wrapper-overflow:        hidden;
+
+//_____________________________________
+// Global Brands => Content Item Properties (flickity-enabled)
+$gbrands-item-border-radius:      $global-border-radius;
+
+$gbrands-item-width:              100%;
+$gbrands-item-max-width-sm:       260px;
+$gbrands-item-max-width-375:      300px;
+$gbrands-item-max-width-412:      360px;
+$gbrands-item-max-width-564:      460px;
+$gbrands-item-max-width-md:       560px;
+$gbrands-item-max-width-770:      660px;
+$gbrands-item-max-width-970:      460px;
+$gbrands-item-max-width-lg:       100%;
+
+$gbrands-item-padding:            $global-flickity-item-padding;
+$gbrands-item-padding-last:       $global-flickity-item-padding-last;
+$gbrands-item-margin:             $global-flickity-item-margin;
+$gbrands-item-margin-last:        $global-flickity-item-margin-last;
+$gbrands-item-shadow-height:      45%;
+$gbrands-item-logo-width:         150px;
+
+//_____________________________________
+// Global Brands => Content Item Properties (Go to Website link) (flickity-enabled)
+$gbrands-item-link-color:         white;
+$gbrands-item-link-font-size:     rem-calc(12);
+$gbrands-item-link-text-transform:uppercase;
+
+//_____________________________________
+// Global Brands => Content Item Properties (desktop +)
+$gbrands-info-wrapper-position:   absolute;
+$gbrands-info-wrapper-bottom:     $global-padding-interior-sm;
+$gbrands-info-wrapper-z-index:    1;
+$gbrands-info-wrapper-padding-sm: 0 $global-padding-interior-sm;
+$gbrands-info-wrapper-padding-md: 0 0 0 40px;
+$gbrands-info-wrapper-text-shadow:$global-text-shadow;
+
+$gbrands-info-name-font-size:     rem-calc(22);
+$gbrands-info-name-line-height:   1.18;
+$gbrands-info-rate-font-size:     rem-calc(16);
+$gbrands-info-rate-line-height:   1.5;
+
+$gbrands-item-top-info-padding:   55px 63px 55px 40px;
+$gbrands-item-top-info-margin-btm:10px;
+
+$gbrands-item-bottom-img-height:  260px;

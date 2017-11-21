@@ -1,0 +1,531 @@
+.dashboard-account {
+  position: relative;
+  min-height: 100vh;
+  left: 0;
+  padding: 0;
+  background-color: $white;
+  transition: left 500ms ease-out;
+  @include breakpoint(large) { left: 33.3333%; }
+  @include breakpoint(large) { left: 25%; }
+}
+.account-info {
+  border-bottom: 1px solid $gray-light;
+  padding: rem-calc(32) 5% rem-calc(24);
+  @include breakpoint(large) { padding: rem-calc(40) rem-calc(60) rem-calc(50) 5%; }
+  h2 {
+    line-height: 1.11;
+    margin-bottom: rem-calc(40);
+  }
+  > .row, .columns {
+    margin: 0;
+    padding: 0;
+  }
+}
+.account-info-user {
+  padding: 0;
+  text-align: center;
+  @include breakpoint(large) {
+    align-self: flex-end;
+    text-align: left;
+  }
+  figure {
+    width: rem-calc(96);
+    height: rem-calc(96);
+    margin: 0px auto rem-calc(16);
+    background: #e8e8e8;
+    border-radius: 50%;
+    background-size: cover;
+    @include breakpoint(large) {
+      width: rem-calc(100);
+      height: rem-calc(100);
+      margin: rem-calc(0 20 32 0);
+      float: left;
+    }
+    @include breakpoint(large) { margin: rem-calc(0 20 0 0); }
+  }
+  .red, .Red { background-image: url(../images/dashboard/avatars/red.svg); }
+  .silver, .Silver { background-image: url(../images/dashboard/avatars/silver.svg); }
+  .gold, .Gold { background-image: url(../images/dashboard/avatars/gold.svg); }
+  .concierge, .Concierge { background-image: url(../images/dashboard/avatars/concierge.svg); }
+  h3 {
+    font-size: rem-calc(26);
+    line-height: 1.15;
+    color: $true-black;
+    letter-spacing: 1px;
+    @include breakpoint(large) { margin: rem-calc(24 0 0); }
+  }
+  h4 {
+    font-family: $proxima-nova-semibold;
+    font-size: rem-calc(12);
+    line-height: 1.33;
+    color: $gray-dark;
+    text-transform: uppercase;
+    margin-bottom: rem-calc(36);
+  }
+}
+.account-info-buttons {
+  @include flex;
+  flex-direction: column;
+  .button {
+    display: block;
+    margin-bottom: rem-calc(16);
+    line-height: 1.5;
+    color: $true-black;
+    padding: rem-calc(14);
+    @include breakpoint(large) {
+      width: rem-calc(197);
+      height: rem-calc(40);
+      margin: 0 auto rem-calc(10);
+      padding: 0.85em 1em;
+    }
+    &.secondary {
+      margin: 0 auto rem-calc(24);
+      background-color: $white;
+      border: 1px solid $primary-color;
+
+      @include breakpoint(large) { margin: 0 auto; }
+
+      &:hover { background-color: $primary-color; }
+    }
+  }
+  .user-account-number {
+    color: $gray-dark;
+    text-align: center;
+    margin-bottom: 0;
+    @include breakpoint(large) {
+      order: -1;
+      font-size: rem-calc(14);
+      line-height: 1.57;
+      margin-bottom: rem-calc(10);
+    }
+  }
+}
+.account-points-status {
+  > .row { margin: 0; }
+}
+.account-points, .account-status {
+  @include flex;
+  flex-direction: column;
+  padding: rem-calc(24 16 48);
+  border-bottom: 1px solid $gray-light;
+  @include breakpoint(large) { padding: rem-calc(30 40 87); }
+  h5 {
+    font-family: $proxima-nova-semibold;
+    font-size: rem-calc(12);
+    line-height: 1.33;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 0;
+  }
+}
+.account-points {
+  @include breakpoint(large) { border-right: 1px solid $gray-light; }
+}
+.account-points-info {
+  margin-top: rem-calc(24);
+  align-self: center;
+  text-align: center;
+  @include breakpoint(large) { margin-top: rem-calc(85); }
+  i {
+    display: block;
+    margin: 0 auto rem-calc(10);
+    width: rem-calc(40);
+    height: rem-calc(40);
+    border: 2px solid $secondary-color;
+    border-radius: 50%;
+    font-size: rem-calc(18);
+    line-height: 2.25rem;
+    color: $secondary-color;
+  }
+  .account-points-value {
+    font-family: $proxima-nova-thin;
+    font-size: rem-calc(52);
+    line-height: 1.08;
+  }
+}
+
+.account-redemption-status, .account-special-offers, .account-registered-ecerts {
+  // max-width: 90%;
+  // margin: 0 auto;
+  // padding: rem-calc(40 0 48);
+  // border-bottom: 1px solid $gray-light;
+
+  // @include breakpoint(large) { padding: rem-calc(60 0); }
+
+  h3, h4 {
+    font-family: $proxima-nova-reg;
+    font-size: rem-calc(22);
+    line-height: 1.18;
+    margin-bottom: rem-calc(24);
+  }
+  h3 { line-height: 1; }
+  h4 { margin-bottom: rem-calc(10); }
+  > .row { margin: 0; }
+  .button {
+    font-size: rem-calc(14);
+    color: $true-black;
+    padding: rem-calc(21 0);
+  }
+}
+.account-redemption-status {
+  h3 {
+    margin-bottom: rem-calc(32);
+    text-align: center;
+    @include breakpoint(large) {
+      margin-bottom: rem-calc(40);
+      text-align: left;
+    }
+  }
+}
+.account-redemption-pick, .account-special-offer {
+  margin-bottom: rem-calc(40);
+  padding: 0;
+}
+.account-redemption-pick {
+  padding: rem-calc(0 25);
+  text-align: center;
+  .account-redemption-icon {
+    display: block;
+    width: rem-calc(44);
+    height: rem-calc(44);
+    fill: $secondary-color;
+    margin: 0 auto rem-calc(16);
+
+    @include breakpoint(large) { margin: 0 auto rem-calc(30); }
+  }
+  a {
+    font-family: $proxima-nova-semibold;
+    font-size: rem-calc(12);
+    line-height: 1.33;
+    color: #E62528;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    &:hover { text-decoration: underline; }
+  }
+  p {
+    color: $gray-dark;
+  }
+}
+.account-special-offers {
+  max-width: 100%;
+  padding: rem-calc(40) 0 rem-calc(16) 5%;
+  border-bottom: 0;
+
+  @include breakpoint(large) {
+    max-width: 90%;
+    padding: rem-calc(40 0 60);
+  }
+
+  h3 {
+    margin-bottom: rem-calc(24);
+
+    @include breakpoint(large) { margin-bottom: rem-calc(40); }
+  }
+
+  .button.expanded {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+.row.slideshow-container {
+  display: block;
+  height: rem-calc(485);
+  @include breakpoint(large) {
+    display: flex;
+    justify-content: flex-start;
+    height: auto;
+  }
+}
+.slideshow-container {
+  &::after {
+    content: 'flickity';
+    display: none;
+    @include breakpoint(large) { content: ''; }
+  }
+}
+.account-special-offer {
+  // width: 300px;
+  // border-radius: 4px 4px 0 0;
+  // margin-right: 2.5%;
+
+  &:nth-of-type(2) {
+    @include breakpoint(large) { margin-right: 0; }
+  }
+
+  &:not(:nth-of-type(3)) {
+    @include breakpoint(xlarge) { margin-right: 4.25%; }
+  }
+
+  &:nth-of-type(3) {
+    @include breakpoint(xlarge) { margin-right: 0; }
+  }
+
+  @include breakpoint (small only) { margin-bottom: 0; }
+
+  @include breakpoint(large) {
+    flex: 0 1 48%;
+    margin-right: 4%;
+  }
+
+  @include breakpoint(xlarge) {
+    flex: 0 1 30.5%;
+    margin-bottom: 0;
+  }
+
+  figcaption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: rem-calc(40);
+    background-color: $true-black;
+    border-radius: 4px 4px 0 0;
+    @include flex;
+    justify-content: center;
+    align-items: center;
+    font-size: rem-calc(14);
+    line-height: 1.29;
+    color: white;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    border-radius: 4px 4px 0 0;
+  }
+
+  .shadow { height: rem-calc(60); }
+
+  .offer-exipry-date {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+    padding: rem-calc(0 0 12 24);
+    font-family: $proxima-nova-semibold;
+    font-size: rem-calc(10);
+    line-height: 1.4;
+    color: white;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    @include breakpoint(large) {
+      padding: rem-calc(0 0 12 20);
+    }
+  }
+
+  .offer-content {
+    min-height: rem-calc(190);
+    padding: rem-calc(20 20 0);
+    border: 1px solid $gray-light;
+    h4 {
+      color: $true-black;
+      margin-bottom: rem-calc(8);
+    }
+    p {
+      font-size: rem-calc(14);
+      line-height: 1.43;
+      color: $gray-dark;
+      margin-bottom: 0;
+    }
+  }
+  .offer-hotel-info {
+    align-items: center;
+    height: rem-calc(72);
+    border-radius: 0 0 4px 4px;
+    border: 1px solid $gray-light;
+    border-top: none;
+    margin: 0;
+
+    &.multiple-hotels {
+      .columns { padding: rem-calc(0 20); }
+      p {
+        font-family: $proxima-nova-semibold;
+        font-size: rem-calc(12);
+        line-height: 1.33;
+        color: $gray-medium;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-bottom: 0;
+      }
+    }
+  }
+  .offer-hotel-logo {
+    padding: rem-calc(0 0 0 20);
+    max-width: rem-calc(95);
+  }
+  .offer-hotel-title {
+    @include flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: rem-calc(0 8 0 19);
+    h5 {
+      font-family: $proxima-nova-semibold;
+      font-size: rem-calc(10);
+      line-height: 1.4;
+      color: $gray-medium;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.account-registered-ecerts {
+  border-bottom: 0;
+  // border-top: 1px solid $gray-light;
+  h3 {
+    font-family: $proxima-nova-reg;
+    line-height: 1.18;
+    margin-bottom: rem-calc(8);
+
+    @include breakpoint(medium) { margin-bottom: rem-calc(5); }
+  }
+  p {
+    line-height: 1.5;
+    color: #353535;
+    margin-bottom: rem-calc(24);
+
+    @include breakpoint(medium) { margin-bottom: rem-calc(32); }
+  }
+}
+
+.account-ecert {
+  @include flex;
+  align-items: center;
+  height: rem-calc(160);
+  border: 1px solid $gray-light;
+  border-radius: 4px;
+  margin-bottom: rem-calc(32);
+
+  @include breakpoint(medium) { margin-bottom: rem-calc(40); }
+
+  // &.profile-ecert { display: none; }
+  &.lookup-ecert {
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate3d(0, -100%, 0);
+    transition: opacity 500ms ease 125ms, max-height 500ms ease, transform 500ms ease;
+    margin-bottom: 0;
+
+    &.show-ecert {
+      max-height: rem-calc(200);
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      margin-bottom: rem-calc(32);
+
+      @include breakpoint(medium) { margin-bottom: rem-calc(40); }
+    }
+  }
+}
+
+.account-ecert-icon {
+  @include flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: $gray-lightest;
+  border-right: 1px solid $gray-light;
+  padding: rem-calc(0 14);
+
+  svg { width: rem-calc(32); }
+}
+
+.account-ecert-content {
+  padding: rem-calc(0 24);
+
+  @include breakpoint(medium) { padding: rem-calc(0 40); }
+
+  h4 {
+    font-family: $proxima-nova-reg;
+    font-size: rem-calc(18);
+    line-height: 1.22;
+    color: $true-black;
+    margin-bottom: rem-calc(8);
+
+    @include breakpoint(medium) { margin-bottom: rem-calc(10); }
+  }
+
+  p {
+    font-size: rem-calc(12);
+    line-height: 1.67;
+    color: $near-black;
+    margin-bottom: 0;
+
+    @include breakpoint(medium) {
+      font-size: rem-calc(14);
+      line-height: 1.57;
+      color: $gray-dark;
+    }
+  }
+}
+
+.account-ecert-lookup {
+  .ecert-lookup-field { max-width: rem-calc(240); }
+}
+
+.account-ecert-lookup label, .ecert-lookup label { display: inline-block; color: #000000; }
+
+.ecert-field-wrap {
+  @include flex;
+  justify-content: space-between;
+  height: rem-calc(48);
+  margin-bottom: rem-calc(32);
+
+  @include breakpoint(medium) {
+    justify-content: flex-start;
+    height: rem-calc(40);
+    margin-bottom: rem-calc(30);
+  }
+}
+
+.ecert-lookup-field {
+  flex: 0 0 64%;
+  margin-bottom: 0;
+
+  &::placeholder { color: $gray-medium; }
+
+  @include breakpoint(medium) {
+    flex: 0 0 auto;
+    margin-right: rem-calc(10);
+  }
+}
+
+.button.ecert-lookup-button {
+  flex: 0 0 34%;
+  padding: rem-calc(12 30);
+
+  @include breakpoint(medium) { flex: 0 0 auto; }
+}
+
+.dashboard .card-v2 .no-img {
+  height: 70px;
+}
+
+.dashboard-sidebar {
+  transition: 600ms ease-in-out;
+}
+
+.fixed-search .dashboard-sidebar {
+  transform: translateY(-70px);
+}
+
+// .club-carlson .wrapper {
+//   background: #fff;
+//   @include breakpoint(large) {
+//     background: #f1f1f1;
+//   }
+// }
+
+.club-carlson .account-nav a {
+  width: 100%;
+  text-align: left;
+}
+
+.club-carlson .account-nav .active a:hover {
+  padding-left: 0;
+  border-left: 0;
+}

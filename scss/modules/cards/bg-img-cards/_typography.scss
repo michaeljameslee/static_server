@@ -1,0 +1,30 @@
+// ========================================================================
+// BACKGROUND-IMAGE CARDS
+// Cards with a coverfitted background image
+// ========================================================================
+
+/*
+| Table of Contents
+__________________________
+|-- BACKGROUND-CARD
+|-- card-title (ex. Berlin, Germany)
+|-- card-details (ex. 9 HOTELS)
+|-- card-description (ex. Starting at $119.63 USD)
+*/
+
+.background-card .card-title,
+.background-card .card-details {
+  color: $bgCard-text-color;
+  text-shadow: $bgCard-text-shadow;
+}
+
+.background-card .card-description,
+.background-card .card-description p {
+  color: $bgCard-text-color;
+  line-height: 1.5625;
+  text-shadow: $bgCard-text-shadow;
+}
+
+.background-card .card-description {
+  margin: $bgCard-desc-margin;
+}

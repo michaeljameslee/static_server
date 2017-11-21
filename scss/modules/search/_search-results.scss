@@ -1,0 +1,658 @@
+.results-page {
+  .searchconsole {
+    &.fixed {
+      @include breakpoint(small only) {
+        top: 0;
+        width: 65%;
+        left: 25%;
+        height: 63px;
+        border-bottom: none;
+      }
+      @include breakpoint(large) { transform: translate(0, -67%); }
+    }
+
+    .search-field .search-cancel,
+    .search-field .search-code {
+      @include breakpoint(small only) { display: none; }
+    }
+  }
+
+  .wrapper { padding-top: 0; }
+  .content-wrap { padding-top: 0; }
+}
+.sticky{
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  background-color: #fff;
+}
+.button.rates-cta-top {
+  width: 100%;
+  color: $secondary-color;
+  border: none;
+  border-bottom: 1px solid $gray-light;
+  @include get-font('semibold');
+  font-size: rem-calc(12);
+  letter-spacing: 1px;
+  padding: rem-calc(16 0);
+  z-index: 110;
+
+  &:hover {
+    color: $secondary-color;
+  }
+}
+
+.searchresults {
+  margin-top: rem-calc(64);
+  @include breakpoint(large) { margin-top: 170px; }
+}
+
+.travel-guide {
+  border-bottom: 1px solid #cdcdcd;
+  margin-top: 0;
+  max-width: 82rem;
+  padding-top: 20px;
+
+  @include breakpoint(medium) {
+    width: 95%;
+    margin-bottom: 30px;
+  }
+
+  @include breakpoint(large) {
+    padding-top: 0;
+  }
+
+  hr {
+    float: none;
+    width: 100%;
+    margin: 0;
+    max-width: 100%;
+    background: $gray-light;
+    margin-top: 61px;
+  }
+
+  .row {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+.popular-cities {
+  margin-bottom: 12px;
+  @include breakpoint(large) { margin-bottom: 20px; }
+
+  .popular-cities-list {
+    list-style: none;
+    margin-left: 0;
+    display: block;
+
+    @include breakpoint(medium down) {
+      margin-bottom: 0.5rem;
+    }
+
+    @include breakpoint(large) {
+      display: inline;
+    }
+
+    li {
+      display: inline-block;
+      margin-right: 4px;
+      margin-bottom: 0;
+      @include get-font('semibold');
+
+      @include breakpoint(large) {
+        margin-right: 10px;
+        margin-bottom: 10px;
+      }
+
+      a {
+        border: 1px solid $primary-color;
+        color: black;
+        font-size: rem-calc(9);
+        line-height: 1.14;
+        text-transform: uppercase;
+        letter-spacing: .3px;
+        padding: rem-calc(1.5 3);
+
+        @include breakpoint(large) {
+          padding: rem-calc(3 6);
+          font-size: rem-calc(11);
+          letter-spacing: .5px;
+        }
+      }
+
+      a:hover, a:focus {
+        color: $primary-text-hover-cta;
+        background-color: $primary-color;
+        transition: background .4s;
+        @include breakpoint(large) { background-color: $primary-hover-cta; border-color: $primary-hover-cta; }
+      }
+    }
+  }
+
+  .view-all {
+    @include get-font('semibold');
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    font-size: rem-calc(10);
+    letter-spacing: .3px;
+
+    @include breakpoint(large) {
+      font-size: rem-calc(14);
+      letter-spacing: .5px;
+
+    }
+  }
+}
+
+.results-info,
+.results,
+.brand-travel-guide {
+  max-width: 83rem;
+  padding-top: 20px;
+  margin-bottom: 30px;
+  @include breakpoint(medium) { padding-top: 50px; width: 95%; }
+}
+
+.results-info {
+  margin-bottom: 0;
+  @include breakpoint(medium) { padding-top: 17px; }
+  @include breakpoint(small only) { padding-top: 0px; }
+}
+
+.results {
+  padding-top: 0;
+  @include breakpoint(small only) { width: 92%; }
+  @include breakpoint(medium only) { width: 95%; }
+}
+
+.travel-guide-intro {
+  margin-bottom: rem-calc(32);
+
+  @include breakpoint(medium) {
+    flex: 0 0 55%;
+    max-width: 55%;
+    padding: 0 40px 0 0;
+    margin-bottom: rem-calc(10);
+  }
+}
+
+.travel-guide-intro,
+.travel-guide-loc,
+.travel-guide-desc,
+.travel-guide-rating {
+  h1 {
+    @include get-font('light');
+    font-size: rem-calc(38);
+    line-height: 1.11;
+    margin-bottom: rem-calc(10);
+  }
+
+  h3 {
+    @include get-font('semibold');
+    font-size: rem-calc(12);
+    line-height: 1.33;
+    color: $gray-dark;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 22px;
+
+    @include breakpoint(medium) { margin-bottom: 20px; }
+  }
+  h4 {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: rem-calc(12);
+    font-weight: bold;
+    color: #00659b;
+    margin-bottom: -7px;
+  }
+  p {
+    font-size: rem-calc(12);
+    line-height: 1.67rem;
+    color: $gray-dark;
+    margin-bottom: rem-calc(24);
+
+    @include breakpoint(medium) {
+      font-size: rem-calc(16);
+      line-height: 1.5rem;
+      margin-bottom: rem-calc(26);
+    }
+
+    @include breakpoint(medium down) {
+      margin-bottom: 0.5rem;
+    }
+  }
+  .button {
+    font-size: rem-calc(14);
+    line-height: 1.29;
+    letter-spacing: 1.2px;
+    padding: rem-calc(21 30);
+
+    @include breakpoint(small only) {
+      width: 100%;
+      padding-top: rem-calc(16);
+      padding-bottom: rem-calc(16);
+      color: $true-black;
+      letter-spacing: 1px;
+    }
+  }
+  .tripadvisor-rating {
+    display: inline-block;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: rem-calc(10px);
+    color: #00659b;
+    margin-bottom: rem-calc(32);
+
+    img { width: 102px; vertical-align: bottom; }
+  }
+}
+
+.travel-guide-desc {
+  @include breakpoint(large) {
+    padding-right: rem-calc(150);
+  }
+}
+
+.travel-guide-image {
+  flex: 0 0 45%;
+  max-width: 45%;
+  padding: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+
+  .caption { font-size: rem-calc(13px); color: $gray-dark; }
+}
+
+.travelguide-img-wrapper {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.results-number {
+  margin-bottom: 0;
+
+  @include breakpoint(medium) {
+    margin-bottom: rem-calc(40);
+    padding-left: 0;
+  }
+
+  h2 {
+    font-size: rem-calc(18px);
+    text-align: left;
+    opacity: 0;
+
+    @include breakpoint(small only) { margin-bottom: rem-calc(20); }
+
+    @include breakpoint(medium) { font-size: rem-calc(22px); }
+  }
+}
+
+.results-filters {
+  @include breakpoint(small only) { margin-bottom: 20px; }
+  @include breakpoint(medium) {
+    text-align: left;
+    padding: 0;
+  }
+  @include breakpoint(large) { text-align: right; }
+  .show-for-medium {
+    a {
+      width: 147px;
+      padding-left: 30px;
+      .svg-map {
+        padding-right: 4px;
+      }
+    }
+    .promo-code-trigger {
+      width: 192px;
+    }
+  }
+
+  .filter-buttons {
+    border-bottom: 1px solid $gray-light;
+
+    div {
+      @include flex;
+      justify-content: center;
+      align-items: center;
+      padding: rem-calc(16 0);
+      text-align: center;
+      height: 48px;
+
+      &:first-child i { @include get-font('regular'); }
+
+      &:nth-child(2) {
+        border-left: 1px solid $gray-light;
+        border-right: 1px solid $gray-light;
+      }
+
+      i {
+        font-size: rem-calc(16);
+        margin-right: rem-calc(8);
+      }
+
+      span {
+        @include get-font('semibold');
+        font-size: rem-calc(12);
+        line-height: 1.33;
+        color: $true-black;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+    }
+
+    .map-view {
+      a { color: black; }
+    }
+
+    &.hide-for-medium {
+      .icon {
+        vertical-align: middle;
+        margin-right: 8px;
+      }
+
+      .svg-map {
+        height: 18px;
+        margin-top: 0px;
+        vertical-align: middle;
+
+        @include breakpoint(medium) {
+          height: 14px;
+        }
+      }
+    }
+  }
+
+  .label {
+    display: inline-block;
+    @include get-font('semibold');
+    font-size: rem-calc(12);
+    line-height: 1.33;
+    color: $true-black;
+    letter-spacing: 1px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-right: 10px;
+  }
+
+  form {
+    display: inline-block;
+    margin-right: 20px;
+    vertical-align: top;
+    width: 60%;
+
+    @include breakpoint(medium) { margin-right: 10px; width: 160px; }
+    @include breakpoint(large) { width: 200px; }
+
+    /* phone Landscape */
+    @media only screen and (min-device-width: 320px) and (max-device-width: 736px) and (orientation: landscape) {
+      margin-right: 10px;
+      width: 155px;
+    }
+
+    /* tablet landscape */
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      width: 145px;
+    }
+  }
+
+  select {
+    font-size: rem-calc(14);
+    line-height: 1.57;
+    min-height: rem-calc(40);
+  }
+
+  .button {
+    display: inline-flex;
+    align-items: center;
+    margin-right: rem-calc(10);
+    height: rem-calc(48);
+    padding: rem-calc(0 16);
+
+    @include breakpoint(medium down) {
+      background-color: white;
+      border: 1px solid $primary-color;
+      margin-right: 20px;
+      color: black;
+    }
+
+    /* phone Landscape */
+    @media only screen and (min-device-width: 320px) and (max-device-width: 736px) and (orientation: landscape) {
+      margin-right: 10px;
+    }
+
+    &:hover { text-decoration: none; }
+
+    .fa {
+      font-size: rem-calc(20);
+      @include breakpoint(medium) {
+        font-size: rem-calc(16);
+        margin-right: rem-calc(10);
+      }
+    }
+
+    .icon {
+      vertical-align: top;
+      margin-top: 2px;
+      margin-right: 6px;
+
+      &.svg-map {
+        height: 18px;
+        margin-top: 0px;
+        vertical-align: middle;
+
+        @include breakpoint(medium) {
+          height: 14px;
+        }
+      }
+    }
+
+    &.secondary:focus {
+      background-color: #fefefe;
+      text-decoration: none;
+    }
+  }
+  /* stylelint-disable declaration-no-important */
+  /* Needed to override for firefox*/
+  button {
+    display: inline-block !important;
+  }
+  /* stylelint-enable declaration-no-important */
+}
+
+.applied-filters {
+  margin-bottom: 30px;
+  padding: 0;
+  width: 100%;
+  @include breakpoint(large) {
+    max-width: calc(100% - 120px);
+  }
+  span {
+    font-size: rem-calc(12);
+    text-transform: uppercase;
+    margin-right: 20px;
+    @include get-font('semibold');
+    padding-top: 10px;
+  }
+
+  .button {
+    i {
+      font-size: rem-calc(12);
+    }
+    svg {
+      margin-left: 10px;
+    }
+    &.secondary {
+      margin-right: 10px;
+      padding: rem-calc(12 20);
+      &:focus { background-color: #fefefe; }
+    }
+  }
+}
+
+.results-cards {
+  width: 100%;
+
+  .row { margin: 0; }
+
+  .disclaimer {
+    font-size: rem-calc(13px);
+    line-height: 1.57;
+    color: $gray-dark;
+
+    @include breakpoint(medium) { font-size: rem-calc(14px); margin-bottom: 30px; }
+  }
+
+  .loader-wrap {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
+  }
+  .loader { opacity: 1; }
+
+  .loader > div:nth-child(1) { animation: ball-pulse-sync 1s -0.14s infinite ease-in-out; }
+  .loader > div:nth-child(2) { animation: ball-pulse-sync 1s -0.07s infinite ease-in-out; }
+  .loader > div:nth-child(3) { animation: ball-pulse-sync 1s 0s infinite ease-in-out; }
+
+  @keyframes ball-pulse-sync {
+    25%, 50%, 75% { transform: translateY(15px); }
+    100% { transform: translateY(0); }
+  }
+
+  .reservations-card a {
+    color: black;
+    text-decoration: none;
+  }
+  .reservations-card {
+    padding: 0;
+    display: block;
+    margin-bottom: 16px;
+
+    @include breakpoint(medium) { display: flex; margin-bottom: 40px; }
+    @include breakpoint(large) {
+      flex: 0 0 23%;
+      max-width: 23%;
+    }
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      flex: 0 0 48%;
+      max-width: 48%;
+    }
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      flex: 0 0 31%;
+      max-width: 31%;
+    }
+  }
+
+  .reservations-card figure {
+    border: none;
+    @include breakpoint(medium) { min-height: 150px; }
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) { min-height: 220px; }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) { min-height: 220px; }
+
+
+    img {
+      border: none;
+      @include breakpoint(xlarge) { max-height: rem-calc(200); }
+      @include breakpoint(xxlarge) { max-height: initial; }
+
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) { min-height: 220px; }
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) { min-height: 220px; }
+    }
+
+    .room-recentstay {
+      position: absolute;
+      background-color: black;
+      width: 100%;
+      text-align: center;
+      color: white;
+      font-size: rem-calc(14);
+      border-radius: 4px 4px 0 0;
+      line-height: 1.29;
+      top: 0;
+      padding: 10px 0;
+    }
+  }
+  .reservations-card article {
+    border: none;
+    min-height: rem-calc(128);
+
+    @include breakpoint(medium) { min-height: rem-calc(155); }
+    @include breakpoint(large) { min-height: rem-calc(120); }
+  }
+  .reservations-card .card-hotel-name .changeFont {
+    @include breakpoint(medium) { font-size: rem-calc(11); }
+    @include breakpoint(large) { font-size: rem-calc(13); }
+  }
+  .reservations-card footer {
+    border: none;
+    border-top: 1px solid $gray-light;
+  }
+
+  .reservations-card .previous-add-cart .fill { fill: black; }
+
+  .reservations-card.columns {
+    @include breakpoint(medium) {
+      margin-right: 2%;
+    }
+  }
+
+  .card-link {
+    border: 1px solid $gray-light;
+    border-radius: 4px;
+  }
+
+  .room-ratename {
+    color: $gray-medium;
+    font-size: rem-calc(10px);
+    text-transform: uppercase;
+    @include breakpoint(large) { font-size: rem-calc(12px); }
+  }
+  .room-rateval { font-size: rem-calc(26px); }
+}
+
+.brand-travel-guide {
+  border-top: 1px solid $gray-light;
+
+  .travel-guide-intro {
+    @include breakpoint (large) {
+      flex: 0 0 46%;
+      max-width: 46%;
+    }
+
+    h1 {
+      @include breakpoint (large) {
+        width: 85%;
+      }
+    }
+  }
+}
+
+// Search Results Promo Codes
+.searchresults-wrapper {
+  .promocodes-form, .applied-promos {
+    margin: 0;
+    .column {
+      width: 100%;
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+  .promocodes-form {
+    margin-bottom: 1.25rem;
+    width: 100%;
+  }
+  .applied-promos, .codes-applied-open { display: none; }
+}

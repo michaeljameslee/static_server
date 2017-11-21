@@ -1,0 +1,819 @@
+.gift-pad {
+  padding: 40px 60px 0 60px;
+  @media screen and (max-width: 63em) {
+    padding: 24px 0 0 0;
+  }
+}
+
+.ways-redeem {
+  margin-left: 15px;
+  width: 115px;
+  height: 16px;
+  font-family: $proxima-nova-semibold;
+  font-size: 12px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.33;
+  letter-spacing: 1px;
+  color: $true-black;
+  padding-left: 0;
+  text-transform: uppercase;
+  &::before {
+    content: "";
+    display: inline-block;
+    position: relative;
+    left: -10px;
+    transform: rotate(225deg);
+    width: 8px;
+    height: 8px;
+    border-top: 3px solid #E62528;
+    border-right: 3px solid #E62528;
+    transition: transform .4s;
+  }
+  .reg {
+    font-size: rem-calc(16);
+    padding-left: 3px;
+  }
+  @media screen and (max-width: 63em) {
+    padding-left: 17px;
+  }
+}
+
+.giftcard-retail-page {
+  margin-left: 0;
+  margin-top: 40px;
+  .header-right {
+    padding-left: 5rem;
+    margin-top: -10px;
+    padding-top: 13px;
+  }
+  .gift-title {
+    width: 360px;
+    font-family: $proxima-nova-light;
+    font-size: 38px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.11;
+    letter-spacing: normal;
+  }
+  .short-desc {
+    display: none;
+    font-family: $proxima-nova-reg;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: $gray-dark;
+    &.active {
+      display: block;
+    }
+    @media screen and (max-width: 63em) {
+      font-size: 12px;
+    }
+  }
+  .long-desc {
+    display: none;
+    font-family: $proxima-nova-reg;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: $gray-dark;
+    &.active {
+      display: block;
+    }
+    @media screen and (max-width: 63em) {
+      font-size: 12px;
+    }
+  }
+  .termscondition {
+    width: 180px;
+    height: 16px;
+    font-family: $proxima-nova-semibold;
+    font-size: 12px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: 1px;
+    color: darken(#ee2d24, 5%);
+    text-transform: uppercase;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .top-10 {
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+}
+
+.gift-mobile-title {
+  display: none;
+}
+
+@media screen and (max-width: 63em) {
+  .giftcard-retail-page .gift-title {
+    margin-bottom: 20px;
+    font-size: 30px;
+    width: 260px;
+  }
+  .giftcard-retail-page {
+    padding-left: 17px;
+    padding-right: 17px;
+    margin-top: 24px;
+  }
+  .giftcard-retail-page .header-right {
+    padding-left: 0;
+    margin-top: 0;
+    padding-top: 0;
+  }
+  .gift-mobile-title {
+    margin-left: 0px;
+    display: flex;
+    margin-top: 25px;
+    .mobile-title-text-1 {
+      font-family: $proxima-nova-semibold;
+      font-size: 12px;
+      font-style: normal;
+      font-stretch: normal;
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .mobile-title-text-2 {
+      font-family: $proxima-nova-semibold;
+      font-size: 12px;
+      font-style: normal;
+      font-stretch: normal;
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .mobile-title-text-3 {
+      font-family: $proxima-nova-semibold;
+      font-size: 12px;
+      font-style: normal;
+      font-stretch: normal;
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .point-text-1 {
+      color: darken(grey, 10%);
+    }
+    .point-text-2 {
+      color: darken(grey, 10%);
+    }
+    .point-text-3 {
+      color: darken(grey, 10%);
+    }
+    .left-grid {
+      border-top: solid 1px $gray-light;
+      border-bottom: solid 1px $gray-light;
+    }
+    .mid-grid {
+      border: solid 1px $gray-light;
+    }
+    .right-grid {
+      border-top: solid 1px $gray-light;
+      border-bottom: solid 1px $gray-light;
+    }
+  }
+}
+
+.giftcard-block {
+  border-top: solid 1px $gray-light;
+  margin-top: 40px;
+  padding-top: 60px;
+  .card-block {
+    padding-bottom: 60px;
+    margin-bottom: 20px;
+    border-bottom: solid 1px $gray-light;
+    margin-left: 0px;
+    max-width: none;
+  }
+  .gift-desktop-title {
+    width: 200px;
+    height: 26px;
+    margin-bottom: 10px;
+    h2 {
+      font-family: $proxima-nova-reg;
+      font-size: 22px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.18;
+      letter-spacing: normal;
+    }
+  }
+  .gift-card {
+    border-radius: 4px;
+    background-color: $white;
+    border: solid 1px $gray-light;
+    min-height: 330px;
+    position: relative;
+    cursor: pointer;
+  }
+  .gift-card-bg {
+    margin-top: 20px;
+    padding-right: 40px;
+  }
+  .gift-card-img {
+    margin-top: rem-calc(20);
+    max-height: 90px;
+  }
+  .gift-card-title {
+    font-family: $proxima-nova-reg;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+  .gift-card-desc {
+    font-family: $proxima-nova-light;
+    font-size: 26px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.15;
+    letter-spacing: normal;
+    margin-top: 8px;
+    padding-bottom: 130px;
+  }
+  .add-sub {
+    margin-top: rem-calc(33);
+    border-radius: 3px;
+    background-color: $white;
+    border: solid 1px $gray-light-border;
+    display: inline-block;
+    position: absolute;
+    bottom: 85px;
+    .add {
+      color: black;
+      margin-left: 0.5rem;
+      margin-right: 0.6rem;
+    }
+    .num {
+      color: black;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+    .sub {
+      color: black;
+      margin-left: 0.6rem;
+      margin-right: 0.5rem;
+      position: relative;
+      top: -2px;
+    }
+  }
+  .middle {
+    position: absolute;
+    bottom: 10px;
+    width: 87%;
+    text-align: center;
+    border-radius: 2px;
+    border: solid 1px $golden-yellow;
+    margin-top: 15px;
+    padding: 7px;
+    margin-bottom: 10px;
+    &:hover {
+      background: $golden-yellow;
+      transition: background .4s;
+    }
+  }
+  .cart-text {
+    font-family: $proxima-nova-semibold;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: 1px;
+    color: $true-black;
+    text-transform: uppercase;
+  }
+  .three {
+    border-bottom: 0;
+  }
+  @media screen and (max-width: 63em) {
+    border-top: none;
+    margin-top: 0;
+    padding-top: 0;
+    .card-block {
+      padding-bottom: 36px;
+    }
+    .gift-desktop-title {
+      display: none;
+      margin-bottom: 0;
+    }
+    .gift-card-bg {
+      padding-right: 0;
+    }
+    .middle {
+      float: right;
+      display: inline-block;
+      padding: 7px 20px;
+      margin-top: 2.2rem;
+      width: 55%;
+      position: initial;
+    }
+    .add-sub {
+      padding: 7px 0px;
+      margin-bottom: 20px;
+      margin-top: 2.2rem;
+      position: initial;
+      .add {
+        padding-right: 1rem;
+      }
+      .sub {
+        padding-left: 1rem;
+      }
+    }
+    .gift-card-title {
+      margin-top: 25px;
+    }
+    .gift-card {
+      padding: 0 25px;
+    }
+    .gift-card-desc {
+      padding-bottom: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 63em) {
+  .one {
+    display: none;
+    &.active {
+      display: block;
+      border-bottom: 0px;
+    }
+  }
+  .two {
+    display: none;
+    &.active {
+      display: block;
+      border-bottom: 0px;
+    }
+  }
+  .three {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+  .left-grid {
+    &.active {
+      border-bottom: solid 2px $golden-yellow;
+      .point-text-1 {
+        color: black;
+      }
+    }
+  }
+  .mid-grid {
+    &.active {
+      border-bottom: solid 2px $golden-yellow;
+      .point-text-2 {
+        color: black;
+      }
+    }
+  }
+  .right-grid {
+    &.active {
+      border-bottom: solid 2px $golden-yellow;
+      .point-text-3 {
+        color: black;
+      }
+    }
+  }
+}
+
+.anchored-cart {
+  height: 80px;
+  background-color: $golden-yellow;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-top: 0.8rem;
+  max-width: 100vw;
+  z-index: 114;
+  .cart-points {
+    margin-bottom: 0;
+    margin-top: 3px;
+    font-family: $proxima-nova-light;
+    font-size: 26px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.15;
+    letter-spacing: normal;
+  }
+  .cart-cards {
+    font-family: $proxima-nova-semibold;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: 1px;
+    color: $true-black;
+  }
+  .view-cart {
+    float: right;
+    margin-top: 18px;
+    font-family: $proxima-nova-reg;
+    font-size: 15px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.25;
+    letter-spacing: 1.6px;
+    color: $true-black;
+  }
+  .cart-arrow {
+    margin-left: 10px;
+    font-size: 0.7rem;
+  }
+  @media screen and (max-width: 63em) {
+    .view-cart {
+      text-transform: uppercase;
+    }
+  }
+}
+
+.simple-landing {
+  .info-expander {
+    color: black;
+    font-size: rem-calc(12);
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: 1px;
+    vertical-align: middle;
+    padding-top: 2px;
+    &::after {
+      top: 1px;
+      right: -14px;
+      /*border-top: 3px solid #E62528;
+      border-right: 3px solid #E62528;*/
+    }
+  }
+}
+
+.gift-retail-overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 60px;
+  left: 0;
+  background-color: white;
+  overflow-x: hidden;
+  max-width: 100vw;
+  .overlay-content {
+    position: relative;
+    top: 5%;
+    width: 100%;
+    margin-top: 30px;
+  }
+  .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 3rem;
+    font-size: 30px;
+    color: black;
+  }
+  .overlay-heading {
+    font-family: $proxima-nova-light;
+    font-size: 38px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.11;
+    letter-spacing: normal;
+  }
+  .overlay-desc {
+    font-family: $proxima-nova-reg;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.57;
+    letter-spacing: normal;
+    color: $gray-dark;
+    p {
+      font-family: $proxima-nova-reg;
+      font-size: 14px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.57;
+      letter-spacing: normal;
+      color: $gray-dark;
+    }
+  }
+  .overlay-cost {
+    font-family: $proxima-nova-semibold;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.57;
+    letter-spacing: normal;
+    color: $gray-dark;
+    margin-bottom: 0;
+  }
+  .overlay-pn {
+    font-family: $proxima-nova-semibold;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.57;
+    letter-spacing: normal;
+    color: $gray-dark;
+  }
+  .overlay-points {
+    font-family: $proxima-nova-light;
+    font-size: 32px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.13;
+    letter-spacing: normal;
+  }
+  .leftcontent {
+    padding-left: 2rem;
+  }
+  .add-sub {
+    margin-top: -1rem;
+    border-radius: 3px;
+    background-color: $white;
+    border: solid 1px $gray-light-border;
+    display: inline-block;
+    .add {
+      color: black;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+    }
+    .num {
+      color: black;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+    .sub {
+      color: black;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+      position: relative;
+      top: -2px;
+    }
+  }
+  .middle {
+    text-align: center;
+    margin: 0;
+    border-radius: 2px;
+    background-color: $golden-yellow;
+    padding-top: 10px;
+    height: 50px;
+    margin-top: 25px;
+  }
+  .cart-text {
+    font-family: $proxima-nova-semibold;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: 1px;
+    color: $true-black;
+  }
+  .overlay-title {
+    display: none;
+  }
+  @media screen and (max-width: 63em) {
+    border-top: none;
+    margin-top: 0;
+    padding-top: 0;
+    .mobile-line {
+      border-top: 1px solid $gray-light;
+      padding-top: 10px;
+    }
+    .overlay-top {
+      border-bottom: 1px solid $gray-light;
+      margin-top: 15px;
+    }
+    .overlay-title {
+      display: flex;
+      position: relative;
+      left: 39%;
+      font-family: $proxima-nova-reg;
+      font-size: 22px;
+      font-weight: 600;
+      font-style: normal;
+      font-stretch: normal;
+    }
+    .gift-desktop-title {
+      display: none;
+    }
+    .gift-card-bg {
+      padding-right: 0;
+    }
+    .middle {
+      margin-right: 0;
+      position: fixed;
+      width: 100%;
+      bottom: 0px;
+    }
+    .add-sub {
+      height: 30px;
+      float: right;
+      margin-right: 2rem;
+      margin-top: 0.1px;
+    }
+    .closebtn {
+      left: 20px;
+      top: 0.6rem;
+      font-size: 27px;
+      font-weight: 600;
+    }
+    .overlay-points {
+      margin-left: 2rem;
+      display: inline;
+      font-size: 1.3rem;
+    }
+  }
+}
+
+//GIFT CONFIRMATION
+.gift-confirmation {
+  padding-top: rem-calc(70);
+  @media screen and (max-width: 63em) {
+    padding-top: 0;
+  }
+}
+
+.giftconf-1 {
+  padding: 0 60px;
+  border-bottom: 1px solid $gray-light;
+  .con-heading {
+    margin-top: 50px;
+  }
+  .con-desc {
+    color: $gray-dark;
+    font-size: 14px;
+    width: 560px;
+  }
+  .con-order {
+    margin-top: 25px;
+    p {
+      margin-bottom: 0;
+      color: $gray-dark;
+      font-size: 14px;
+    }
+    span {
+      font-family: $proxima-nova-semibold;
+      color: $gray-dark;
+      font-size: 14px;
+    }
+  }
+  .buttons-1 {
+    margin-top: 25px;
+    margin-bottom: 60px;
+    .acc {
+      padding: 12px 30px;
+    }
+    .cont {
+      padding: 12px 30px;
+      margin-left: 20px;
+    }
+  }
+  @media screen and (max-width: 63em) {
+    padding: 0 20px;
+    h2 {
+      font-size: 30px;
+    }
+    .con-heading {
+      margin-top: 32px;
+    }
+    .con-desc {
+      width: inherit;
+      font-size: 16px;
+    }
+    .con-order p {
+      font-size: 16px;
+    }
+    .buttons-1 .acc {
+      display: block;
+    }
+    .buttons-1 .cont {
+      display: block;
+      margin-left: 0;
+      margin-top: 16px;
+    }
+  }
+}
+
+.giftconf-2 {
+  padding: 0 60px;
+  margin-left: 0;
+  margin-right: 0;
+  h2 {
+    font-size: 32px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.13;
+    letter-spacing: normal;
+    font-family: $proxima-nova-light;
+  }
+  .logo {
+    margin-top: 40px;
+    margin-left: -15px;
+  }
+  .border {
+    border-bottom: 2px solid $golden-yellow;
+    height: 1px;
+    width: 30px;
+    margin-top: 1.5rem;
+  }
+  .con-heading2 {
+    width: 430px;
+  }
+  .con-desc2 {
+    margin-top: 25px;
+    width: 400px;
+  }
+  .buttons-2 {
+    margin-top: 15px;
+    .appstore {
+      width: 144px;
+      height: 45px;
+    }
+    .googleplay {
+      margin-left: 10px;
+      width: 150;
+      height: 65px;
+    }
+  }
+  .mobile-img {
+    padding-top: 20px;
+  }
+  @media screen and (max-width: 63em) {
+    padding: 0 40px;
+    h2 {
+      font-family: $proxima-nova-reg;
+    }
+    .con-heading2 {
+      margin-top: 25px;
+      text-align: center;
+      width: inherit;
+    }
+    .con-heading2 h2 {
+      font-size: 22px;
+    }
+    .con-desc2 {
+      text-align: center;
+      font-size: 14px;
+      width: inherit;
+      padding: 0 10px;
+      font-family: $proxima-nova-reg;
+    }
+    .logo {
+      display: none;
+    }
+    .border {
+      display: none;
+    }
+    .buttons-2 {
+      text-align: center;
+      margin-left: 6px;
+    }
+    .buttons-2 .appstore {
+      width: 45%;
+    }
+    .buttons-2 .googleplay {
+      width: 50%;
+    }
+    .mobile-img {
+      text-align: center;
+    }
+  }
+  @include breakpoint(medium only) {
+    .buttons-2 {
+      padding: 0 150px;
+    }
+  }
+}

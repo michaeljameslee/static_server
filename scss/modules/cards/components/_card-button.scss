@@ -1,0 +1,39 @@
+// Card Button (like .svg-cart)
+// Nest this element inside .card-header
+.card-v2 .card-button {
+  border: 1px solid transparent;
+  border-radius: 50%;
+  box-shadow: $card-box-shadow;
+  color: $true-black;
+  background-color: $primary-color;
+  font-size: rem-calc(18);
+  height: rem-calc(40);
+  width: rem-calc(40);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -20px;
+  right: 20px;
+  z-index: 1;
+  transition: $card-cart-transition;
+}
+
+.card-button .svg-cart {
+  width: 18px;
+  position: relative;
+  left: -1px;
+  transition: all 100ms ease-in-out;
+}
+
+.card-button:hover,
+.card-button:focus {
+  border: 1px solid rgba(0, 0, 0, .0625);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 1.5px 20px rgba(0, 0, 0, .23);
+  transform: scale(1.5);
+
+  .svg-cart,
+  .rad {
+    transform: scale(1.15);
+  }
+}

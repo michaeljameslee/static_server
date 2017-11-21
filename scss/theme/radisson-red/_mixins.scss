@@ -1,0 +1,213 @@
+// ------------------------------------//
+//    Typography
+// ------------------------------------//
+
+// Get general font styles
+@mixin get-font($type) {
+  @if ($type == 'thin') {
+    font-family: map-get($fonts, 'thin');
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  @if ($type == 'light') {
+    font-family: map-get($fonts, 'light');
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  @if ($type == 'regular') {
+    font-family: map-get($fonts, 'regular');
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  @if ($type == 'semibold') {
+    font-family: map-get($fonts, 'semibold');
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  @if ($type == 'paragraph') {
+    font-family: map-get($fonts, 'paragraph');
+  }
+  @if ($type == 'secondary-paragraph') {
+    font-family: map-get($fonts, 'secondary-paragraph');
+  }
+}
+
+@mixin heading-1 {
+  font-family: $knockout-lightweight;
+  font-size: rem-calc(40);
+  line-height: rem-calc(44);
+  text-transform: uppercase;
+  @include breakpoint(large) {
+    font-size: rem-calc(72);
+    line-height: rem-calc(76);
+  }
+}
+
+@mixin heading-2 {
+  font-family: $knockout-lightweight;
+  font-size: rem-calc(24);
+  line-height: rem-calc(28);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  @include breakpoint(large) {
+    font-size: rem-calc(38);
+    line-height: rem-calc(42);
+  }
+}
+
+@mixin heading-3 {
+  font-family: $knockout-lightweight;
+  font-size: rem-calc(18);
+  line-height: rem-calc(22);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  @include breakpoint(large) {
+    font-size: rem-calc(32);
+    line-height: rem-calc(36);
+  }
+}
+
+@mixin heading-4 {
+  font-family: $knockout-lightweight;
+  font-size: rem-calc(16);
+  line-height: rem-calc(20);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  @include breakpoint(large) {
+    font-size: rem-calc(26);
+    line-height: rem-calc(30);
+  }
+}
+
+@mixin heading-5 {
+  font-family: $knockout-lightweight;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  @include breakpoint(large) {
+    font-size: rem-calc(20);
+    line-height: rem-calc(24);
+  }
+}
+
+@mixin heading-6 {
+  font-family: $knockout-lightweight;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  @include breakpoint(large) {
+    font-size: rem-calc(16);
+    line-height: rem-calc(20);
+  }
+}
+
+@mixin main-paragraph {
+  font-family: $georgia;
+  line-height: rem-calc(24);
+}
+
+@mixin secondary-paragraph {
+  font-family: $georgia;
+  font-size: rem-calc(12);
+  line-height: rem-calc(16);
+  @include breakpoint(large) {
+    font-size: rem-calc(14);
+    line-height: rem-calc(22);
+  }
+}
+
+@mixin label-text {
+  font-family: $proxima-nova-semibold;
+  font-size: rem-calc(12px);
+  letter-spacing: 1px;
+  line-height: rem-calc(16);
+  text-transform: uppercase;
+}
+
+@mixin card-label {
+  font-family: $proxima-nova-semibold;
+  font-size: rem-calc(10px);
+  letter-spacing: 1px;
+  line-height: rem-calc(14);
+  text-transform: uppercase;
+}
+
+// ------------------------------------//
+//    Links
+// ------------------------------------//
+
+@mixin body-link {
+  font-family: $georgia;
+  font-size: rem-calc(14);
+  line-height: rem-calc(22);
+  @include breakpoint(large){
+    line-height: rem-calc(24);
+  }
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@mixin text-link {
+  font-family: $knockout-lightweight;
+  font-size: rem-calc(16);
+  letter-spacing: 0.5px;
+  line-height: rem-calc(20);
+  text-transform: uppercase;
+  @include breakpoint(large) {
+    font-size: rem-calc(14);
+    line-height: rem-calc(18);
+  }
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@mixin large-link-with-caret {
+  font-family: $knockout-lightweight;
+  font-size: rem-calc(18);
+  line-height: rem-calc(22);
+  letter-spacing: 0.5px;
+  color: $black;
+  @include breakpoint(large) {
+    font-size: rem-calc(20);
+    line-height: rem-calc(24);
+  }
+  &:hover { color: $secondary-color; text-decoration: none; }
+  .fill { fill: $secondary-color; }
+}
+
+@mixin small-link-with-caret {
+  font-family: $knockout-lightweight;
+  font-size: rem-calc(16);
+  letter-spacing: 0.5px;
+  line-height: rem-calc(20);
+  text-transform: uppercase;
+  color: $black;
+  &:hover { color: $secondary-color; text-decoration: none; }
+  .fill { fill: $secondary-color; }
+}
+
+@mixin batch-link {
+  font-family: map-get($fonts, 'paragraph');
+  color: #000;
+  &:hover { color: $secondary-color; text-decoration: none; }
+}
+
+// ------------------------------------//
+//    Buttons
+// ------------------------------------//
+
+@mixin small-button {
+  font-family: $knockout-lightweight;
+  font-size: rem-calc(16);
+  letter-spacing: 0.5px;
+  line-height: rem-calc(20);
+  text-transform: uppercase;
+}
+
+@mixin large-button {
+  font-family: $knockout-lightweight;
+  font-size: rem-calc(18);
+  letter-spacing: 0.5px;
+  line-height: rem-calc(22);
+  text-transform: uppercase;
+}

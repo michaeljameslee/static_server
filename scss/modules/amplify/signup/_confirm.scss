@@ -1,0 +1,60 @@
+.confirm-component {
+  min-height: rem-calc(680);
+  border-bottom: 1px solid $gray-light;
+  @include breakpoint(medium) { top: 0; }
+  @include breakpoint(large) {
+    position: relative;
+    height: auto;
+    min-height: 100%;
+  }
+  .confirm-heading {
+    font-size: rem-calc(26);
+    @include breakpoint(large) { font-size: rem-calc(52); }
+  }
+  .button {
+    width: 100%;
+    padding: rem-calc(12 30);
+    @include breakpoint(large) { width: auto; }
+    &.primary {
+      margin-bottom: rem-calc(10);
+      @include breakpoint(large) {
+        margin-bottom: 0;
+        margin-right: rem-calc(10);
+      }
+    }
+    &.secondary {
+      background-color: $white;
+      border: 1px solid $primary-color;
+      &:hover { background-color: $primary-color; }
+    }
+  }
+}
+
+.confirm-graphic {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  background-image: url(../images/landing/cc-login-bg.svg);
+  background-repeat: no-repeat;
+  background-position: -25px 0;
+  background-size: 100% 100%;
+  @include breakpoint(medium) {
+    width: 90%;
+    height: 32%;
+  }
+  @media (min-width: 48em) {
+    width: 100%;
+    height: 35%;
+    background-size: 85% 100%;
+  }
+  @include breakpoint(large) {
+    left: auto;
+    right: 0;
+    width: 55%;
+    height: 100%;
+    background-size: contain;
+    background-position: 100% 100%;
+  }
+}

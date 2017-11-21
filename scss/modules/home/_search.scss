@@ -1,0 +1,148 @@
+.home {
+  .header {
+    @include breakpoint(medium down) {
+      border-bottom: none;
+    }
+  }
+
+  .searchwrapper {
+    padding: 70px 0 0 0;
+    @include breakpoint(medium down) {
+      top: 64px;
+      border-left: none;
+      width: 100%;
+      left: 0;
+    }
+
+    &.fixed {
+      padding: 0;
+      .searchform { height: 70px; }
+      .search-field { max-height: 90px; }
+      .search-field label { display: none; }
+      .search-field input {
+        font-size: 1.125rem;
+        @include breakpoint(medium down) {
+          margin-left: 0;
+        }
+      }
+      .search-field i {
+        @include breakpoint(medium down) { display: inline-block; }
+      }
+      .search-field .search-code { bottom: 11px; }
+      .search-dates .search-arrive, .search-dates .search-depart, .search-dates .spacer {
+        font-size: 1.125rem;
+      }
+      .search-submit {
+        flex: 1 1 16.8%;
+        padding-right: 0;
+        margin-right: 0;
+      }
+      .search-submit button { height: 100%; }
+      .show-results-panel .close-results { top: 161px; }
+    }
+  }
+  &:not(.fixed-search) .search-datepick .datepick-weekheader {
+    @include breakpoint(large) { top: 270px; }
+  }
+  &:not(.fixed-search) .search-datepick {
+    @include breakpoint(large) {
+      top: 299px;
+      height: calc(100vh - 299px);
+    }
+  }
+
+  .searchconsole {
+    @include breakpoint(medium down) {
+      width: 100%;
+    }
+  }
+
+  .searchform {
+    height: 140px;
+    @include breakpoint(medium down) { height: 70px; }
+  }
+  .search-field { max-height: 70px; }
+  .search-field input {
+
+    font-size: rem-calc(16);
+
+    @include breakpoint(medium) { font-size: rem-calc(26); }
+    @include breakpoint(medium down) { margin-left: 16px; }
+  }
+  .search-field i {
+    @include breakpoint(medium down) { display: none; }
+  }
+  .search-field label {
+    @include get-font('semibold');
+    font-size: rem-calc(12);
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    line-height: 16px;
+
+    @include breakpoint(large) { display: none; }
+  }
+  .search-field label .mobile-icon {
+    @include breakpoint(medium down) {
+      display: inline-block;
+      margin: 0 5px 0 16px;
+      width: auto;
+    }
+  }
+  .search-field .search-code { bottom: -9px; }
+  .search-dates .search-arrive, .search-dates .search-depart, .search-dates .spacer {
+    font-size: rem-calc(26);
+  }
+  .search-submit {
+    flex: 0 1 15%;
+    margin-right: 1.875rem;
+  }
+  .search-submit button { height: auto; }
+  .show-results-panel .close-results { top: 341px; }
+
+  &.search-focused {
+    .show-results-panel {
+      top: 269px;
+      height: calc(100vh - 269px);
+
+      @include breakpoint(medium down) {
+        top: 222px;
+        height: calc(100vh - 222px);
+      }
+    }
+    .search-field label { display: none; }
+  }
+  &.search-focused .searchwrapper.fixed .searchform { height: 91px; }
+
+  &.fixed-search.search-focused .searchwrapper.fixed {
+    width: 100%;
+    left: 0;
+  }
+
+  &.fixed-search.search-focused .searchwrapper.fixed .show-results-panel {
+    top: 99px;
+    height: calc(100vh - 99px);
+
+    @include breakpoint(large) {
+      top: 89px;
+      height: calc(100vh - 89px);
+    }
+  }
+
+  &.fixed-search .searchwrapper.fixed {
+    @include breakpoint(medium down) {
+      top: 0;
+      border-left: 1px solid #cdcdcd;
+      width: 65%;
+      left: 24.5%;
+      margin: 0;
+      padding: 12px 0 0 0;
+      z-index: zIndex(search);
+    }
+
+    .searchform {
+      @include breakpoint(medium down) {
+        height: 52px;
+      }
+    }
+  }
+}

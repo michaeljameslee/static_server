@@ -1,0 +1,206 @@
+.meetings-events-category {
+  .amenities object {
+    width: 36px;
+    height: 36px;
+  }
+  .amenities .text {
+    position: relative;
+    top: -15px;
+    display: inline;
+    margin-left: 15px;
+    color: #454545;
+    font-size: 12px;
+  }
+  .row {
+    margin: 0;
+    max-width: none;
+  }
+  .link-cover {
+    padding-left: rem-calc(16);
+    height: rem-calc(64);
+    padding-top: rem-calc(17);
+
+    @include breakpoint (large) {
+      width: inherit;
+      position: absolute;
+      height: 40px;
+      background-color: white;
+      padding-top: rem-calc(7);
+      padding-left: rem-calc(22);
+      padding-right: rem-calc(20);
+      top: rem-calc(149);
+      left: rem-calc(20);
+    }
+    .link-carret {
+      @include small-link-with-caret;
+      &::before {
+        content: "";
+        display: inline-block;
+        transform: rotate(225deg);
+        width: rem-calc(8);
+        height: rem-calc(8);
+        border-top: rem-calc(3) solid $secondary-color;
+        border-right: rem-calc(3) solid $secondary-color;
+        transition: transform .4s;
+        margin-right: rem-calc(8);
+        margin-bottom: rem-calc(1);
+      }
+    }
+  }
+  .main-image {
+    img {
+      height: rem-calc(281);
+      @include breakpoint (large) {
+        width: 100%;
+        height: 410px;
+      }
+    }
+  }
+  .grid-icon {
+    width: 32px;
+    height: 32px;
+    padding: 6px;
+    background-color: $secondary-hover-cta;
+    position: absolute;
+    right: 16px;
+    top: 144px;
+
+    @include breakpoint (large) {
+      width: 69px;
+      height: 70px;
+      padding: 17px;
+    }
+
+    svg { fill: #3a3745; }
+  }
+  .first-block {
+    padding: 0 16px 48px 16px;
+
+    @include breakpoint (large) { padding: 60px; }
+
+    h1 {
+      font-size: rem-calc(30);
+      line-height: rem-calc(34);
+      margin-top: 32px;
+
+      @include breakpoint (large) {
+        margin-top: 0;
+        font-size: rem-calc(38);
+        line-height: rem-calc(42);
+        margin-bottom: rem-calc(16);
+      }
+    }
+    h2 {
+      font-size: rem-calc(24);
+      line-height: rem-calc(28);
+    }
+    h3 {
+      font-size: rem-calc(16);
+      line-height: rem-calc(20);
+      margin-bottom: 24px;
+
+      @include breakpoint (large) {
+        font-size: rem-calc(22);
+        line-height: rem-calc(26);
+      }
+    }
+    .left-block {
+      margin-bottom: 32px;
+
+      @include breakpoint (large) { padding-right: 30px; }
+    }
+
+    .right-block{
+      @include breakpoint (large) { padding-left: 30px; }
+    }
+    .request-button {
+      width: 100%;
+
+      @include breakpoint (large) { width: inherit; }
+      .button {
+        width: 100%;
+
+        @include breakpoint (medium down) {
+          padding-top: 15px;
+          padding-bottom: 15px;
+        }
+
+        @include breakpoint (large) {
+          width: inherit;
+          padding: 20px 45px;
+        }
+      }
+    }
+  }
+  .meeting-rooms {
+    border-top-width: rem-calc(1);
+    border-top-style: solid;
+    border-top-color: $gray-light;
+    @include breakpoint (large) { padding: 60px; }
+
+    .right-block {
+      padding: 24px 16px 40px 16px;
+      @include breakpoint (large) { padding: 30px 0 0 60px; }
+    }
+
+    h1 {
+      @include breakpoint (large) { margin-bottom: 10px; }
+    }
+    .room-size {
+      margin-bottom: 16px;
+      font-size: 12px;
+      line-height: 16px;
+
+      @include breakpoint (large) {
+        margin-bottom: 30px;
+        font-size: rem-calc(16);
+        line-height: rem-calc(20);
+      }
+
+      .room-people {
+        @include breakpoint (large) {
+          margin-left: 25px;
+        }
+      }
+
+      .divider {
+        padding-left: 25px;
+      }
+    }
+    .desc {
+      font-size: 12px;
+      line-height: 16px;
+      margin-bottom: 32px;
+
+      @include breakpoint (large) {
+        margin-bottom: 30px;
+        font-size: rem-calc(16);
+        line-height: rem-calc(24);
+      }
+    }
+    .floorplan {
+      @include get-font('semibold');
+    }
+    .config-title {
+      margin-top: rem-calc(30);
+      @include get-font('regular');
+
+      @include breakpoint (large) {
+        font-size: rem-calc(26);
+        line-height: rem-calc(30);
+      }
+    }
+    .config-body .amenity {
+      padding-top: rem-calc(24);
+
+      @include breakpoint (large) { padding-top: rem-calc(19); }
+    }
+
+    img {
+      @include breakpoint (large) {
+        height: 420px;
+        width: 560px;
+      }
+    }
+  }
+}

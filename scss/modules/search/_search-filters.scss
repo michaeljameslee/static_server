@@ -1,0 +1,248 @@
+/* search results filters */
+.results-filters-wrapper {
+  position: fixed;
+  top: 0;
+  background: white;
+  width: 100%;
+  display: block;
+  max-width: 100%;
+  height: 100vh;
+  padding: 0;
+  z-index: 220;
+  overflow-y: scroll;
+  margin-left: 0;
+  margin-right: 0;
+
+  @include breakpoint (small only) {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  @include breakpoint (large) {
+    top: 70px;
+    height: calc(100vh - 70px);
+    max-width: 102%;
+    width: 102%;
+    z-index: 120;
+  }
+
+  .mobile-price-buttons {
+    .fill { fill: $secondary-color; }
+  }
+  .mobile-filter-buttons {
+    text-align: center;
+    border-bottom: 1px solid $gray-light;
+    padding-bottom: 20px;
+
+    h1 {
+      padding: 0;
+      margin: 20px 0 0 0;
+      font-size: rem-calc(22);
+    }
+
+    .cancel-btn, .reset-btn {
+      position: absolute;
+      top: 28px;
+      text-transform: uppercase;
+      font-size: rem-calc(12);
+      @include get-font('semibold');
+      letter-spacing: 1px;
+    }
+    .cancel-btn {
+      left: 16px;
+      color: black;
+    }
+
+    .reset-btn {
+      right: 16px;
+    }
+  }
+
+  .close-results {
+    color: black;
+    float: right;
+    margin: 30px 5% 0 0;
+    font-size: rem-calc(26);
+  }
+
+  h1 {
+    margin: 40px 0 0 0;
+    font-size: rem-calc(16);
+    @include get-font('regular');
+    padding: 0 5%;
+
+    @include breakpoint (large) {
+      font-size: rem-calc(32);
+      @include get-font('light');
+    }
+  }
+
+  .search-code {
+    color: $secondary-color;
+    float: right;
+    margin: 30px 0 0 0;
+    font-size: rem-calc(12px);
+    font-weight: 600;
+  }
+  .bookingview-ratecode {
+    position: relative;
+    max-width: 100%;
+    padding: 40px 0 0 0;
+    top: auto;
+    left: auto;
+    transform: initial;
+    z-index: initial;
+
+    .button.primary { margin: 25px 0 0 0; }
+  }
+  .bookingview-full-body { width: 100%; }
+  .promo-close {
+    color: $secondary-color;
+    float: right;
+    margin-top: -40px;
+    font-weight: 600;
+    font-size: rem-calc(12px);
+    text-transform: uppercase;
+  }
+
+  .filter {
+    padding: 32px 0 21px;
+    width: 90%;
+    margin: 0 auto;
+    border-top: none;
+    border-bottom: 1px solid $gray-light;
+
+    @include breakpoint (large) { padding: 30px 0 19px; }
+
+    &:nth-last-child(2) {
+      border: none;
+      margin-bottom: 117px;
+    }
+
+    &.filter-sort {
+      padding: 12px 0 32px;
+      border-top: none;
+      border-bottom: 1px solid $gray-light;
+
+      @include breakpoint (large) { padding: 12px 0 0px; }
+    }
+
+    &.filter-buttons {
+      width: 100%;
+      border: none;
+      @include breakpoint (small only) {
+        padding-bottom: 44px;
+      }
+      @include breakpoint (large) {
+        padding: 30px 0;
+        border-top: 1px solid $gray-light;
+        position: fixed;
+        bottom: 0;
+        background: white;
+        z-index: 10;
+      }
+    }
+  }
+
+  .filter-options .button.secondary:focus {
+    outline: 1px;
+    @include breakpoint (large) {
+      background-color: #fefefe;
+    }
+  }
+
+  .filter-options .button.secondary:hover:focus {
+    @include breakpoint (large) {
+      background-color: $secondary-hover-cta;
+    }
+  }
+
+  .filter-buttons {
+    padding: 0;
+    @include breakpoint (large) { padding: 0 5%; }
+  }
+
+  .filter-buttons .reset-btn { margin-left: 5%; }
+  .filter-buttons .apply-filters {
+    @include breakpoint (large) { margin-right: 5%; }
+  }
+
+  .filter-radio {
+    list-style: none;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .filter-radio li {
+    color: black;
+    display: inline-block;
+    position: relative;
+    margin: 0 20px 30px 0;
+    padding-left: 0;
+    text-indent: 0;
+    &:before {
+      content: '';
+    }
+
+
+    @include breakpoint (small only) {
+      display: block;
+      margin: 0 20px 0 0;
+    }
+  }
+
+  .filter-radio li input { position: absolute; visibility: hidden; }
+  .filter-radio li label {
+    display: inline-block;
+    position: relative;
+    font-size: rem-calc(16px);
+    padding: 29px 0 0 40px;
+    margin: 0;
+    z-index: 9;
+    cursor: pointer;
+    transition: all 0.25s linear;
+    text-transform: none;
+    @include get-font('regular');
+    letter-spacing: 0;
+
+    @include breakpoint (small only) {
+      padding: 18px 0 0 40px;
+    }
+  }
+
+  .filter-radio li .check {
+    display: block;
+    position: absolute;
+    border: 1px solid $primary-color;
+    border-radius: 100%;
+    height: 22px;
+    width: 22px;
+    top: 30px;
+    left: 3px;
+    z-index: 5;
+    transition: border .25s linear;
+
+    @include breakpoint (small only) {
+      top: 20px;
+    }
+  }
+
+  .filter-radio li .check::before {
+    display: block;
+    position: absolute;
+    content: '';
+    border-radius: 100%;
+    height: 8px;
+    width: 7px;
+    top: 6px;
+    left: 7px;
+    margin: auto;
+    transition: background 0.25s linear;
+  }
+
+  .filter-radio input:checked ~ .check { border: 1px solid $primary-color; }
+  .filter-radio input:checked ~ .check::before { background: black; }
+
+  .filter-buttons .secondary { margin-right: 15px; }
+}

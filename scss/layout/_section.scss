@@ -1,0 +1,45 @@
+$section-title-font-family:       $global-font-family-light;
+$section-title-font-size:         1.375rem;
+$section-title-font-size-md:      1.625rem;
+$section-title-font-size-lg:      1.825rem;
+
+$section-title-line-height:       1.18;
+$section-title-p-margin:          0 0 .5rem;
+
+$section-title-margin:            0 0 $global-margin-sm;
+$section-title-margin-md:         0 0 $global-margin-md;
+$section-title-margin-lg:         0 0 $global-margin-md;
+
+.section {
+  padding-bottom: 60px;
+  border-bottom: 1px solid $gray-light;
+  margin-bottom: 60px;
+
+  &:last-of-type, 
+  &:only-of-type, 
+  &:last-child, 
+  &:only-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+  
+  &.global-brands {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+}
+
+.section-title {
+  font-family: $section-title-font-family;
+  font-size: $section-title-font-size;
+  line-height: $section-title-line-height;
+  margin: $section-title-p-margin;
+  @include breakpoint (medium) { font-size: $section-title-font-size-md; }
+  @include breakpoint (large) { font-size: $section-title-font-size-lg; }
+}
+
+.section-title-wrapper {
+  margin: $section-title-margin;
+  @include breakpoint (medium) { margin: $section-title-margin-md; }
+  @include breakpoint (large) { margin: $section-title-margin-lg; }
+}

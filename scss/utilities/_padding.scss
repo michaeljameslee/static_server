@@ -1,0 +1,6 @@
+// PADDING
+.padding {
+  padding: $global-padding-interior-sm;
+  @include breakpoint(medium) { padding: $global-padding-interior-sm; }
+  @include breakpoint(large) { padding: $global-padding-interior-lg; }
+}

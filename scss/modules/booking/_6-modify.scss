@@ -1,0 +1,51 @@
+// ------------------------------------//
+//    Modify
+// ------------------------------------//
+
+.bookingview-modify {
+  max-width: none;
+  padding: (map-get($header-height, small) + 16px) 0 34px;
+  position: relative;
+  @include breakpoint(large) { padding: 117px 0 100px; }
+  & > .row {
+    max-width: none;
+    margin: 0;
+    @include breakpoint(large) { margin: 0 60px; }
+  }
+  .column {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .column:first-child {
+    @include breakpoint(large) { padding-left: 0; }
+  }
+  h1 {
+    font-size: rem-calc(40px);
+    line-height: rem-calc(44px);
+    margin-bottom: rem-calc(9px);
+    @include breakpoint(large) {
+      font-size: rem-calc(39px);
+      line-height: rem-calc(42px);
+      margin-bottom: rem-calc(20px);
+    }
+  }
+  p {
+    margin-bottom: rem-calc(21px);
+  }
+  .field {
+    margin-bottom: rem-calc(20px);
+    @include breakpoint(large) { margin-bottom: rem-calc(18px); }
+  }
+  label {
+    margin-bottom: rem-calc(11px);
+    @include breakpoint(large) { margin-bottom: rem-calc(7px); }
+  }
+  input { margin-bottom: 0; }
+  .field-errors { transform: translateY(0); }
+  .button {
+    width: 100%;
+    padding: rem-calc(15px 0);
+    margin-top: rem-calc(10px);
+    @include breakpoint(large) { padding: rem-calc(11px 0); }
+  }
+}

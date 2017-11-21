@@ -1,0 +1,48 @@
+/*doc
+---
+title: Background-Image Cards
+name: location-bg-img-cards
+author: William Pansky [SG0301235]
+category: Cards
+---
+
+<p class="label loc">File location</p>
+scss/modules/cards/bg-image-cards/*.scss
+
+```html_example
+<div class="cardholder grid _4c">
+    <div class="card-wrapper">
+        <article class="card background-card" itemtype="http://schema.org/Place" tabindex="0" data-card-type="Background-Image Card">
+            <meta itemprop="addressLocality" content="">
+            <meta itemprop="addressRegion" content="London-GB">
+            <meta itemprop="category" content="Destination">
+            <a itemprop="url" href="/en/search-results?city=London-GB">
+                <div class="card-img-cover">
+                    <picture>
+                        <source media="(min-width: 1080px)" srcset="/uploads/7143/67/city-view-london-uk-card.jpg">
+                        <source media="(min-width: 769px)" srcset="/uploads/7143/66/city-view-london-uk-card.jpg">
+                        <source media="(min-width: 375px)" srcset="/uploads/7143/65/city-view-london-uk-card.jpg">
+                        <source media="(min-width: 320px)" srcset="/uploads/7143/64/city-view-london-uk-card.jpg">
+                        <img itemprop="image" src="/uploads/7143/0/city-view-london-uk-card.jpg" alt="" class="cover-img" data-type="card-bg-img" data-picture="content/card/mediafile">
+                    </picture>
+                    <div class="shadow"></div>
+                </div>
+                <header class="card-header">
+                    <h3 class="card-title" itemprop="name">London, United Kingdom</h3>
+                    <p class="card-details">22 Hotels</p>
+                    <p class="card-description">Starting at $53.37&nbsp;USD
+                    </p>
+                </header>
+            </a>
+        </article>
+    </div>
+</div>
+```
+
+<p class="label rel-links">Relevant links</p>
+- [Design Mockups](https://zpl.io/29NyDzV)
+- [Atlassian Docs](https://radisson.atlassian.net/wiki/spaces/SD/pages/19693570/Card+Styling)
+*/
+
+@import 'layout';
+@import 'typography';

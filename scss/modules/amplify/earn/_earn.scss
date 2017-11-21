@@ -1,0 +1,137 @@
+.clubcarlson-page {
+  position: relative;
+  .breadcrumb-back {
+    position: static;
+    padding: 24px 16px;
+    @include breakpoint(large) {
+      // position: absolute;
+      // top: 0;
+      // left: 0;
+      // z-index: 1;
+      padding: 40px 60px;
+    }
+  }
+
+  .row {
+    max-width: 100%;
+  }
+  .column.module-content {
+    padding: rem-calc(0 16px);
+    @include breakpoint(large) { padding: rem-calc(0 0 0 60px); }
+  }
+  .main-content {
+    margin-bottom: 40px;
+    @include breakpoint(large) { margin-bottom: 64px; }
+  }
+}
+
+.clubcarlson-earn,
+.clubcarlson-member-benefits {
+  position: relative;
+  padding-top: rem-calc(64);
+
+  @include breakpoint(large) { padding-top: 0; }
+
+  &.user-logged-in {
+    .clubcarlson-section.earn-stay { border-top: 0; }
+  }
+
+  .clubcarlson-section {
+    text-align: center;
+    padding: rem-calc(40 16 0);
+    border-top: 1px solid $gray-light;
+
+    @include breakpoint(large) { padding: rem-calc(60); }
+  }
+
+  h1 {
+    @include heading-2;
+    font-size: rem-calc(22);
+    line-height: 1.18;
+    margin-bottom: rem-calc(16);
+
+    @include breakpoint(large) {
+      font-size: rem-calc(32);
+      line-height: 1.13;
+      margin-bottom: rem-calc(20);
+    }
+  }
+
+  h2 {
+    @include heading-2;
+    font-size: rem-calc(22);
+    line-height: 1.18;
+    margin-bottom: rem-calc(16);
+
+    @include breakpoint(large) {
+      font-size: rem-calc(32);
+      line-height: 1.13;
+      margin-bottom: rem-calc(20);
+    }
+  }
+
+  h3 {
+    @include heading-3;
+    margin-bottom: rem-calc(8);
+
+    @include breakpoint(large) {
+      font-family: $proxima-nova-reg;
+      font-size: rem-calc(22);
+      line-height: 1.18;
+      margin-bottom: rem-calc(10);
+    }
+  }
+
+  p {
+    font-size: rem-calc(12);
+    line-height: 1.5;
+    margin-bottom: rem-calc(56);
+
+    @include breakpoint(large) {
+      font-size: rem-calc(16);
+      line-height: 1.57;
+      margin-bottom: rem-calc(40);
+    }
+  }
+}
+
+.breadcrumb-back {
+  display: block;
+  position: absolute;
+  top: 24px;
+  left: 16px;
+  @include label-text;
+  color: $true-black;
+
+  @include breakpoint(large) {
+    top: 40px;
+    left: 60px;
+  }
+
+  @include breakpoint(xlarge) { left: 60px; }
+
+  &::before {
+    content: '';
+    display: inline-block;
+    transform: rotate(225deg);
+    width: 8px;
+    height: 8px;
+    border-top: 3px solid $secondary-color;
+    border-right: 3px solid $secondary-color;
+    margin-right: 8px;
+  }
+}
+
+
+.earn-stay {
+  .earn-item div {
+    font-size: rem-calc(16);
+    line-height: 1.25;
+    padding: rem-calc(0 16);
+
+    @include breakpoint(large) {
+      line-height: 1.5;
+      padding: 0;
+    }
+  }
+}

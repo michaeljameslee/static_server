@@ -1,0 +1,120 @@
+// DINING OPTIONS
+.dining-options {
+  padding-top: 0;
+  & > .columns {
+    @include breakpoint(small only) { padding-left: 0; padding-right: 0; }
+  }
+  .back-to-prop {
+    display: inline-block;
+    padding: 0 .625rem 26px;
+  }
+}
+.dinopt {
+  color: $white;
+  text-shadow: 2px 2px 3px $gray-dark;
+  display: flex;
+  position: relative;
+  padding: 0;
+  margin-bottom: 24px;
+  background-color: black;
+
+  @include breakpoint(small only) { padding-left: 0; padding-right: 0; }
+  @include breakpoint(medium) {
+    margin-right: 27px;
+    flex: 0 0 47%;
+  }
+  @include breakpoint(large) {
+    margin-right: 24px;
+    max-width: 33%;
+    flex: 0 0 31.6%;
+  }
+
+  &:nth-child(2n) {
+    @include breakpoint(medium only) { margin-right: 0; }
+  }
+
+  &:nth-child(3n) {
+    @include breakpoint(large) { margin-right: 0; }
+  }
+
+  &:after {
+    content: '';
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    background-image: linear-gradient(to top, rgba(0,0,0,1), transparent);
+    bottom: 0;
+    left: 0;
+  }
+  .dinopt_container {
+    background-color: $gray-dark;
+    position: relative;
+    min-height: 472px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    @include breakpoint(large) {
+      // min-height: 460px;
+      min-height: 36vw;
+    }
+  }
+  .dinopt_info {
+    padding: 68px 24px 24px;
+    z-index: 1;
+    @include breakpoint(large) {
+      padding: 30px 30px 28px;
+    }
+  }
+  img {
+    height: auto;
+    left: 50%;
+    max-height: 472px;
+    max-width: none;
+    min-height: 100%;
+    min-width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: auto;
+    @include breakpoint(large) {
+      min-height: 36vw;
+    }
+  }
+  h2 {
+    font-size: rem-calc(24px);
+    line-height: 28px;
+    margin-bottom: 12px;
+    @include breakpoint(large) {
+      font-size: rem-calc(28px);
+      line-height: 36px;
+    }
+  }
+  .dinopt_info_desc {
+    font-family: $georgia;
+    font-size: 12px;
+    line-height: 20px;
+    margin-bottom: 13px;
+    @include breakpoint(large) { margin-bottom: 16px; }
+  }
+  .dinopt_cta {
+    color: $white;
+    letter-spacing: 0.1rem;
+    position: relative;
+  }
+  .dinopt_cta.info-go:after {
+    position: static;
+    margin-left: 7px;
+    text-shadow: 1px -1px 1px $gray-dark;
+  }
+}
+.content-info {
+  display: flex;
+}
+
+.radisson-red .spaced-panel:first-of-type.dining-overview{ 
+  @media screen and (min-width: 64em){
+    padding-left: 3.8125rem;     
+  }
+}

@@ -1,0 +1,133 @@
+.email-signup, .email-signup-confirm {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 120;
+  padding-bottom: rem-calc(30);
+  overflow: scroll;
+
+  @include breakpoint(large) {
+    top: 70px;
+    z-index: 140;
+    padding-top: rem-calc(50);
+    padding-bottom: 0;
+  }
+
+  .modal-close {
+    @include breakpoint(medium) {
+      width: rem-calc(18);
+      height: rem-calc(18);
+      top: 150px;
+      left: 20px;
+      right: auto;
+    }
+
+    @include breakpoint(large) {
+      position: fixed;
+      width: rem-calc(20);
+      height: rem-calc(20);
+      left: auto;
+      right: 30px;
+      top: 90px;
+    }
+
+    p {
+      display: none;
+    }
+  }
+
+  .signup-component-content h3 {
+    margin-top: rem-calc(40);
+
+    @include breakpoint(large) { margin-top: 0; }
+  }
+
+  .email-optin-label {
+    font-size: rem-calc(16);
+    line-height: 1.5;
+    color: $near-black;
+    margin-bottom: rem-calc(24);
+
+    @include breakpoint(large) {
+      font-size: rem-calc(14);
+      line-height: 1.57;
+      color: $gray-dark;
+      margin-bottom: rem-calc(20);
+    }
+  }
+}
+
+.email-signup-form {
+  .checkbox-field {
+    input:checked + label::after, input:not(:checked) + label::after { top: 0; }
+  }
+}
+.labelforuserid {
+  display: block;
+  color: #000;
+  font-family: "Proxima N W01 Smbd",Arial,sans-serif;
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: .25rem;
+}
+.email-signup-confirm-content {
+  padding: rem-calc(43 16 0);
+
+  @include breakpoint(large) {
+    max-width: rem-calc(360);
+    margin: 0 auto;
+    padding: rem-calc(60 0 0);
+  }
+
+  h3 {
+    font-size: rem-calc(22);
+    line-height: 1.18;
+
+    @include breakpoint(large) {
+      font-family: $proxima-nova-light;
+      font-size: rem-calc(32);
+      line-height: 1.125;
+    }
+
+    &::before {
+      content: '\f00c';
+      font-family: fontawesome;
+      font-size: rem-calc(12);
+      line-height: 1;
+      color: $success-green;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: rem-calc(32);
+      height: rem-calc(32);
+      border: 1px solid $success-green;
+      border-radius: 50%;
+      margin-right: rem-calc(12);
+      position: relative;
+      top: -3px;
+
+      @include breakpoint(large) {
+        margin-right: rem-calc(15);
+        top: -5px;
+      }
+    }
+  }
+
+  p {
+    margin-bottom: rem-calc(24);
+
+    @include breakpoint(large) { margin-bottom: rem-calc(30); }
+  }
+
+  .email-signup-user {
+    @include breakpoint(large) { margin-bottom: rem-calc(20); }
+  }
+}
+
+.email-signup-confirm-close {
+  padding: rem-calc(11 0);
+}

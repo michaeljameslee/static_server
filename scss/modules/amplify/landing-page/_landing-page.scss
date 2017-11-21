@@ -1,0 +1,459 @@
+.clubcarlson-landing,
+.clubcarlson-earn,
+.clubcarlson-ecert-landing,
+.clubcarlson-member-benefits {
+  padding-bottom: rem-calc(88);
+
+  @include breakpoint(large) { padding-bottom: 0; }
+
+  .loader-wrapper {
+    top: map-get($header-height, small);
+
+    @include breakpoint(large) { top: 0; }
+  }
+
+  .row {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  p {
+    color: $gray-dark;
+    margin-bottom: rem-calc(30);
+  }
+
+  .divider {
+    max-width: rem-calc(30);
+    border-bottom: 2px solid $primary-color;
+    margin: 0 auto rem-calc(12);
+
+    @include breakpoint(large) {
+      margin: rem-calc(20 0);
+      text-align: left;
+    }
+  }
+
+  &.user-logged-in {
+    padding-bottom: 0;
+
+    .clubcarlson-intro.user-logged-out, .clubcarlson-login, .iwttab-login { display: none; }
+
+    .clubcarlson-intro .clubcarlson-landing-image {
+      @include breakpoint(large) {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+  }
+
+  &:not(.user-logged-in) {
+    .clubcarlson-intro.user-logged-out {
+      display: block;     
+    }
+    @include breakpoint(large) {
+      .clubcarlson-intro.user-logged-out {
+        padding-left: 60px;
+      }
+    }
+    .club-carlson-join {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      z-index: 12;
+      height: rem-calc(64);
+
+      @include breakpoint(large) {
+        position: static;
+        height: rem-calc(60);
+        padding: rem-calc(18);
+        margin-bottom: rem-calc(60px);
+      }
+    }
+  }
+
+  .account-special-offer {
+    &:not(:nth-of-type(3)) {
+      @include breakpoint(xlarge) { margin: 0; }
+    }
+
+    figure {
+      max-height: rem-calc(177);
+      @include breakpoint(large) { max-height: rem-calc(145); }
+      @include breakpoint(xxlarge) { max-height: rem-calc(195); }
+
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .row.slideshow-container {
+    @include breakpoint(large) { margin-bottom: rem-calc(40); }
+  }
+
+  .login-form input {
+    margin-bottom: rem-calc(16);
+
+    @include breakpoint(large) { margin-bottom: rem-calc(10); }
+  }
+
+  .footer.row {
+    @include breakpoint(small only) {
+      margin: 0;
+      padding: rem-calc(12 0);
+    }
+    margin-bottom: rem-calc(50);
+  }
+}
+
+
+
+.clubcarlson-intro:not(.user-logged-out) {
+  position: relative;
+
+  .clubcarlson-landing-image {
+    img {
+      @include breakpoint(large) {
+        min-height: rem-calc(480);
+        object-fit: cover;
+      }
+
+      @include breakpoint(xlarge) { min-height: 100%; }
+    }
+  }
+
+  .intro-offer-card {
+    position: relative;
+    top: -70px;
+    max-width: rem-calc(340);
+    margin: 0 auto;
+    background-color: white;
+    border: 1px solid $gray-light;
+    border-radius: 4px;
+    overflow: hidden;
+
+    @include breakpoint(large) {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-60%);
+      left: 60px;
+      max-width: rem-calc(360);
+    }
+
+    article {
+      padding: rem-calc(32 24 70);
+      color: black;
+
+      @include breakpoint(large) { padding: rem-calc(40 40 48); }
+
+      h2 {
+        font-family: $proxima-nova-semibold;
+        font-size: rem-calc(12);
+        line-height: 1.33;
+        color: $gray-medium;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: rem-calc(16);
+
+        @include breakpoint(large) { margin-bottom: rem-calc(10); }
+      }
+
+      h3 {
+        font-family: $proxima-nova-light;
+        font-size: rem-calc(30);
+        line-height: 1.13;
+
+        @include breakpoint(large) { font-size: rem-calc(32); }
+      }
+    }
+
+    h1 {
+      font-family: $proxima-nova-semibold;
+      font-size: rem-calc(12);
+      line-height: 1.33;
+      color: $gray-medium;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: rem-calc(16);
+
+      @include breakpoint(large) { margin-bottom: rem-calc(10); }
+    }
+
+    h2 {
+      font-family: $proxima-nova-light;
+      font-size: rem-calc(30);
+      line-height: 1.13;
+
+      @include breakpoint(large) { font-size: rem-calc(32); }
+    }
+
+    footer {
+      border-top: 1px solid $gray-light;
+      padding: rem-calc(24);
+
+      @include breakpoint(large) { padding: rem-calc(24 40); }
+
+      .offer-hotel-logo, .offer-hotel-title { padding-left: 0; }
+
+      .offer-hotel-title {
+        @include flex;
+        flex-direction: column;
+        justify-content: center;
+
+        font-family: $proxima-nova-semibold;
+        font-size: rem-calc(10);
+        line-height: 1.4;
+        color: $gray-medium;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 0;
+      }
+
+      h3 {
+        font-family: $proxima-nova-semibold;
+        font-size: rem-calc(10);
+        line-height: 1.4;
+        color: $gray-medium;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+
+
+.clubcarlson-section {
+  @include breakpoint(large) { padding: rem-calc(60); }
+
+  &.clubcarlson-earn {
+    p { margin-bottom: rem-calc(20); }
+  }
+
+  &.clubcarlson-stay {
+    @include breakpoint(large) {
+      padding-bottom: rem-calc(120);
+      border-bottom: 1px solid $gray-light;
+    }
+
+    p {
+      margin-bottom: rem-calc(16);
+
+      @include breakpoint(large) { margin-bottom: rem-calc(20); }
+    }
+
+    ul {
+      margin-bottom: rem-calc(40);
+      margin-left: 0;
+      list-style-type: none;
+      list-style-position: inside;
+    }
+
+    li {
+      position: relative;
+      &::before {
+        transform: translateY(50%);
+        content: '\2022';
+        padding-right: rem-calc(24);
+      }
+    }
+
+  }
+
+  &.clubcarlson-business { border-bottom: 1px solid $gray-light; }
+}
+
+.clubcarlson-landing-content {
+  padding: rem-calc(32 16 56);
+
+  @include breakpoint(large) { align-self: center; }
+
+  &.content-right {
+    @include breakpoint(large) { padding: rem-calc(0 60 0 65); }
+  }
+
+  &.content-left {
+    @include breakpoint(large) { padding: rem-calc(0 136 0 0); }
+  }
+
+  img { margin-bottom: rem-calc(32); }
+
+  h2 {
+    font-family: $proxima-nova-light;
+    font-size: rem-calc(30);
+    line-height: 1.13;
+    margin-bottom: rem-calc(16);
+
+    @include breakpoint(large) {
+      font-size: rem-calc(38);
+      line-height: 1.11;
+      margin-bottom: rem-calc(20);
+    }
+  }
+
+  .points-chart {
+    @include flex;
+    justify-content: center;
+    margin: rem-calc(30 0 40);
+
+    @include breakpoint(large) { justify-content: flex-start; }
+
+    .chart-item-1 { margin-right: rem-calc(40); }
+
+    .chart-item-2 { margin-left: rem-calc(40); }
+
+    .chart-separator {
+      font-size: rem-calc(26);
+      line-height: 1.15;
+      color: $gray-medium;
+      padding-top: rem-calc(16);
+    }
+
+    .chart-icon {
+      @include flex;
+      width: rem-calc(64);
+      height: rem-calc(64);
+      margin: 0 auto rem-calc(20);
+
+      img { margin: auto; }
+    }
+
+    h4 {
+      font-family: $proxima-nova-semibold;
+      font-size: rem-calc(12);
+      line-height: 1.33;
+      color: $true-black;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-align: center;
+      margin-bottom: 0;
+    }
+
+    p {
+      margin-bottom: 0;
+      font-family: $proxima-nova-semibold;
+      font-size: rem-calc(12);
+      line-height: 1.33;
+      color: $true-black;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+  }
+
+  .button {
+    width: 100%;
+    padding: rem-calc(16);
+
+    @include breakpoint(large) {
+      width: auto;
+      padding: rem-calc(12 30);
+    }
+  }
+}
+
+.clubcarlson-offers {
+  border-bottom: 1px solid $gray-light;
+
+  h2 {
+    font-size: rem-calc(22);
+    line-height: 1.18;
+    margin-bottom: rem-calc(32);
+
+    @include breakpoint(large) {
+      font-size: rem-calc(26);
+      line-height: 1.15;
+      margin-bottom: rem-calc(20);
+    }
+  }
+
+  .row.slideshow-container {
+    @include breakpoint(large) { justify-content: space-between; }
+  }
+
+  .account-special-offer {
+    @include breakpoint(large) {
+      margin-right: 0;
+      flex: 0 0 48%;
+    }
+
+    @include breakpoint(xlarge) { flex: 0 0 22.45%; }
+
+    h3 {
+      font-family: $proxima-nova-reg;
+      font-size: rem-calc(22);
+      line-height: 1.18;
+    }
+  }
+
+  .button.expanded {
+    padding: rem-calc(16);
+
+    @include breakpoint(large) {
+      width: 100%;
+      padding: rem-calc(21 0);
+      font-size: rem-calc(14);
+    }
+  }
+}
+
+.clubcarlson-login {
+  text-align: center;
+
+  @include breakpoint(large) { text-align: left; }
+
+  h2 {
+    font-size: rem-calc(22);
+    line-height: 1.18;
+    text-align: center;
+    margin-bottom: rem-calc(16);
+
+    @include breakpoint(large) {
+      font-size: rem-calc(32);
+      line-height: 1.13;
+      text-align: left;
+      margin-bottom: rem-calc(20);
+    }
+  }
+
+  p {
+    font-size: rem-calc(12);
+    line-height: 1.67;
+
+    @include breakpoint(large) {
+      font-size: rem-calc(16);
+      line-height: 1.5;
+    }
+  }
+
+  position: relative;
+  padding: rem-calc(40 16 56);
+
+  @include breakpoint(large) { padding: rem-calc(60); }
+
+  .columns { padding: 0; }
+
+  .login-form {
+    @include breakpoint(large) { max-width: rem-calc(360); }
+
+    label {
+      color: $true-black;
+      text-align: left;
+    }
+    .button {
+      padding: rem-calc(16);
+
+      @include breakpoint(large) { padding: rem-calc(11 12); }
+    }
+  }
+}
+
+.clubcarlson-login-content {
+  @include breakpoint(large) {
+    flex: 0 0 34%;
+    max-width: 34%;
+  }
+}

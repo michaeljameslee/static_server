@@ -1,0 +1,78 @@
+//
+// CMS Module: Content Block
+//
+
+.content-block {
+  border-bottom: 1px solid $gray-light;
+  padding: rem-calc(60) 0;
+  text-align: center;
+
+  &__header {
+    margin-bottom: rem-calc(10);
+  }
+
+  &__content {
+    font-size: rem-calc(12);
+    color: $gray-dark;
+    max-width: 400px;
+    width: 85%;
+    margin: 0 auto;
+
+    @include breakpoint(large) {
+      font-size: rem-calc(16);
+      max-width: 570px;
+    }
+    *:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// This is for simple page templates with a single content block on them
+.single-content {
+  text-align: left;
+  padding-top: 30px;
+
+  @include breakpoint(large) { margin: 0 60px; }
+
+  .main-content-area & {
+    @include breakpoint(large) { margin: 0; }
+  }
+
+  .column {
+    @include breakpoint(large) { padding: 0; }
+  }
+
+  .content-block__header {
+    @include get-font('light');
+    font-size: rem-calc(30);
+    line-height: rem-calc(34);
+    padding-bottom: rem-calc(24);
+    margin-bottom: rem-calc(24);
+    position: relative;
+    @include breakpoint(large) {
+      font-size: rem-calc(50);
+      line-height: rem-calc(56);
+      padding-bottom: rem-calc(30);
+      margin-bottom: rem-calc(30);
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background: $primary-color;
+    }
+  }
+
+  .content-block__content {
+    max-width: none;
+    width: 100%;
+
+    @include breakpoint(large) {
+      max-width: none;
+    }
+  }
+}

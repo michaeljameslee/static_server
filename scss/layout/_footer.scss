@@ -1,0 +1,203 @@
+.footer {
+  max-width: 100%;
+  border-top: 1px solid $gray-light;
+  background-color: $white;
+  @include breakpoint(medium) {
+    padding: 70px 50px 0;
+    margin-bottom: 50px;
+  }
+}
+.footer .column {
+  @include breakpoint(small only) {
+    cursor: pointer; 
+    border-bottom: 1px solid $gray-light;
+    padding: 1rem;
+    margin: 0 auto;
+  }
+
+  &.signup-component-content,
+  &.field,
+  &.email-signup-confirm-content,
+  &.signup-form-wrapper { border-bottom: 0; }
+
+  &:nth-child(4) {
+    @include breakpoint(small only) {
+      border: none;
+    }
+  }
+
+  h2, ._h2 {
+    font-family: $proxima-nova-reg;
+    font-size: rem-calc(16);
+    padding: 16px 5px 16px 0;
+    margin: 0;
+    @include breakpoint(small only) { padding: 0; }
+    @include breakpoint(medium) {
+      font-size: rem-calc(18);
+      line-height: 1.2;
+      padding: 0;
+      margin: rem-calc(0 0 30);
+    }
+
+    &:after {
+      @include breakpoint(small only) {
+        content: "\f107";
+        position: relative;
+        float: right;
+        font-size: 1.25rem;
+        transition: 250ms ease transform;
+        transform: rotate(0deg);
+        font-family: FontAwesome;
+        font-weight: 600;
+        color: $secondary-color;
+      }
+    }
+
+    a { color: black; }
+  }
+
+  .fa {
+    float: right;
+    margin: 7px 0 0 0;
+    color: $secondary-color;
+    font-weight: 600;
+  }
+
+  ul {
+    display: none;
+    list-style: none;
+    font-size: rem-calc(12);
+    margin: 10px 0;
+    font-weight: 600;
+    color: $gray-dark;
+    @include get-font('paragraph');
+
+    @include breakpoint(medium) { display: block; }
+  }
+  li { line-height: 1.83;
+    font-family: $proxima-nova-semibold;
+    a {
+      @include breakpoint(medium down) {
+        display: block;
+        padding: .5rem 0;
+      }
+    }
+  }
+  a:not(.email-signup-trigger) { color: $gray-dark; }
+
+  &.active {
+    h2 {
+      @include breakpoint(medium down) {
+        padding: 16px 5px 8px 0;
+      }
+    }
+    h2:after {
+      @include breakpoint(small only) {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+.footer-subscribe {
+  p {
+    font-size: rem-calc(14);
+    line-height: 1.57;
+    margin-bottom: rem-calc(20);
+  }
+
+  .button {
+    width: rem-calc(134);
+    padding: rem-calc(11 0);
+  }
+}
+
+.footer-logos {
+  background-color: $white;
+  padding: 10px 10px 13px;
+  border-top: 1px solid $gray-light;
+  border-bottom: 1px solid $gray-light;
+  @include breakpoint(medium) { border-bottom: none; padding: 62px 0; }
+
+  .logos-list {
+    display: flex;
+    list-style: none;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: $global-width;
+    @include breakpoint(large) { justify-content: space-around; flex-wrap: nowrap; }
+    li {
+      width: 33%;
+      height: 25vw;
+      @include breakpoint(medium) { width: 25%; }
+      @include breakpoint(large) { width: 13%; height: auto; }
+    }
+    a {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+    .logo {
+      width: 48%;
+    }
+    .logo-quorvus-collection { min-width: 69%; }
+    .logo-cis { min-width: 63%; }
+    .logo-park-plaza { min-width: 56%; }
+    .logo-radisson-red, .logo-radisson-blu { min-width: 60%; }
+    .logo-club-carlson { min-width: 66%; }
+  }
+}
+
+.footer-social {
+  background-color: $white;
+  text-align: center;
+  padding-top: 30px;
+  @include breakpoint(large) {
+    padding-top: 0;
+    padding-bottom: 30px;
+  }
+
+  .social-list {
+    list-style: none;
+    margin: 0 auto;
+
+    li {
+      display: inline-block;
+      margin: 0 40px;
+
+      @include breakpoint(medium) { margin: 0 35px; }
+    }
+
+    span {
+      text-indent: -9999em;
+      overflow: hidden;
+      display: block;
+    }
+
+    a { color: $gray-medium; }
+
+    .fa { font-size: rem-calc(25); }
+  }
+
+  p {
+    color: $gray-dark;
+    font-size: rem-calc(12);
+
+    @include breakpoint(medium) { font-size: rem-calc(14); }
+  }
+
+  .mobile-newsletter {
+    display: block;
+    height: rem-calc(64);
+    background: $primary-color;
+    font-family: $proxima-nova-semibold;
+    font-size: rem-calc(14);
+    line-height: 1.57;
+    color: $true-black;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: rem-calc(20 0);
+    width: 100%;
+  }
+}

@@ -1,0 +1,198 @@
+
+@import '!config';                    // variables and config settings
+@import 'card-grid/!module';          // grid properties for card parent elems
+@import 'offer-cards/!module';        // Offer Cards (contains parent styles)
+@import 'large-cards/!module';        // Large Cards (TwoUp)
+@import 'bg-img-cards/!module';       // Background-Image Cards
+@import 'reservation-cards/!module';  // searchresults.html cards
+@import 'room-cards/!module';         // room-selection.html cards
+@import 'map-cards/!module';          // map.js cards
+@import 'blog-cards/!module';         // blog.xsl cards
+@import 'offer-cards-fw/!module';     // full-width offer cards
+@import 'components/!module';         // various additional items (button etc)
+@import 'flickity';                   // Specific .flickity-enabled styles
+
+// ========================================================================
+// FORCE-2359 (TEMPORARY CODE - WILL CHANGE)
+// Forcing max-width: 1280px for the following card locations:
+// ========================================================================
+/* stylelint-disable declaration-no-important */
+.clubcarlson-offers .row.slideshow-container,
+.offer-cardholder,
+.cardholder._2c,
+.cardholder._4c,
+.brand-offers-cards-carousel,
+.row.dest-card-wrapper,
+.button-expanded,
+.cta-full,
+.roomselection-rooms,
+.results.row {
+  flex-wrap: wrap !important;
+  max-width: $container-max-width !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+/* stylelint-enable */
+
+.brand-cards article .brand-card-image {
+  border-radius: .1765rem;
+}
+
+.brand-cards article:after {
+  content: none;
+}
+
+.brand-cards .shadow {
+  height: 65%;
+}
+
+.brand-cards .brand-property-content {
+  text-shadow: 0 1px 2px rgba(0,0,0,0.875);
+}
+
+.hotel-card .card-v2 {
+  box-shadow: $card-box-shadow-hover;
+}
+
+.hotel-card .card-v2:hover,
+.hotel-card .card-v2:focus {
+  transform: none;
+}
+
+.hotel-card .card-v2 .expiration i {
+  margin-right: .5rem;
+}
+
+.hotel-card .card-beak {
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 12px solid #ffffff;
+  bottom: -9px;
+  height: 0px;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  width: 0px;
+}
+
+/* stylelint-disable declaration-no-important */
+.hotel-card,
+.hotel-card-loader-wrapper {
+  display: none !important;
+  
+  @include breakpoint(large) {
+    display: block !important;
+  }
+}
+/* stylelint-enable */
+
+.footer .column {
+  height: 59px;
+}
+
+.footer .column.active {
+  height: auto;
+}
+
+.footer .column ul,
+.footer .column ul li {
+  display: block;
+  margin: 0;
+  opacity: 0;
+  transition: 400ms ease-in-out;
+  transform: translateY(20px);
+}
+
+.footer.row > .column {
+  overflow: hidden;
+  transition: 300ms ease-in-out;
+}
+
+.footer.row > .column.active ul,
+.footer.row > .column.active ul li {
+  height: auto;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.footer.row > .column.active ul li {
+  opacity: 1;
+  transition: 400ms ease-in-out;
+  transform: translateY(0);
+}
+
+@include breakpoint(medium) {
+  .footer .column,
+  .footer .column.active {
+    height: auto;
+  }
+
+  .footer .column ul,
+  .footer .column ul li {
+    height: auto;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .footer .column a {
+    transition: 300ms ease-in-out;
+  }
+
+  .footer .column a:hover,
+  .footer .column a:focus {
+    opacity: .625;
+  }
+
+  .footer.row > .column.active ul,
+  .footer.row > .column.active ul li {
+    opacity: 1;
+    transform: translateY(0);
+    margin: 0;
+  }
+}
+
+.roomview-images .masthead {
+  height: 75vw;
+  min-height: 75vw;
+  max-height: 75vw;
+  overflow: hidden;
+
+  @media (min-width: 546px) {
+    height: 410px;
+    min-height: 410px;
+    max-height: 410px;
+  }
+}
+
+.fwc-full-wrapper {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+  &:hover, &:focus {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transform: translateY(-10px);
+  }
+}
+
+.single-content .content-block__content {
+  word-break: break-word;
+}
+
+.close-btn,
+.open-lb-gallery,
+.hero .gallery-loader {
+  transition: $card-cart-transition;
+  &:hover, &:focus {
+    transform: scale(1.3625);
+  }
+}
+
+.hero .gallery-loader:hover, 
+.hero-we .gallery-loader:hover {
+  transition: $card-cart-transition;
+}
+
+.rad {
+  transition: 100ms ease-in-out;
+}

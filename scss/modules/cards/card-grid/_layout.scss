@@ -1,0 +1,424 @@
+/***
+PLEASE NOTE
+==============================
+In the effort of refactoring our SCSS into smaller modules and components, I've tried to rid the use of element selectors (e.g: .class a, .class h2) and the use of specificity selectors (e.g: .class > a); however, since cards use flickity.js for mobile-swiping I've added specific selectors here (e.g: .grid & .card-wrapper:first-child { margin: 0 1rem 1rem 0; }) that only take place when .flickity-enabled is NOT present. That way the styles don't take place until flickity.js is no longer active on larger breakpoints.
+***/
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+
+  &._2card > .card-wrapper {
+    width: 100%;
+    margin: 0 auto 1rem;
+  }
+
+  &._2card > .card-wrapper:last-child {
+    width: 100%;
+    margin: 0 auto 1rem;
+  }
+
+  &._2card > .card-wrapper:only-child {
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+
+  & > .card-wrapper {
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+
+  @media (min-width: 770px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    &._2card > .card-wrapper {
+      flex: 50%;
+    }
+
+    & > .card-wrapper {
+      flex: 48%;
+      max-width: 49%;
+    }
+
+    & > .card-wrapper:nth-child(odd) { margin: 0 1rem 1rem 0; }
+    & > .card-wrapper:nth-child(even) { margin: 0 0 1rem 0; }
+  } // @media 770px
+
+  // @media (min-width: 970px) {
+  //   &.cardholder {
+  //     width: 100%;
+  //     max-width: 1280px;
+  //   }
+
+  //   &._2card > .card-wrapper {
+  //     flex: 1;
+  //     width: 100%;
+  //     max-width: 50%;
+  //   }
+
+  //   & > .card-wrapper {
+  //     flex: 33.33%;
+  //     width: 100%;
+  //     max-width: $card-max-width;
+  //     margin: 0 1rem 0 0;
+  //   }
+
+  //   // & > .card-wrapper:first-child { margin: 0 1rem 0 0; }
+  //   & > .card-wrapper:nth-child(2n+2) { margin: 0 1rem 1rem 0; }
+  //   & > .card-wrapper:nth-child(3n+3) { margin: 0 1rem 1rem 0; }
+  //   & > .card-wrapper:nth-child(4n+4) { margin: 0 0 1rem; }
+  //   & > .card-wrapper:nth-child(5n+5) { margin: 0 1rem 1rem 0; }
+  //   & > .card-wrapper:last-child { margin: 0; }
+  // } // @media 970px
+
+  @media (min-width: 1024px) {
+    &.cardholder {
+      width: 100%;
+      max-width: 1280px;
+      padding: 0 60px;
+    }
+
+    &._2card > .card-wrapper {
+      flex: 1;
+      width: 100%;
+      max-width: 50%;
+    }
+
+    & > .card-wrapper {
+      flex: auto;
+      width: 100%;
+      max-width: 23.55%;
+      margin: 0 1rem 0 0;
+    }
+
+    // & > .card-wrapper:first-child { margin: 0 1rem 0 0; }
+    & > .card-wrapper:nth-child(2n+2) { margin: 0 1rem 1rem 0; }
+    & > .card-wrapper:nth-child(3n+3) { margin: 0 1rem 1rem 0; }
+    & > .card-wrapper:nth-child(4n+4) { margin: 0 0 1rem 0; }
+    // & > .card-wrapper:last-child { margin: 0; }
+  } // @media 1024px
+
+  @media (min-width: 1145px) {
+    & > .card-wrapper {
+      flex: 23.55%;
+      width: 100%;
+      max-width: 23.55%;
+      margin: 0 1rem 0 0;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    &.cardholder {
+      width: 100%;
+      max-width: 1280px;
+    }
+
+    &._2card > .card-wrapper {
+      flex: 1;
+      width: 100%;
+      max-width: 50%;
+    }
+
+    & > .card-wrapper {
+      flex: 23.55%;
+      width: 100%;
+      max-width: $card-max-width;
+      margin: 0 1rem 0 0;
+    }
+
+    // & > .card-wrapper:first-child { margin: 0 1rem 0 0; }
+    & > .card-wrapper:nth-child(2n+2) { margin: 0 1rem 1rem 0; }
+    & > .card-wrapper:nth-child(3n+3) { margin: 0 1rem 1rem 0; }
+    & > .card-wrapper:nth-child(4n+4) { margin: 0 0 1rem; }
+    & > .card-wrapper:nth-child(5n+5) { margin: 0 1rem 1rem 0; }
+    & > .card-wrapper:last-child { margin: 0 0 1rem; }
+  } // @media 1280px
+} // .grid
+
+.results,
+.roomselection-rooms {
+  width: 92%;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media (min-width: 640px) {
+    width: 95%;
+  }
+}
+
+
+
+// ========================================================================
+// FLOAT GRID
+// ========================================================================
+
+
+
+
+// ========================================================================
+// FLEXBOX GRID
+// ========================================================================
+
+/***
+
+https://caniuse.com/#search=flex
+FULL support in every major browser, partial support in IE11
+
+IE11 specifics:
+|-- IE 11 requires a unit to be added to the third argument, the flex-basis property
+|-- In IE10 and IE11, containers with display: flex and flex-direction: column will not properly calculate their flexed childrens' sizes if the container has min-height but no explicit height property.
+|-- IE 11 does not vertically align items correctly when min-height is used
+|-- In IE10 the default value for flex is 0 0 auto rather than 0 1 auto as defined in the latest spec.
+
+Further reading:
+-- https://gridbyexample.com/examples/
+-- https://davidwalsh.name/css-supports
+
+FALLBACK WATERFALL: grid > flex > floats
+
+***/
+
+.searchresults .flexgrid {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0;
+  margin-left: -30px;
+  
+  & > * {
+    width: 100%;
+    padding-left: 30px;
+    margin: 0;
+    &:nth-child(n+2) { margin-top: 30px; }
+  }
+  
+  & > * > *:last-child { margin-bottom: 0; }
+  
+  @media (min-width: 560px) {
+    & > * {
+      width: 50%;
+      &:nth-child(n+2) { margin-top: 0; }
+      &:nth-child(n+3) { margin-top: 30px; }
+    }
+  }
+  
+  @media (min-width: 770px) {
+    & > * {
+      width: 33.33%;
+      &:nth-child(n+3) { margin-top: 0; }
+      &:nth-child(n+4) { margin-top: 30px; }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    & > * {
+      width: 25%;
+      max-width: 49%;
+      margin: 0;
+      &:nth-child(n+3) { margin: 0; }
+      &:nth-child(n+4) { margin: 0; }
+      &:nth-child(n+5) { margin-top: 30px; }
+    }
+  }
+}
+
+//_____________________________________
+// BOOKING VIEW SPECIFIC FLEX PROPS
+// (Different @media values due to the booking funnel's
+// sidebar taking up `margin-right: 325px;`
+.bookingview .flexgrid {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0;
+  margin-left: -30px;
+  
+  & > * {
+    width: 100%;
+    padding-left: 30px;
+    margin: 0;
+    &:nth-child(n+2) { margin-top: 30px; }
+  }
+  
+  & > * > *:last-child { margin-bottom: 0; }
+  
+  @media (min-width: 560px) {
+    & > * {
+      width: 50%;
+      &:nth-child(n+2) { margin-top: 0; }
+      &:nth-child(n+3) { margin-top: 30px; }
+    }
+  }
+  
+  @media (min-width: 770px) {
+    & > * {
+      width: 33.33%;
+      &:nth-child(n+3) { margin-top: 0; }
+      &:nth-child(n+4) { margin-top: 30px; }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    & > * {
+      width: 50%;
+      &:nth-child(n+2) { margin-top: 0; }
+      &:nth-child(n+3) { margin-top: 30px; }
+    }
+  }
+
+  @media (min-width: 1280px) {
+    & > * {
+      width: 33.33%;
+      &:nth-child(n+3) { margin-top: 0; }
+      &:nth-child(n+4) { margin-top: 30px; }
+    }
+  }
+}
+
+//_____________________________________
+// BOOKING VIEW SPECIFIC FLEX PROPS
+// (Different @media values due to the booking funnel's
+// sidebar taking up `margin-right: 325px;`
+._3card.grid {
+  list-style: none;
+  // margin-left: -30px;
+  // padding: 0;
+  
+  & > * {
+    width: 100%;
+    max-width: none;
+    padding-left: 30px;
+    margin: 0;
+    &:nth-child(n+2) { margin-top: 30px; }
+  }
+  
+  & > * > *:last-child { margin-bottom: 0; }
+  
+  @media (min-width: 560px) {
+    & > * {
+      width: 50%;
+      &:nth-child(n+2) { margin-top: 0; }
+      &:nth-child(n+3) { margin-top: 30px; }
+    }
+  }
+  
+  @media (min-width: 770px) {
+    & > * {
+      width: 33.33%;
+      flex: 1;
+      &:nth-child(n+3) { margin-top: 0; }
+      &:nth-child(n+4) { margin-top: 30px; }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    & > * {
+      width: 50%;
+      padding-left: 0;
+      margin-left: auto;
+      &:nth-child(n+2) { margin-top: 0; }
+      &:nth-child(n+3) { margin-top: 0; }
+    }
+  }
+
+  @media (min-width: 1280px) {
+    & > * {
+      width: 33.33%;
+      &:nth-child(n+3) { margin-top: 0; }
+      &:nth-child(n+4) { margin-top: 30px; }
+    }
+  }
+}
+
+
+// ========================================================================
+// CSS GRID
+// ========================================================================
+
+/***
+
+https://caniuse.com/#search=grid
+Full support in everything but Opera Mini; partial support in IE11
+
+https://caniuse.com/#search=supports
+Basically, everything but IE11 and partial Opera Mini support
+
+Further reading:
+-- https://gridbyexample.com/examples/
+-- https://davidwalsh.name/css-supports
+
+FALLBACK WATERFALL: grid > flex > floats
+
+***/
+
+.cssgrid {
+  display: flex;
+  flex-wrap: wrap;
+
+  @supports (display: grid) {
+    display: grid;
+    grid-gap: 1rem;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+@supports (display: grid) {
+  .searchresults .cssgrid {
+    grid-template-columns: repeat(auto-fill, minmax($card-max-width, 1fr));
+    margin-left: 0;
+    
+    & > * {
+      width: 100%;
+      padding: 0;
+      margin: 0; 
+      &:nth-child(n+2) { margin-top: 0; }
+    }
+  }
+  
+  
+  .bookingview .cssgrid {
+    grid-template-columns: repeat(auto-fill, minmax(312px, 1fr));
+    margin-left: 0;
+    
+    & > * {
+      width: 100%;
+      padding: 0;
+      margin: 0; 
+      &:nth-child(n+2) { margin-top: 0; }
+    }
+    
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    
+    @media (min-width: 1280px) {
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    }
+
+    @media (min-width: 1440px) {
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    }
+  }
+
+
+  ._3card.cssgrid {
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    margin-left: 0;
+
+    & > * {
+      width: 100%;
+      padding: 0;
+      margin: 0; 
+      &:nth-child(n+2) { margin-top: 0; }
+    }
+  }
+}

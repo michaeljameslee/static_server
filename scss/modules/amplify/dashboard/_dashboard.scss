@@ -1,0 +1,21 @@
+// General dashboard styles
+.dashboard {
+  position: relative;
+
+  > .row {
+    max-width: 100%;
+    flex-flow: initial;
+    overflow-x: hidden;
+  }
+
+  &.nav-visible {
+    max-height: rem-calc(700);
+    overflow-y: hidden;
+  }
+}
+
+// Import component specific files
+@import 'sidebar';
+@import 'account';
+@import 'status-bar';
+@import 'statement';

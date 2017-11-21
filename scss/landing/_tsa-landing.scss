@@ -1,0 +1,85 @@
+.tsa-landing {
+  @media screen and (min-width: 64em) {
+    padding-top: 130px;
+    .main-image {
+      position: relative;
+      float: right;
+      right: 60px;
+      width: 660px;
+      height: 371px;
+    }
+    .main-image img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .first-block {
+    padding: 30px 16px;
+    .pbutton {
+      position: fixed;
+      width: 100%;
+      bottom: 0px;
+      margin-left: -16px;
+      z-index: 1;
+      button {
+        width: 100%;
+      }
+    }
+    @media screen and (min-width: 64em) {
+      padding: 60px;
+      .pbutton {
+        position: relative;
+        width: inherit;
+        bottom: inherit;
+        margin-left: 0;
+        z-index: inherit;
+      }
+      .pbutton button {
+        width: inherit;
+        padding: 22px 119px;
+      }
+      .main-desc {
+        width: rem-calc(380);
+      }
+    }
+
+  }
+
+  .second-block {
+    padding: 40px 16px;
+    border-top: 1px solid #cdcdcd;
+    @media screen and (min-width: 64em) {
+      padding: 30px 60px;
+      border-top: none;
+      padding-left: 43%;
+      margin-top: 30px;
+
+      .second-desc {
+        padding-bottom: 40px;
+        border-bottom: 1px solid #cdcdcd;
+      }
+    }
+  }
+
+  .third-block {
+    padding: 40px 16px;
+    @media screen and (min-width: 64em) {
+      padding: 30px 60px;
+      padding-left: 43%;
+      padding-bottom: 60px;
+    }
+  }
+}
+.review-cart {
+  .email-form {
+    margin-top: 30px;
+    input {
+      width: 100%;
+    }
+    @media screen and (min-width: 64em) {
+      input {
+        width: 460px;
+      }
+    }
+  }
+}

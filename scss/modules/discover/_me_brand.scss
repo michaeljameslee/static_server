@@ -1,0 +1,233 @@
+/* CSS Document */
+/* BRAND MEETINGS AND EVENTS */
+
+.brand-me-landing {
+  .meb-content {
+    margin: 0 auto;
+    max-width: none;
+    @include breakpoint(medium down) {
+      padding: 40px 16px;
+    }
+    @include breakpoint(large) {
+      padding: 60px;
+    }
+    &._meb-c1 {
+      h1 {
+        display: block;
+        width: 100%;
+      }
+      /* stylelint-disable declaration-no-important */
+      /* Override CMS defaults */
+      h3 {
+        color: black !important;
+        @include get-font('paragraph');
+        font-style: normal !important;
+        font-size: rem-calc(12);
+        letter-spacing: 0.5px;
+        line-height: 1.33;
+        text-transform: uppercase;
+      }
+      /* stylelint-enable declaration-no-important */
+    }
+    &._meb-c2 {
+      background-color: $gray-lightest;
+      justify-content: space-between;
+      @include breakpoint(medium down) {
+        padding: 0 0 58px 0;
+      }
+      h2 {
+        margin-bottom: 20px;
+      }
+      h3 {
+        @include heading-2;
+        margin-bottom: 40px;
+        @include breakpoint(small only) {
+          font-size: rem-calc(16);
+          margin-bottom: 24px;
+        }
+      }
+      ._h1 {
+        margin-bottom: 30px;
+      }
+      .meb-desc, .meb-desc2 {
+        @include breakpoint(medium down) {
+          margin-left: auto;
+          margin-right: auto;
+          max-width: calc(100% - 32px);
+        }
+      }
+      .meb-pic-wrapper {
+        flex: 0 0 calc((100% - 60px) * .51);
+        margin-right: 60px;
+        max-width: 560px;
+      }
+      /* stylelint-disable max-nesting-depth */
+      /* allow this specific stuff here */
+      .meb-desc2 {
+        flex: 0 0 calc((100% - 60px) * .49);
+        max-width: 540px;
+        > div, > h2, > p {
+          max-width: 460px;
+        }
+      }
+      /* stylelint-enable max-nesting-depth */
+    }
+    &._meb-c3 {
+      background-color: $gray-lightest;
+      color: black;
+      h2, h3, .meb-desc, .meb-desc2 {
+        color: black;
+      }
+      h2 {
+        margin-bottom: 20px;
+      }
+    }
+    h1, ._h1 {
+      @include heading-1;
+      font-size: rem-calc(64);
+      line-height: 1.06;
+      margin: 0 auto 20px;
+      @include breakpoint(small only) {
+        font-size: rem-calc(30);
+        line-height: 1.13;
+        margin-bottom: 16px;
+      }
+    }
+    div, p {
+      padding: 0;
+    }
+  }
+  .meb-desc, .meb-desc2 {
+    color: $gray-dark;
+    @include get-font('paragraph');
+    @include breakpoint(large) {
+      max-width: 560px;
+    }
+    p {
+      margin: 0 auto 11px;
+    }
+    p, ul {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .meb-content .meb-desc {
+    padding-left: 0;
+    @include breakpoint(large) {
+      padding-right: 40px;
+    }
+  }
+  .meb-desc2 {
+    padding-right: 0;
+    @include breakpoint(medium down) {
+      ul {
+        font-size: rem-calc(12);
+      }
+    }
+  }
+  .meb-pics {
+    overflow: visible;
+    position: relative;
+    margin: 0 auto 112px;
+    width: 100%;
+    @include breakpoint(large) {
+      margin: 30px auto 60px;
+      width: calc(100% - 120px);
+    }
+  }
+  .meb-pic, .meb-pic1, .meb-pic2 {
+    overflow: hidden;
+    position: relative;
+    img {
+      height: auto;
+      max-height: none;
+      max-width: 120%;
+      min-height: 100%;
+      min-width: 100%;
+      left: 50%;
+      top: 50%;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      width: auto;
+    }
+  }
+  .meb-pic {
+    height: 281px;
+    width: 100%;
+    @include breakpoint(medium down) {
+      margin-bottom: 32px;
+    }
+    @include breakpoint(large) {
+      height: 420px;
+      max-width: 560px;
+      width: 100%;
+    }
+  }
+  .meb-pic1 {
+    height: 281px;
+    width: 100%;
+    @include breakpoint(large) {
+      height: 360px;
+      margin-left: 0;
+      width: 75%;
+    }
+  }
+  .meb-pic2 {
+    border: 6px solid white;
+    height: 183px;
+    position: absolute;
+    right: 16px;
+    top: 152px;
+    transform: rotate(5deg);
+    width: 222px;
+    z-index: 0;
+    @include breakpoint(large) {
+      border: 11px solid white;
+      height: 335px;
+      width: 455px;
+      right: 0;
+      top: 72px;
+    }
+    img {
+      max-height: 120%;
+      max-width: none;
+    }
+  }
+  .meb-offers {
+    padding: 40px 0 56px;
+    @include breakpoint(large) {
+      padding: 60px 0;
+    }
+    h2 {
+      margin: 0 auto 40px;
+      width: calc(100% - 120px);
+      @include breakpoint(medium down) {
+        margin: 0 auto 24px;
+        width: calc(100% - 32px);
+      }
+    }
+  }
+  .ctas {
+    margin: 30px auto 0;
+    .cta-big {
+      max-width: none;
+      padding: 21px 30px;
+      width: auto;
+      @include breakpoint(small only) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.meb-starcite-wrapper {
+  margin: 0 auto;
+  max-width: 935px;
+  width: 100%;
+  iframe {
+    border: none;
+    height: 1085px;
+    width: 100%;
+  }
+}

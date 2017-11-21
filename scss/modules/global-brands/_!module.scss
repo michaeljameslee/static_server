@@ -1,0 +1,60 @@
+/***
+TABLE OF CONTENTS
+==============================
+
+_!config.scss
+==============================
+|  |-- Globals
+|  |-- Logo Nav (desktop only)
+|  |  |-- <li>
+|  |  |-- <img>
+|  |-- Content Wrapper
+|  |-- Content Item Properties (mobile+)
+|  |-- Content Item Properties (desktop+)
+
+_layout.scss
+==============================
+|-- .global-brands
+|  |-- .flickity-enabled
+|  |-- <p>
+
+_navigation.scss
+==============================
+|-- .global-brands-nav
+|  |-- li
+|  |-- li img
+|  |  |-- &:hover, &:focus
+|  |-- .is-selected img
+
+_typography.scss
+==============================
+|-- .global-brands-content
+|-- .global-brands-item
+|  |-- .column
+|  |  |-- img
+|  |-- .medium-8
+|  |  |-- .prop-img
+|  |  |-- .shadow
+|  |  |-- .brand-logo
+|  |  |-- .entry-link
+|  |-- .medium-4
+|  |-- .brand-property-content
+|  |  |-- <p>
+|  |  |-- .prop-name
+|  |  |-- .prop-rate
+|  |-- .top-brand-info
+|  |  |-- <h3>
+|  |  |-- <p>
+|  |  |-- .button.secondary
+|  |-- .bottom-brand-image
+
+_flickity.scss
+==============================
+|-- .global-brands-content.flickity-enabled
+***/
+
+@import '!config';      // variables and config settings
+@import 'layout';       // general layout
+@import 'navigation';   // logo nav (desktop+)
+@import 'typography';   // aesthetics & type
+@import 'flickity';     // flickity-enabled props

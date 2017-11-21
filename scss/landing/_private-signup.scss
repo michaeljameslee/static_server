@@ -1,0 +1,49 @@
+.private-signup {
+  .row {
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  padding: 16px;
+  @media screen and (min-width: 64em) {
+    padding: 60px;
+  }
+  .left-block {
+    .button {
+      width: 100%;
+    }
+    h2 {
+      margin-bottom: 20px;
+      @include breakpoint(small) {
+        font-size: 1.875rem;
+        line-height: 32px;
+      }
+    }
+  }
+  .right-block {
+    padding-top: 40px;
+    @media screen and (min-width: 64em) {
+      padding-top: 0;
+    }
+    h3 {
+      margin-bottom: 5px;
+      @include breakpoint(small) {
+        font-size: 1.375rem;
+        margin-bottom: 15px;
+      }
+    }
+  }
+  .first-block {
+    border-bottom: 1px solid #cdcdcd;
+    padding-bottom: 20px;
+  }
+  .second-block {
+    padding-top: 30px;
+    @media screen and (min-width: 64em) {
+      padding-top: 30px;
+    }
+    .ex-date {
+      font-family: $proxima-nova-semibold;
+    }
+  }
+}

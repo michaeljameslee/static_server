@@ -1,0 +1,613 @@
+// ------------------------------------//
+//    Confirmation
+// ------------------------------------//
+.bookingview-confirmation {
+  max-width: none;
+  @include breakpoint(medium down) {
+    padding: map-get($header-height, small) 0;
+  }
+  & > .row {
+    max-width: none;
+    margin: 0;
+    @include breakpoint(large) { margin: 0 60px; }
+  }
+  .fullrow {
+    margin: 0;
+    .column { padding: 0; }
+  }
+  .column {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  p {
+    @include get-font('paragraph');
+    @include breakpoint(large) { font-size: rem-calc(14); }
+  }
+}
+
+// Club Carlson Header
+.confirmation-clubcarlson {
+  padding: 32px 0;
+  border-bottom: 1px solid $gray-light;
+  @include breakpoint(large) {
+    padding: 60px 0;
+    background: url('/templates/main/images/confirm-bg.svg') no-repeat;
+    background-size: 61%;
+    background-position: bottom right;
+  }
+  &.fullrow .column {
+    padding: 0 16px;
+    @include breakpoint(large) { padding: 0 0 0 60px; }
+  }
+  h1 {
+    font-size: rem-calc(40);
+    line-height: rem-calc(44);
+    @include breakpoint(large) {
+      font-size: rem-calc(38);
+      line-height: rem-calc(42);
+      margin-bottom: 23px;
+    }
+  }
+  p {
+    font-size: rem-calc(16);
+    line-height: rem-calc(24);
+    margin-bottom: rem-calc(23px);
+  }
+  .clubcarlson-membernumber {
+    margin-bottom: 0;
+  }
+  .button {
+    margin-top: 9px;
+    width: 100%;
+    padding: 15px 0;
+    @include breakpoint(large) { width: auto; padding: 10px 28px; }
+  }
+}
+.confirmation-clublogo {
+  width: 101px;
+  margin-bottom: 21px;
+  @include breakpoint(large) { width: 140px; margin-bottom: 37px; }
+}
+
+.confirmation-header {
+  @include breakpoint(large) { padding: 60px 0; }
+  h1 {
+    @include get-font('light');
+    font-size: rem-calc(40);
+    margin-bottom: 5px;
+    @include breakpoint(large) {
+      font-size: rem-calc(38);
+      margin-bottom: 10px;
+    }
+  }
+  p:last-child { margin-bottom: 0; }
+  .column {
+    @include breakpoint(large) { padding: 0; }
+  }
+  .column:first-child() {
+    @include breakpoint(medium down) {
+      border-bottom: 1px solid $gray-light;
+      padding: 26px 16px 31px;
+    }
+  }
+  .column:last-child() {
+    @include breakpoint(medium down) { padding: 32px 24px; }
+    @include breakpoint(large) { padding-left: 20px; padding-right: 20px; }
+  }
+}
+
+.confirmation-label {
+  @include label-text;
+}
+
+.confirmation-hotelinfo {
+  color: #fff;
+  position: relative;
+  .cover {
+    @include breakpoint(large) {
+      width: 100%;
+      height: 465px;
+      max-height: 465px;
+      overflow: hidden;
+      background-color: $true-black;
+    }
+  }
+  .hotelinfo-property {
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 178px;
+      width: 100%;
+      z-index: 0;
+      background-image: linear-gradient(to top, #000000, rgba(0, 0, 0, 0));
+      @include breakpoint(large) { height: 202px; }
+    }
+  }
+  .confirmation-hotelname {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 24px;
+    width: 100%;
+    z-index: 1;
+    @include breakpoint(large) { padding: 30px 40px; }
+  }
+  h2 {
+    @include get-font('regular');
+    font-size: rem-calc(24);
+    @include breakpoint(large) {
+      font-size: rem-calc(32);
+    }
+  }
+  p {
+    @include label-text;
+    margin-bottom: 0;
+  }
+}
+
+.confirmation-reservationinfo {
+  font-size: rem-calc(20px);
+  line-height: rem-calc(24px);
+  @include breakpoint(large) {
+    @include get-font('regular');
+    padding: 39px 0;
+    border-bottom: 1px solid $gray-light;
+  }
+  .column {
+    @include breakpoint(medium down) {
+      padding: 16px 23px 11px;
+      border-bottom: 1px solid $gray-light;
+    }
+    @include breakpoint(large) { padding: 0; }
+  }
+  .column:first-child() {
+    @include breakpoint(medium down) { border-right: 1px solid $gray-light; }
+  }
+  .confirmation-label {
+    margin-bottom: 5px;
+    @include breakpoint(large) { margin-bottom: 10px; }
+  }
+  .reservationinfo-time {
+    @include breakpoint(medium down) {
+      @include get-font('regular');
+      display: block;
+      font-size: rem-calc(24);
+      margin-bottom: 2px;
+    }
+  }
+  .reservationinfo-date {
+    @include breakpoint(medium down) {
+      @include get-font('paragraph');
+      display: block;
+      font-size: rem-calc(14);
+      text-transform: none;
+    }
+  }
+}
+.reservationinfo-buttons {
+  text-align: right;
+  max-width: 260px;
+  .button { width: 100%; margin-bottom: 16px; }
+  a {
+    @include label-text;
+    @include get-font('semibold');
+    display: block;
+  }
+}
+
+.confirmation-rooms {
+  padding: 34px 0 0;
+  @include breakpoint(large) { padding: 42px 0 0; }
+  .column {
+    @include breakpoint(large) { padding: 0; }
+  }
+  .step-rooms {
+    padding: 0px 0 36px;
+    @include breakpoint(large) { padding: 0 0 30px; }
+    &:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+  }
+  .stepnav-guests { @include get-font('paragraph'); text-transform: none; }
+  .stepnav-name {
+    @include breakpoint(large) { margin-bottom: 21px; }
+  }
+  .room-name {
+    font-size: rem-calc(16);
+    line-height: rem-calc(20);
+    margin-bottom: 3px;
+    display: inline-block;
+    @include breakpoint(large) {
+      font-size: rem-calc(18);
+      line-height: rem-calc(22);
+    }
+  }
+  .room-rate {
+    font-size: rem-calc(18);
+    line-height: rem-calc(22);
+    @include breakpoint(large) {
+      font-size: rem-calc(26);
+      line-height: rem-calc(30);
+    }
+  }
+  .stepnav-room-image {
+    width: 138px;
+    height: 104px;
+    img {
+      height: 104px;
+      width: auto;
+      max-width: none;
+    }
+  }
+  .stepnav-room-desc {
+    margin-left: 150px;
+    padding-top: 8px;
+    @include breakpoint(large) {
+      padding-top: 0;
+    }
+  }
+  .label-text {
+    @include card-label;
+    color: $gray-medium;
+  }
+}
+.confirmation-roomslist { margin: 0; list-style-type: none; }
+.confirmation-rooms .confirmation-roomslist.row { margin: 0; }
+
+.confirmation-roomsbtn {
+  .button { width: 100%; }
+}
+
+.confirmation-guestinfo {
+  @include get-font('regular');
+  font-size: rem-calc(18px);
+  line-height: rem-calc(22px);
+  padding: 40px 0 0;
+  @include breakpoint(large) {
+    padding: 40px 0 16px;
+    border-top: 1px solid $gray-light;
+    font-size: rem-calc(20px);
+    line-height: rem-calc(24px);
+  }
+  .column { padding: 0 16px 22px; word-break: break-word; }
+  .column:first-child {
+    @include breakpoint(large) { padding-left: 0; }
+  }
+  .column:last-child {
+    @include breakpoint(large) { padding-right: 0; align-items: flex-end; }
+  }
+  h3 {
+    font-size: rem-calc(24);
+    line-height: rem-calc(28);
+    margin-bottom: 24px;
+  }
+  .confirmation-label { margin-bottom: 8px; }
+  .button {
+    margin-top: 14px;
+    width: 100%;
+    @include breakpoint(large) { max-width: 260px; }
+  }
+}
+
+.confirmation-total {
+  padding-top: 5px;
+  @include breakpoint(large) { padding: 21px 0 34px; border-top: 1px solid $gray-light; }
+  .column:first-child {
+    @include breakpoint(large) { padding-left: 0; }
+  }
+  .button.small {
+    @include breakpoint(medium down) {
+      @include get-font('paragraph');
+      text-align: left;
+      text-transform: none;
+      border: 0;
+      border-bottom: 1px solid $gray-light;
+      width: 100%;
+      padding: 23px 16px;
+    }
+  }
+  .button.small:first-child {
+    @include breakpoint(medium down) { border-top: 1px solid $gray-light; }
+  }
+  .button.small:hover {
+    @include breakpoint(medium down) {
+      color: #000;
+      background: #fff;
+    }
+  }
+}
+.confirmation-totalnum {
+  @include get-font('regular');
+  font-size: rem-calc(24px);
+  @include breakpoint(large) {
+    margin-top: 14px;
+    display: inline-block;
+  }
+}
+.confirmation-bestprice {
+  @include label-text;
+  font-size: rem-calc(10px);
+  color: $gray-medium;
+  display: inline-block;
+  width: 100%;
+  position: relative;
+  top: -8px;
+}
+.confirmation-totalbtns {
+  &.column {
+    padding: 23px 0 0;
+    @include breakpoint(large) { text-align: right; }
+  }
+  .button {
+    @include breakpoint(large) { margin-left: 5px; }
+  }
+}
+
+.confirmation-mapimg {
+  position: relative;
+  overflow: hidden;
+  .map-directions {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+  .map {
+    width: 100%;
+    height: auto;
+    @include breakpoint(large) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      z-index: -1;
+      height: auto;
+      width: 100%;
+      max-width: none;
+    }
+    @media screen and (min-width: 1024px) and (max-width: 1373px) {
+      height: 100%;
+      width: auto;
+    }
+  }
+  .map-lmarker {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-100%);
+    .map-marker-title {
+      background-color: #FFF;
+      box-shadow: ( 0 2px 4px 0 rgba(0, 0, 0, 0.07));
+      margin: 0px;
+      padding: 13px;
+      text-align: center;
+    }
+    .map-marker-tip {
+      background-image: url(../../assets/images/temporary/pic-cloud-tip.png);
+      background-repeat: no-repeat;
+      background-position: top center;
+      background-size: auto 100%;
+      height: 6px;
+    }
+  }
+  .map-panel {
+    background-color: #FFF;
+    box-shadow: ( 0 2px 4px 0 rgba(0, 0, 0, 0.07));
+    left: 11px;
+    right: 11px;
+    padding: 15px;
+    position: absolute;
+    .icon {
+      display: inline-block;
+      height: auto;
+      width: 18px;
+      color: $secondary-color;
+      font-size: 20px;
+      text-align: center;
+      max-height: none;
+      max-width: 18px;
+    }
+    // For placeholder icons
+    .fa-envelope-o {
+      font-size: 18px;
+    }
+    .fa-mobile {
+      font-size: 24px;
+    }
+    &.bottom {
+      bottom: 20px;
+      padding: rem-calc(20 20 35);
+      .icon {
+        margin: rem-calc(0 10 0 0);
+        align-self: flex-start;
+      }
+      p {
+        @include get-font('paragraph');
+        text-transform: none;
+        font-size: rem-calc(14);
+        line-height: 1.57;
+        color: $gray-dark;
+      }
+    }
+  }
+  .map-panel-content {
+    display: inline-block;
+    margin: 0;
+    text-align: left;
+    span { line-height: 1.57; }
+    a { color: $gray-dark; }
+  }
+  .map-panel-element {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: rem-calc(4);
+  }
+}
+.confirmation-mapbtn {
+  @include get-font('regular');
+  color: #000;
+  height: 125px;
+  text-align: center;
+  border-right: 1px solid $gray-light;
+  border-bottom: 1px solid $gray-light;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .mapbtn-svg {
+    height: 32px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    .svg-stroke { stroke: $primary-color; }
+    .svg-fill { fill: $primary-color; }
+  }
+}
+.confirmation-mapbtn:last-child { border-right: 0; }
+
+.confirmation-app {
+  @include get-font('paragraph');
+  text-align: center;
+  font-size: rem-calc(14px);
+  padding: 0;
+  border-bottom: 1px solid $gray-light;
+  @include breakpoint(large) { border-top: 1px solid $gray-light; }
+  &.row {
+    @include breakpoint(large) { margin: 0; min-height: 319px; }
+  }
+  h3 {
+    font-size: rem-calc(24px);
+    line-height: rem-calc(28px);
+    @include breakpoint(large) {
+      font-size: rem-calc(32px);
+      line-height: rem-calc(36px);
+    }
+  }
+}
+.confirmation-appdesc {
+  @include breakpoint(large) { display: flex; }
+  &.column {
+    @include breakpoint(medium down) {
+      order: 2;
+      padding-top: 36px;
+    }
+    @include breakpoint(large) { padding: 0 0 0 60px; text-align: left; }
+  }
+}
+.confirmation-appbtns {
+  margin-bottom: 48px;
+  @include breakpoint(large) { margin-bottom: 0; }
+  a { display: inline-block; padding: 0 3px; }
+  img { width: 128px; }
+}
+.confirmation-appdesc-wrapper {
+  @include breakpoint(large) {
+    width: 44%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  h3, p {
+    @include breakpoint(large) { margin-bottom: 20px; }
+  }
+}
+.has-upgrades .confirmation-appdesc-wrapper {
+  @include breakpoint(large) { width: 50%; }
+}
+.confirmation-appimg {
+  @include breakpoint(large) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 50%;
+    padding: 0 30px;
+  }
+  img {
+    width: 72%;
+    height: auto;
+    @include breakpoint(large) { width: 72%; max-width: 253px; }
+  }
+}
+.has-upgrades .confirmation-appimg {
+  @include breakpoint(medium down) { max-height: 192px; overflow: hidden; }
+  @include breakpoint(large) { align-items: center; }
+  img {
+    @include breakpoint(large) { height: 283px; width: auto; }
+  }
+}
+.confirmation-upgrades {
+  background: $gray-lightest;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @include breakpoint(medium down) { order: 1; border-bottom: 1px solid $gray-light; }
+  &.column {
+    padding: 10.3% 8.5%;
+    @include breakpoint(large) { padding: 0 8.5%; }
+  }
+  h3 {
+    font-size: rem-calc(24);
+    line-height: rem-calc(28);
+    @include breakpoint(large) {
+      font-size: rem-calc(32);
+      line-height: rem-calc(36);
+      margin-bottom: 10px;
+    }
+  }
+  p {
+    font-size: rem-calc(16);
+    line-height: rem-calc(24);
+  }
+  .button { margin-top: 12px; }
+}
+
+.confirmation-disclaimer {
+  @include get-font('paragraph');
+  padding: 41px 16px;
+  font-size: rem-calc(12px);
+  @include breakpoint(large) { padding: 41px 0; }
+  .column {
+    @include breakpoint(large) { padding: 0; }
+  }
+  & > p:last-child { margin-bottom: 0; }
+}
+
+.reveal-cancel-reservation {
+  .booking-snippet p, .booking-snippet p:last-child { margin-bottom: 1rem; }
+}
+.reveal-cancel-reservation.small {
+  @include breakpoint(large) {
+    width: 43.75%;
+  }
+  h2 {
+    @include breakpoint(large) {
+      font-size: rem-calc(26px);
+      line-height: rem-calc(30px);
+    }
+  }
+  p {
+    @include breakpoint(large) {
+      margin-bottom: 26px;
+    }
+  }
+  .cancelres-buttons {
+    @include breakpoint(large) {
+      display: flex;
+      margin: 0 -5px;
+    }
+    .button {
+      width: 100%;
+      margin: 0 0 1rem;
+      @include breakpoint(large) { margin: 0 5px; }
+    }
+    .button:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

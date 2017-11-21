@@ -1,0 +1,71 @@
+// reservation details page
+.reservation-detail {
+  .reservations-container {
+    @include breakpoint(large) { padding: rem-calc(40 60); }
+  }
+  .reservations-upcoming-details {
+    @include breakpoint(large) { padding-bottom: 0; }
+  }
+  .reservations-separator {
+    max-width: none;
+    margin: 0;
+  }
+  .reservations-upcoming-rooms {
+    padding: rem-calc(32 16 40);
+    @include breakpoint(large) { padding: rem-calc(40 60); }
+  }
+  .reservations-guest-info { padding-top: 0; }
+  .reservations-card {
+    &.room-card {
+      @include breakpoint(large) {
+        max-width: none;
+        margin-right: 0;
+        flex: 0 0 33.3333%;
+      }
+    }
+    &.enhance-card {
+      @include breakpoint(xlarge) { flex: 0 0 22.45%; }
+    }
+  }
+  .guest-info-button.columns, .reservation-total-buttons.columns {
+    @include breakpoint(large) { padding-right: 0; }
+  }
+  .reservations-upcoming-total {
+    @include breakpoint(large) { padding: rem-calc(0 60); }
+    .reservations-separator { margin-top: rem-calc(40); }
+  }
+  .reservations-upcoming-enhance {
+    .row.slideshow-container {
+      @include breakpoint(xlarge) { padding-right: 0; }
+    }
+  }
+}
+
+.reservation-details-header {
+  position: relative;
+  width: 100%;
+  height: rem-calc(64);
+  @include flex;
+  justify-content: center;
+  align-items: center;
+  i {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  h3 {
+    font-size: rem-calc(22);
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 0;
+  }
+}
+
+.reservation-detail-overlay {
+  width: 0;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  display: none;
+}

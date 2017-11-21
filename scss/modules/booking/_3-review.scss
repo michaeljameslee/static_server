@@ -1,0 +1,208 @@
+.bookingview-review {
+  margin: 0 auto;
+  @include breakpoint(large) { margin: 0 60px; }
+}
+
+.review-header {
+  @include breakpoint(medium down) { display: none; }
+  @include breakpoint(large) {
+    padding-top: 57px;
+  }
+  h2 {
+    font-size: 38px;
+    line-height: 42px;
+    margin-bottom: 11px;
+  }
+  p { @include get-font('paragraph'); margin-bottom: rem-calc(29px); }
+}
+
+.review-body {
+  padding-bottom: 95px;
+  @include breakpoint(large) { padding-bottom: 310px; }
+  .animation-done & {
+    @include breakpoint(large) { padding-bottom: 148px; }
+  }
+}
+
+.stepnav-review {
+  position: static;
+  width: 100%;
+  overflow-y: auto;
+  &:after { content: none; }
+  .review-body & .fliptext-wrapper {
+    height: auto;
+    @include breakpoint(large) { min-height: 50px; }
+    & > span { position: static; }
+  }
+  .datesstep-date {
+    @include breakpoint(medium down) {
+      font-size: 24px;
+      line-height: 28px;
+    }
+  }
+  .stepnav-step {
+    display: block;
+    margin-left: 0;
+    background: #fff;
+    padding-left: 16px;
+    padding-right: 16px;
+    @include breakpoint(medium down) { padding-top: 32px; }
+    @include breakpoint(large) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  .stepnav-step:before { background: $gray-light; }
+  .stepnav-name {
+    color: #696969;
+    @include breakpoint(large) { color: $gray-dark; }
+  }
+  .stepnav-step:last-child {
+    @include breakpoint(medium down) { border-bottom: 0; }
+  }
+  .step-hotel {
+    @include breakpoint(medium down) { border-top: 0; }
+  }
+  .stepnav-edit {
+    @include breakpoint(medium down) {
+      position: static;
+      display: inline-block;
+      margin-top: 16px;
+      a, button {
+        @include get-font('regular');
+        color: $primary-text-cta;
+        border: $active-border-width solid $primary-color;
+        background: $primary-color;
+        padding: 14px 32px;
+        font-size: 16px;
+        line-height: 1;
+        height: 48px;
+      }
+    }
+    @include breakpoint(large) {
+      top: 29px;
+      right: 0;
+      height: 16px;
+      a, button {
+        line-height: 16px;
+      }
+    }
+  }
+  .stepnav-edit .stepnav-remove {
+    @include breakpoint(medium down) {
+      background: #fff;
+      border: $active-border-width solid $primary-color;
+      float: right;
+      margin-left: 16px;
+    }
+  }
+  .stepnav-room-desc {
+    margin-left: 150px;
+    @include breakpoint(large) {
+      font-size: 18px;
+    }
+    .label-text {
+      @include label-text;
+      color: $gray-medium;
+      margin: 6px 0 3px;
+      display: inline-block;
+      font-size: 10px;
+    }
+    .room-rate {
+      @include get-font('light');
+      font-size: 18px;
+      @include breakpoint(large) { font-size: 26px; }
+    }
+  }
+  .stepnav-room-image {
+    height: 104px;
+    width: 138px;
+    img {
+      height: 104px;
+      width: auto;
+      max-width: none;
+    }
+  }
+  .stepnav-step.step-rooms {
+    line-height: 20px;
+    @include breakpoint(medium down) {
+      margin: 0 16px;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  .stepnav-guests {
+    text-transform: none;
+    font-family: map-get($fonts, 'paragraph');
+  }
+}
+
+.review-addroom-wrapper {
+  @include breakpoint(medium down) { margin: 0 16px; }
+}
+
+.review-button {
+  background: $primary-color;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateZ(0);
+  .bookingview-loading {
+    background: $primary-color;
+  }
+  .loader {
+    top: 32%;
+    right: 3%;
+    left: auto;
+    @include breakpoint(large) { top: 45%; }
+  }
+  .loader > div {
+    background: $primary-text-cta;
+    @include breakpoint(medium down) {
+      width: 8px;
+      height: 8px;
+      margin: 2px;
+    }
+  }
+  .button {
+    @include large-button;
+    padding: 10px;
+    text-align: right;
+    flex: 1 1 155px;
+    font-size: 18px;
+    line-height: 22px;
+    color: $primary-text-cta;
+    position: relative;
+    @include breakpoint(large) {
+      flex: 1 1 auto;
+      font-size: 20px;
+      line-height: 24px;
+      padding: 30px 60px;
+    }
+    &:hover, &:active { background: $primary-color; color: $primary-text-hover-cta; }
+  }
+  .fa {
+    font-size: 16px;
+    margin-left: 3px;
+    width: 9px;
+  }
+}
+.review-total {
+  @include get-font('regular');
+  padding: 13px 0 13px 16px;
+  font-size: 16px;
+  line-height: 20px;
+  color: $primary-text-cta;
+  @include breakpoint(large) {
+    font-size: 26px;
+    line-height: 30px;
+    padding: 31px 60px;
+  }
+}
+.review-pluscash {
+  @include breakpoint(small only) { display: block; }
+}
+.review-ratename { @include label-text; }

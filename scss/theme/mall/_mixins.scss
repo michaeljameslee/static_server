@@ -1,0 +1,165 @@
+// ------------------------------------//
+//    Typography
+// ------------------------------------//
+
+// Get general font styles
+@mixin get-font($type) {
+  @if ($type == 'thin') {
+    font-family: map-get($fonts, 'thin');
+  }
+  @if ($type == 'light') {
+    font-family: map-get($fonts, 'light');
+  }
+  @if ($type == 'regular') {
+    font-family: map-get($fonts, 'regular');
+  }
+  @if ($type == 'semibold') {
+    font-family: map-get($fonts, 'semibold');
+  }
+  @if ($type == 'paragraph') {
+    font-family: map-get($fonts, 'paragraph');
+  }
+  @if ($type == 'secondary-paragraph') {
+    font-family: map-get($fonts, 'secondary-paragraph');
+  }
+}
+
+@mixin heading-1 {
+  font-family: $proxima-nova-light;
+  line-height: 1.13;
+  @include breakpoint(large) {
+    font-family: $proxima-nova-thin;
+    line-height: 1.08;
+  }
+}
+
+@mixin heading-2 {
+  font-family: $proxima-nova-reg;
+  line-height: rem-calc(26);
+  @include breakpoint(large) {
+    font-family: $proxima-nova-light;
+    line-height: rem-calc(42);
+  }
+}
+
+@mixin heading-3 {
+  font-family: $proxima-nova-reg;
+  line-height: rem-calc(20);
+  @include breakpoint(large) {
+    font-family: $proxima-nova-light;
+    line-height: rem-calc(36);
+  }
+}
+
+@mixin heading-4 {
+  font-family: $proxima-nova-reg;
+  line-height: rem-calc(18);
+  @include breakpoint(large) {
+    font-family: $proxima-nova-light;
+    line-height: rem-calc(30);
+  }
+}
+
+@mixin heading-5 {
+  font-family: $proxima-nova-reg;
+  line-height: rem-calc(26);
+  @include breakpoint(large) {
+    line-height: rem-calc(26);
+  }
+}
+
+@mixin heading-6 {
+  font-family: $proxima-nova-reg;
+  line-height: rem-calc(22);
+  @include breakpoint(large) {
+    line-height: rem-calc(22);
+  }
+}
+
+@mixin main-paragraph {
+  font-family: $proxima-nova-reg;
+  line-height: rem-calc(24);
+}
+
+@mixin secondary-paragraph {
+  font-family: $proxima-nova-reg;
+  font-size: rem-calc(12);
+  line-height: rem-calc(20);
+  @include breakpoint(large) {
+    font-size: rem-calc(14);
+    line-height: rem-calc(22);
+  }
+}
+
+@mixin label-text {
+  font-family: $proxima-nova-semibold;
+  font-size: rem-calc(12px);
+  letter-spacing: 1px;
+  line-height: rem-calc(16);
+  text-transform: uppercase;
+}
+
+@mixin card-label {
+  font-family: $proxima-nova-semibold;
+  font-size: rem-calc(10px);
+  letter-spacing: 1px;
+  line-height: rem-calc(14);
+  text-transform: uppercase;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 600;
+}
+
+// ------------------------------------//
+//    Links
+// ------------------------------------//
+
+@mixin text-link {
+  font-family: map-get($fonts, 'semibold');
+  font-size: rem-calc(12);
+  letter-spacing: 1px;
+  line-height: rem-calc(16);
+  text-transform: uppercase;
+}
+
+@mixin large-link-with-caret {
+  font-family: map-get($fonts, 'regular');
+  font-size: rem-calc(16);
+  line-height: rem-calc(20);
+  color: $black;
+  &:hover { color: $secondary-color; text-decoration: none; }
+  .fill { fill: $secondary-color; }
+}
+
+@mixin small-link-with-caret {
+  font-family: map-get($fonts, 'semibold');
+  font-size: rem-calc(12);
+  letter-spacing: 1px;
+  line-height: rem-calc(16);
+  text-transform: uppercase;
+  color: $black;
+  &:hover { color: $secondary-color; text-decoration: none; }
+  .fill { fill: $secondary-color; }
+}
+
+@mixin batch-link {
+  font-family: map-get($fonts, 'paragraph');
+  color: #000;
+  &:hover { color: $secondary-color; text-decoration: none; }
+}
+
+// ------------------------------------//
+//    Buttons
+// ------------------------------------//
+
+@mixin small-button {
+  @include label-text;
+}
+
+@mixin large-button {
+  font-family: map-get($fonts, 'semibold');
+  font-size: rem-calc(14);
+  letter-spacing: 1px;
+  line-height: rem-calc(18);
+  text-transform: uppercase;
+}

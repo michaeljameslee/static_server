@@ -1,0 +1,238 @@
+// ------------------------------------//
+//    Form Elements
+// ------------------------------------//
+$active-input-color: $primary-color !default;
+
+// Labels
+label, ._label {
+  font-family: $proxima-nova-semibold;
+  font-size: rem-calc(12);
+  color: $gray-dark;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: rem-calc(4);
+}
+
+// Fields
+input, [type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'], select, textarea {
+  @include get-font('paragraph');
+  font-size: rem-calc(16);
+  padding: rem-calc(0 0 0 20);
+  margin-bottom: rem-calc(20);
+  box-shadow: none;
+  min-height: 48px;
+  @include breakpoint(large) { min-height: 40px; font-size: rem-calc(14); }
+  &:focus, &:hover {
+    border: $active-border-width solid $active-input-color;
+    box-shadow: none;
+  }
+}
+
+// Placeholder
+input::placeholder, textarea::placeholder { color: $gray-dark; }
+
+// Dropdowns
+
+select {
+  @include get-font('paragraph');
+  font-size: rem-calc(16);
+  background: none;
+  padding: rem-calc(0 0 0 20);
+  margin-left: 0;
+  margin-right: 0;
+  min-height: 48px;
+  @include breakpoint(large) { min-height: 40px; font-size: rem-calc(14); }
+  &:focus, &:hover {
+    border: $active-border-width solid $active-input-color;
+  }
+}
+.dropdown {
+  cursor: pointer;
+  position: relative;
+  margin: rem-calc(0 0 20);
+  &::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: calc(50% - 5px);
+    right: 20px;
+    transform: rotate(135deg);
+    width: 8px;
+    height: 8px;
+    border-top: 3px solid $secondary-color;
+    border-right: 3px solid $secondary-color;
+    transition: transform .4s;
+    pointer-events: none;
+  }
+  &.active::after {
+    transform: rotate(-45deg);
+    transition: transform .4s;
+  }
+  &.err {
+    margin-bottom: 10px;
+  }
+  select { margin: 0; }
+}
+
+// Checkboxes
+
+/*
+Example:
+<div class="checkbox-field">
+  <input id="emailcheckbox" type="checkbox">
+  <label for="emailcheckbox">Yes! Sign me up to receive emails.</label>
+</div>
+*/
+
+.checkbox-field {
+  position: relative;
+  @include flex;
+  margin-bottom: rem-calc(10);
+  input {
+    position: absolute;
+    left: -9999px;
+  }
+  label {
+    flex: 0 1 90%;
+    font-family: $proxima-nova-reg;
+    font-size: rem-calc(14);
+    line-height: 1.57;
+    text-transform: none;
+    letter-spacing: normal;
+    margin-left: rem-calc(10);
+    margin-right: 0;
+    position: relative;
+    padding-left: rem-calc(24);
+    cursor: pointer;
+    a {
+      @include text-link;
+    }
+  }
+  input:checked + label::after, 
+  input:not(:checked) + label::after {
+    width: rem-calc(24);
+    height: rem-calc(24);
+    position: absolute;
+    top: 5px;
+    left: -10px;
+    @include flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: $border-radius;
+    border: $active-border-width solid $primary-color;
+  }
+  input:checked + label::after {
+    content: '\f00c';
+    font-family: 'fontawesome';
+    font-size: rem-calc(12);
+    border: $active-border-width solid $primary-color;
+    // background-color: $primary-color;
+  }
+  input:not(:checked) + label::after {
+    content: '';
+    border: $active-border-width solid $gray-light;
+  }
+}
+
+// Radio
+
+.radio-field-group {
+  @include flex;
+  flex-direction: column;
+  margin-bottom: rem-calc(16);
+  padding: rem-calc(0 16);
+
+  @include breakpoint(large) {
+    flex-direction: row;
+    margin-bottom: rem-calc(32);
+    padding: 0;
+  }
+}
+
+.radio-field {
+  margin-bottom: rem-calc(16);
+  @include breakpoint(large) {
+    margin-right: rem-calc(40);
+    margin-bottom: 0;
+  }
+}
+
+.radio-input {
+  position: absolute;
+  opacity: 0;
+}
+
+.radio-label {
+  @include get-font('regular');
+  position: relative;
+  font-size: rem-calc(16);
+  line-height: 1.25;
+  text-transform: none;
+  letter-spacing: normal;
+  padding-left: 35px;
+
+  @include breakpoint(large) { line-height: 1.5; }
+}
+
+.radio-input + .radio-label { margin: 0; }
+
+.radio-input + .radio-label::before {
+  content: '';
+  border: 1px solid $primary-color;
+  border-radius: 50%;
+  display: inline-block;
+  width: rem-calc(22);
+  height: rem-calc(22);
+  margin-right: rem-calc(12);
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.radio-input:checked + .radio-label::before {
+  border-color: $primary-color;
+}
+
+.radio-input:checked + .radio-label::after {
+  content: '';
+  display: block;
+  position: absolute;
+  border-radius: 100%;
+  height: 8px;
+  width: 8px;
+  top: 7px;
+  left: 7px;
+  margin: auto;
+  background: black;
+}
+
+//phone
+.phone-wrapper {
+  display: flex;
+  width: 100%;
+  span {
+    color: $gray-dark;
+    display: inline-block;
+    @include get-font('paragraph');
+    font-size: rem-calc(14);
+    margin-bottom: 10px;
+  }
+  .phone {
+    display: inline-block;
+    &._small {
+      margin-right: 3%;
+      width: 22%;
+    }
+    &._large {
+      margin: 0;
+      width: 49%;
+    }
+  }
+  /* stylelint-disable selector-no-qualifying-type */
+  /* this is only needed for inputs, but .phone is for labels also */
+  input.small::after {
+    content: '-';
+  }
+  /* stylelint-enable selector-no-qualifying-type */
+}

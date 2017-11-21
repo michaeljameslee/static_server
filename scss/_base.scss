@@ -1,0 +1,168 @@
+// a:hover { text-decoration: underline; }
+// ------------------------------------//
+//    Typography
+// ------------------------------------//
+h1, ._h1 {
+  @include heading-1;
+}
+
+h2, ._h2 {
+  @include heading-2;
+}
+
+h3, ._h3{
+  @include heading-3;
+}
+
+h4, ._h4 {
+  @include heading-4;
+}
+
+h5, ._h5 {
+  @include heading-5;
+}
+
+h6, ._h6 {
+  @include heading-6;
+}
+
+a:focus {
+  @include breakpoint(large) { 
+    outline-color: $primary-color;
+  }
+}
+
+// ------------------------------------//
+//    Form Elements
+// ------------------------------------//
+
+// Buttons
+.button, .cta, .cta-1, .cta-2, .cta-big {
+  // Default padding for buttons. This is for mobile and desktop small.
+  padding: rem-calc(15px 30px);
+  @include breakpoint(large) { padding: rem-calc(11px 30px); }
+}
+.button.primary {
+  color: $primary-text-cta;
+  border: $active-border-width solid $primary-color;
+}
+.button.primary:hover, .button.primary:focus {
+  color: $primary-text-hover-cta;
+  background-color: $primary-color;
+  transition: background .4s;
+  @include breakpoint(large) { background-color: $primary-hover-cta; border-color: $primary-hover-cta; }
+}
+button, .button:focus {
+  @include breakpoint(large) { outline-color: $primary-color; }
+}
+.button[disabled], .button[disabled]:hover, .button.disabled, .button.disabled:hover, .button.disabled:focus {
+  background-color: $gray-light;
+  color: rgba(#000, 0.5);
+  opacity: 1;
+  border: $active-border-width solid $gray-light;
+}
+.button.hollow[disabled], .button.hollow[disabled]:hover {
+  background-color: #fff;
+  border-color: $gray-light;
+  color: #000;
+  opacity: 0.5;
+}
+.button.secondary {
+  color: $secondary-text-cta;
+  background-color: $white;
+  border: $active-border-width solid $primary-color;
+  transition: background .4s;
+  &:hover, &:focus {
+    color: $secondary-text-hover-cta;
+    background-color: $white;
+    @include breakpoint(large) { background-color: $primary-color; }
+
+    &.disabled {
+      border: $active-border-width solid $gray-light;
+      background: $white;
+      color: rgba(#000, 0.5);
+
+      .fill { fill: rgba(#000, 0.5); }
+    }
+  }
+
+  &.disabled {
+    border: $active-border-width solid $gray-light;
+    background: $white;
+    color: rgba(#000, 0.5);
+
+    .fill { fill: rgba(#000, 0.5); }
+  }
+}
+
+.button.small {
+  @include small-button;
+}
+.button.large {
+  @include large-button;
+  @include breakpoint(large) { padding: rem-calc(20px 30px); }
+}
+
+// ------------------------------------//
+//    Vue
+// ------------------------------------//
+[v-cloak] {
+  opacity: 0;
+}
+
+
+// ------------------------------------//
+//    Foundation
+// ------------------------------------//
+// .reveal-overlay { max-width: 100vw; }
+// .reveal {
+//   @include breakpoint(small only) {
+//     width: auto;
+//     height: auto;
+//     min-height: 0;
+//     top: 50%;
+//     right: 24px;
+//     left: 24px;
+//     position: absolute;
+//     padding: 47px 32px 32px;
+//   }
+//   @include breakpoint(medium) {
+//     width: auto;
+//     padding: 60px;
+//     border: 0;
+//   }
+//   .close-button {
+//     top: 3px;
+//     right: auto;
+//     left: 17px;
+//     @include breakpoint(medium) {
+//       top: 20px;
+//       right: 33px;
+//       left: auto;
+//     }
+//   }
+//   .svg-close .fill { fill: $secondary-color; }
+// }
+// .reveal-scroll {
+//   height: 60vh;
+//   max-height: 60vh;
+//   overflow-y: scroll;
+//   a { word-break: break-all; }
+// }
+
+/* stylelint-disable selector-no-qualifying-type */
+/* sometimes you just need an hr without a margin */
+hr.no-margin { margin: 0 auto; }
+/* stylelint-enable selector-no-qualifying-type */
+
+// ------------------------------------//
+//    Utility/Helper classes
+// ------------------------------------//
+.svg-fill-primary { fill: $primary-color; }
+.svg-fill-secondary { fill: $secondary-color; }
+.svg-fill-shopping-cart { fill: $shopping-cart; }
+
+/* Hide content - needed for WAVE errors when <a> has a div underneath it */
+.hideContent {
+  display: none;
+}

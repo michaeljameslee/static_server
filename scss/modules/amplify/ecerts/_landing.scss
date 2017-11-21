@@ -1,0 +1,109 @@
+.clubcarlson-ecert-landing {
+  position: relative;
+}
+
+.ecert-landing-intro,
+.ecert-landing-form,
+.ecert-landing-faq {
+  padding: rem-calc(64 0 0 16);
+
+  @include breakpoint(large) {
+    max-width: rem-calc(760);
+    padding: rem-calc(100 0 0 60);
+  }
+
+  img {
+    @include breakpoint(large) { width: rem-calc(120); }
+  }
+
+  h1 {
+    margin-top: rem-calc(32);
+    font-family: "Proxima N W01 Light";
+    @include breakpoint(large) { margin-top: rem-calc(30); }
+  }
+
+  hr {
+    max-width: rem-calc(30);
+    text-align: left;
+    border-bottom: 2px solid $primary-color;
+    margin: rem-calc(24 0);
+
+    @include breakpoint(large) { margin: rem-calc(30 0); }
+  }
+}
+
+.ecert-landing-form,
+.ecert-landing-faq {
+  padding-top: 0;
+
+  h2 {
+    font-size: rem-calc(22);
+    line-height: 1.18;
+    margin-bottom: rem-calc(24);
+
+    @include breakpoint(large) {
+      font-size: rem-calc(32);
+      line-height: 1.13;
+      margin-bottom: rem-calc(30);
+    }
+  }
+}
+
+.ecert-landing-form {
+  .account-ecert {
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate3d(0, -100%, 0);
+    transition: opacity 500ms ease 125ms, max-height 500ms ease, transform 500ms ease;
+    margin-bottom: 0;
+
+    &.show-ecert {
+      max-height: rem-calc(200);
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      margin-bottom: rem-calc(32);
+
+      @include breakpoint(medium) { margin-bottom: rem-calc(40); }
+    }
+  }
+}
+
+.ecert-lookup, .account-ecert-lookup {
+  .ecert-lookup-field { max-width: calc(100% - 122px); }
+
+  .ecert-field-wrap {
+    position: relative;
+    margin-bottom: rem-calc(32);
+
+    @include breakpoint(large) { margin-bottom: rem-calc(30); }
+
+    .field-errors {
+      display: block;
+      opacity: 0;
+      position: absolute;
+      top: calc(100% + 20px);
+      left: 0;
+      transition: opacity 500ms ease;
+
+      &.show-error { opacity: 1; }
+    }
+  }
+}
+
+.ecert-landing-faq {
+  h3 {
+    font-family: $proxima-nova-semibold;
+    font-size: rem-calc(16);
+    line-height: 1.375;
+    color: $true-black;
+    margin-bottom: rem-calc(8);
+
+    @include breakpoint(large) {
+      font-size: rem-calc(18);
+      line-height: 1.22;
+      margin-bottom: rem-calc(10);
+    }
+  }
+}

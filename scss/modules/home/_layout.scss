@@ -1,0 +1,53 @@
+/* CSS Document */
+.home {
+  .wrapper { 
+    padding-top: 270px;
+    overflow-x: hidden;
+    @include breakpoint(medium down) { padding-top: 222px; }
+  }
+
+  &.fixed-search .wrapper {
+    @include breakpoint(medium down) { padding-top: 114px; }
+  }
+}
+
+.home-featured-offers {
+  padding-bottom: 60px;
+  > h2 {
+    width: calc(100vw - 30px);
+    max-width: calc(100vw - 30px);
+    margin: 0 auto 40px;
+    
+    // @include breakpoint(large) {
+    //   width: calc(100vw - 120px);
+    //   max-width: calc(100vw - 120px);
+    // }
+  }
+  .cardholder {
+    margin-bottom: 60px;
+  }
+}
+
+.interior .wrapper {
+  overflow-x: hidden;
+}
+
+@include breakpoint (large) {
+  .hero._featured-offer .featured-offer,
+  .featured-info {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  }
+  
+  .hero._featured-offer .featured-offer:hover,
+  .hero._featured-offer .featured-offer:focus {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    transform: translateY(-52.5%);
+  }
+
+  .featured-info:hover,
+  .featured-info:focus {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    transform: translateY(-10px);
+  }
+}

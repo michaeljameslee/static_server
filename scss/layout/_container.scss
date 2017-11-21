@@ -1,0 +1,27 @@
+$global-padding-exterior-sm:      16px;
+$global-padding-exterior-lg:      60px;
+$container-max-width:             1280px;
+$container-padding-sm:            $global-padding-exterior-sm;
+$container-padding-lg:            $global-padding-exterior-lg;
+$container-side-margin:           auto;
+$container-border:                1px solid $global-border-color;
+$container-overflow-x:            hidden;
+
+.container {
+  max-width: $container-max-width;
+  padding-right: $container-padding-sm;
+  padding-left: $container-padding-sm;
+  margin-right: $container-side-margin;
+  margin-left: $container-side-margin;
+  // overflow-x: $container-overflow-x;
+
+  @include breakpoint(large) {
+    padding-right: $container-padding-lg;
+    padding-left: $container-padding-lg;
+  }
+
+  // @media (min-width: $container-max-width) {
+  //   border-left: $container-border;
+  //   border-right: $container-border;
+  // }
+}

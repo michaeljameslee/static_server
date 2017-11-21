@@ -1,0 +1,71 @@
+// THIS WILL BE REFACTORED; time: TBD
+
+.full-width-card {
+  background-color: $primary-color;
+  box-shadow: $card-box-shadow;
+}
+
+.full-width-card .fwc-info .label {
+  @extend .card-details;
+}
+
+.full-width-card .property-info h3 {
+  @extend .card-title;
+}
+
+.full-width-card .property-footer {
+  padding-top: .9275rem;
+}
+
+.full-width-card .fwc-footer .label-rate-text {
+  @extend .card-details;
+  margin-bottom: .025rem;
+}
+
+.full-width-card .fwc-footer .property-rate {
+  @extend .card-title;
+  font-size: rem-calc(26px);
+  line-height: 1;
+  flex: initial;
+  margin-bottom: 0;
+}
+
+// .fwc-full-wrapper {
+//   box-shadow: $card-box-shadow-hover;
+// }
+
+.full-width-card .card-cart {
+  border: 1px solid transparent;
+  border-radius: 50%;
+  box-shadow: $card-box-shadow;
+  color: $true-black;
+  background-color: $primary-color;
+  font-size: rem-calc(18);
+  height: rem-calc(40);
+  width: rem-calc(40);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  transition: $card-cart-transition;
+}
+
+.card-cart .svg-cart {
+  position: relative;
+  top: 3px;
+  left: -1px;
+  transition: all 100ms ease-in-out;
+  transform: scale(1.3675);
+}
+
+.full-width-card .card-cart:hover,
+.full-width-card .card-cart:focus {
+  border: 1px solid rgba(0, 0, 0, .0625);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 1.5px 20px rgba(0, 0, 0, .23);
+  transform: scale(1.5);
+
+  .svg-cart,
+  .rad {
+    transform: scale(1.5825);
+  }
+}

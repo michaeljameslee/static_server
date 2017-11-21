@@ -1,0 +1,39 @@
+// ========================================================================
+// CARDS => BACKGROUND-IMAGE CARDS
+// Cards with a coverfitted background image
+// ========================================================================
+
+/***
+| Table of Contents
+__________________________
+|-- BACKGROUND-CARD
+|-- card-img-cover
+|-- card-img-cover img
+|-- card-header
+***/
+
+.background-card .card-img-cover {
+  height: $bgCard-image-height;
+  border-radius: calc(#{$card-border-radius} - .05rem);
+}
+
+// .background-card .card-img-cover img {
+//   transform: translateY(-2%);
+// }
+
+.background-card .card-header {
+  height: $bgCard-header-height;
+  min-height: $bgCard-header-min-height;
+  position: $bgCard-header-position;
+  bottom: $bgCard-header-position-bottom;
+}
+
+.background-card .card-img-cover [data-picture*='static-img'] {
+  height: auto;
+  min-height: auto;
+  max-height: 100%;
+  width: auto;
+  min-width: auto;
+  max-width: none;
+  transform: translateX(-50%);
+}

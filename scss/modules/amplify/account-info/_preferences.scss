@@ -1,0 +1,199 @@
+.user-preferences {
+  .row { margin: 0; }
+}
+
+.edit-user-preferences {
+  padding: 0;
+  @include breakpoint(large) {
+    max-width: rem-calc(500);
+    padding: rem-calc(60) 0 rem-calc(60) 4.25%;
+  }
+
+  .columns { padding: 0; }
+
+  h2 {
+    font-family: $proxima-nova-reg;
+    font-size: rem-calc(22);
+    line-height: 1.18;
+    margin-bottom: rem-calc(30);
+  }
+
+  .language-prefs-page {
+    color: $true-black;
+    display: block;
+    font-family: $proxima-nova-reg;
+    font-size: rem-calc(16);
+    @include breakpoint(large) {
+      font-size: rem-calc(22);
+    }
+    .dropdown::after {
+      @include breakpoint(large) {
+        right: rem-calc(32);
+      }
+    }
+  }
+
+  .user-language {
+    @include breakpoint(large) {
+      border: 1px solid $gray-light;
+      border-radius: 2px;
+      margin-bottom: rem-calc(40);
+      padding: rem-calc(28) rem-calc(1) rem-calc(27) rem-calc(30);
+    }
+
+    .dropdown, label {
+      width: 100%;
+      @include breakpoint(large) {
+        margin-bottom: 0;
+      }
+    }
+
+    .dropdown::after {
+      top: calc(50% + 6px);
+      transform: rotate(45deg);
+      @include breakpoint(large) {
+        border-right-width: 4px;
+        border-top-width: 4px;
+        height: 12px;
+        top: calc(50% - 9px);
+        transform: rotate(135deg);
+        width: 12px;
+      }
+    }
+
+    label {
+      width: 100%;
+      padding: rem-calc(8 16);
+      color: $gray-dark;
+      background-color: $gray-lightest;
+      border-bottom: 1px solid $gray-light;
+      @include breakpoint(large) {
+        padding: 0;
+        background-color: transparent;
+        border: 0;
+      }
+    }
+
+    .language-data {
+      margin-bottom: 0;
+      padding: rem-calc(19) 0 0 rem-calc(16);
+      @include breakpoint(large) {
+        padding: 0;
+      }
+    }
+
+    .language-label {
+      @include breakpoint(large) {
+        color: $gray-dark;
+        font-family: $proxima-nova-semibold;
+        font-size: rem-calc(12);
+        font-weight: 600;
+        letter-spacing: 1px;
+        line-height: 1.33;
+        margin-bottom: rem-calc(5);
+        text-transform: uppercase;
+        width: 100%;
+      }
+    }
+
+    select {
+      height: rem-calc(64);
+      line-height: 1.25;
+      padding: rem-calc(0 16);
+      border: 0;
+      @include breakpoint(large) {
+        height: auto;
+        font-size: rem-calc(22);
+        line-height: 1.18;
+        padding: 0;
+      }
+    }
+  }
+
+  h3 {
+    width: 100%;
+    padding: rem-calc(8 16);
+    @include label-text;
+    margin-bottom: rem-calc(24);
+    background-color: $gray-lightest;
+    border-top: 1px solid $gray-light;
+    border-bottom: 1px solid $gray-light;
+    @include breakpoint(large) {
+      padding: 0;
+      background-color: transparent;
+      border: 0;
+    }
+  }
+
+  .language-label {
+    border-top: 0;
+    margin-bottom: 0;
+  }
+
+  .user-communication {
+    padding-bottom: rem-calc(8);
+    @include breakpoint(large) {
+      margin-bottom: rem-calc(20);
+      padding-bottom: 0;
+    }
+
+    .checkbox-field {
+      padding: rem-calc(0 16);
+      margin-bottom: rem-calc(24);
+      @include breakpoint(large) {
+        padding: 0;
+        margin-bottom: rem-calc(20);
+      }
+
+      label { flex: 0 0 95%; }
+
+      p { margin-bottom: 0; }
+    }
+  }
+
+  .checkbox-field input:not(:checked) + label::after,
+  .checkbox-field input:checked + label::after { top: 0; }
+
+  .user-earning {
+    flex-direction: column;
+  }
+
+  .user-miles-info {
+    display: none;
+    padding: rem-calc(0 16);
+    @include breakpoint(large) { padding: 0; }
+
+    .dropdown::after { top: calc(50% + 6px); }
+  }
+
+  .preference-submit {
+    margin-bottom: rem-calc(32);
+    padding: rem-calc(0 16);
+    @include breakpoint(large) {
+      margin-bottom: rem-calc(30);
+      padding: 0;
+    }
+
+    .button {
+      width: 100%;
+      padding: rem-calc(15 0);
+      @include breakpoint(large) {
+        width: rem-calc(110);
+        padding: rem-calc(11 0);
+      }
+    }
+  }
+
+  .important-info {
+    font-size: rem-calc(14);
+    line-height: 1.375;
+    color: $near-black;
+    padding: rem-calc(0 16);
+    @include breakpoint(large) {
+      color: $gray-medium;
+      padding: 0;
+    }
+
+    p { margin-bottom: 0; }
+  }
+}

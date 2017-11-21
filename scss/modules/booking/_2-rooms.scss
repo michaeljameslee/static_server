@@ -1,0 +1,244 @@
+// ------------------------------------//
+//    Step - Rooms
+// ------------------------------------//
+
+.bookingview-rooms {
+  @include breakpoint(large) { padding-bottom: 60px; }
+}
+.bookingview-rooms, .guests-list {
+  h1 {
+    text-align: center;
+    font-size: 22px;
+    line-height: 26px;
+    padding: 30px;
+    @include breakpoint(medium down) { display: none; }
+  }
+  ul {
+    list-style-type: none;
+    margin-bottom: 20px;
+    @include breakpoint(large) {
+      width: percentage(882/1000);
+      height: 70vh;
+      border-top: 1px solid $gray-light;
+      border-left: 1px solid $gray-light;
+    }
+  }
+  ul .column {
+    text-align: center;
+    border-bottom: 1px solid $gray-light;
+    border-right: 1px solid $gray-light;
+    display: flex;
+    padding: 24%;
+    position: relative;
+    @include breakpoint(large) {
+      font-size: 32px;
+      line-height: 36px;
+      padding: 0;
+    }
+  }
+  .column:nth-child(even) {
+    @include breakpoint(small only) { border-right: 0; }
+  }
+  .button {
+    @include get-font('light');
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    border-radius: 0;
+    border: 2px solid #fff;
+    font-size: rem-calc(40px);
+    line-height: rem-calc(44px);
+    background: transparent;
+    transition: none;
+    @include breakpoint(large) {
+      transition: border-color .5s;
+      font-size: rem-calc(32px);
+      line-height: rem-calc(36px);
+    }
+    &:hover {
+      @include breakpoint(large) { border: 2px solid $primary-color; }
+    }
+    &:active, &.active {
+      color: $primary-text-cta;
+      border: 2px solid $primary-color;
+      background: $primary-color;}
+  }
+  .active .button {
+    color: $primary-text-cta;
+    border: 2px solid $primary-color;
+    background: $primary-color;
+  }
+}
+
+// ------------------------------------//
+//    Room View
+// ------------------------------------//
+.bookingview-roomview {
+  @include breakpoint(large) {
+    top: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .bookingview-full-header {
+    @include breakpoint(large) {
+      padding: 0;
+      max-width: none;
+      .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background-color: #fff;
+        height: 40px;
+        width: 40px;
+        padding: 10px;
+        z-index: 1;
+      }
+      h1 { display: none; }
+      .svg-close { height: 14px; width: 14px; }
+    }
+  }
+}
+.roomview-images {
+  padding: 0;
+  img { width: 100%; }
+  
+  // FORCE-3658
+  @include breakpoint(medium) {
+    .masthead.coverfit {
+      height: 410px;
+    }
+  }
+  
+  // FORCE-3658
+  @include breakpoint(large) {
+    .masthead.coverfit {
+      height: 25.625rem;
+    }
+  }
+}
+.roomview-info {
+  justify-content: space-between;
+  padding-top: 18px;
+  @include breakpoint(large) { padding-top: 32px; }
+  .column { padding: 0; }
+  .column:first-child {
+    @include breakpoint(large) { flex: 0 0 48.27%; }
+  }
+  .column:last-child {
+    @include breakpoint(large) { flex: 0 0 31.03%; }
+  }
+}
+.roomview-desc {
+  @include get-font('paragraph');
+  padding: 0 16px 8px;
+  margin-bottom: 36px;
+  border-bottom: 1px solid $gray-light;
+  color: $gray-dark;
+  font-size: rem-calc(16);
+  line-height: rem-calc(24);
+  @include breakpoint(large) {
+    padding: 0 0 13px;
+    margin-bottom: 40px;
+    font-size: rem-calc(14);
+    line-height: rem-calc(22);
+  }
+  h2 {
+    font-size: 30px;
+    color: #000;
+    margin-bottom: 4px;
+    font-family: map-get($fonts, 'light');
+    @include breakpoint(large) { font-size: 38px; }
+  }
+  p {
+    font-size: rem-calc(16);
+    line-height: rem-calc(24);
+    @include breakpoint(large) {
+      font-size: rem-calc(14);
+      line-height: rem-calc(22);
+    }
+  }
+}
+.roomview-amenities {
+  padding: 0 16px 40px;
+  border-bottom: 1px solid $gray-light;
+  @include breakpoint(large) { border-bottom: 0; padding: 0 0 40px; }
+  h3 {
+    font-size: 22px;
+    font-family: map-get($fonts, 'light');
+    margin-bottom: 18px;
+    @include breakpoint(large) { font-size: 26px; }
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    @include breakpoint(large) {
+      width: 49%;
+      display: inline-block;
+    }
+  }
+  li {
+    margin-bottom: 16px;
+    @include breakpoint(large) { padding-right: 10px; }
+  }
+  button {
+    @include label-text;
+  }
+  .fa { color: $secondary-color; font-size: 11px; }
+}
+.roomview-rate {
+  @include breakpoint(medium down) {
+    font-size: 16px;
+    color: $primary-text-cta;
+    flex: 1 1 50%;
+    padding: 12px 16px;
+    .roomview-ratename { color: $primary-text-cta; }
+  }
+  @include breakpoint(large) {
+    padding: 16px 0;
+    font-size: 32px;
+    line-height: 36px;
+  }
+}
+.roomview-rateinfo {
+  @include breakpoint(medium down) {
+    background: $primary-color;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+}
+.roomview-ratename {
+  @include label-text;
+  color: $gray-light;
+  font-size: rem-calc(10px);
+  @include breakpoint(large) { color: #000; font-size: .75rem; }
+}
+.roomview-button {
+  @include breakpoint(medium down) {
+    flex: 1 1 50%;
+  }
+  .button {
+    max-width: 100%;
+    font-size: 18px;
+    padding: 22px 0;
+    width: 100%;
+    @include breakpoint(medium down) {
+      text-align: right;
+      padding-right: 12px;
+      font-size: 18px;
+    }
+  }
+  .fa {
+    display: none;
+    @include breakpoint(medium down) {
+      display: inline-block;
+      font-size: 12px;
+      margin-left: 4px;
+    }
+  }
+}

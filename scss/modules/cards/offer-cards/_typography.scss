@@ -1,0 +1,66 @@
+/*
+| Table of Contents
+__________________________
+|-- CARD
+|-- expiration (ex. Expires May 08, 2018)
+|-- card-title (ex. Family Getaway Package)
+|-- card-description (ex. Treat your family on ...)
+|-- card-details (ex. 2 Participating Hotels)
+*/
+
+// ========================================================================
+// OFFER CARDS
+// Offer cards with a small image on top
+// ========================================================================
+// Offer Cards => Expiration Date
+.card-v2 .expiration {
+  color: $card-exp-color;
+  @include label-text;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  padding: $card-padding-sm;
+  @include breakpoint (large) { padding: $card-padding-lg; }
+}
+
+//_____________________________________
+// Offer Cards => Title
+.card-v2 .card-title {
+  color: $card-title-color;
+  font-size: $card-title-font-size;
+  line-height: $card-title-line-height;
+  margin-bottom: $card-title-margin-bottom;
+}
+
+//_____________________________________
+// Offer Cards => Description
+.card-v2 .card-description,
+.card-v2 .card-description p {
+  color: $card-desc-color;
+  font-size: $card-desc-font-size;
+  font-weight: normal;
+  line-height: $card-desc-line-height;
+  margin: $card-desc-margin;
+  vertical-align: middle;
+}
+
+.card-v2 .card-description,
+.card-v2 .card-description p b {
+  font-weight: normal;
+}
+
+.card-v2 .card-description br {
+  display: none;
+}
+
+//_____________________________________
+// Offer Cards => Details
+.card-v2 .card-details {
+  color: $card-details-color;
+  @include label-text;
+  font-size: .675rem;
+  line-height: 1.1;
+  padding: $card-details-padding;
+  margin: $card-details-margin;
+}

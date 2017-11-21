@@ -1,0 +1,72 @@
+// ========================================================================
+// UTILITIES => VISIBILITY UTILS
+// ========================================================================
+
+/* 
+Use these classes to override and take control of visibility.
+
+NOTE:
+Stylelint declaration-no-important is disabled here to force these rules when applied.
+*/
+
+/* 
+stylelint-disable 
+  declaration-no-important, 
+  block-opening-brace-space-before  
+*/
+
+
+//_____________________________________
+// HIDE
+.hide {
+  &\@m {
+    display: none !important;
+    @include breakpoint(medium) { display: none !important; }
+  } // @m
+
+  &\@l {
+    display: none !important;
+    @include breakpoint(large)  { display: none !important; }
+  } // @l
+} // end .hide
+
+
+//_____________________________________
+// SHOW
+.show {
+  &\@m {
+    display: none !important;
+    @include breakpoint(medium) { display: inherit !important; }
+  } // @m
+
+  &\@l {
+    display: none !important;
+    @include breakpoint(large)  { display: inherit !important; }
+  } // @l
+} // end .show
+
+/*doc
+---
+title: .hideContent
+name: hide-content
+category: Utilities
+author: William Pansky [SG0301235]
+---
+
+<p class="label loc">File location</p>
+scss/utilities/_visibility.scss
+
+Needed for WAVE errors when `<a>` has a div underneath it
+
+```
+.hideContent { display: none !important; }
+```
+*/
+
+//_____________________________________
+// hideContent
+// Needed for WAVE errors when
+// <a> has a div underneath it
+.hideContent { display: none !important; }
+
+/* stylelint-enable */

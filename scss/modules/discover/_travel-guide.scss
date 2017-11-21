@@ -1,0 +1,1638 @@
+// TRAVEL GUIDE
+
+// variables
+$tg-section-width: auto;
+$tg-section-height: rem-calc(540);
+$tg-section-padding: rem-calc(60);
+$tg-section-padding-mobile: rem-calc(16);
+
+$tg-section-border: 1px solid $gray-light;
+
+// common text elements
+
+
+.main-paragraph{
+  p{
+    font-family: $proxima-nova-reg;
+    font-size: rem-calc(16);
+    line-height: 1.5;
+    color: $gray-dark;
+    margin-bottom: rem-calc(0);
+    @include breakpoint (small){
+      padding-right: rem-calc(16);
+    }
+    @include breakpoint (large){
+      padding-right: rem-calc(0);
+    }
+  }
+}
+
+/* see short and long desc */
+.secondary-paragraph{
+  p{
+    font-family: $proxima-nova-reg;
+    font-size: rem-calc(14);
+    line-height: 1.57;
+    color: $gray-medium;
+  }
+}
+
+.label{
+  font-family: $proxima-nova-semibold;
+  font-size: rem-calc(12);
+  font-weight: 600;
+  line-height: 1.33;
+  letter-spacing: rem-calc(1);
+  color: $true-black;
+  text-transform: uppercase;
+}
+
+// other shared elements
+.tg-gallery{
+  // margin-top: rem-calc(40);
+  // margin-bottom: rem-calc(40);
+  color: $true-black;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; 
+  align-items: center;
+  justify-content: space-between;
+  margin: rem-calc(40) auto;
+
+  @include breakpoint (medium down){
+    margin-top: rem-calc(24);
+    margin-bottom: rem-calc(24);
+    height: auto;
+  }
+  /*
+  @include breakpoint (medium only){
+    height: rem-calc(800);
+  }
+  */
+}
+
+.tg-btn-full-width{
+  height: rem-calc(60);
+  padding-top: rem-calc(20);
+  font-family: $proxima-nova-semibold;
+  font-size: rem-calc(14);
+  font-weight: 600;
+  line-height: 1.43;
+  letter-spacing: normal;
+  @include breakpoint(small only){
+    line-height: 1.33;
+    letter-spacing: rem-calc(0.5);
+  }
+  text-transform: uppercase;
+  a{
+    color: $true-black;
+  }
+}
+
+
+// Header-Hero
+.tg-hero{
+  overflow: hidden;
+  border-bottom: $tg-section-border;
+}
+
+.tg-hero-left{
+  @include breakpoint (small){
+    width: auto;
+    height: auto;
+    padding-right: rem-calc(0);
+    overflow-wrap: normal;
+    margin-bottom: rem-calc(42);
+  }
+  @include breakpoint (large){
+    width: rem-calc(560);
+    margin: rem-calc(0);
+    float: left;
+    overflow-wrap: normal;
+    padding-left: $tg-section-padding;
+    padding-right: rem-calc(40);
+    padding-top: rem-calc(40);
+    position: relative;
+    bottom: rem-calc(10);
+    .label{
+      font-family: $proxima-nova-semibold;
+      padding-bottom: rem-calc(17);
+    }
+  }
+
+  .back-to-link-wrapper{
+    position: relative;
+    @include breakpoint (small){
+      margin-top: rem-calc(24);
+      margin-bottom: rem-calc(24);
+      padding-left: rem-calc(16);
+    }
+
+    @include breakpoint (large){
+      margin-top: rem-calc(40);
+      margin-bottom: rem-calc(65);
+      padding-left: rem-calc(0);
+    }
+  }
+
+  .back-to-guides:before {
+    content: "";
+    display: inline-block;
+    transform: rotate(225deg);
+    width: rem-calc(8);
+    height: rem-calc(8);
+    border-top: rem-calc(3) solid $secondary-color;
+    border-right: rem-calc(3) solid $secondary-color;
+    transition: transform .4s;
+    margin-right: rem-calc(12);
+    margin-bottom: rem-calc(1);
+    @include breakpoint (small){
+      vertical-align: middle;
+    }
+    @include breakpoint (large){
+      vertical-align: none;
+    }
+  }
+
+  .back-to-guides{
+    :hover{
+      color: $secondary-color;
+    }
+    :active{
+      color: $secondary-color;
+    }
+  }
+
+  .back-to-link{
+    padding-left: rem-calc(2);
+    font-family: $proxima-nova-semibold;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    text-transform: uppercase;
+    a{
+      color: $true-black;
+    }
+    @include breakpoint (small){
+      font-size: rem-calc(12);
+      letter-spacing: rem-calc(0.5);
+      vertical-align: middle;
+    }
+    @include breakpoint (large){
+      font-size: rem-calc(12);
+      letter-spacing: rem-calc(1);
+    }
+  }
+
+  h1{
+    margin-bottom: rem-calc(5);
+    @include breakpoint (small){
+      font-family: $proxima-nova-light;
+      font-size: rem-calc(30);
+      padding-left: rem-calc(16);
+    }
+    @include breakpoint (large){
+      font-family: $proxima-nova-thin;
+      font-size: rem-calc(52);
+      padding-left: rem-calc(0);
+      padding-top: rem-calc(65);
+    }
+  }
+  h5{
+    margin-top: rem-calc(-15);
+    margin-bottom: rem-calc(10);
+    @include breakpoint (small){
+      font-family: $proxima-nova-semibold;
+      font-size: rem-calc(12);
+      margin-top: rem-calc(13.4);
+      text-transform: uppercase;
+    }
+    @include breakpoint (large){
+      font-family: $proxima-nova-reg;
+      font-size: rem-calc(22);
+      text-transform: none;
+    }
+  }
+
+  .tg-hero-text{
+    height: auto;
+    color: $gray-dark;
+
+    @include breakpoint (small){
+      width: auto;
+      padding-top: rem-calc(20);
+      padding-left: rem-calc(16);
+      padding-right: rem-calc(8);
+
+    }
+    @include breakpoint (large){
+      padding-top: rem-calc(29);
+      padding-left: rem-calc(0);
+      padding-right: rem-calc(40);
+    }
+  }
+  .read-more{
+    a{
+      color: $gray-dark;
+    }
+  }
+}
+
+.tg-hero-left.small-12.large-5 .info-expander.label{
+  vertical-align: middle;
+  @include breakpoint (small){
+    padding-left: rem-calc(16);
+    &::after{
+      vertical-align: middle;
+      top: rem-calc(2);
+    }
+  }
+  @include breakpoint (large){
+    padding-top: rem-calc(13);
+    padding-left: rem-calc(0);
+    &::after{
+      vertical-align: middle;
+      top: rem-calc(15);
+    }
+  }
+}
+
+.tg-hero-left.small-12.large-5 .info-expander.active {
+  vertical-align: middle;
+  @include breakpoint (small){
+    padding-left: rem-calc(16);
+    &::after{
+      vertical-align: middle;
+      top: rem-calc(5.5);
+    }
+  }
+  @include breakpoint (large){
+    padding-top: rem-calc(13);
+    padding-left: rem-calc(0);
+    &::after{
+      vertical-align: middle;
+      top: rem-calc(18.5);
+    }
+  }
+}
+
+.tg-hero-right{
+  overflow: hidden;
+  position: relative;
+  z-index: 4;
+
+  @include breakpoint (small){
+    width: 105vw;
+    height: auto;
+    padding: rem-calc(0);
+    overflow-wrap: normal;
+  }
+
+  @include breakpoint (large){
+    float: right;
+    margin: rem-calc(0);
+  }
+
+  .hero-img{
+    @include breakpoint (small){
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      margin-bottom: rem-calc(36);
+    }
+    @include breakpoint (large){
+      width: 100%;
+      margin-bottom: rem-calc(0);
+      transform: translateY(-12.55%);
+    }
+  }
+
+  .mobile-breadcrumb{
+    height: rem-calc(64);
+  }
+}
+
+.icon-grid{
+  position: absolute;
+  z-index: 8;
+  background-color: $primary-color;
+  border-radius: 3px;
+  @include breakpoint (small){
+    left: 88%;
+    margin-top: rem-calc(8);
+    width: 36px;
+    height: 36px;
+    padding-top: rem-calc(5.5);
+    padding-bottom: rem-calc(5.5);
+    padding-left: rem-calc(5.5);
+    padding-right: rem-calc(5.5);
+  }
+  @include breakpoint (medium){
+    left: 94%;
+    margin-top: rem-calc(8);
+    padding-top: rem-calc(5.5);
+    padding-bottom: rem-calc(5.5);
+    padding-left: rem-calc(5.5);
+    padding-right: rem-calc(5.5);
+  }
+  @include breakpoint (large){
+    left: 89%;
+    margin-top: rem-calc(20);
+    width: 66px;
+    height: 67px;
+    padding-top: rem-calc(15);
+    padding-bottom: rem-calc(14);
+    padding-left: rem-calc(14);
+    padding-right: rem-calc(14);
+  }
+  &:hover {
+    background-color: $primary-hover-cta;
+  }
+
+}
+
+.tg-gallery-overlay{
+  background-color: $primary-color;
+  display: none;
+  position: fixed;
+  z-index: 215;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: calc(100vh + 64px);
+  //background-color: $white;
+
+  &.visible { display: block; }
+}
+
+
+// Attractions List w/ Inset Static Map
+.attractions{
+  overflow: hidden;
+  overflow-wrap: normal;
+  @include breakpoint (small){
+    width: auto;
+    height: auto;
+    overflow-wrap: normal;
+    padding: rem-calc(0);
+  }
+  @include breakpoint (large){
+    height: auto;
+    width: $tg-section-width;
+    // padding: $tg-section-padding;
+  }
+  .label{
+    font-family: $proxima-nova-semibold;
+    @include breakpoint (small) { padding-left: rem-calc(16); }
+    @include breakpoint (large) { padding-left: rem-calc(0); }
+
+    &:hover {
+      color: $secondary-color;
+      text-decoration: underline;
+    }
+    &:focus {
+      text-decoration: initial;
+      color: initial;
+    }
+  }
+
+  .attractions-list{
+    h2{
+      @include breakpoint (small){
+        margin-top: rem-calc(42);
+        font-size: rem-calc(22);
+        font-style: normal;
+        font-weight: normal;
+        font-stretch: normal;
+        letter-spacing: normal;
+        line-height: 1.18;
+        padding-left: rem-calc(16);
+      }
+      @include breakpoint (large){
+        margin-top: rem-calc(63);
+        padding-left: rem-calc(0);
+        padding-right: rem-calc(460);
+        font-size: rem-calc(32);
+        line-height: 1.13;
+        height: rem-calc(36);
+        width: auto;
+      }
+    }
+    h3{
+      font-family: $proxima-nova-reg;
+      @include breakpoint (small){
+        margin-top: rem-calc(42);
+        font-size: rem-calc(22);
+        font-style: normal;
+        font-weight: normal;
+        font-stretch: normal;
+        letter-spacing: normal;
+        line-height: 1.18;
+        padding-left: rem-calc(16);
+      }
+      @include breakpoint (large){
+        margin-top: rem-calc(63);
+        padding-left: rem-calc(0);
+        padding-right: rem-calc(460);
+        font-size: rem-calc(32);
+        line-height: 1.13;
+        height: rem-calc(36);
+        width: auto;
+      }
+    }
+    .main-paragraph{
+      @include breakpoint (small only){
+        padding-left: rem-calc(16);
+      }
+      @include breakpoint (large){
+        p{
+          margin-bottom: rem-calc(0.5);
+        }
+      }
+    }
+    .scene-list{
+      border-top: $tg-section-border;
+      margin-top: rem-calc(32);
+      @include breakpoint (large) { 
+        border-top: none;
+        justify-content: space-between;
+        overflow: auto;
+      }
+    }
+  }
+
+  .attraction-entry{
+    @include breakpoint (large){
+      border-bottom: none;
+      padding-bottom: rem-calc(0);
+      margin-bottom: rem-calc(50);
+      float: left;
+      width: 33%;
+    }
+
+    h3 {
+      width: auto;
+      font-family: $proxima-nova-reg;
+      font-size: rem-calc(16);
+      font-stretch: normal;
+      font-style: normal;
+      font-weight: normal;
+      line-height: rem-calc(20);
+      letter-spacing: normal;
+      color: $gray-dark;
+      margin-top: rem-calc(26);
+      margin-bottom: rem-calc(4);
+      height: auto;
+
+      @include breakpoint (large){
+        font-size: rem-calc(18);
+        line-height: 1.22;
+        margin-top: 0;
+        margin-bottom: 10px;
+        padding-right: 0;
+      }
+    }
+
+    li{
+      float: left;
+      font-family: $proxima-nova-reg;
+      line-height: 1.22;
+      color: $gray-dark;
+      @include breakpoint (small){
+        width: auto;
+        height: 100%;
+        margin-top: rem-calc(40);
+        margin-bottom: rem-calc(17);
+        margin-right: rem-calc(14);
+        font-size: rem-calc(12);
+        border-bottom: $tg-section-border;
+      }
+      @include breakpoint (medium){
+        height: rem-calc(107);
+        width: rem-calc(360);
+        margin-top: rem-calc(40);
+        margin-bottom: rem-calc(17);
+        margin-right: rem-calc(14);
+        flex-flow: row wrap;
+        font-size: rem-calc(18);
+        border-bottom: none;
+      }
+    }
+
+    .entry-text{
+      /*width: rem-calc(360);*/
+      height: rem-calc(44);
+      padding-right: rem-calc(40);
+      color: $gray-medium;
+      overflow: hidden;
+      font-size: rem-calc(12);
+      line-height: 1.67;
+      margin-top: rem-calc(5);
+      padding-left: rem-calc(16);
+
+      @include breakpoint (large){
+        font-size: rem-calc(14);
+        line-height: rem-calc(22);
+        border-bottom: none;
+        margin-bottom: rem-calc(12);
+        float: none;
+        margin-top: 0;
+        padding-left: 0;
+      }
+    }
+
+    .entry-link{
+      @include breakpoint (large){
+        margin-top: rem-calc(15);
+        margin-left: rem-calc(0);
+        padding-right: rem-calc(8);
+        font-family: $proxima-nova-semibold;
+        font-size: rem-calc(12);
+        font-weight: 600;
+        letter-spacing: rem-calc(1);
+        line-height: 1.33;
+        text-transform: uppercase;
+        color: $true-black;
+        &:hover{
+          color: $secondary-color;
+        }
+      }
+    }
+
+    .info-go {
+      position: relative;
+      display: table;
+      @include breakpoint (small){
+        bottom: rem-calc(40);
+        left: 85%;
+      }
+      @include breakpoint (large){
+        float: none;
+        bottom: rem-calc(0);
+        left: rem-calc(0);
+      }
+
+      &::after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: rem-calc(4.7);
+        transform: rotate(45deg);
+        width: rem-calc(8);
+        height: rem-calc(8);
+        border-top: rem-calc(3) solid $secondary-color;
+        border-right: rem-calc(3) solid $secondary-color;
+        transition: transform .4s;
+        @include breakpoint(small) { right: rem-calc(-32); }
+        @include breakpoint(large) { right: rem-calc(-2); }
+      }
+
+      p {
+        display: none;
+      }
+    }
+  }
+}
+
+.attractions.small-12.medium-12.large-12.row .attractions-list .info-expander.label{
+  @include breakpoint (small){
+    &::after{
+      vertical-align: middle;
+      top: rem-calc(1);
+    }
+  }
+  @include breakpoint (large){
+    &::after{
+      vertical-align: middle;
+      top: rem-calc(2);
+    }
+  }
+}
+
+.attractions.small-12.medium-12.large-12.row .attractions-list .info-expander.active{
+  @include breakpoint (small){
+    &::after{
+      vertical-align: middle;
+      top: rem-calc(4.5);
+    }
+  }
+
+  @include breakpoint (large){
+    &::after{
+      vertical-align: middle;
+      top: rem-calc(6.5);
+    }
+  }
+}
+
+.attraction-map{
+  @include breakpoint (small){
+    width: auto;
+    height: auto;
+    margin-left: rem-calc(16);
+    margin-right: rem-calc(16);
+    margin-top: rem-calc(40);
+    margin-bottom: rem-calc(40);
+    overflow-wrap: normal;
+  }
+  @include breakpoint (large){
+    width: $tg-section-width;
+    height: rem-calc(260);
+    overflow: hidden;
+    margin: rem-calc(0);
+    padding: rem-calc(0);
+    position: relative;
+    z-index: 0;
+    border-bottom: none;
+  }
+  .inset-map{
+    max-width: none;
+    @include breakpoint (small){
+      display: none;
+    }
+    @include breakpoint (large){
+
+      width: 100%;
+      height: auto;
+      display: block;
+      overflow: hidden;
+      position: relative;
+      z-index: 4;
+    }
+  }
+
+  .button-wrapper{
+    @include breakpoint (small){
+      left: rem-calc(0);
+      transform: none;
+    }
+    @include breakpoint (large){
+      position: absolute;
+      z-index: 8;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      width: auto;
+    }
+  }
+
+  .all-attractions-btn{
+    text-transform: uppercase;
+    font-family: $proxima-nova-semibold;
+    font-style: normal;
+    font-stretch: normal;
+    font-weight: 600;
+    letter-spacing: rem-calc(1);
+
+    @include breakpoint (small){
+      padding: rem-calc(16) rem-calc(94);
+      font-size: rem-calc(14);
+      line-height: rem-calc(18);
+    }
+    @include breakpoint (large){
+      width: rem-calc(246);
+      height: rem-calc(60);
+      padding: rem-calc(21) rem-calc(22);
+      font-size: rem-calc(14);
+      line-height: rem-calc(18);
+    }
+
+    a{
+      color: $true-black;
+    }
+  }
+}
+
+
+// Hotel
+.hotel{
+
+  .tg-gallery{
+    @include breakpoint (medium down){
+      height: rem-calc(475);
+    }
+
+    @include breakpoint (large){
+      margin-bottom: rem-calc(0);
+    }
+  }
+
+  .slideshow-container {
+    @include breakpoint(small) {
+      height: 450px;
+    }
+
+    &::after {
+      content: 'flickity';
+      display: none;
+      @include breakpoint(large) { content: ''; }
+    }
+  }
+
+  @include breakpoint (small){
+    width: auto;
+    height: auto;
+    padding-top: rem-calc(48);
+    padding-bottom: rem-calc(56);
+    padding-left: rem-calc(16);
+    padding-right: rem-calc(16);
+    overflow-wrap: normal;
+    border-top: $tg-section-border;
+    border-bottom: $tg-section-border;
+  }
+  @include breakpoint (large){
+    height: auto;
+    width: $tg-section-width;
+    padding-top: $tg-section-padding;
+    padding-bottom: $tg-section-padding;
+    padding-left: rem-calc(0);
+    padding-right: rem-calc(0);
+    border: none;
+  }
+  h3, ._h3{
+    @include breakpoint (small){
+      font-family: $proxima-nova-reg;
+      font-size: rem-calc(22);
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.18;
+      margin: rem-calc(0);
+      padding: rem-calc(0);
+    }
+    @include breakpoint (large){
+      font-family: $proxima-nova-light;
+      font-size: rem-calc(32);
+      font-weight: 300;
+      line-height: 1.13;
+      height: rem-calc(36);
+      width: rem-calc(402);
+      margin: rem-calc(0);
+      margin-left: $tg-section-padding;
+      padding: rem-calc(0);
+    }
+  }
+  .card h4 {
+    font-family: $proxima-nova-reg;
+    font-size: rem-calc(16);
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    /*height: rem-calc(10);*/
+    /*line-height: rem-calc(20);*/
+  }
+  .card .card-label1 {
+    font-family: $proxima-nova-semibold;
+    font-size: rem-calc(10);
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    /*line-height: 1.4;*/
+    letter-spacing: rem-calc(1);
+    color: $gray-medium;
+    text-transform: uppercase;
+  }
+  .card .card-neighborhood, .card .card-miles {
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 1px;
+
+    i {
+      margin-right: 5px;
+      font-size: 11px;
+    }
+  }
+
+  .card .card-cover-img{
+    min-height: 100%;
+  }
+
+  .card .card-price{
+    line-height: 1.43;
+  }
+
+  .card .logo-brand-container {
+    height: 25px;
+    img {
+      max-height: 25px;
+    }
+  }
+
+  .tg-btn-full-width{
+    width: calc(100% - 60px);
+    margin-left: rem-calc(60);
+    margin-right: rem-calc(60);
+  }
+}
+
+
+// Spotlight
+.spotlight{
+  height: auto;
+  overflow: hidden;
+
+  .spotlight-left {
+    @include breakpoint (large){
+      height: rem-calc(420);
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .spotlight-right{
+    @include breakpoint (large){
+      padding-left: rem-calc(60);
+    }
+
+    a {
+      color: $true-black;
+    }
+  }
+
+  .label-text{
+    color: $true-black;
+    text-transform: uppercase;
+    @include breakpoint (small){
+      margin-top: rem-calc(32);
+    }
+    @include breakpoint (large){
+      margin-top: rem-calc(40);
+    }
+
+    h2{
+      @include breakpoint (small){
+        font-family: $proxima-nova-light;
+        font-size: rem-calc(30);
+        font-weight: 300;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.13;
+        margin: rem-calc(0);
+        padding: rem-calc(0);
+      }
+      @include breakpoint (large){
+        /*
+        font-family: $proxima-nova-light;
+        font-size: rem-calc(38);
+        font-weight: 300;
+        line-height: 1.11;
+        height: rem-calc(42);
+        width: rem-calc(368);
+        margin: rem-calc(0);
+        padding: rem-calc(0);
+        */
+        font-family: $proxima-nova-semibold;
+        font-size: rem-calc(12);
+        color: $true-black;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: rem-calc(4);
+      }
+    }
+  }
+
+
+  .spotlight-text{
+    @include breakpoint (small){
+      width: auto;
+      height: auto;
+      margin-top: rem-calc(16);
+      margin-bottom: rem-calc(32);
+    }
+    @include breakpoint (large){
+      margin-top: rem-calc(10);
+      margin-bottom: rem-calc(30);
+    }
+  }
+
+  .spotlight-btn{
+    @include breakpoint(large){
+      font-family: $proxima-nova-semibold;
+      font-size: rem-calc(12);
+      font-weight: 600;
+      font-stretch: normal;
+      font-style: normal;
+      height: rem-calc(40);
+      letter-spacing: rem-calc(1);
+      line-height: rem-calc(16);
+      padding: 12px 23.5px;
+      a{
+        display: inline-block;
+        color: $true-black;
+      }
+    }
+  }
+}
+
+
+// Latest Articles
+.latest-articles{
+  // overflow: hidden;
+
+  @include breakpoint (small){
+    width: auto;
+    height: auto;
+    padding-left: rem-calc(16);
+    padding-right: rem-calc(16);
+    overflow-wrap: normal;
+    padding-top: rem-calc(56);
+    padding-bottom: rem-calc(56);
+    border-bottom: $tg-section-border;
+  }
+
+  @include breakpoint (large){
+    // height: $tg-section-height;
+    width: $tg-section-width;
+    margin-top: rem-calc(10);
+    padding: $tg-section-padding;
+    border-bottom: none;
+  }
+
+  h4{
+    @include breakpoint (small){
+      font-family: $proxima-nova-reg;
+      font-size: rem-calc(22);
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      letter-spacing: normal;
+      line-height: 1.18;
+      margin: rem-calc(0);
+      padding: rem-calc(0);
+    }
+    @include breakpoint (large){
+      font-family: $proxima-nova-light;
+      font-size: rem-calc(26);
+      font-weight: 300;
+      line-height: 1.15;
+      height: rem-calc(30);
+      width: rem-calc(528);
+      margin: rem-calc(0);
+      padding: rem-calc(0);
+    }
+  }
+
+  .tg-gallery .card-wrapper{
+    @include breakpoint (small){
+      height: auto;
+      left: rem-calc(0);
+    }
+  }
+
+  .tg-gallery .card .quarter-width{
+    @include breakpoint (small only){
+      display: inline-flex;
+      margin-right: rem-calc(32);
+      margin-bottom: rem-calc(21);
+      min-width: none;
+      &:nth-child(2n){
+        margin-right: rem-calc(-1);
+      }
+    }
+  }
+
+  .tg-gallery .card .card-cover-img{
+    min-height: 100%;
+  }
+}
+
+
+// Offers
+.tg-offers{
+  overflow: hidden;
+  width: auto;
+  height: auto;
+  overflow-wrap: normal;
+  margin: 32px auto 40px;
+  @include breakpoint (medium) {
+    border-bottom: none;
+    margin: 40px auto 56px;
+  }
+  
+  h2 {
+    display: block;
+    margin-bottom: 32px;
+    width: 100%;
+    @include breakpoint(medium) {
+      margin-bottom: 40px;
+    }
+  }
+
+  h4 {
+    @include breakpoint (small){
+      font-family: $proxima-nova-reg;
+      font-size: rem-calc(22);
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      letter-spacing: normal;
+      line-height: 1.18;
+      padding: rem-calc(0);
+    }
+    @include breakpoint (small only){
+      margin: rem-calc(0);
+    }
+    @include breakpoint (large){
+      font-family: $proxima-nova-light;
+      font-size: rem-calc(26);
+      font-weight: 300;
+      line-height: 1.15;
+      height: rem-calc(30);
+      width: auto;
+      padding: rem-calc(0);
+    }
+  }
+
+  .tg-gallery {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    @include breakpoint(medium) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+  }
+}
+
+// Attractions Map
+
+.tg-attraction-map{
+  background: $gray-dark;
+  overflow: auto;
+  width: 100%;
+  z-index: 208;
+  padding: 0;
+  position: relative;
+
+  aside {
+    float: left;
+  }
+  .poi-panel-wrapper {
+    bottom: 0;
+    display: none;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    .slick-list, .slick-track {
+      height: 104px;
+    }
+    .poi-panel {
+      position: relative;
+    }
+    .poi-img-container {
+      overflow: hidden;
+      position: relative;
+    }
+    .poi-name-cont, .poi-distance-name {
+      float: right;
+      width: calc(100% - 150px);
+      &.noimage {
+        width: 100%;
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+    }
+    .poi-name-cont {
+      color: black;
+      @include get-font('regular');
+      font-size: rem-calc(16);
+      margin-bottom: 8px;
+      line-height: 1.25;
+      
+    }
+    .poi-distance-name {
+      color: $gray-medium;
+      @include get-font('semibold');
+      font-size: rem-calc(10);
+      letter-spacing: 1px;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+  }
+  .tg-attractions-options {
+    .mobile-map-button {
+      background-color: white;
+      border-bottom: $tg-section-border;
+      @include get-font('semibold');
+      font-size: rem-calc(12);
+      letter-spacing: 1px;
+      line-height: 1.33;
+      padding: 16px 0;
+      text-align: center;
+      text-transform: uppercase;
+      width: 100%;
+      a {
+        color: $true-black;
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.is-open{
+  height: 100%;
+  opacity: 1;
+  display: initial;
+  @include breakpoint(small only){
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+}
+
+
+.mobile-top{
+  background-color: $white;
+}
+
+.mobile-map-options{
+  background-color: $white;
+  height: rem-calc(64);
+  padding-top: rem-calc(17);
+  font-family: $proxima-nova-reg;
+  font-size: rem-calc(22);
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+  line-height: rem-calc(26);
+  text-align: center;
+}
+
+.close-overlay-map-mobile{
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 5%;
+    top: 5%;
+    left: 5%;
+    margin-top: -1px;
+    background: black;
+  }
+
+  &::before { transform: rotate(45deg); }
+
+  &::after { transform: rotate(-45deg); }
+}
+
+.mobile-map-toggle-hide{
+  display: none;
+}
+
+.tg-attractions-list{
+  overflow: auto;
+  @include breakpoint (small only){
+    float: none;
+  }
+  @include breakpoint (medium){
+    float: left;
+  }
+  ol {
+    list-style-position: inside;
+    margin: 0;
+    h3 {
+      display: inline-block;
+    }
+    li {
+      @include get-font('semibold');
+      color: $gray-dark;
+      font-size: rem-calc(18);
+      line-height: 1.375;
+    }
+  }
+  .active-indicator{
+    background-color: $primary-color;
+  }
+  .attraction-category {
+    @include label-text;
+    background-color: $gray-lightest;
+    border-bottom: 1px solid $gray-light;
+    color: $gray-dark;
+    font-size: rem-calc(12);
+    padding: 9px 20px 7px;
+    text-transform: uppercase;
+  }
+
+  .attraction-entry{
+    background-color: $white;
+    cursor: pointer;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    @include breakpoint (small){
+      color: $gray-medium;
+      font-family: $proxima-nova-reg;
+      font-size: rem-calc(12);
+      line-height: rem-calc(20);
+      padding: rem-calc(25) rem-calc(40) rem-calc(25) rem-calc(16);
+      border-bottom: $tg-section-border;
+      box-shadow: inset rem-calc(0) rem-calc(-1) rem-calc(0) rem-calc(0) $gray-light;
+      h3{
+        font-size: rem-calc(16);
+        margin-bottom: rem-calc(10);
+        color: $gray-dark;
+      }
+    }
+    @include breakpoint (medium){
+      padding: rem-calc(25) rem-calc(20);
+      border-bottom: $tg-section-border;
+      box-shadow: none;
+      h3{
+        font-family: $proxima-nova-semibold;
+        font-size: rem-calc(18);
+        line-height: rem-calc(22);
+        margin-bottom: rem-calc(10);
+        color: $gray-dark;
+      }
+    }
+
+    .entry-text{
+      @include get-font('regular');
+      color: $gray-medium;
+      @include breakpoint(small only) {
+        font-size: rem-calc(12);
+        line-height: 1.67;
+      }
+      @include breakpoint(medium) {
+        font-size: rem-calc(14);
+        line-height: 1.57;
+        margin-bottom: 10px;
+      }
+    }
+
+    .entry-link{
+      @include label-text;
+      color: $true-black;
+      font-size: rem-calc(12);
+      font-weight: 600;
+      line-height: rem-calc(16);
+      letter-spacing: rem-calc(1);
+      margin-top: rem-calc(10);
+      &:hover{
+        color: $secondary-color;
+      }
+    }
+
+    .info-go {
+      position: relative;
+      @include breakpoint (small){
+        bottom: rem-calc(40);
+        left: 95%;
+      }
+      @include breakpoint (large){
+        float: none;
+        bottom: rem-calc(0);
+        left: rem-calc(0);
+      }
+
+      &::after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: rem-calc(4.7);
+        @include breakpoint(small){
+          right: rem-calc(-32);
+        }
+        @include breakpoint(large){
+          right: rem-calc(-16);
+        }
+        transform: rotate(45deg);
+        width: rem-calc(8);
+        height: rem-calc(8);
+        border-top: rem-calc(3) solid $secondary-color;
+        border-right: rem-calc(3) solid $secondary-color;
+        transition: transform .4s;
+      }
+    }
+  }
+}
+
+
+.tg-attractions-map{
+  background-color: $white;
+  width: 100%;
+  height: 100%;
+
+  @include breakpoint (small only){
+    float: none;
+    display: none;
+  }
+
+  @include breakpoint (large){
+    float: left;
+  }
+
+
+  .overlay-map{
+    z-index: 3004;
+    position: relative;
+    top: rem-calc(-40);
+    width: 100%;
+    height: auto;
+  }
+}
+
+.back-to-tg-details {
+  background-color: $white;
+  border-bottom: 1px solid $gray-light;
+  display: block;
+  text-transform: uppercase;
+  width: 100%;
+  a{
+    @include label-text;
+    color: $true-black;
+    display: inline-block;
+    &:hover{
+      color: $secondary-color;
+    }
+  }
+  @include breakpoint (small){
+    padding: rem-calc(16);
+  }
+  @include breakpoint (medium){
+    padding: rem-calc(20 20 20 22);
+  }
+}
+
+.back-to-tg-details:before {
+  content: "";
+  display: inline-block;
+  transform: rotate(225deg);
+  width: rem-calc(8);
+  height: rem-calc(8);
+  border-top: rem-calc(3) solid $secondary-color;
+  border-right: rem-calc(3) solid $secondary-color;
+  transition: transform .4s;
+  margin-right: rem-calc(8);
+  margin-bottom: rem-calc(1);
+  @include breakpoint (small){
+    vertical-align: middle;
+  }
+  @include breakpoint (large){
+    vertical-align: none;
+  }
+}
+
+.tg-mobile-map-overlay{
+  background-color: $gray-light;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: rem-calc(0);
+  left: rem-calc(0);
+}
+
+.tg-poi-map-container {
+  height: 100%;
+  width: auto;
+  padding: 0px;
+  position: relative;
+  @include breakpoint(medium down) {
+    flex: 1 1 100%;
+    max-width: none;
+  }
+  @include breakpoint(large) {
+    position: relative;
+  }
+
+  .tg-poi-map-inner {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    
+    .gm-style-iw + div {
+      display: none;
+    }
+    /* stylelint-disable declaration-no-important */
+    /* Needed to override inline map styles*/
+    .gm-style-iw-outer, .gm-poi { width: 260px !important; z-index: 1 !important; }
+    .gm-poi { transform: translate(15px, 10px); }
+    .gm-poi-logo { width: 88px !important; }
+    .gm-style-iw-outer-logo { width: 118px !important; }
+    /* stylelint-enable declaration-no-important */
+  }
+
+  .tg-poi-map {
+    height: 100%;
+    width: 100%;
+  }
+
+  .poi_info_wrapper {
+    .poi_inside_title {
+      color: black;
+      font-size: rem-calc(18);
+    }
+    .poi_address {
+      color: $gray-dark;
+      @include get-font('paragraph');
+      font-size: rem-calc(14);
+      line-height: 1.43;
+    }
+    .poi_distance {
+      color: $gray-medium;
+    }
+  }
+
+  .MicrosoftMap .Infobox .infobox-body {
+    /* stylelint-disable declaration-no-important */
+    /* Needed to override inline map styles*/
+    height: 330px !important;
+    max-height: 350px !important;
+
+    @include breakpoint(medium down) {
+      height: 320px !important;
+      max-height: 340px !important;
+    }
+    /* stylelint-enable declaration-no-important */
+  }
+
+  .MicrosoftMap .poi_inside_panel .poi_info_wrapper {
+    padding: 19px 20px 0 20px;
+  }
+}
+
+
+// LANDING PAGE
+
+.featured{
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+
+  .cover-img{
+    @include breakpoint (medium down){
+      min-height: rem-calc(281);
+      transform: none;
+    }
+  }
+}
+
+
+.trending{
+  @include breakpoint (medium down){
+    padding-top: rem-calc(56);
+    // padding-left: $tg-section-padding-mobile;
+    // padding-right: $tg-section-padding-mobile;
+    h2{
+      font-size: rem-calc(22);
+      line-height: rem-calc(26);
+    }
+
+    .tg-gallery{
+      margin-bottom: rem-calc(0);
+    }
+  }
+
+  @include breakpoint (large){
+    padding-top: $tg-section-padding;
+    h2{
+      font-size: rem-calc(26);
+      line-height: rem-calc(30);
+    }
+  }
+}
+
+
+.featured-secondary{
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  @include breakpoint (small){
+    padding-top: rem-calc(56);
+    padding-bottom: rem-calc(56);
+    // padding-left: $tg-section-padding-mobile;
+    // padding-right: $tg-section-padding-mobile;
+
+    h2 {
+      font-size: rem-calc(22);
+      line-height: rem-calc(26);
+      margin-bottom: rem-calc(0);
+    }
+  }
+
+  @include breakpoint (large){
+    padding: $tg-section-padding;
+  }
+
+  @include breakpoint (medium) {
+    .full-width-card .right {
+      right: 0;
+    }
+  }
+
+}
+
+
+// best category vacations
+.bcv{
+  @include breakpoint (medium down){
+    padding-top: rem-calc(56);
+    // padding-left: $tg-section-padding-mobile;
+    // padding-right: $tg-section-padding-mobile;
+
+    h2{
+      font-size: rem-calc(22);
+      line-height: rem-calc(26);
+    }
+
+    .tg-gallery{
+      margin-bottom: rem-calc(0);
+    }
+  }
+
+  @include breakpoint (large){
+    // padding: $tg-section-padding;
+    padding-bottom: 0.275rem;
+    h2{
+      font-size: rem-calc(26);
+      line-height: rem-calc(30);
+    }
+  }
+}
+
+.landing-offers{
+  @include breakpoint (small){
+    padding-top: 0.625rem;
+    h2{
+      font-size: rem-calc(22);
+      line-height: rem-calc(26);
+    }
+  }
+  @include breakpoint (large){
+    padding: $tg-section-padding 0;
+    h2{
+      font-size: rem-calc(26);
+      line-height: rem-calc(30);
+    }
+  }
+}
+
+.slideshow-container{
+  @include breakpoint (small){
+    height: rem-calc(449);
+  }
+  @include breakpoint (large){
+    height: auto;
+  }
+}
+
+.slideshow-container > .travel-guide-card{
+  @include breakpoint (small){
+    margin-right: rem-calc(12);
+  }
+  @include breakpoint (large){
+    margin-right: rem-calc(40);
+  }
+}
+
+.slideshow-container a {
+  outline: none;
+  &:focus > div {
+    //default values
+    outline: auto 1px rgb(174,214,241);
+  }
+
+  &:last-child {
+    @include breakpoint(large) { margin-right: 0; }
+  }
+}
+
+.tg-poi-page {
+  h4, ._h4 {
+    color: black;
+    font-size: rem-calc(22);
+    line-height: 1.18;
+    margin-bottom: rem-calc(12);
+  }
+  hr {
+    margin: 40px auto;
+    max-width: none;
+    width: 100%;
+  }
+  .hero {
+    position: relative;
+  }
+  .tags {
+    margin-bottom: 30px;
+  }
+  .hours {
+    margin-bottom: 10px;
+  }
+  .hours p, .address p {
+    color: $gray-dark;
+    font-size: rem-calc(14);
+    line-height: 1.57;
+    margin: 0 auto;
+  }
+}

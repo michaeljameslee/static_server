@@ -1,0 +1,56 @@
+/*doc
+---
+title: Offer Cards
+name: offer-cards
+author: William Pansky [SG0301235]
+category: Cards
+---
+
+<p class="label loc">File location</p>
+scss/modules/cards/offer-cards/*.scss
+
+```html_example
+<div class="cardholder grid _4c">
+  <div class="card-wrapper">
+    <article class="card" itemtype="http://schema.org/Offer" tabindex="0" data-card-type="Offer Card">
+      <meta itemprop="name" content="City Breaks">
+      <meta itemprop="description" content="<p>Enjoy a break in the heart of a big city with any of the Radisson brands. Enjoy a break in the heart of a big city with any of the Radisson brands.</p>">
+      <meta itemprop="seller" content="Carlson Rezidor Hotel Group">
+      <meta itemprop="category" content="special offer">
+      <meta itemprop="priceCurrency" content="USD">
+      <meta itemprop="validFrom" content="2017-03-27 08:51:00">
+      <meta itemprop="validThrough" content="2017-12-29 08:51:00">
+      <meta itemprop="priceValidUntil" content="2017-12-29 08:51:00">
+      <a itemprop="url" href="#">
+        <div class="card-img-cover">
+          <picture>
+            <source media="(min-width: 769px)" srcset="/uploads/1008/70/offers-city-breaks.jpg">
+            <source media="(min-width: 375px)" srcset="/uploads/1008/69/offers-city-breaks.jpg">
+            <source media="(min-width: 320px)" srcset="/uploads/1008/68/offers-city-breaks.jpg">
+            <img itemprop="image" src="/uploads/1008/0/offers-city-breaks.jpg" alt="City Breaks" class="cover-img" data-type="card-img" data-picture="content/card/image">
+          </picture>
+          <time class="expiration">Expires Dec 29, 2017</time>
+          <div class="shadow"></div>
+        </div>
+        <header class="card-header">
+          <h3 class="card-title" itemprop="name">City Breaks</h3>
+          <div class="card-description" itemprop="description">
+            <p>Enjoy a break in the heart of a big city with any of the Radisson brands. Enjoy a break in ...</p>
+          </div>
+        </header>
+        <footer class="card-footer">
+          <p class="card-details" itemprop="">22 Participating Hotels</p>
+        </footer>
+      </a>
+    </article>
+  </div>
+</div>
+```
+
+<p class="label rel-links">Relevant links</p>
+- [Design Mockups](https://zpl.io/2Em0jY2)
+- [Atlassian Docs](https://radisson.atlassian.net/wiki/spaces/SD/pages/19693570/Card+Styling)
+*/
+
+@import 'layout';
+@import 'typography';

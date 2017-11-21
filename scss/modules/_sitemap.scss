@@ -1,0 +1,42 @@
+// Sitemap styles
+.sitemap-content {
+  max-width: 100%;
+  padding: rem-calc(16);
+  @include breakpoint(large) { padding: rem-calc(60); }
+
+  > .columns { padding: 0; }
+
+  h1 {
+    margin-bottom: rem-calc(32);
+    @include breakpoint(large) { margin-bottom: rem-calc(60); }
+  }
+
+  .sitemap { margin: 0; }
+
+  .sitemap .column {
+    padding: 0;
+    border-bottom: 1px solid $gray-light;
+    @include breakpoint(medium) { border-bottom: 0; }
+
+    &:last-child { border-bottom: 0; }
+
+    h2 {
+      @include heading-5;
+      font-size: rem-calc(18);
+      margin: rem-calc(16 0);
+      @include breakpoint(large) { margin: rem-calc(0 0 30); }
+    }
+
+    ul {
+      list-style: none;
+      font-size: rem-calc(12);
+      margin: rem-calc(0 0 24);
+      font-weight: 600;
+      color: $gray-dark;
+    }
+
+    li { line-height: 1.83; }
+
+    a { color: $gray-dark; }
+  }
+}

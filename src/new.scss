@@ -1,0 +1,17 @@
+/* These imports are required for Foundation to compile */
+
+@import 'node_modules/foundation-sites/scss/foundation';
+@import 'scss/variables';
+@import 'scss/mixins';
+@import 'scss/theme/mall/variables';
+@import 'scss/theme/mall/mixins';
+@import 'scss/theme/mall/mall';
+@import 'scss/base';
+
+.testdiv {
+  width: 13em;
+  height: 3em;
+  margin-left: 5em;
+  background-color: blue;
+}
+

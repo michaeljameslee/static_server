@@ -1,0 +1,47 @@
+.offers-filters-wrapper {
+  display: none;
+
+  @include breakpoint (medium down) { z-index: 300; }
+  @include breakpoint (large) {
+    top: 130px;
+    height: calc(100vh - 130px);
+  }
+
+  .filter:nth-last-child(2) {
+    @include breakpoint (medium down) {
+      margin-bottom: 32px;
+    }
+  }
+
+  .fixed-search & {
+    @include breakpoint (large) {
+      top: 70px;
+      height: calc(100vh - 70px);
+    }
+  }
+  .filter-options {
+    i {
+      font-size: rem-calc(12);
+    }
+    .secondary {
+      .svg-plus, .rad-plus { display: inline-block; }
+      .svg-close, .rad-close { display: none; }
+    }
+
+    .active {
+      .svg-plus, .rad-plus { display: none; }
+      .svg-close, .rad-close { display: inline-block; }
+    }
+  }
+
+  .mobile-filter-buttons {
+    .close-results {
+      @include breakpoint (medium down) {
+        position: absolute;
+        top: 10px;
+        left: 26px;
+        margin: 0;
+      }
+    }
+  }
+}

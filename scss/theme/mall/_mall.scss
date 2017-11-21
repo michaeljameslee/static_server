@@ -1,0 +1,230 @@
+
+// ------------------------------------//
+//    Layout
+// ------------------------------------//
+// Major page elements and general layout classes
+
+/* stylelint-disable selector-no-qualifying-type */
+/* Form error handling */
+input, [type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'], select, textarea {
+  &.err {
+    border: 1px solid $tomato;
+    color: $tomato;
+    margin-bottom: 0;
+  }
+}
+/* stylelint-enable selector-no-qualifying-type */
+.valerr {
+  color: $tomato;
+  display: none;
+  font-family: $proxima-nova-semibold;
+  font-size: rem-calc(12);
+  line-height: 1.33;
+  margin: 10px auto rem-calc(20);
+  width: 100%;
+}
+.cta {
+  border-radius: 2px;
+  color: $black;
+  display: inline-block;
+  font-family: $proxima-nova-semibold;
+  font-size: rem-calc(14);
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  &:hover {
+    color: $black;
+  }
+}
+.cta-1 {
+  @extend .cta;
+  background-color: $primary-color;
+  &:hover {
+    border: 2px solid $primary-hover-cta;
+    background-color: $primary-hover-cta;
+  }
+}
+.cta-2 {
+  @extend .cta;
+  background-color: $white;
+  &:hover {
+    border: 2px solid $secondary-hover-cta;
+    background-color: $secondary-hover-cta;
+  }
+}
+.cta-full {
+  display: block;
+  font-size: rem-calc(14);
+  letter-spacing: 1px;
+  line-height: 1.43;
+  @include breakpoint(small only) {
+    font-size: rem-calc(12);
+  }
+}
+
+.label {
+  font-family: $proxima-nova-reg;
+  &._subtitle, &._tag {
+    font-family: $proxima-nova-semibold;
+  }
+}
+a .label, .label a {
+  color: darken($tomato,10%);
+  font-family: $proxima-nova-semibold;
+  font-size: rem-calc(12);
+  font-weight: bold;
+}
+a:hover .label, .label a:hover {
+  border-bottom: 1px solid $tomato;
+}
+.batch-link, a .batch-link, .batch-link a {
+  font-family: $proxima-nova-reg;
+  color: $tomato;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.info-expander::after {
+  top: 6px;
+}
+.info-expander.active::after {
+  top: 10px;
+}
+
+// OFFERS
+.offers-main {
+  .hero {
+    h2 {
+      font-family: $proxima-nova-light;
+    }
+  }
+}
+.offer-main {
+  .info-expander::after {
+    top: 4px;
+  }
+  .info-expander.active::after {
+    top: 7px;
+  }
+}
+.offer-detail {
+  h2 {
+    font-size: rem-calc(26);
+  }
+  ul {
+    @include breakpoint(large) {
+      overflow: auto;
+      li {
+        display: inline-block;
+        float: left;
+        margin-right: 9%;
+        width: 40%;
+      }
+    }
+    li {
+      font-size: rem-calc(14);
+      margin-bottom: 11px;
+    }
+  }
+}
+.offer-locations {
+  h2 {
+    font-size: rem-calc(32);
+    margin-bottom: 10px;
+  }
+}
+.offer-cardholder {
+  @include flickity-gallery;
+  .card {
+    .card-label2-related-prop {
+      display: inline-block;
+      float: right;
+      width: 40%;
+      text-align: left;
+    }
+  }
+}
+@media screen and (max-width: 40em) {
+  .offer-title {
+    padding: 24px 0px 10px;
+    h1 {
+      font-size: rem-calc(30);
+      margin: 0px auto rem-calc(8);
+    }
+    h1, h3, p, ul, .offer-part-brand, .offer-part-brands {
+      margin-left: 16px;
+      margin-right: 16px;
+    }
+    .feature {
+      font-size: rem-calc(12);
+    }
+    hr {
+      margin: 24px 0;
+    }
+  }
+}
+
+// CARDS
+.card-spacer {
+  // border-radius: 4px; // removed in favor of $card-border-radius
+}
+.card {
+  h3 {
+    color: $black;
+    @include breakpoint (large){
+      font-family: $proxima-nova-reg;
+      font-size: rem-calc(22);
+      line-height: 1.18;
+      margin: 2px auto 8px;
+    }
+  }
+
+  h4 {
+    color: $black;
+    font-family: $proxima-nova-semibold;
+    font-size: rem-calc(16);
+    line-height: 1.25;
+    text-transform: capitalize;
+  }
+  p {
+    color: $gray-dark;
+    font-size: rem-calc(14);
+    line-height: 1.43;
+  }
+  .card-cart .fa-shopping-cart,
+  .card-cart .svg-cart {
+    color: $black;
+    fill: $black;
+    width: 17px;
+  }
+  .card-label2 {
+    color: $gray-medium;
+    font-family: $proxima-nova-semibold;
+    font-size: rem-calc(12);
+    font-weight: bold;
+    line-height: 1.33;
+    text-transform: uppercase;
+  }
+  .card-price {
+    color: $black;
+    font-family: $proxima-nova-reg;
+    font-size: rem-calc(26);
+    line-height: 1.15;
+  }
+  .card-content {
+    .ta-logo {
+      bottom: auto;
+    }
+  }
+}
+
+//MALL Blog Landing background
+.bl-hero{
+  .greeting{
+    .greeting-block{
+      @include breakpoint (large){
+        background-image: url("/templates/main/images/card-bg.svg");
+      }
+    }
+  }
+}

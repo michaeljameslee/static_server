@@ -1,0 +1,208 @@
+.best-rate-landing {
+  .icon {
+    max-width: none;
+    max-height: none;
+  }
+  h2 {
+    font-family: $proxima-nova-thin;
+    font-size: 30px;
+  }
+  p {
+    font-family: $proxima-nova-reg;
+    font-size: 16px;
+    color: $gray-dark;
+  }
+  .side-padding {
+    padding: 0 16px;
+  }
+  button {
+    font-family: $proxima-nova-semibold;
+  }
+  .row {
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  @media screen and (min-width: 64em) {
+    .side-padding {
+      padding: 0 60px;
+    }
+    h2 {
+      font-size: 52px;
+      line-height: 56px;
+      margin-bottom: 15px;
+    }
+  }
+
+  .first-block {
+    padding-top: 24px;
+    .main-desc {
+      margin-bottom: 0px;
+    }
+    .logo-cover {
+      margin-top: 13px;
+    }
+    .main-image {
+      margin-top: 24px;
+      text-align: center;
+    }
+    @media screen and (min-width: 64em) {
+      height: 600px;
+      border-bottom: 1px solid #cdcdcd;
+      .main-image {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        margin-top: 129px;
+      }
+      .image-file {
+        width: 620px;
+        height: 540px;
+      }
+      .main-desc {
+        margin-bottom: 30px;
+      }
+      .logo-cover {
+        margin: 40px 0;
+      }
+    }
+    @media screen and (min-width: 80em) {
+      .image-file {
+        width: 720px;
+      }
+    }
+  }
+
+  .third-block {
+    padding-top: 40px;
+    padding-bottom: 56px;
+    text-align: center;
+    border-bottom: 1px solid #cdcdcd;
+
+    h2 {
+      font-family: $proxima-nova-light;
+      font-size: 22px;
+    }
+    button {
+      width: 100%;
+      padding: 16px 0;
+    }
+    .icon {
+      width: 64px;
+      height: 64px;
+      margin: auto;
+    }
+    .st0 {
+      fill: #ee2d24;
+    }
+    .third-block-body-icon {
+      margin-top: 47px;
+      margin-bottom: 24px;
+    }
+    .third-block-body-heading {
+      font-size: 16px;
+    }
+    .third-block-body-desc p {
+      font-size: 12px;
+      font-family: $proxima-nova-reg;
+      color: $gray-dark;
+      padding: 5px 30px 24px 30px;
+    }
+    .detail {
+      color: black;
+      font-family: $proxima-nova-semibold;
+      font-size: rem-calc(12);
+      &::after {
+        content: "";
+        display: inline-block;
+        transform: rotate(45deg);
+        width: rem-calc(8);
+        height: rem-calc(8);
+        border-top: rem-calc(3) solid $secondary-color;
+        border-right: rem-calc(3) solid $secondary-color;
+        transition: transform .4s;
+        margin-left: rem-calc(8);
+        margin-bottom: rem-calc(1);
+      }
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+    @media screen and (min-width: 64em) {
+      padding: 60px 0;
+      h2 {
+        font-size: 32px;
+      }
+      button {
+        width: 167px;
+        padding: 12px 0;
+      }
+      .topmargin {
+        position: relative;
+        top: 21px;
+      }
+      .third-block-body-heading {
+        font-size: 22px;
+      }
+      .third-block-body-desc p {
+        font-size: 14px;
+        width: 260px;
+        padding: 10px 0 20px 0;
+        text-align: center;
+        margin: auto;
+      }
+      .icon {
+        margin: auto;
+      }
+    }
+  }
+
+  .last-block {
+    text-align: center;
+
+    @include breakpoint(medium down) {
+      padding: 10px 0 0;
+    }
+
+    .bk {
+      position: relative;
+
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 32px;
+        right: 32px;
+        background: #cdcdcd;
+        height: 1px;
+        @include breakpoint(large) {
+          height: 100%;
+          width: 1px;
+          top: 0;
+          left: auto;
+          right: 0;
+          bottom: auto;
+        }
+      }
+    }
+
+    .small-12 {
+      @include breakpoint(medium down) {
+        padding: 10px 0;
+      }
+    }
+
+    @media screen and (min-width: 64em) {
+      padding: 60px;
+      .desc {
+        padding: 0 30px;
+      }
+    }
+    p {
+      @include breakpoint(small only) {
+        font-size: rem-calc(12);
+        padding: 5px 22px 24px;
+      }
+    }
+  }
+}

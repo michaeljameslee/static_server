@@ -1,0 +1,147 @@
+// Common Contact-Us parts
+@mixin heading-block{
+  padding-top: 32px;
+  padding-left: 16px;
+  padding-right: 16px;
+  @media screen and (min-width: 64em) {
+    padding: 0;
+  }
+}
+
+@mixin brand-stripe{
+  border-bottom: 1px solid $primary-color;
+  height: 1px;
+  width: 30px;
+  margin-top: rem-calc(24);
+}
+
+.contact-us {
+  @media screen and (min-width: 64em) {
+    padding: 60px;
+    h2 {
+      margin-bottom: rem-calc(20);
+    }
+    max-width: rem-calc(880);
+  }
+  p {
+    color: #696969;
+  }
+  .row {
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .border {
+    @include brand-stripe;
+  }
+  .heading-block {
+    @include heading-block;
+  }
+
+  .email-block {
+    padding-top: 24px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #cdcdcd;
+    @media screen and (min-width: 64em) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .toll-block {
+    padding: 40px 16px;
+    border-bottom: 1px solid #cdcdcd;
+    @media screen and (min-width: 64em) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .custom-block {
+    padding: 40px 16px;
+    border-bottom: 1px solid #cdcdcd;
+    .name {
+      font-family: $proxima-nova-semibold;
+      margin-bottom: 20px;
+    }
+    .content p {
+      color: black;
+      margin-bottom: 1px;
+    }
+    @media screen and (min-width: 64em) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .faq-block {
+    padding: 40px 16px;
+    @media screen and (min-width: 64em) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  
+  .box {
+    width: 100%;
+    padding: 32px 24px;
+    border: 1px solid #cdcdcd;
+    margin: 24px 20px 0 0;
+    @media screen and (min-width: 64em) {
+      max-width: rem-calc(360);
+    }
+    a { color: black; }
+  }
+}
+
+
+.contact-us-faq {
+  padding: rem-calc(40) rem-calc(460) rem-calc(80) rem-calc(60);
+  
+  @include breakpoint (medium down){
+    padding-left: rem-calc(16);
+    padding-right: rem-calc(16);
+  }
+
+  .title{
+    @include heading-block;
+    font-weight: 300;
+    @include breakpoint (medium down){
+      padding-left: rem-calc(0);
+      padding-right: rem-calc(0);
+    }
+  }
+
+  .border {
+    @include brand-stripe;
+    margin-bottom: rem-calc(15);
+  }
+
+  .content{
+    padding-bottom: rem-calc(15);
+    :after{
+      display: block;
+      content: "";
+      height: rem-calc(128);
+      margin: rem-calc(-128) rem-calc(0) rem-calc(0);
+    }
+    @include breakpoint (medium down){
+      p{
+        color: $near-black;  
+      }
+      strong{
+        color: $true-black;
+      }
+    }
+    @include breakpoint (large){
+      p{
+        color: $gray-dark;
+      }
+      strong{
+        color: $true-black;
+      }
+    }
+  }
+}

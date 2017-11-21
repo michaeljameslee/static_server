@@ -1,0 +1,767 @@
+/* stylelint-disable declaration-no-important */
+.search-map {
+  .wrapper { padding: 0 !important; }
+  .header-logo {
+    padding-left: 30px;
+    @include breakpoint(small down) {
+      padding-left: 12px;
+      padding-right: 10px;
+    }
+  }
+
+  .search-poi-panel .search-poi-location-name {
+    text-transform: none;
+  }
+}
+/* stylelint-enable */
+
+.searchmap {
+  margin-top: 63px;
+  height: calc(100vh - 63px);
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  @include breakpoint(large) {
+    margin-top: 128px;
+    height: calc(100vh - 128px);
+    overflow: hidden;
+  }
+}
+.search-map-wrapper {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+
+  .loader-wrap {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
+    padding-top: 130px;
+    z-index: 40;
+  }
+  .loader { opacity: 1; }
+
+  .loader > div:nth-child(1) { animation: ball-pulse-sync 1s -0.14s infinite ease-in-out; }
+  .loader > div:nth-child(2) { animation: ball-pulse-sync 1s -0.07s infinite ease-in-out; }
+  .loader > div:nth-child(3) { animation: ball-pulse-sync 1s 0s infinite ease-in-out; }
+
+  @keyframes ball-pulse-sync {
+    25%, 50%, 75% { transform: translateY(15px); }
+    100% { transform: translateY(0); }
+  }
+
+  .results-filters .button:last-of-type {
+    margin-right: rem-calc(10);
+
+    @include breakpoint(medium down) {
+      margin-right: 0;
+    }
+  }
+
+  .results-filters .label,
+  .results-filters form .dropdown {
+    @include breakpoint(large) {
+      margin-bottom: 0;
+    }
+  }
+
+  .results-filters-wrapper {
+    @include breakpoint(large) {
+      top: 130px;
+      height: calc(100vh - 130px);
+    }
+  }
+}
+.search-poiMap { width: 100%; height: 100%; }
+
+.search-poi-locations {
+  border-right: 1px solid $gray-light;
+  padding: 0px;
+
+  @include breakpoint(large) {
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    height: 100%;
+  }
+
+  &::-webkit-scrollbar { width: 0; }
+
+  .search-poi-panel-wrapper {
+    @include breakpoint(medium down) {
+      position: absolute;
+      bottom: 16px;
+      width: 100%;
+      max-width: none;
+      z-index: 1;
+      height: 104px;
+    }
+    
+    @include breakpoint(small only){
+      // bottom: 16.5%;
+      display: none;
+    }
+
+    //android
+    @media (-webkit-min-device-pixel-ratio: 3) and (min-resolution: 192dpi) and (max-width: 640px) {
+      bottom: 14px;
+    }
+
+    @include breakpoint(medium only){
+      bottom: 40px;
+    }
+
+    &.slick-initialized { display: block; }
+    /* stylelint-disable declaration-no-important */
+    /* Need to override slick's default padding */
+    .slick-list { padding: 0 33px 0 8px !important; }
+    /* stylelint-enable declaration-no-important */
+  }
+
+  .brand-divider {
+    @include get-font('regular');
+    font-size: rem-calc(12);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: $gray-lightest;
+    border-top: 1px solid $gray-light;
+    border-bottom: 1px solid $gray-light;
+    margin: 0;
+    padding: 7px 0 7px 20px;
+    font-weight: 600;
+    color: $gray-dark;
+    display: block;
+    width: 100%;
+  }
+}
+
+.search-poi-panel {
+  border-bottom: 1px solid $gray-light;
+  cursor: pointer;
+  display: none;
+  padding: 20px;
+  @include breakpoint(medium down) {
+    border: 1px solid $gray-light;
+    border-radius: 4px;
+    background: #fff;
+    height: 104px;
+    display: inline-flex;
+    margin: 0 6px 0 7px;
+    padding: 0;
+    white-space: normal;
+  }
+
+  @include breakpoint(large) { transition: border-left 0.3s ease; transition-delay: .2s; }
+  &.is-active {
+    @include breakpoint(large) { border-left: 5px solid $primary-color; }
+    .search-poi-location-name { color: $black; }
+  }
+  &.is-match { display: flex; }
+  &:hover {
+    @include breakpoint(large) { border-left: 5px solid #000; }
+    .search-poi-location-name { color: $black; }
+  }
+  .i-cont {
+    display: inline-block;
+    margin-right: 10px;
+    position: relative;
+    vertical-align: top;
+
+    @include breakpoint(small only) { margin-right: 2px; }
+    @include breakpoint(medium only) { vertical-align: middle; }
+  }
+  .search-panel-link {
+    display: block;
+    width: 100%;
+  }
+  .search-poi-location-name {
+    @extend %lightweight;
+    color: $gray-dark;
+    display: inline-block;
+    font-size: rem-calc(16);
+    margin: 0 0 8px 0;
+    vertical-align: top;
+    line-height: 18px;
+    @include breakpoint(medium down) { 
+      font-size: .875rem;
+      line-height: 1.2;
+    }
+  }
+
+  .search-poi-img-container {
+    width: 138px;
+    height: 102px;
+    overflow: hidden;
+
+    @include breakpoint(large) {
+      display: inline-block;
+      height: 54px;
+      overflow: hidden;
+      position: relative;
+      width: 72px;
+      margin-top: 6px;
+    }
+  }
+  .search-poi-img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+    @include breakpoint(large) {
+      left: 0px;
+      position: absolute;
+      transform: translateY(-50%);
+      top: 50%;
+    }
+  }
+
+  .search-poi-name-cont {
+    flex: 1 1 0px;
+    min-width: initial;
+    text-align: left;
+    padding: 6px;
+    margin-right: 0;
+    
+    @include breakpoint(medium down) {
+      width: 45%;
+      padding-top: 10px;
+      height: 102px;
+      overflow: hidden;
+    }
+
+    @include breakpoint(large) {
+      padding: 0;
+      margin-right: 0;
+      width: 57%;
+    }
+  }
+
+  .search-poi-ratename {
+    font-size: .625rem;
+    line-height: 1;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    @include get-font('semibold');
+    color: $gray-medium;
+    @include breakpoint(large) { font-size: rem-calc(10); }
+  }
+  .search-poi-rateval {
+    color: $gray-dark;
+    font-size: rem-calc(16);
+    font-weight: 900;
+    margin-bottom: 0;
+    @include breakpoint(large) {
+      font-size: rem-calc(20);
+      line-height: 1.2;
+    }
+  }
+  .search-poi-rateval-pointspluscash {
+    @include breakpoint(medium down) { font-size: rem-calc(12); }
+  }
+}
+
+.search-poi-map-container {
+  padding: 0px;
+  @include breakpoint(medium down) { flex: 1 1 100%; max-width: none; }
+  @include breakpoint(large) { position: relative; }
+
+  .search-poi-map-inner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    // Moved the filter to it's on row; pushed the map down due to the filters
+    // overlaying the map and making it unfunctional (panning and top-right button)
+    // margin-top: 68px;
+
+    @include breakpoint(medium down) {
+      top: 49px;
+      height: calc(100vh - 49px);
+    }
+  }
+  .search-poi-map { height: 100%; width: 100%; }
+  .gm-style-iw + div { display: none; }
+  /* stylelint-disable declaration-no-important */
+  /* Needed to override inline map styles*/
+  .gm-style .gm-style-iw { overflow: visible !important; }
+
+  .gm-style .gm-style-iw div:nth-child(1) { box-shadow: 0px 3px 7px rgba(0,0,0, .3); border-radius: 4px; }
+
+  .gm-style-iw-outer, .gm-poi { width: 260px !important; z-index: 1 !important; }
+  .gm-poi { transform: translate(15px, 10px); }
+  .gm-style-iw-outer-marker, .gm-marker-poi { width: 79px !important; opacity: 1 !important; }
+
+  .gm-style-iw-outer-marker.active,
+  .gm-style-iw-outer-marker.active .gm-marker-poi {
+    width: 96px !important;
+
+    @include breakpoint(medium down) { width: 118px !important; }
+  }
+  .gm-style-iw-outer-marker.active .panel-beak { width: 100%; }
+  .gm-style-iw-outer-marker.active { z-index: 50 !important; opacity: 1 !important; }
+  .gm-style-iw-outer-marker.is-open.active { z-index: 1 !important; opacity: 0 !important; }
+  .gm-poi-logo { width: 88px !important; }
+  .gm-style-iw-outer-logo { width: 118px !important; }
+  /* stylelint-enable declaration-no-important */
+
+  .filters-top {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    width: 100%;
+
+    @include breakpoint(large) {
+      position: absolute;
+      z-index: 10;
+      width: 100%;
+      right: 0;
+      top: 0;
+      padding: 10px;
+      background: rgba(255,255,255,.625);
+      border-bottom: 1px solid $global-border-color;
+    }
+
+    select { background: #fff; }
+  }
+  .results-info {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  .results-filters {
+    width: 100%;
+    margin-bottom: 0;
+
+    @include breakpoint(medium down) {
+      border-bottom: 1px solid $gray-light;
+      display: flex;
+    }
+
+    @include breakpoint(large) {
+      text-align: center;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .button {
+      @include breakpoint(medium down) {
+        flex: 1 1 100%;
+        display: inline-block;
+        margin-right: 0;
+        border-radius: 0;
+        background: white;
+        height: 48px;
+        padding: 15px 0 0 0;
+        border-width: 0 0 0 1px;
+        border-left: 1px solid $gray-light;
+      }
+      @include breakpoint(large) { padding: 10px 30px; }
+    }
+
+    .button:first-of-type {
+      @include breakpoint(medium down) { border-left: 0; }
+    }
+
+    .fa-sliders {
+      transform: rotate(90deg);
+    }
+
+    span {
+      @include breakpoint(medium down) {
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+
+    .button .fa {
+      @include breakpoint(medium down) {
+        vertical-align: top;
+        margin-right: 2px;
+        font-weight: normal;
+      }
+      @include breakpoint(small only) {
+        vertical-align: middle;
+      }
+      //android mobile
+      @media (-webkit-min-device-pixel-ratio: 3) and (min-resolution: 192dpi) and (max-width: 640px) {
+        vertical-align: middle;
+      }
+      /* phone Landscape */
+      @media only screen and (min-device-width: 320px) and (max-device-width: 736px) and (orientation: landscape) {
+        vertical-align: middle;
+        margin-top: 2px;
+      }
+      // ipad tablet portrait
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+        vertical-align: middle;
+        margin-top: 2px;
+      }
+      // android tablet portrait
+      @media (min-device-width: 800px) and (max-device-width: 1280px) and (orientation: portrait) {
+        vertical-align: top;
+        margin-top: 0;
+      }
+    }
+  }
+
+  .poi_logo {
+    background: #fff;
+    padding: 12px;
+    border-radius: 4px;
+
+    @include breakpoint(large) { padding: 12px 14px; }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    img {
+      width: 50px;
+      height: auto;
+
+      @include breakpoint(medium down) { width: 62px; }
+    }
+
+    &.active {
+      @include breakpoint(medium down) { padding: 22px; }
+      @include breakpoint(large) { padding: 12px 19px; }
+      img {
+        width: 54px;
+
+        @include breakpoint(medium down) { width: 64px; }
+      }
+    }
+  }
+
+  .panel-beak {
+    content: '';
+    background-image: url(../../assets/images/temporary/pic-cloud-tip.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: auto 100%;
+    display: block;
+    width: 100%;
+    height: 6px;
+    position: absolute;
+    bottom: -3px;
+  }
+}
+
+.search-infowindow {
+  cursor: default;
+  border-radius: 4px;
+  background: white;
+  width: 260px;
+  .room-recentstay {
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    padding-top: 10px;
+    color: white;
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-size: 14px;
+    z-index: 1;
+  }
+  .room-imagewrap {
+    height: 175px;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      width: 100%;
+      height: 30%;
+      z-index: 10;
+      position: absolute;
+      background-image: linear-gradient(to top, #000, transparent);
+      bottom: 0;
+    }
+  }
+  .room-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .ta-logo {
+    height: 17px;
+  }
+  .hotel-miles {
+    position: absolute;
+    bottom: 6px;
+    color: white;
+    padding-left: 22px;
+    z-index: 40;
+    text-transform: uppercase;
+    @include get-font('semibold');
+    font-size: rem-calc(10);
+
+    .fa { margin-right: 5px; font-size: rem-calc(14); }
+  }
+  .svg-cart {
+    vertical-align: middle;
+    transition: transform 0.3s;
+    margin-top: 12px;
+    width: 17px;
+
+    .fill { fill: #000; }
+  }
+  .room-name {
+    border-left: 1px solid $gray-lightest;
+    border-right: 1px solid $gray-lightest;
+    border-bottom: 1px solid $gray-lightest;
+    padding: 20px 12px;
+    position: relative;
+    @include breakpoint(large) {
+      padding: 20px;
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    .hotel-name {
+      @include get-font('regular');
+      font-size: 14px;
+      line-height: 20px;
+      margin-bottom: 6px;
+    }
+    .button {
+      position: absolute;
+      top: -20px;
+      right: 12px;
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      transition: transform 0.3s;
+      z-index: 30;
+      @include breakpoint(large) { right: 20px; }
+      &:hover {
+        @include breakpoint(large) { transform: scale(1.25); }
+      }
+      &:hover .svg-cart {
+        @include breakpoint(large) { transform: scale(0.8); }
+      }
+    }
+    .logo { margin-bottom: 16px; }
+  }
+  .room-ratename {
+    /* stylelint-disable declaration-no-important */
+    /* Needed to override inline map styles*/
+    @include label-text;
+    box-shadow: none !important;
+    /* stylelint-enable declaration-no-important */
+  }
+  .room-rate {
+    border: 1px solid $gray-lightest;
+    border-bottom: none;
+    padding: 12px;
+    line-height: 20px;
+    color: $gray-medium;
+    font-size: rem-calc(10px);
+    @include breakpoint(large) {
+      padding: 20px;
+      font-size: rem-calc(26px);
+      line-height: 30px;
+    }
+  }
+  .room-rateval {
+    color: black;
+    @include breakpoint(small only) { font-size: rem-calc(26px); }
+  }
+
+  .panel-beak {
+    height: 10px;
+    bottom: -7px;
+  }
+}
+
+/* bing map infobox */
+.MicrosoftMap .Infobox {
+  /* stylelint-disable declaration-no-important */
+  /* Needed to override inline map styles*/
+  border: none !important;
+  border-radius: 4px !important;
+
+  .infobox-close { z-index: 10; }
+
+  .infobox-title { display: none; }
+  .infobox-body {
+    cursor: pointer;
+    border-radius: 4px;
+    background: white;
+    width: 290px !important;
+    height: 430px !important;
+    max-width: 300px !important;
+    max-height: 450px !important;
+
+    @include breakpoint(medium down) {
+      height: 320px !important;
+      max-height: 340px !important;
+    }
+  }
+  .infobox-info {
+    max-height: 450px !important;
+    padding: 0 !important;
+    font-family: $proxima-nova-reg !important;
+    color: black !important;
+
+    .poi_inside_panel { width: 100%; }
+  }
+  /* stylelint-enable declaration-no-important */
+  .search-infowindow { width: 100%; }
+  .room-recentstay {
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    padding-top: 10px;
+    color: white;
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-size: 14px;
+    z-index: 1;
+  }
+  .room-imagewrap {
+    height: 175px;
+    position: relative;
+    overflow: hidden;
+
+    @include breakpoint(medium down) {
+      height: 125px;
+    }
+
+    &::before {
+      content: '';
+      width: 100%;
+      height: 30%;
+      z-index: 10;
+      position: absolute;
+      background-image: linear-gradient(to top, #000, transparent);
+      bottom: 0;
+    }
+  }
+  .room-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .ta-logo {
+    height: 17px;
+  }
+  .hotel-miles {
+    position: absolute;
+    bottom: 6px;
+    color: white;
+    padding-left: 22px;
+    z-index: 40;
+    text-transform: uppercase;
+    @include get-font('semibold');
+    font-size: rem-calc(10);
+
+    .fa { margin-right: 5px; font-size: rem-calc(14); }
+  }
+  .svg-cart {
+    vertical-align: middle;
+    transition: transform 0.3s;
+    margin-top: 12px;
+    width: 17px;
+
+    .fill { fill: #000; }
+  }
+  .room-name {
+    border-left: 1px solid $gray-lightest;
+    border-right: 1px solid $gray-lightest;
+    border-bottom: 1px solid $gray-lightest;
+    padding: 20px 12px;
+    position: relative;
+    font-size: 14px;
+    line-height: 18px;
+    @include breakpoint(large) {
+      padding: 20px;
+      font-size: 18px;
+      line-height: 22px;
+    }
+    .button {
+      position: absolute;
+      top: -20px;
+      right: 12px;
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      transition: transform 0.3s;
+      z-index: 30;
+      @include breakpoint(large) { right: 20px; }
+      &:hover {
+        @include breakpoint(large) { transform: scale(1.25); }
+      }
+      &:hover .svg-cart {
+        @include breakpoint(large) { transform: scale(0.8); }
+      }
+    }
+    .logo { margin-bottom: 16px; }
+  }
+  .room-ratename {
+    /* stylelint-disable declaration-no-important */
+    /* Needed to override inline map styles*/
+    @include label-text;
+    box-shadow: none !important;
+    /* stylelint-enable declaration-no-important */
+  }
+  .room-rate {
+    border: 1px solid $gray-lightest;
+    border-bottom: none;
+    padding: 12px;
+    line-height: 20px;
+    color: $gray-medium;
+    font-size: rem-calc(10px);
+    @include breakpoint(large) {
+      padding: 20px;
+      font-size: rem-calc(26px);
+      line-height: 30px;
+    }
+  }
+  .room-rateval {
+    color: black;
+    @include breakpoint(small only) { font-size: rem-calc(26px); }
+  }
+}
+
+.poi-map .MicrosoftMap .NavBar_Container.compact {
+  /* stylelint-disable declaration-no-important */
+  /* Needed to override inline map styles*/
+
+  @include breakpoint(medium down) {
+    top: 80px !important;
+  }
+  /* stylelint-enable declaration-no-important */
+}
+
+.MicrosoftMap .NavBar_Container {
+  /* stylelint-disable declaration-no-important */
+  /* Needed to override inline map styles*/
+  z-index: 10 !important;
+
+  @include breakpoint(large) {
+    top: auto !important;
+    bottom: 40px !important;
+  }
+  /* stylelint-enable declaration-no-important */
+}
+
+// Moves fullscreen button down below the filter bar
+/* stylelint-disable declaration-no-important */
+.gm-style > *[title='Toggle fullscreen view'] {
+  @include breakpoint(large) {
+    top: 69px !important;
+  }
+}
+/* stylelint-enable */

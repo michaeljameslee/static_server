@@ -1,0 +1,609 @@
+// ------------------------------------//
+//    Guest Info
+// ------------------------------------//
+.bookingview-guestinfo {
+  @include get-font('paragraph');
+  color: $gray-dark;
+  max-width: none;
+  position: relative;
+  padding-bottom: 64px;
+  @include breakpoint(large) {
+    margin: 60px 60px 0;
+    padding: 0;
+    font-size: 14px;
+  }
+  @media screen and (min-width: rem-calc(1280px)) {
+    margin: 60px auto 0;
+    max-width: rem-calc(1160);
+  }
+  .column {
+    padding-left: 16px;
+    padding-right: 16px;
+    @include breakpoint(large) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  h2 {
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 10px;
+    color: #000;
+    @include breakpoint(large) {
+      font-size: 32px;
+      line-height: 36px;
+      margin-bottom: 0;
+      order: -1;
+    }
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .secure-checkout {
+    @include small-link-with-caret;
+    &:hover { color: $black; text-decoration: none; }
+    .fill { fill: $black; }
+    .svg-lock { margin-left: 6px; vertical-align: text-top; }
+  }
+  .club-carlson-login {
+    a {
+      @include text-link;
+      margin-left: 5px;
+    }
+  }
+  label { margin-bottom: 8px; }
+  .checkbox-field {
+    margin-bottom: 24px;
+    @include breakpoint(large) { margin-bottom: 20px; }
+    label {
+      font-size: 16px;
+      line-height: 24px;
+      padding-left: 30px;
+      @include breakpoint(large) {
+        font-size: 14px;
+        line-height: 22px;
+        padding-left: 22px;
+      }
+    }
+  }
+  .checkbox-field input:checked + label:after, .checkbox-field input:not(:checked) + label:after {
+    top: 0;
+    @include breakpoint(large) { width: 22px; height: 22px; }
+  }
+
+  .checkbox-field input:focus + label:after {
+    border: rem-calc(1) solid darken($primary-color, 50%);
+  }
+
+  .checkbox-field-travelarranger {
+    margin-top: 30px;
+    margin-bottom: 18px;
+    label {
+      font-size: rem-calc(16);
+    }
+  }
+}
+.book-top-msg {
+  padding-top: 23px;
+  padding-bottom: 12px;
+  line-height: 24px;
+  border-bottom: 1px solid $gray-light;
+
+  @include breakpoint(large) {
+    border: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  p { margin-bottom: rem-calc(20); }
+  .secure-checkout { margin-bottom: 22px; }
+  .secure-checkout .svg-lock { margin-left: 1px; margin-right: 6px; }
+}
+
+// Small boxes of info for guest and payment information
+.book-info-small {
+  border: 1px solid $gray-light;
+  padding: rem-calc(24);
+  font-size: rem-calc(16);
+  line-height: 1.5;
+  color: $near-black;
+  text-align: left;
+  word-wrap: break-word;
+  display: block;
+  width: 100%;
+  border-radius: $border-radius;
+  margin-top: 17px;
+  outline: rem-calc(0);
+  @include breakpoint(large) {
+    padding: rem-calc(20);
+    color: $gray-dark;
+    border-color: #cccccc;
+    margin-top: 30px;
+  }
+  .book-info-edit {
+    float: right;
+    color: $secondary-color;
+    @include label-text;
+    &:hover { color: $secondary-color; }
+  }
+}
+.book-info-otherguest {
+  @include main-paragraph;
+  margin: 17px 0 0;
+  @include breakpoint(large) { margin: 20px 0 0; }
+  .book-info-edit {
+    color: $secondary-color;
+    @include label-text;
+    &:hover { color: $secondary-color; }
+  }
+}
+
+// Guest info
+.guestinfo-guest {
+  margin: 40px 0 0;
+  padding: 0 0 24px;
+  @include breakpoint(large) { margin: 40px 0 14px; }
+  .club-carlson-login { margin-bottom: 37px; }
+  .secure-checkout { float: right; }
+  .guest-info > p {
+    font-size: 16px;
+  }
+  .user-profile-info {
+    padding: 14px 0 0;
+    @include breakpoint(large) { padding: 13px 0 0; }
+  }
+  .user-profile-info .row > .columns {
+    @include breakpoint(medium down) {
+      border: 0;
+      display: block;
+      padding: 0;
+      margin-bottom: 24px;
+    }
+    @include breakpoint(large) { margin-bottom: 20px; }
+  }
+  .user-phone .columns:nth-child(2) {
+    padding-left: 16px;
+    @include breakpoint(large) { padding-right: 16px; }
+  }
+  .edit-personal-info .first-name .user-field-input {
+    @include breakpoint(medium down) { border-right: 1px solid $gray-light; }
+  }
+  .edit-personal-info .last-name .user-field-input {
+    @include breakpoint(medium down) { border-left: 1px solid $gray-light; }
+    &:focus {
+      @include breakpoint(large) { border-left: 0; }
+    }
+  }
+  .edit-personal-info .user-email p, .edit-personal-info .user-cc p {
+    font-size: rem-calc(12px);
+    line-height: rem-calc(20px);
+    @include breakpoint(large) {
+      font-size: rem-calc(14px);
+      line-height: rem-calc(22px);
+    }
+  }
+  .edit-personal-info .user-email p {
+    margin: 7px 0 0;
+    @include breakpoint(large) { margin: 10px 0; }
+  }
+  .edit-personal-info .user-cc p {
+    margin: 7px 0 0;
+    @include breakpoint(large) { margin: 10px 0 0; }
+  }
+  .user-field-title {
+    color: $gray-dark;
+    @include breakpoint(medium down) {
+      float: none;
+    }
+  }
+  .first-name .user-field-input-wrapper {
+    position: relative;
+    input, input:active, input:hover, input:focus { border-right: 0; }
+    &:after {
+      @include breakpoint(large) {
+        content: "";
+        position: absolute;
+        width: 1px;
+        top: 10px;
+        right: 0;
+        bottom: 10px;
+        background: $gray-light;
+      }
+    }
+  }
+  .has-error .first-name .user-field-input-wrapper {
+    &:after {
+      @include breakpoint(large) {
+        content: none;
+      }
+    }
+  }
+  .edit-personal-info .last-name .user-field-input.has-error {
+    @include breakpoint(large) {
+      position: relative;
+      left: -1px;
+    }
+  }
+  .user-field-input {
+    text-align: left;
+    @include breakpoint(medium down) { border: 1px solid $gray-light; }
+  }
+  // .user-field-input:focus, .first-name .user-field-input:focus, .last-name .user-field-input:focus {
+  //   border: $active-border-width solid $active-input-color;
+  // }
+  .user-country select:focus {
+    outline: $active-border-width solid $active-input-color;
+  }
+  .edit-personal-info .field-errors { position: static; text-align: left; }
+  .dropdown { margin: 0; }
+  .edit-personal-info .dropdown::after { top: calc(50% - 5px); }
+  .user-country select { direction: ltr; }
+  .button {
+    padding: 21px 0;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    line-height: 22px;
+    @include breakpoint(large) {
+      position: static;
+      margin-top: 20px;
+    }
+  }
+  .other-guest-button {
+    position: static;
+    margin-top: 16px;
+    @include breakpoint(large) { margin-top: 20px; }
+  }
+  .other-guest-button:first-of-type {
+    @include breakpoint(medium down) { margin-top: 0; }
+  }
+}
+
+.guestinfo-header {
+  @include breakpoint(large) {
+    @include flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+}
+
+// Payment info
+.guestinfo-payment {
+  padding-top: 16px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid $gray-light;
+  @include breakpoint(large) {
+    padding-top: 0;
+    padding-bottom: 0;
+    border: 0;
+  }
+  .book-info-small { margin-bottom: 16px; }
+  .guarantee-copy {
+    font-size: 12px;
+    line-height: 20px;
+    @include breakpoint(large) { font-size: 14px; line-height: 22px; }
+  }
+  .payment-info {
+    @include breakpoint(large) { margin-top: 12px; }
+    & > p {
+      margin-bottom: 26px;
+      font-size: 16px;
+    }
+    .row { margin: 0; }
+    .column { padding: 0; }
+    .user-payment {
+      .dropdown { margin-bottom: 20px; }
+    }
+    .creditcard-info {
+      margin-top: 32px;
+      @include breakpoint(large) { margin-top: 40px; }
+    }
+    .cardnumber-wrapper {
+      position: relative;
+      .fa {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 20px;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      input { transition: padding 0.3s; }
+    }
+    .has-type {
+      input { padding-left: 49px; line-height: 48px; }
+      .fa { opacity: 1; }
+    }
+    .user-card-exp {
+      // padding-right: 9px;
+      @include breakpoint(large) { padding-right: 0; }
+    }
+    .user-card-cvv {
+      padding-left: 9px;
+      @include breakpoint(large) { padding-left: 0; }
+    }
+  }
+}
+// Grouped card inputs
+@include breakpoint(large) {
+  .user-card-number input {
+    border-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .user-card-exp input {
+    border-left: 0;
+    // border-right: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .user-card-exp-wrapper {
+    position: relative;
+    &:before {
+      @include breakpoint(large) {
+        content: "";
+        position: absolute;
+        width: 1px;
+        top: 10px;
+        left: 0;
+        bottom: 10px;
+        background: $gray-light;
+      }
+    }
+    // &:after { left: auto; right: 0; }
+  }
+  .user-card-cvv input {
+    border-left: 0;
+  }
+}
+
+// Special Requests
+.guestinfo-requests {
+  padding: 40px 0 40px;
+  &.column { padding: 0; }
+  textarea {
+    padding: 12px 24px;
+    height: 112px;
+    @include breakpoint(large) {
+      padding: 10px 20px;
+      height: 150px;
+    }
+  }
+}
+.guestinfo-requests-row {
+  padding-left: 16px;
+  padding-right: 16px;
+  border-bottom: 1px solid $gray-light;
+  @include breakpoint(large) {
+    padding-left: 0;
+    padding-right: 0;
+    border-bottom: 0;
+  }
+}
+.guestinfo-requests-textarea {
+  padding-top: 40px;
+  padding-bottom: 20px;
+  @include breakpoint(large) {
+    padding-top: 0;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $gray-light;
+    margin-bottom: 40px;
+  }
+}
+
+// Club Carlson
+.guestinfo-requests-clubcarlson {
+  padding-bottom: 22px;
+  position: relative;
+  @include breakpoint(large) {
+    border: 1px solid $gray-light;
+    margin: 0 0 30px;
+    padding: 19px 30px;
+  }
+  .clubcarlson-logo {
+    margin: 39px auto 41px;
+    height: 49px;
+    display: block;
+    @include breakpoint(large) {
+      margin: 0;
+      height: 33px;
+      position: absolute;
+      left: 81px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  .checkbox-field {
+    margin-bottom: 18px;
+    @include breakpoint(large) { margin-bottom: 7px; position: static; }
+  }
+  .checkbox-field label {
+    font-size: 16px;
+    @include breakpoint(large) {
+      font-size: 14px;
+      padding-left: 171px;
+      position: static;
+    }
+  }
+  .checkbox-field input:checked + label:after, .checkbox-field input:not(:checked) + label:after {
+    top: -1px;
+    @include breakpoint(large) {
+      top: 50%;
+      left: 30px;
+      transform: translateY(-50%);
+      width: 22px;
+      height: 22px;
+    }
+  }
+  .clubcarlson-terms {
+    padding-left: 30px;
+    margin-left: .625rem;
+    @include breakpoint(large) { padding-left: 171px; margin-bottom: 0; }
+    a { @include text-link; }
+  }
+}
+
+// Checkboxes
+.guestinfo-requests-checkboxes {
+  padding: 44px 16px 17px;
+  border: 0;
+  @include breakpoint(large) {
+    padding: 0;
+  }
+  .field-errors {
+    width: 100%;
+    margin-left: .625rem;
+    padding-left: 30px;
+    @include breakpoint(large) {
+      padding-left: 22px;
+    }
+  }
+  a { @include text-link; }
+  label { @include get-font('paragraph'); }
+}
+
+// Button
+.guestinfo-button {
+  padding: 24px 0 25px;
+  @include breakpoint(large) {
+    display: flex;
+    flex-direction: column;
+    padding-top: 19px;
+  }
+  &.column { padding-left: 0; padding-right: 0; }
+}
+.guestinfo-disclaimer {
+  font-size: 12px;
+  padding-left: 16px;
+  padding-right: 16px;
+  @include breakpoint(large) {
+    font-size: 14px;
+    order: 2;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  p { line-height: 20px; margin-bottom: 20px; }
+  .guest-open & {
+    @include breakpoint(large) { display: none; }
+  }
+  a {
+    @include text-link;
+  }
+}
+.guestinfo-submit {
+  @include breakpoint(large) { order: 1; margin-bottom: 40px; }
+  .button {
+    width: 100%;
+    padding: 23px 0;
+    @include breakpoint(large) {
+      padding: 21px 0;
+    }
+  }
+}
+
+// Order Summary
+.guestinfo-summary {
+  padding-top: 31px;
+  border-top: 1px solid $gray-light;
+  border-bottom: 1px solid $gray-light;
+  @include breakpoint(large) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 31.03%;
+    font-size: 14px;
+    border: 0;
+    padding-top: 0;
+  }
+  .scrollmagic-pin-spacer & {
+    @include breakpoint(large) { width: 100%; max-width: 100%; }
+  }
+  &.active {
+    @include breakpoint(large) { width: 28.5%; }
+    @media screen and (min-width: rem-calc(1280px)) { width: 21.6%; }
+  }
+  h2 {
+    @include text-link;
+    margin-bottom: 23px;
+    color: #000;
+    @include breakpoint(large) {
+      margin-bottom: 32px;
+    }
+  }
+  h3 {
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    color: #000;
+    @include breakpoint(large) {
+      font-size: 26px;
+      margin-bottom: 13px;
+    }
+  }
+  p {
+    line-height: 24px;
+    margin-bottom: 8px;
+  }
+}
+.ordersummary {
+  width: 100%;
+  td { padding: 6px 0; vertical-align: top; }
+}
+.ordersummary-row {
+  td:first-child() { width: 60%; }
+  td:last-child() { width: 40%; text-align: right; }
+}
+.ordersummary-room {
+  td {
+    padding: 8px 0;
+    @include breakpoint(large) { padding: 13px 0; }
+  }
+}
+.ordersummary-room:last-of-type {
+  @include breakpoint(large) { padding: 13px 0; }
+}
+.ordersummary-subtotal {
+  border-top: 1px solid $gray-light;
+  td {
+    padding-top: 15px;
+    @include breakpoint(large) { padding-top: 12px; }
+  }
+}
+.ordersummary-taxes {
+  border-bottom: 1px solid $gray-light;
+  td {
+    padding-bottom: 14px;
+    @include breakpoint(large) { padding-top: 11px; }
+  }
+}
+.ordersummary-total {
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  td {
+    padding: 22px 0;
+    @include breakpoint(large) { padding: 20px 0; }
+  }
+}
+.ordersummary-totalnum {
+  @include get-font('regular');
+  font-size: 16px;
+  line-height: 20px;
+  color: $secondary-color;
+  @include breakpoint(large) {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+.ordersummary-total-label { @include get-font('regular'); color: #000; }
+.ordersummary-bestprice {
+  @include label-text;
+  display: inline-block;
+  width: 100%;
+  position: relative;
+  top: -6px;
+}

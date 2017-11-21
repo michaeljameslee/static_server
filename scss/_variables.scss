@@ -1,0 +1,52 @@
+// ------------------------------------//
+//    Colors
+// ------------------------------------//
+
+$true-black: #000000 !default;
+$near-black: #696969 !default;    /* mobile black */
+$figcaption-black: #202020 !default;
+$gray-dark: #454545 !default;     /*aka primary-gray-4 in comp */
+$gray-medium: #767676 !default;   /*aka primary-gray-3 in comp */
+$gray-light: #cdcdcd !default;    /*aka primary-gray-2 in comp */
+$gray-lightest: #f1f1f1 !default; /*aka primary-gray-1 in comp */
+$gray-light-border: #d9d9d9 !default;
+
+$error-color: #cf1910;
+$success-green: #85c734;
+
+$facebook: #3b5998;
+$twitter: #00aced;
+
+$salmon: #e89d87;
+
+$golden-yellow: #ffc324;
+
+// ------------------------------------//
+//    Fonts
+// ------------------------------------//
+$proxima-nova-thin: 'Proxima N W01 Thin Reg',  Arial, sans-serif !default;
+$proxima-nova-light: 'Proxima N W01 Light',  Arial, sans-serif !default;
+$proxima-nova-reg: 'Proxima N W01 Reg',  Arial, sans-serif !default;
+$proxima-nova-semibold: 'Proxima N W01 Smbd',  Arial, sans-serif !default;
+
+// ------------------------------------//
+//    Sizes
+// ------------------------------------//
+
+// Use: map-get($header-height, small)
+$header-height: (
+  small: 64px,
+  large: 60px
+);
+
+// Use: map-get($header-area-height, small)
+//header and search console height
+$header-area-height: (
+  small: 64px,
+  large: 130px
+);
+
+// ------------------------------------//
+//    Z-Index
+// ------------------------------------//
+$elements: bottom, header, search, modal-overlay, modal, top;

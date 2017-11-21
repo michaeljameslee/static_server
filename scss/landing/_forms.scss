@@ -1,0 +1,172 @@
+.parsley-errors-list {
+  text-transform: uppercase;
+
+  &:empty {
+    display: none;
+  }
+}
+
+.field-errors:empty {
+  display: none;
+}
+
+.group-reservation-form {
+  padding: 30px 16px;
+  @media screen and (min-width: 64em) {
+    padding: 60px;
+  }
+  p { color: #696969; }
+  .row {
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .left-block {
+    @media screen and (min-width: 64em) {
+      h1 { margin-bottom: rem-calc(40); }
+    }
+  }
+  .error {
+    font-size: rem-calc(14);
+    color: #ee2d24;
+  }
+  .right-block {
+    max-width: rem-calc(360);
+    @media screen and (min-width: 64em) {
+      padding-top: rem-calc(90);
+    }
+  }
+  .button { width: 100%; }
+  .req-text {
+    @include label-text;
+    margin-bottom: 20px;
+    @media screen and (min-width: 64em) {
+      position: absolute;
+      right: 30px;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.reservation-form-details {
+  .row {
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .form {
+    padding: 30px 16px;
+    @media screen and (min-width: 64em) { padding: 60px; }
+  }
+  .error {
+    font-size: rem-calc(14);
+    color: #ee2d24;
+  }
+  .text-block {
+    max-width: rem-calc(400);
+    margin: auto;
+  }
+  .main-block {
+    max-width: rem-calc(400);
+    margin: auto;
+    padding-top: rem-calc(20);
+  }
+  .button { width: 100%; }
+  input::-webkit-calendar-picker-indicator { display: none; }
+
+  .first { display: block; }
+  .second { display: none; }
+}
+
+.club-carlson-form {
+  .row {
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .form {
+    padding: 30px 16px;
+    @media screen and (min-width: 64em) { padding: 60px; }
+  }
+  .text-block {
+    max-width: rem-calc(400);
+    margin: auto;
+  }
+  .main-block {
+    max-width: rem-calc(400);
+    margin: auto;
+    padding-top: rem-calc(20);
+  }
+  .button { width: 100%; }
+}
+
+.best-rate-form {
+  .row {
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .form {
+    padding: 30px 16px;
+    @media screen and (min-width: 64em) { padding: 60px; }
+  }
+  .error {
+    font-size: rem-calc(14);
+    color: #ee2d24;
+  }
+  .text-block {
+    max-width: rem-calc(400);
+    margin: auto;
+  }
+  .main-block {
+    max-width: rem-calc(400);
+    margin: auto;
+    padding-top: rem-calc(20);
+  }
+  .button { width: 100%; }
+}
+
+// ------------------------------------//
+//    Thank you pages
+// ------------------------------------//
+.form-thank-you {
+  padding-top: 24px;
+  @include breakpoint(large) {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+  .column {
+    padding: rem-calc(0 16px);
+    @include breakpoint(large) { padding: rem-calc(0 0 0 60px); }
+  }
+  .main-content {
+    margin-bottom: 40px;
+    @include breakpoint(large) { margin-bottom: 64px; }
+  }
+  .intro-content {
+    @include breakpoint(large) { padding: rem-calc(0 0 0 60px); }
+  }
+  h1 {
+    font-size: rem-calc(30px);
+    line-height: rem-calc(34px);
+    margin-bottom: 8px;
+    @include breakpoint(large) {
+      font-size: rem-calc(38px);
+      line-height: rem-calc(42px);
+      margin-bottom: 10px;
+    }
+  }
+  p {
+    color: $gray-dark;
+    @include breakpoint(large) {
+      font-size: rem-calc(14px);
+      line-height: rem-calc(22px);
+    }
+  }
+  .button {
+    padding: 23px 30px;
+    margin-top: 14px;
+    @include breakpoint(medium down) { width: 100%; }
+    @include breakpoint(large) { padding: 12px 30px; }
+  }
+}

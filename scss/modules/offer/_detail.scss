@@ -1,0 +1,1147 @@
+// OFFER DETAILS
+
+.offer-main {
+  overflow: hidden;
+  position: relative;
+  ul {
+    list-style: none;
+    margin: 0px 0 40px 0;
+    padding: 0px;
+    li {
+      color: $gray-dark;
+      display: block;
+      padding-left: 1.25em;
+      text-indent: -1.25em;
+      &::before {
+        /*content: "• ";*/
+        content: '\2022';
+        color: $primary-color;
+        display: inline-block;
+        font-size: 1.2em;
+        line-height: 1em;
+        float: left;
+        width: .85em;
+      }
+    }
+  }
+  .info-expander {
+    font-size: rem-calc(16);
+    letter-spacing: normal;
+  }
+  select:disabled {
+    background-color: $white;
+    cursor: default;
+    &:hover, &:focus {
+      border-color: $medium-gray;
+    }
+  }
+}
+
+.offer {
+  overflow: auto;
+  position: relative;
+}
+
+.hero-right {
+  overflow: hidden;
+  .masthead {
+    height: 100%;
+  }
+}
+
+.offer-left {
+  display: inline-block;
+  float: left;
+  width: 36%;
+}
+.offer-right {
+  display: inline-block;
+  float: right;
+  margin-right: 60px;
+  width: 51%;
+}
+
+.offer-title {
+  @extend .offer-left;
+  background-color: $white;
+  padding: 40px;
+  z-index: 20;
+  h1 {
+    font-size: rem-calc(42px);
+    text-align: left;
+    font-family: $proxima-nova-light;
+  }
+  p {
+    color: $gray-dark;
+    &:first-of-type {
+      margin-bottom: rem-calc(10);
+    }
+  }
+  .upspace-30 {
+    margin-top: 20px;
+  }
+
+  .cta-1 {
+    color: black;
+    letter-spacing: 1px;
+    line-height: 1.14;
+    padding-bottom: 22px;
+    padding-top: 22px;
+    &:active {
+      color: black;
+    }
+  }
+  .feature {
+    .icon {
+      font-size: rem-calc(19);
+      margin-right: 10px;
+      width: 15px;
+    }
+    span {
+      font-size: rem-calc(14);
+    }
+  }
+  .offer-part-brand {
+    display: block;
+    margin: 0 auto 30px;
+    img {
+      height: 40px;
+      width: auto;
+    }
+  }
+  .offer-part-brands {
+    display: block;
+    list-style-type: none;
+    margin: 0 auto;
+    li {
+      display: inline-block;
+      margin: 20px 12.5% 20px 0px;
+      padding-left: 0;
+      text-indent: 0;
+      width: 25%;
+      vertical-align: middle;
+      &::before {
+        content: '';
+      }
+      &:nth-child(3n+3) {
+        margin-right: 0;
+      }
+      img {
+        height: auto;
+        max-width: 80px;
+        width: 100%;
+      }
+    }
+  }
+}
+.offer_heading {
+  color: $gray-dark;
+  font-family: $proxima-nova-reg;
+  font-size: rem-calc(22);
+  line-height: 1.18;
+  margin-bottom: 30px;
+}
+.scrollmagic-pin-spacer {
+  .offer-title {
+    width: 100%;
+  }
+}
+
+.offer-detail {
+  @extend .offer-right;
+  /*float: right;*/
+  margin: 60px 60px 60px 0px;
+  &._hs {
+    margin-top: 60px;
+  }
+  &._hr {
+    margin-top: 0px;
+    @include breakpoint(small only) {
+      margin-top: 30px;
+    }
+  }
+  h3, ._h3 {
+    color: black;
+    font-size: rem-calc(22);
+    line-height: 1.18;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+  }
+  p {
+    color: $gray-dark;
+    text-overflow: ellipsis;
+    max-width: 660px;
+  }
+  big {
+    color: $black;
+  }
+  .offer-desc {
+    margin-bottom: 40px;
+  }
+  .label a {
+    color: darken(#ee2d24, 10%);
+  }
+  .otc {
+    display: inline-block;
+    padding-bottom: 20px;
+  }
+  ._tag {
+    padding: rem-calc(2) rem-calc(8);
+  }
+  .tags {
+    margin-bottom: 0px;
+  }
+}
+
+.offer-registration {
+  background-color: $white;
+  display: block;
+  position: relative;
+  h1 {
+    color: $black;
+    font-family: $proxima-nova-thin;
+    line-height: 1;
+  }
+  h3 {
+    color: $black;
+    font-size: rem-calc(22);
+    line-height: 1.18;
+    margin-bottom: 20px;
+  }
+  hr {
+    margin-bottom: 30px;
+  }
+  label {
+    color: black;
+    line-height: 1.33;
+    margin-bottom: 10px;
+  }
+  p {
+    color: $gray-dark;
+  }
+  ul {
+    margin-bottom: 30px;
+  }
+  .ccl-cont {
+    margin-bottom: 0;
+  }
+  .club-carlson-logo {
+    height: 40px;
+    width: auto;
+  }
+  input:checked + label::after, input:not(:checked) + label::after {
+    width: rem-calc(22);
+    height: rem-calc(22);
+  }
+  .checkbox-field {
+    height: 30px;
+    label {
+      padding-top: 4px;
+    }
+  }
+  .cta-1 {
+    font-size: rem-calc(12);
+    margin: 30px auto;
+    padding: 10px 0;
+  }
+  .label {
+    font-size: rem-calc(12);
+  }
+  .nospaced {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  .error {
+    // margin-bottom: 0;
+  }
+  .valerr {
+    display: none;
+    margin-bottom: 1.25rem;
+  }
+}
+.cc-offexp {
+  height: auto;
+  right: -1690px;
+  max-width: none;
+  position: absolute;
+  top: 53px;
+  width: 3220px;
+}
+.right_alredreg {
+  .bg_black {
+    background-color: black;
+    color: white;
+    font-family: $proxima-nova-reg;
+    font-size: rem-calc(14);
+    line-height: 1.57;
+    padding: 9px 0;
+    text-align: center;
+  }
+  .alredreg_info {
+    padding: 30px;
+    width: 100%;
+    @include breakpoint(medium) {
+      border: 1px solid $gray-light;
+      border-radius: 4px;
+    }
+    hr {
+      margin: 20px auto;
+    }
+    p{
+      margin: 0 auto;
+    }
+  }
+  .alredreg_membinfo {
+    display: flex;
+    overflow: hidden;
+    .alredreg_sign {
+      width: 50px;
+      margin-right: 16px;
+      img {
+        width: 100%;
+      }
+    }
+    .alredreg_text {
+      width: calc(100% - 66px);
+      vertical-align: middle;
+      p {
+        line-height: 1.25;
+        margin: 0 auto;
+      }
+    }
+    figure {
+      float: left;
+      height: 50px;
+      margin-right: 20px;
+      width: 50px;
+    }
+    span {
+      display: block;
+    }
+    .name {
+      color: black;
+      font-family: $proxima-nova-reg;
+      font-size: rem-calc(18);
+      line-height: 1.22;
+    }
+    .member_level {
+      color: $gray-dark;
+      font-family: $proxima-nova-semibold;
+      font-size: rem-calc(12);
+      letter-spacing: 1px;
+      line-height: 1.33;
+      text-transform: uppercase;
+    }
+    &.sidebar-account-info {
+      margin: 0;
+    }
+  }
+  .cta-1 {
+    font-size: 12px;
+    margin-top: 30px;
+    padding: 10px 0;
+    width: 100%;
+  }
+}
+.reg-success {
+  display: none;
+}
+.offer-locations {
+  overflow: auto;
+  @include breakpoint(large) {
+    padding-bottom: 60px;
+    padding-top: 60px;
+  }
+  @include breakpoint(medium down) {
+    padding-bottom: 40px;
+    padding-top: 40px;
+  }
+
+  h2 {
+    font-size: rem-calc(32);
+    margin-bottom: 10px;
+    font-family: $proxima-nova-light;
+    text-transform: capitalize;
+  }
+  p {
+    color: $gray-dark;
+    margin-bottom: 0;
+  }
+
+  .cardholder {
+    .flickity-viewport {
+      min-height: 441px;
+    }
+  }
+
+  .offer-overcard {
+    background-color: $white;
+
+    @include breakpoint (small){
+      border-radius: rem-calc(4);
+      height: rem-calc(215);
+      width: rem-calc(343);
+      position: absolute;
+      top: 140px;
+      left: rem-calc(0);
+    }
+
+    @include breakpoint (large){
+      border-radius: rem-calc(4);
+      height: 330px;
+      width: 360px;
+      position: absolute;
+      top: 40px;
+      left: 60px;
+    }
+
+    h2 {
+      color: black;
+      letter-spacing: 0.5px;
+      line-height: 1.13;
+      margin-bottom: 20px;
+    }
+    img {
+      height: initial;
+      width: initial;
+    }
+    .card-content {
+      &._co1 {
+        height: 256px;
+        padding: 40px;
+      }
+      &._co2 {
+        border-top: 1px solid $gray-light;
+        height: 72px;
+        padding: 12px 40px 14px;
+      }
+      .card-label2 {
+        color: $gray-medium;
+        @include get-font('semibold');
+        font-size: 10px;
+        line-height: 1.4;
+        margin-bottom: 2px;
+        text-transform: uppercase;
+      }
+      .card-price {
+        color: black;
+        @include get-font('regular');
+        font-size: rem-calc(26);
+        line-height: 1.15;
+      }
+    }
+    .card-cart {
+      background-color: $primary-color;
+      border-radius: 20px;
+      bottom: 53px;
+      height: 40px;
+      line-height: 36px;
+      width: 40px;
+      right: 40px;
+      position: absolute;
+      text-align: center;
+      vertical-align: middle;
+      z-index: 20;
+    }
+    .card-label {
+      color: $gray-medium;
+      @include get-font('semibold');
+      font-size: rem-calc(12);
+      letter-spacing: 1px;
+      line-height: 1.33;
+      text-transform: uppercase;
+    }
+    .card-marker {
+      bottom: 90px;
+      left: 40px;
+      margin: 0px;
+      position: absolute;
+    }
+    .ta-rate {
+      max-height: 15px;
+      width: auto;
+    }
+  }
+
+  .property-fwc {
+    @include breakpoint(medium down) {
+      height: 472px;
+      max-height: 472px;
+    }
+  }
+}
+.offer-cardholder {
+  @include flickity-gallery;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: rem-calc(448);
+  overflow: visible;
+  width: 100%;
+
+  .card {
+    margin-top: 30px;
+    vertical-align: top;
+
+    @media screen and (max-width: 860px) {
+      &:nth-child(2n+2) {
+        margin-right: 0;
+      }
+    }
+    @media screen and (min-width: 861px) and (max-width: 1160px) {
+      &:nth-child(3n+3) {
+        margin-right: 0;
+      }
+    }
+    @media screen and (min-width: 1160px) {
+      &:nth-child(4n+4) {
+        margin-right: 0;
+      }
+    }
+    /*.icon {
+      margin-right: 6px;
+      font-size: 12px;
+    }*/
+    .ta-rate {
+      height: 17px;
+      max-height: 17px;
+      width: auto;
+    }
+    .card-marker {
+      font-family: $proxima-nova-semibold;
+      font-size: rem-calc(10);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+  }
+  .card .card-cart {
+    &:hover {
+      transform: scale(1.15);
+      transition: transform 0.3s;
+    }
+  }
+  div .card-mini-cover {
+    background-color: black;
+  }
+
+  .card-link {
+    cursor: pointer;
+  }
+  .card-content {
+    display: block;
+    padding: 20px;
+    position: relative;
+    width: 100%;
+    &._co1 {
+      height: 140px;
+      padding: 0px;
+      position: relative;
+      div {
+        @expand .vcentered;
+        padding: 10px 10px;
+        width: 100%;
+      }
+    }
+    &._co2 {
+      height: 190px;
+    }
+    .card-spacer-related-prop{
+      width: 100%;
+      height: 10px;
+    }
+    &._pc2 {
+      padding: 12px 10px;
+    }
+  }
+  /*@media screen and (min-width: 1161px) {
+    .card {
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  @media screen and (min-width: 861px) and (max-width: 1160px) {
+    .card {
+      margin-right: 4.645%;
+      width: 30.23%;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  @media screen and (min-width: 561px) and (max-width: 860px) {
+    .card {
+      margin-right: 7.13%;
+      width: 46.435%;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  @media screen and (min-width: 561px) {
+    .card-spacer {
+      margin-right: 0;
+    }
+  }
+  @media screen and (max-width: 560px) {
+    .slick-list {
+      padding: 0px 50px 0px 0px;
+      width: 100%;
+    }
+  }*/
+}
+.offer-search-invite {
+  @extend .offer-left;
+  h2 {
+    font-size: rem-calc(32);
+  }
+}
+.offer-search-console {
+  @extend .offer-right;
+  form {
+    max-width: 360px;
+    .dropdown {
+      margin-bottom: 20px;
+      &:last-of-type {
+        margin-bottom: 30px;
+      }
+    }
+    .dropdown select {
+      height: 48px;
+      &:hover {
+        border-color: #FFC324;
+      }
+    }
+    option {
+      border: 1px solid $primary-color;
+      height: 40px;
+    }
+    .cta-1 {
+      padding: 10px;
+    }
+    label {
+      margin-bottom: 10px;
+      color: $black;
+    }
+  }
+}
+.offer-search-results {
+  padding-top: 40px;
+  h2 {
+    font-size: rem-calc(32);
+    text-transform: capitalize;
+    font-family: $proxima-nova-light;
+    @include breakpoint (medium) {
+      margin-top: 33px;
+    }
+  }
+  hr {
+    margin: 60px auto 40px;
+    max-width: none;
+    width: 100%;
+  }
+  .back-to-offer {
+    color: $black;
+    font-family: $proxima-nova-semibold;
+    font-size: rem-calc(12);
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 1.33;
+    text-transform: uppercase;
+    margin-left: 4px;
+    &::before {
+      border-right: 3px solid $secondary-color;
+      border-top: 3px solid $secondary-color;
+      content: "";
+      display: inline-block;
+      height: 8px;
+      margin-bottom: 1px;
+      margin-right: 12px;
+      transform: rotate(225deg);
+      transition: transform .4s;
+      width: 8px;
+    }
+    &:hover {
+      color: #EE2D24;
+    }
+  }
+  .block-left {
+    display: inline-block;
+    padding-top: 9px;
+    width: 36%;
+  }
+  .block-right {
+    display: inline-block;
+    float: right;
+    width: auto;
+  }
+  .block-rinfo {
+    margin-left: 40px;
+    width: 57%;
+    padding-top: 15px;
+    @include breakpoint (medium) {
+      padding-top: 47px;
+    }
+  }
+  .block-left, .block-right, .block-rinfo {
+    p {
+      color: $gray-dark;
+    }
+  }
+  .last-info {
+    font-size: rem-calc(14);
+    margin-top: 40px;
+  }
+  .offer-code {
+    color: $secondary-color;
+    text-transform: uppercase;
+  }
+  .dropdown {
+    &:after {
+      pointer-events: none;
+    }
+  }
+  .search-header {
+    h4 {
+      font-size: 22px;
+      text-transform: capitalize;
+    }
+    label {
+      color: $black;
+      display: inline-block;
+      margin-bottom: 0;
+      margin-right: 20px;
+    }
+    select {
+      width: 100%;
+      &:hover {
+        border-color: #FFC324;
+      }
+    }
+    .dropdown {
+      display: inline-block;
+      margin-right: 20px;
+      width: 190px;
+    }
+    .cta-1, .cta-2 {
+      border-width: 1px;
+      font-size: rem-calc(12);
+      margin-bottom: 0;
+      padding: 10px 22px;
+    }
+    .cta-1 {
+      margin-right: 20px;
+    }
+    .cta-2 {
+      margin-right: 0;
+    }
+  }
+  .card-content._co1 {
+    > div {
+      padding-top: 20px;
+    }
+    .card-spacer-related-prop {
+      padding: 8px;
+    }
+    h4 {
+      font-size: rem-calc(16);
+      margin: 0 auto 11px;
+    }
+  }
+}
+
+//CLASSES FOR TABLET & WIDESCREEN
+@media screen and (min-width: 40.063em) {
+  .offer-right {
+    margin-right: 30px;
+  }
+  .hero-right {
+    float: right;
+    height: 454px;
+    margin: 30px 30px 20px 0px;
+    width: 51%;
+    .hero, .masthead {
+      height: 454px;
+    }
+  }
+  .offer-sticky-trigger {
+    height: 1px;
+    position: absolute;
+    width: 100%;
+  }
+  .offer-sticky-wrapper {
+    margin: 0 3.1% 0 30px;
+    position: absolute;
+    width: 36%;
+    z-index: 1;
+    .offer-title {
+      margin: 0px auto;
+      width: 100%;
+    }
+  }
+  .offer-detail {
+    margin: 30px 30px 30px 0px;
+    .tags {
+      padding-top: 10px;
+    }
+  }
+}
+@media screen and (min-width: 64em) {
+  .offer-registration {
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 100px;
+    .left_block {
+      max-width: 560px;
+    }
+    .right_form {
+      max-width: 360px;
+    }
+  }
+  .offer-title {
+    .offer-part-brands {
+      li {
+        margin-right: 40px;
+        width: 80px;
+        &:nth-child(3n+3) {
+          margin-right: 40px;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 52em) {
+  .show-for-mat {
+    display: none;
+  }
+  .offer-registration {
+    left: 50%;
+    margin: 0 auto;
+    overflow: auto;
+    position: absolute;
+    top: 300px;
+    transform: translateX(-50%);
+    width: 90%;
+    h1, .offer_heading {
+      max-width: 501px;
+    }
+    .hrfull {
+      display: none;
+    }
+    .ccl-cont {
+      margin-bottom: 40px;
+    }
+    .left_block {
+      float: left;
+      width: 58%;
+    }
+    .right_form, .right_alredreg {
+      float: right;
+      margin-top: 80px;
+      width: 37.5%;
+    }
+  }
+}
+@media screen and (min-width: 64.063em) {
+  .offer-right {
+    margin-right: 60px;
+  }
+  .offer-sticky-trigger {
+    &._herover {
+      top: 260px;
+    }
+    &._left {
+      top: 60px;
+    }
+  }
+  .offer-sticky-wrapper {
+    margin: 0 3.1% 0 60px;
+    &._herover {
+      top: 260px;
+    }
+    &._left {
+      top: 60px;
+    }
+  }
+  .offer-detail {
+    margin: 60px 60px 60px 0px;
+  }
+  .hero-right {
+    height: 454px;
+    margin: 60px 60px 30px 0px;
+    width: 51%;
+  }
+}
+
+
+//CLASSES FOR TABLET
+@media screen and (min-width: 40.063em) and (max-width: 64em) {
+  .offer-sticky-trigger {
+    &._herover {
+      top: 130px;
+    }
+  }
+  .offer-sticky-wrapper {
+    &._herover {
+      top: 130px;
+    }
+  }
+  .offer-title {
+    .offer-part-brands {
+      li {
+        margin-right: 20%;
+        width: 40%;
+        &:nth-child(3n+3) {
+          margin-right: 20%;
+        }
+        &:nth-child(2n+2) {
+          margin-right: 0px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 64em) {
+  .offer {
+    .hero {
+      height: 281px;
+    }
+  }
+  .offer-title {
+    padding: 28px 16px;
+    &.hero-overlapped {
+      left: 16px;
+    }
+  }
+  .offer-locations .offer-search-invite h2 {
+    font-size: rem-calc(22);
+  }
+  .offer-registration {
+    padding: 35px 50px 30px 50px;
+  }
+}
+
+//CLASSES FOR MOBILE
+@media screen and (max-width: 52em) {
+  .show-for-mat {
+    display: block;
+  }
+  .hide-for-mat, .show-for-medium {
+    display: none;
+  }
+  .offer-registration {
+    margin: 0 auto;
+    padding: 32px 0;
+    position: relative;
+    width: 100%;
+    .left_block {
+      .ccl-cont {
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      div, h1, p {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+      hr {
+        width: calc(100% - 32px);
+      }
+      h1 {
+        color: black;
+        font-family: $proxima-nova-light;
+        font-size: rem-calc(30);
+        text-align: center;
+      }
+      p {
+        font-size: rem-calc(16);
+      }
+      .hrfull {
+        margin: 30px 0;
+        width: 100%;
+      }
+      .offer_heading {
+        color: $near-black;
+        line-height: 24px;
+        font-size: rem-calc(16);
+        text-align: center;
+      }
+    }
+    .tags {
+      margin-bottom: 0;
+    }
+  }
+  .right_form {
+    //display: none;
+    padding: 32px 16px;
+    width: 100%;
+    @include breakpoint(medium only) {
+      padding-top: 72px;
+    }
+    p:last-child {
+      color: black;
+    }
+    .cta-1 {
+      font-size: rem-calc(12);
+      margin-top: 4px;
+      padding: 14px 0;
+    }
+  }
+  .right_alredreg {
+    width: 100%;
+    p:last-child {
+      color: black;
+    }
+    .alredreg_info {
+      padding: 32px 16px;
+      width: 100%;
+    }
+  }
+  .mob-register {
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    .register {
+      width: 100%;
+    }
+  }
+  .cc-offexp {
+    left: -130%;
+    top: 75%;
+    width: 520%;
+  }
+}
+@media screen and (max-width: 40em) {
+  .livebox .std-content {
+    padding: 40px 16px;
+  }
+  .offer-left, .offer-right {
+    display: block;
+    float: none;
+    width: 100%;
+  }
+  .offer-right {
+    margin-right: auto;
+  }
+  .hero-right {
+    display: block;
+    height: 281px;
+    margin: 0px;
+    width: 100%;
+  }
+  .offer-title {
+    border-bottom: 1px solid $gray-light;
+    &.hero-overlapped {
+      left: auto;
+      position: relative;
+      top: auto;
+    }
+    h1 {
+      font-size: rem-calc(40);
+    }
+  }
+  .offer-detail {
+    margin: 40px auto 33px;
+    padding: 0px 16px;
+    .offer-desc {
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+    .otc {
+      padding-bottom: 0;
+    }
+    &._hs {
+      margin-top: 30px;
+    }
+  }
+  .offer-locations .offer-search-invite {
+    margin-bottom: 32px;
+  }
+  .offer-search-console {
+    form {
+      max-width: none;
+      width: 100%;
+      label {
+        margin-bottom: 8px;
+      }
+    }
+  }
+  hr {
+    margin: 32px auto;
+  }
+  .block-left {
+    padding-bottom: 20px;
+  }
+  .offer-search-results {
+    padding: 40px 0;
+    h2 {
+      font-size: rem-calc(30);
+    }
+    .block-left, .block-right, .block-rinfo, .last-info, label, input, select, .cta-1, .cta-2, .offer-cardholder, .search-header .dropdown {
+      display: block;
+      float: none;
+      margin: 0px auto;
+      padding: 0px;
+      width: 100%;
+    }
+    .block-left, .block-right, .block-rinfo, .offer-cardholder, .last-info {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    .block-rinfo {
+      font-size: rem-calc(12);
+      margin-bottom: 37px;
+      padding-top: 0;
+      p:last-child {
+        margin-bottom: 0;
+      }
+    }
+    .last-info {
+      margin-top: 24px;
+      p {
+        margin-bottom: 0px;
+      }
+    }
+    /*.offer-cardholder {
+      .card {
+        width: 100%;
+        margin-top: 16px;
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+      .card-spacer {
+        margin-right: 0;
+      }
+    }*/
+    .search-header {
+      overflow: hidden;
+      h4 {
+        font-size: rem-calc(16);
+        margin: 32px auto 24px;
+      }
+    }
+    .offer-code {
+      color: $black;
+    }
+  }
+  .mob-cta {
+    border: 1px solid $gray-light;
+    border-right: none;
+    color: $black;
+    cursor: pointer;
+    display: inline-block;
+    font-family: $proxima-nova-semibold;
+    font-size: rem-calc(12);
+    padding: 16px 0;
+    text-align: center;
+    text-transform: uppercase;
+    width: 33.33%;
+    &:last-child {
+      border-right: 1px solid $gray-light;
+    }
+    .fa {
+      font-size: 16px;
+      margin-right: 8px;
+    }
+  }
+}

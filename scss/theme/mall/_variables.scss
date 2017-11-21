@@ -1,0 +1,63 @@
+$theme: 'mall';
+// ------------------------------------//
+//    Sizes
+// ------------------------------------//
+$active-border-width: 1px;
+$border-radius: 2px;
+$card-border-radius: 4px;
+
+// ------------------------------------//
+//    Colors
+// ------------------------------------//
+
+// Theme colors
+$golden-yellow: #ffc324;
+$golden-ocre: #F9B912;
+$tomato: #cf1910;
+$crimson: #e62528;
+
+// General
+$primary-color: $golden-yellow !default;
+$secondary-color: $tomato !default;
+$black: #000000;
+$white: #ffffff;
+
+// Color Settings
+$anchor-color: $secondary-color !default;
+$active-input-color: $primary-color; // border color for active inputs
+$shopping-cart: #000000;
+
+$primary-text-cta: #000;
+$primary-text-hover-cta: #000;
+$primary-hover-cta: $golden-ocre;
+$secondary-text-cta: #000;
+$secondary-text-hover-cta: #000;
+$secondary-hover-cta: $golden-yellow;
+$breadcrumb-template-arrow: $crimson;
+
+// ------------------------------------//
+//    Fonts
+// ------------------------------------//
+
+$proxima-nova-thin: 'Proxima N W01 Thin Reg',  Arial, sans-serif !default;
+$proxima-nova-light: 'Proxima N W01 Light',  Arial, sans-serif !default;
+$proxima-nova-reg: 'Proxima N W01 Reg',  Arial, sans-serif !default;
+$proxima-nova-semibold: 'Proxima N W01 Smbd',  Arial, sans-serif !default;
+
+$georgia: "Georgia", serif;
+$arial: Arial,"Helvetica Neue",Helvetica,sans-serif;
+
+$fonts:(
+  'thin': $proxima-nova-thin,
+  'light': $proxima-nova-light,
+  'regular': $proxima-nova-reg,
+  'semibold': $proxima-nova-semibold,
+  'paragraph': $proxima-nova-reg,
+  'secondary-paragraph': $proxima-nova-reg,
+);
+
+// ------------------------------------//
+//    Links
+// ------------------------------------//
+$anchor-decoration: none;
+$anchor-decoration-hover: underline;

@@ -1,0 +1,93 @@
+/*doc
+---
+title: Logo Navigation
+name: global-brands-navigation
+author: William Pansky [SG0301235]
+category: Global Brands
+---
+
+<p class="label loc">File location</p>
+scss/modules/global-brands/_global-brands.navigation.scss
+
+```html_example
+<ul class="global-brands-nav">
+    <li>
+        <img src="/uploads/171/0/logo-cis.svg" alt="Country Inns &amp; Suites">
+    </li>
+    <li>
+        <img src="/uploads/172/0/logo-radisson.svg" alt="Radisson Green">
+    </li>
+    <li class="is-selected">
+        <img src="/uploads/109/0/logo-radisson-red.svg" alt="Radisson Red">
+    </li>
+    <li>
+        <img src="/uploads/161/0/logo-park-inn.svg" alt="Park Inn">
+    </li>
+    <li>
+        <img src="/uploads/173/0/logo-park-plaza.svg" alt="Park Plaza">
+    </li>
+    <li>
+        <img src="/uploads/174/0/logo-radisson-blu.svg" alt="Radisson Blu">
+    </li>
+    <li>
+        <img src="/uploads/175/0/logo-quorvus-collection.svg" alt="Quorvus Collection">
+    </li>
+    <li>
+        <img src="/uploads/354/0/logo-club-carlson.svg" alt="Mall">
+    </li>
+</ul>
+```
+*/
+
+// LOGO NAVIGATION (desktop and up)
+// ========================================================================
+// Nav wrapper
+.global-brands-nav {
+  list-style: $gbrands-nav-list-style;
+  display: $gbrands-nav-display-type;
+  flex-direction: $gbrands-nav-flex-direction;
+  flex-wrap: $gbrands-nav-flex-wrap;
+  align-items: $gbrands-nav-align-items;
+  justify-content: $gbrands-nav-justify-content;
+  text-align: $gbrands-nav-text-align;
+  width: 100%;
+  padding: $gbrands-nav-padding;
+  margin: $gbrands-nav-margin;
+}
+
+//_____________________________________
+// Nav list items
+.global-brands-nav li {
+  cursor: $gbrands-nav-li-cursor;
+  display: $gbrands-nav-li-display-type;
+  width: $gbrands-nav-li-width;
+  margin: $gbrands-nav-li-margin;
+  &:last-of-type { margin: $gbrands-nav-li-margin-last-child; }
+
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    width: $gbrands-nav-li-width-tablet;
+  }
+}
+
+//_____________________________________
+// Nav logo images
+.global-brands-nav li img { 
+  width: $gbrands-nav-img-width;
+  filter: $gbrands-nav-img-filter;
+  opacity: $gbrands-nav-img-opacity;
+  transition: $gbrands-nav-img-transition;
+
+  &:hover, &:focus {
+    filter: $gbrands-nav-img-filter-hover;
+    opacity: $gbrands-nav-img-opacity-hover;
+    transform: $gbrands-nav-img-transform-hover;
+  }
+}
+
+//_____________________________________
+// Image manipulation when click (.is-selected)
+.global-brands-nav .is-selected img {
+  filter: $gbrands-nav-img-filter-hover;
+  opacity: $gbrands-nav-img-opacity-hover;
+  transform: $gbrands-nav-img-transform-hover;
+}

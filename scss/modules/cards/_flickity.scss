@@ -1,0 +1,88 @@
+/*doc
+---
+title: Flickity
+name: flickity
+author: William Pansky [SG0301235]
+category: Cards
+---
+
+<p class="label loc">File location</p>
+scss/modules/cards/_flickity.scss
+
+When `.flickity-enabled` is added to the DOM via JavaScript, the following properties are applied to set the content beyond the `.container` class wrapper and touch the viewport edges.
+
+```
+.flickity-enabled .card-wrapper {
+  display: $flickity-card-display-type;
+  width: $flickity-card-width;
+  max-width: $flickity-card-max-width;
+  padding: $flickity-card-padding;
+  margin: $flickity-card-margin;
+
+  &:last-child {
+    padding: $flickity-card-padding-last;
+    margin: $flickity-card-margin-last;
+  }
+
+  @include breakpoint(medium) { max-width: $flickity-card-max-width; }
+  @include breakpoint(large) { max-width: $flickity-card-max-width; }
+}
+```
+*/
+
+// ========================================================================
+// FLICKITY-ENABLED CARD-WRAPPER
+// ========================================================================
+.flickity-enabled .card-wrapper {
+  display: $flickity-card-display-type;
+  width: $flickity-card-width;
+  max-width: $flickity-card-max-width;
+  padding: $flickity-card-padding;
+  margin: $flickity-card-margin;
+
+  &:last-child {
+    padding: $flickity-card-padding-last;
+    margin: $flickity-card-margin-last;
+  }
+
+  @include breakpoint(medium) { max-width: $flickity-card-max-width; }
+  @include breakpoint(large) { max-width: $flickity-card-max-width; }
+}
+
+.cardholder {
+  overflow: visible;
+  margin: 0 auto;
+
+  @media (min-width: 770px) {
+    padding: 0 16px;
+  }
+
+  // @media (min-width: 970px) {
+  //   padding: 0 60px;
+  // }
+  
+  &:after {
+    content: 'flickity';
+    display: none;
+    @include breakpoint(xlarge) { content: ''; }
+  }
+
+  &._2card::after {
+    content: '';
+    display: none;
+  }
+
+  &.flickity-enabled {
+    display: block;
+    min-height: 460px;
+    width: 100vw;
+    max-width: 100vw;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .flickity-viewport {
+    min-height: inherit;
+    width: 100%;
+  }
+}

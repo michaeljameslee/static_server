@@ -1,0 +1,154 @@
+// ------------------------------------//
+//    Promocodes
+// ------------------------------------//
+.stepnav-promo {
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  transition: height 0.3s, padding 0.3s;
+  .on-step-room-selection &, .on-step-dates & {
+    height: 48px;
+  }
+}
+.promo-code-trigger {
+  @include small-button;
+  color: $anchor-color;
+  padding: 14px 0;
+  height: 48px;
+  vertical-align: middle;
+  width: 100%;
+  border-bottom: 1px solid $gray-light;
+  @include breakpoint(large) {
+    padding: 10px 29px;
+    margin-bottom: 0;
+    width: auto;
+    height: auto;
+    color: #000;
+    border: $active-border-width solid $primary-color;
+  }
+  .promo-code-count {
+    background: $primary-color;
+    border-radius: 100%;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 18px;
+    margin-left: 4px;
+    letter-spacing: 0;
+  }
+  p { font-family: map-get($fonts, 'paragraph'); }
+}
+.promo-code-button.button {
+  padding: 11px;
+  color: #000;
+  margin-right: 16px;
+  margin-bottom: 16px;
+  width: auto;
+  @include breakpoint(large) { margin-bottom: 10px; }
+  .svg { margin-left: 6px; }
+}
+.bookingview-ratecode {
+  @include breakpoint(large) {
+    max-width: 560px;
+    padding: 62px 44px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    transform: translate(-50%, -50%);
+    z-index: zIndex(modal);
+  }
+  .bookingview-full-body {
+    padding-top: 24px;
+    @include breakpoint(large) { padding-top: 0; }
+  }
+  .bookingview-full-header {
+    @include breakpoint(large) {
+      border-bottom: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+  .bookingview-full-header .close-btn {
+    @include breakpoint(large) {
+      left: auto;
+      right: 9px;
+      top: 10px;
+    }
+  }
+  .bookingview-full-header h1 {
+    @include breakpoint(large) { display: none; }
+  }
+  h2 {
+    font-size: 26px;
+    line-height: 30px;
+    margin-bottom: 10px;
+  }
+  p {
+    @include get-font('paragraph');
+    margin-bottom: 37px;
+    @include breakpoint(large) {
+      font-size: rem-calc(14px);
+      margin-bottom: 30px;
+    }
+  }
+  .column {
+    @include breakpoint(medium down) {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+  .apply-button {
+    width: 100%;
+    margin-top: 12px;
+    margin-bottom: 0;
+    @include breakpoint(large) { width: auto; padding: 10px 30px; margin-top: 0; }
+  }
+  .codes-applied {
+    h2 {
+      @include breakpoint(medium down) { margin-bottom: 21px; }
+    }
+    .button {
+      padding: 16px;
+      @include breakpoint(medium down) { width: 100%; margin-bottom: 16px; }
+      @include breakpoint(large) { margin-right: 15px; }
+    }
+    .promo-code-button:last-child {
+      margin-bottom: 32px;
+      @include breakpoint(large) { margin-bottom: 20px; }
+    }
+  }
+  .codes-applied-form {
+    margin-bottom: 8px;
+    @include breakpoint(large) { margin-bottom: 20px; }
+  }
+  .promo-code-button {
+    @include heading-6;
+    border: 1px solid $gray-light;
+    padding: 15px 20px;
+    position: relative;
+    margin-bottom: 16px;
+    @include breakpoint(large) { padding: 20px; margin-bottom: 20px; }
+    div { @include label-text; color: $gray-dark; }
+  }
+  .edit-promo-code {
+    @include text-link;
+    color: $secondary-color;
+    position: absolute;
+    top: 16px;
+    right: 13px;
+    @include breakpoint(large) {
+      top: 20px;
+      right: 20px;
+    }
+  }
+  label {
+    @include label-text;
+    margin-bottom: 10px;
+    color: $black;
+  }
+  input { margin-bottom: 20px; }
+}

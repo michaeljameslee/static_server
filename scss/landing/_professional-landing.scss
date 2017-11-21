@@ -1,0 +1,54 @@
+.professional-landing {
+  .row {
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .first-block {
+    .logo-cover {
+      text-align: center;
+      margin-bottom: 30px;
+      margin-top: 40px;
+    }
+    .first-heading {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .first-desc {
+      text-align: center;
+    }
+    padding: 20px 16px;
+    @media screen and (min-width: 64em) {
+      padding: 40px 60px;
+      .first-desc {
+        width: 760px;
+        margin: auto;
+      }
+    }
+  }
+  .three-up-cards {
+    padding-top: 40px;
+    padding-left: 16px;
+    h3 {
+      color: white;
+      font-size: rem-calc(22);
+      line-height: 26px;
+      @media screen and (min-width: 64em) {
+        font-size: rem-calc(32);
+        line-height: 36px;
+      }
+    }
+    @media screen and (min-width: 64em) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+  .global-brands {
+    display: none;
+    @media screen and (min-width: 64em) {
+      display: block;
+      padding-top: 60px;
+      border-top: 1px solid #cdcdcd;
+    }
+  }
+}

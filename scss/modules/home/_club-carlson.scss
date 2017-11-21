@@ -1,0 +1,67 @@
+/* Club Carlson - logged in and logged out items */
+.club-carlson-home {
+  text-align: center;
+
+  @include breakpoint(medium down) { 
+    margin-bottom: 40px; 
+    padding-bottom: 40px;
+  }
+
+  .carlson-logo { width: 118px; margin-bottom: 30px; }
+  h2 { 
+    margin-bottom: 10px;
+    .radisson-green & {
+      font-size: 3.25rem;
+    }
+    @include breakpoint(medium down) { font-size: rem-calc(22); }
+  }
+  p { 
+    color: $gray-dark;
+    font-size: rem-calc(14);
+    line-height: 1.5;
+    margin-bottom: 20px;
+
+    @include breakpoint(medium down) { font-size: rem-calc(12); margin-bottom: 20px; }
+  }
+  .button.expanded {
+    padding: 1.3125rem 0;
+    font-size: .875rem;
+  }
+}
+
+.cc-perks-wrapper {
+  margin-bottom: 40px;
+  
+  .column {
+    // padding: 0 95px;
+    @include breakpoint(medium down) { padding: 0 15px; margin-bottom: 20px; }
+    img { 
+      width: 64px; 
+      margin-bottom: 42px;
+
+      @include breakpoint(medium down) { margin-bottom: 17px; }
+    }
+    h3 {
+      @include get-font('regular');
+      font-size: rem-calc(22);
+      line-height: 1.18;
+
+      @include breakpoint(medium down) { font-size: rem-calc(16); }
+    }
+    p {
+      @include breakpoint(medium down) { font-size: rem-calc(12); }
+    }
+  }
+}
+
+.home .module-body.module-content {
+  border-top: 1px solid $gray-light;
+}
+.home .iwttab-full-clubcarlson-app {
+  border-bottom: none;
+
+  @include breakpoint(large) {
+    max-width: 1280px;
+    padding: 3.75rem 60px;
+  }
+}

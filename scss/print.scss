@@ -1,0 +1,45 @@
+@import 'mixins';
+
+// ------------------------------------//
+//    Print Styles
+// ------------------------------------//
+
+// Booking Funnel Print Styles for the confirmation page
+/* stylelint-disable selector-no-id, no-duplicate-selectors, declaration-no-important, selector-no-qualifying-type */
+/* needs some ids for jquery elements */
+.bookingfunnel-open {
+  #cookie-bar, .header, .searchapp, .show-for-small, .hide-for-large, .bookingview-error, .footer, .footer-logos, .footer-social, .reveal-overlay, .icon, .map-directions, .button {
+    display: none;
+  }
+  .wrapper { padding-top: 0 !important; }
+  img { max-width: 500px; }
+  #static-map { max-width: 250px; }
+  a[href^="mailto"]:after {
+    content: " (" attr(href) ")";
+    font-size: 90%;
+  }
+
+  .confirmation-mapimg {
+    max-width: 250px; position: relative;
+    .map-lmarker {
+      position: absolute;
+      left: 50%;
+      top: 64%;
+      transform: translate(-50%,-100%);
+      .map-marker-title {
+        background-color: #FFF;
+        box-shadow: ( 0 2px 4px 0 rgba(0, 0, 0, 0.07));
+        margin: 0px;
+        padding: 13px;
+        text-align: center;
+      }
+      .map-marker-tip {
+        @include arrow(6px, bottom, #fff);
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+      }
+    }
+  }
+}
+/* stylelint-enable selector-no-id, no-duplicate-selectors, declaration-no-important, selector-no-qualifying-type */

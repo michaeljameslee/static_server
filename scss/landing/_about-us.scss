@@ -1,0 +1,102 @@
+.about-intro {
+  text-align: center;
+  padding: rem-calc(20 0 28);
+
+  @include breakpoint(medium) { padding: rem-calc(30 0); }
+  @include breakpoint(large) {
+    max-width: 75rem;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: rem-calc(30);
+    line-height: 1.13;
+    margin-bottom: rem-calc(30);
+
+    @include breakpoint(medium) {
+      font-size: rem-calc(72);
+      line-height: 1.06;
+    }
+  }
+
+  h3 {
+    font-size: rem-calc(14);
+    line-height: 1.33;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: rem-calc(30);
+
+    @include breakpoint(medium) {
+      line-height: 1.33;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  .about-desc {
+    padding: 0 16px;
+
+    @include breakpoint(medium) {
+      width: 80%;
+      margin: 0 auto;
+    }
+    @include breakpoint(large) { width: 50%; }
+
+    p {
+      font-size: rem-calc(16);
+      line-height: 1.5;
+      color: $gray-dark;
+    }
+  }
+}
+
+.about-grid {
+  padding: rem-calc(40 0 48);
+
+  @include breakpoint(medium) { padding: rem-calc(60 30 60); }
+  @include breakpoint(large) { padding: rem-calc(60 30 120); }
+
+  .grid-item {
+    &:first-of-type {
+      margin-bottom: rem-calc(56);
+
+      @include breakpoint(medium) { margin-bottom: rem-calc(60); }
+      @include breakpoint(large) { margin-bottom: rem-calc(120); }
+    }
+  }
+
+  .grid-image {
+    margin-bottom: 32px;
+
+    @include breakpoint(medium) { margin-bottom: 0; }
+  }
+
+  .grid-content {
+    @include breakpoint(medium) { padding-top: 19px; }
+
+    i { 
+      font-size: rem-calc(48);
+      color: $salmon;
+      margin-bottom: 24px;
+
+      @include breakpoint(medium) { margin-bottom: 15px; }
+    }
+
+    h2 {
+      font-size: rem-calc(22);
+      line-height: 1.18;
+      margin-bottom: 5px;
+
+      @include breakpoint(medium) {
+        font-size: rem-calc(32);
+        line-height: 1.13;
+        margin-bottom: 10px;
+      }
+    }
+
+    p {
+      font-size: rem-calc(16);
+      line-height: 1.5;
+      color: $gray-dark;
+    }
+  }
+}

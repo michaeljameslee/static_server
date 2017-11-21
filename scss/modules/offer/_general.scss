@@ -1,0 +1,82 @@
+/* CSS Document */
+
+.offers-main {
+  .hero {
+    .masthead {
+      height: 410px;
+      @include breakpoint(small only) {
+        height: 281px;
+      }
+    }
+    .label {
+      color: $gray-medium;
+    }
+  }
+
+}
+.cards-wrapper {
+  display: flex;
+  overflow: visible;
+  @include breakpoint(small only) {
+    display: block;
+  }
+}
+@media screen and (max-width: 560px) {
+  .slick-list {
+    padding: 0px 50px 0px 0px;
+  }
+}
+
+.livebox.offer-tc {
+  h2, ._h2 {
+    font-size: rem-calc(52);
+    @include get-font('light');
+    line-height: 1.08;
+    margin: 60px auto 30px 60px;
+    max-width: 760px;
+    padding-bottom: 30px;
+    position: relative;
+    width: calc(100% - 120px);
+    @include breakpoint(small only) {
+      font-size: rem-calc(30);
+      text-align: center;
+      margin-top: 24px;
+      width: calc(100% - 32px);
+    }
+    &::after {
+      border-bottom: 2px solid $primary-color;
+      bottom: 0;
+      display: inline-block;
+      content: '';
+      height: 30px;
+      left: 0;
+      position: absolute;
+      width: 30px;
+    }
+  }
+  p, ul, li {
+    color: $gray-dark;
+    @include get-font('regular');
+    font-size: rem-calc(16);
+  }
+  h3, strong {
+    color: black;
+    @include get-font('semibold');
+  }
+  h3, li {
+    margin-bottom: rem-calc(5);
+  }
+  h3 {
+    font-size: rem-calc(18);
+  }
+  p {
+    margin-bottom: rem-calc(15);
+  }
+  .std-content {
+    padding-top: 0;
+    max-width: 880px;
+    .award-terms {
+      display: none;
+    }
+  }
+}

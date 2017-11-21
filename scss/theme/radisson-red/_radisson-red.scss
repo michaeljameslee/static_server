@@ -1,0 +1,1254 @@
+// ------------------------------------//
+//    Base
+// ------------------------------------//
+// Base items (no clases or ids)
+
+h1, ._h1, h2, ._h2, h3, ._h3, h4, h5, h6 {
+  @extend %hl-upper;
+}
+h1, ._h1 {
+  font-size: rem-calc(24px);
+  line-height: 1.13;
+  margin-bottom: rem-calc(20px);
+  @include breakpoint(large) { font-size: rem-calc(38); }
+}
+h2, ._h2 {
+  font-size: rem-calc(32);
+  line-height: 1.13;
+  margin-bottom: rem-calc(8);
+}
+h3, ._h3 {
+  color: $black;
+  font-size: rem-calc(26);
+  line-height: 1.17;
+  margin-bottom: rem-calc(8);
+  letter-spacing: 0.3px;
+}
+h3 {
+  @include breakpoint(large) {
+    font-size: rem-calc(38);
+    line-height: 1.11;
+    margin-bottom: rem-calc(30);
+  }
+}
+h4, ._h4 {
+  font-size: rem-calc(20);
+  line-height: 1.2;
+}
+h5 {
+  font-size: 1rem;
+  margin: rem-calc(10) auto;
+}
+@media screen and (max-width: 40em) {
+  h2 {
+    font-size: rem-calc(24);
+    line-height: 1.17;
+    letter-spacing: 0.5px;
+  }
+}
+
+.radisson-red {
+
+  // ------------------------------------//
+  //    Layout
+  // ------------------------------------//
+  // Major page elements and general layout classes
+
+  .subtitle {
+    color: $gray-dark;
+    font-family: $proxima-nova-semibold;
+    font-size: .8rem;
+    line-height: 1;
+    margin-bottom: 0;
+    text-transform: uppercase;
+  }
+  .button[disabled], .button[disabled]:hover {
+    color: rgba(#000, 0.5);
+    background-color: $gray-light;
+  }
+  .label-thick {
+    @extend h5;
+  }
+
+  // _header
+  header {
+    .header-logo {
+      flex: 0 1 91px;
+      @include breakpoint(large) { flex: 0 1 136px; }
+    }
+    %ph {
+      color: $black;
+      text-transform: uppercase;
+    }
+
+    .header1 {
+      border-left: 1px solid $gray-light;
+      border-right: 1px solid $gray-light;
+      max-height: 60px;
+    }
+    /* @include breakpoint(large) {
+      height: map-get($header-height, large);
+    } */
+  }
+  .primarynav a:focus, .primarynav a:active {
+    color: #fff;
+    .fill { fill: #fff; }
+  }
+  .primarynav a:not(.button), .primarynav-login .button {
+    @include breakpoint(medium down) {
+      font-family: $knockout-lightweight;
+      text-transform: uppercase;
+    }
+  }
+  .primarynav-login .button { font-size: 16px; }
+
+  .header2 {
+    font-family: $knockout-lightweight;
+    font-size: 1.2rem;
+    max-height: 70px;
+    div {
+      border: 1px solid $gray-light;
+      line-height: 1em;
+      padding: 23px 40px;
+    }
+    .ico-search {
+      height: auto;
+      max-width: 8%;
+    }
+    input {
+      border: 1px solid #FFF;
+      box-shadow: inset 0px 0px 0px 0px #FFF;
+      display: inline-block;
+      font-size: 1.2rem;
+      margin: 0px 0px 0px 2%;
+      padding: 0px;
+      width: 80%;
+      @extend %ph;
+    }
+    .search {
+      padding: 10px 40px;
+    }
+    .check_in_out {
+      border-left: none;
+      border-right: none;
+    }
+    .hotels {
+      background-color: $primary-color;
+      border-bottom: 1px solid $primary-color;
+      border-left: none;
+      border-right: none;
+      border-top: 1px solid $primary-color;
+      color: $white;
+      cursor: pointer;
+      text-align: center;
+    }
+  }
+  .breadcrumb {
+    background-color: $black;
+  }
+
+  // ------------------------------------//
+  //    Modules
+  // ------------------------------------//
+  // Smaller reusable elements
+
+  .dropdown-menu-full {
+    a { @extend %hl-upper; }
+    a:active, .active a { color: #fff; }
+  }
+
+  .content-container {
+    &._big {
+      /*line-height: 420px; */
+      > div {
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .room_content {
+        width: 100%;
+        display: flex;
+      }
+    }
+
+    @media screen and (max-width: 40em) {
+      &._big {
+        line-height: 160px;
+      }
+    }
+    @media screen and (min-width: 40em) and (max-width: 1020px) {
+      &._big {
+        line-height: 280px;
+      }
+    }
+  }
+  .back-to-prop {
+    font-family: $knockout-lightweight;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .back-to-prop-tag {
+    &:active, &:hover {
+      color: $primary-color;
+    }
+  }
+  .hero {
+    .property-name {
+      @media screen and (max-width: 40em) {
+        font-size: rem-calc(40);
+      }
+    }
+  }
+  .about-info {
+    /*.short-desc, .long-desc {
+      @include breakpoint(large) { padding-right: rem-calc(40); }
+    }*/
+    hr {
+      margin: 30px auto;
+    }
+    p {
+      font-family: $georgia;
+      font-size: rem-calc(16);
+      line-height: 1.5;
+      color: $gray-dark;
+      margin-bottom: rem-calc(10);
+    }
+  }
+  .overview {
+    @include breakpoint(small only) {
+      padding-bottom: 48px;
+    }
+  }
+  .info-expander {
+    color: $black;
+  }
+  .info-go {
+    position: relative;
+    &::after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      top: 6px;
+      right: -20px;
+      transform: rotate(45deg);
+      width: 8px;
+      height: 8px;
+      border-top: 3px solid $secondary-color;
+      border-right: 3px solid $secondary-color;
+      transition: transform .4s;
+    }
+  }
+  .label {
+    color: $crimson;
+    font-family: $knockout-welterweight;
+    font-size: rem-calc(14);
+    letter-spacing: .5px;
+    line-height: 1.29;
+    text-transform: uppercase;
+    &:hover {
+      border-bottom: 1px solid $crimson;
+    }
+  }
+  .cta {
+    @extend %hl-upper;
+    letter-spacing: 0.5px;
+    &:hover {
+      background-color: $hover;
+      color: $white;
+    }
+  }
+  .cta-2:hover { background-color: $crimson; }
+  .cta-big {
+    padding: 16px 0px;
+  }
+  .cta-full {
+    font-size: rem-calc(18);
+    letter-spacing: 0.5px;
+    line-height: 1.22;
+    @include breakpoint(small only) {
+      font-size: rem-calc(16);
+    }
+  }
+  .cta-link {
+    @extend %hl-upper;
+  }
+  .top-align {
+    margin-top: 25px;
+  }
+  .mobile-btn {
+    .lblmob {
+      @include get-font('regular');
+      font-size: rem-calc(18);
+      line-height: 1.22;
+      color: $true-black;
+      margin-bottom: 0;
+    }
+  }
+  .content-text {
+    /* useful for restyle anchors. */
+    @include contentText;
+    &._lineless {
+      line-height: .75em;
+    }
+    &.spaced-20 { margin-top: 0; }
+    @media screen and (max-width: 40em) {
+      &._ct_mob {
+        font-size: rem-calc(12);
+      }
+    }
+
+    a {
+      color: $gray-dark;
+      transition: color 400ms;
+      &:hover { color: $secondary-hover-cta; }
+    }
+  }
+  .review-content {
+    color: $gray-dark;
+    font-family: Georgia, serif;
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+  }
+  .o-hour {
+    font-family: $georgia;
+    font-size: rem-calc(16);
+    .day {
+      display: inline-block;
+      margin-right: 20px;
+      width: 80px;
+    }
+  }
+  .amenities {
+    h2 {
+      @include breakpoint(small only){
+        margin-bottom: rem-calc(16);
+      }
+    }
+    .ln-amenitie {
+      @include get-font('regular');
+      letter-spacing: .5px;
+      line-height: 1.25;
+    }
+  }
+  .transportation {
+    ._h1 {
+      margin-bottom: 40px;
+    }
+    h4 {
+      margin-bottom: 20px;
+    }
+    ul {
+      list-style: none;
+      margin: 0 0 30px 0;
+      padding: 0px;
+    }
+    li {
+      color: $gray-dark;
+      display: block;
+      padding-left: 1.25em;
+      text-indent: -1.25em;
+      &::before {
+        content: '\2022';
+        color: $primary-color;
+        font-size: 1.8em;
+        line-height: .6em;
+        float: left;
+        width: .85em;
+      }
+    }
+  }
+
+  //ATTRACTIONS
+  .i-cont {
+    height: 54px;
+    line-height: 54px;
+    margin-bottom: 0;
+    @include breakpoint(small only) {
+      margin-bottom: 0;
+    }
+  }
+  .poi-location-name {
+    @include breakpoint(large) {
+      font-size: rem-calc(16);
+    }
+  }
+  /*.poi-panel {
+    .poi-img-container {
+      height: 100%;
+    }
+  }*/
+  .poi-desc {
+    display: none;
+  }
+  .poi-more {
+    display: none;
+  }
+
+  //ROOMS
+  .ico-wheelchair {
+    height: rem-calc(64);
+  }
+  .fa-wheelchair {
+    color: $primary-color;
+    font-size: rem-calc(64);
+  }
+  @media screen and (min-width: 40em) {
+    .ico-wheelchair {
+      margin-bottom: 20px;
+    }
+  }
+  @media screen and (max-width: 40em) {
+    .ico-wheelchair {
+      margin-bottom: 24px;
+    }
+    .room_specs:first-of-type {
+      border-right: 1px solid $gray-light;
+    }
+    .room_title {
+      font-size: rem-calc(48);
+    }
+    .room_subtitle {
+      font-size: rem-calc(18);
+      text-transform: none;
+    }
+    .room_name {
+      font-size: rem-calc(24);
+    }
+  }
+
+
+  // DINING CONTENTS
+  .dining-hours {
+    .spaced-30 { margin-top: 0; }
+  }
+  .restaurant-details {
+    .details-1 {
+      @include breakpoint(large) { padding-left: rem-calc(25); }
+    }
+    .details-2 {
+      @include breakpoint(large) { padding-left: rem-calc(5); }
+    }
+  }
+
+  // DINING OPTIONS
+  .dinopt {
+    .dinopt_cta {
+      @extend %hl-upper;
+    }
+  }
+
+  .dinopt-top-area-spaced-panel{
+    padding-left: 3.8125rem;
+  }
+
+  //WEBEXTRA - OFFERS
+  .we-offers {
+    .card-content {
+      h3 {
+        font-size: rem-calc(24);
+        letter-spacing: 0.5px;
+        line-height: 1.17;
+        text-transform: uppercase;
+      }
+      p {
+        line-height: 1.43;
+      }
+    }
+  }
+
+  // CARDS
+  .card {
+    .card-content {
+      h3 {
+        font-size: rem-calc(16);
+        letter-spacing: .5px;
+        line-height: 1.25;
+        text-transform: uppercase;
+        @include breakpoint(small only) {
+          font-size: rem-calc(18);
+          line-height: 1.22;
+        }
+      }
+    }
+    .content-text {
+      font-size: rem-calc(14);
+    }
+    .card-label1 {
+      color: $gray-medium;
+      font-family: $proxima-nova-semibold;
+      font-size: rem-calc(10);
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: rem-calc(2);
+    }
+    .card-price {
+      color: $black;
+      @extend %hl-upper;
+      font-size: rem-calc(26);
+      line-height: 1.15;
+    }
+    .card-sm-time {
+      color: $gray-medium;
+      font-family: $proxima-nova-semibold;
+      font-size: rem-calc(10);
+      line-height: 1.6;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .card-neighborhood, .card-miles{
+      font-family: $proxima-nova-semibold;
+      font-size: rem-calc(10px);
+      font-stretch: normal;
+      font-style: normal;
+      font-weight: 600;
+      letter-spacing: 1px;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+    h4 {
+      color: $black;
+      font-size: rem-calc(20);
+      letter-spacing: .5px;
+      line-height: 1.2;
+      @include breakpoint(small only) {
+        font-size: rem-calc(24);
+        line-height: 1.16;
+      }
+    }
+  }
+
+  //OFFERS
+  .offer-title {
+    h1 {
+      font-size: rem-calc(72);
+      line-height: 1.06;
+      margin-bottom: 0px;
+    }
+    p {
+      @include contentText;
+      margin-bottom: rem-calc(20);
+    }
+  }
+  .offer-detail {
+    h2 {
+      font-size: rem-calc(32);
+    }
+    p, ul {
+      @include contentText;
+      margin-bottom: 16px;
+      &:last-of-type {
+        margin-bottom: 20px;
+      }
+    }
+    .label {
+      font-family: $knockout-welterweight;
+      font-size: rem-calc(14);
+      margin-top: 40px;
+    }
+    .otc {
+      margin-bottom: 40px;
+    }
+    .tags {
+      margin: 30px auto 0;
+    }
+  }
+  .offer-locations {
+    h2 {
+      @extend %hl-upper;
+      font-size: rem-calc(32px);
+      line-height: 1.11;
+    }
+    p {
+      @include contentText;
+    }
+    .masthead {
+      margin-top: 40px;
+    }
+    .offer-overcard {
+      h2 {
+        text-align: left;
+      }
+      .card-label {
+        color: $gray-medium;
+        font-size: rem-calc(12);
+        margin-bottom: 10px;
+      }
+      .card-label2 {
+        @extend .card-label;
+        font-size: rem-calc(10);
+        margin-bottom: 2px;
+      }
+      .card-label2-related-prop {
+        @extend .card-label;
+        margin: 0px;
+      }
+      .card-marker {
+        margin-bottom: 0px;
+      }
+      .card-price {
+        @extend %hl-upper;
+        color: $black;
+        font-size: rem-calc(26);
+        letter-spacing: 0.5px;
+        line-height: 1.15;
+      }
+    }
+    .card {
+      h3 {
+        font-size: rem-calc(24);
+        margin-bottom: 8px;
+      }
+      .card-label2-related-prop {
+        font-family: $proxima-nova-semibold;
+        font-size: rem-calc(12);
+        letter-spacing: 1px;
+        line-height: 1.33;
+        text-transform: uppercase;
+      }
+    }
+  }
+  @media screen and (max-width: 64.063em) {
+    .offer-title {
+      h1 {
+        font-size: rem-calc(40);
+        margin-bottom: rem-calc(16);
+      }
+    }
+  }
+  @media screen and (max-width: 40em) {
+    .offer-title {
+      padding: 28px 16px;
+    }
+  }
+  @media screen and (min-width: 64.063em) {
+    .offer-sticky-trigger {
+      &._herover {
+        top: 330px;
+      }
+    }
+    .offer-sticky-wrapper {
+      margin: 0 3.1% 0 20px;
+      &._herover {
+        top: 330px;
+      }
+    }
+  }
+
+  //LIVEBOX
+  .livebox {
+    // livebox header area for map
+    .header-area {
+      text-transform: uppercase;
+      border-bottom: 1px solid $gray-light;
+      // title
+      h1 {
+        text-align: center;
+        font-size: 24px;
+        line-height: 64px;
+        margin: 0;
+      }
+    }
+    .menu_header {
+      .menu_title {
+        @extend %hl-upper;
+        font-size: rem-calc(20);
+        line-height: 1;
+      }
+    }
+  }
+  .tabs-title {
+    a {
+      @extend %hl-upper;
+    }
+  }
+
+  .reservations-card .previous-add-cart .svg-cart {
+    fill: white;
+  }
+
+  // _bookingfunnel
+  .bookingview-roomselection .small-toolbar .button {
+    font-size: 16px;
+  }
+  .roomselection-buttons .svg-filter .fill { fill: #fff; }
+  .stepnav-step {
+    font-size: 40px;
+    line-height: 44px;
+    @include breakpoint(large) {
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+  .stepnav-edit a, .stepnav-edit button {
+    letter-spacing: 0.5px;
+    @include breakpoint(large) { font-size: 14px; }
+  }
+  .stepnav-wrapper .stepnav-previous {
+    color: $gray-medium;
+  }
+  .step-hotel .hotelname {
+    font-size: 26px;
+    line-height: 30px;
+  }
+  .hoteladdress {
+    color: $gray-medium;
+  }
+  .bookingview-datepicker .datepick-unavailable { border-width: 1px; color: #000; }
+  .bookingview-datepicker .datepick-selected {
+    color: #fff;
+  }
+  .step-dates .fliptext-wrapper {
+    height: 91px;
+    @include breakpoint(large) { height: 50px; }
+  }
+  .stepnav-review .step-dates .fliptext-wrapper {
+    height: auto;
+    @include breakpoint(large) { height: auto; }
+  }
+  .bookingview-rooms, .guests-list {
+    border-width: 1px;
+    .column, .row { border-width: 1px; }
+    .active .button, .active.button { color: #fff; }
+  }
+  .rate-section:first-child:after, .rate-section:first-child, .rate-viewall, .rate-viewall:after {
+    border-radius: 0;
+  }
+  .roomselection-club {
+    .club-button button {
+      font-size: rem-calc(16px);
+      line-height: rem-calc(20px);
+      letter-spacing: 0.5px;
+      @include breakpoint(large) { font-size: rem-calc(14px); }
+    }
+  }
+  .rate-selected { color: #fff; }
+  .ratelist {
+    @include breakpoint(medium down) {
+      padding: 24px 17px;
+      button {
+        padding: 23px 22px 29px;
+        border: 0;
+      }
+      .column {
+        padding: 0;
+        border: 1px solid $gray-light;
+        margin-bottom: 16px;
+      }
+      .rate-input {
+        width: 22px;
+        height: 22px;
+        float: right;
+        background-color: rgba(0, 0, 0, 0.05);
+        border: solid 0.5px rgba(0, 0, 0, 0.15);
+        margin-top: -10px;
+        margin-right: -8px;
+      }
+      .active.column { border: $active-border-width solid $primary-color; }
+      .active .rate-input { background-color: $primary-color; border-color: $primary-color; }
+      .active .rate-input:after { content: none; }
+    }
+    .rate-name { margin-bottom: 5px; }
+  }
+  .roomslist .room-name .fill { fill: #fff; }
+  .bookingview-rates .svg-close .fill {
+    @include breakpoint(large) { fill: $primary-color; }
+  }
+  .filter-options .button.active { color: #fff; }
+  .filter-options .svg-close .fill { fill: #fff; }
+  .roomview-images { display: none; } // For demo purposes
+  .roomview-desc h2 {
+    font-size: 40px;
+    @include breakpoint(large) { font-size: 38px; }
+  }
+  .roomview-desc {
+    font-size: rem-calc(14px);
+  }
+  .roomview-amenities {
+    h3 {
+      font-size: 24px;
+      @include breakpoint(large) { font-size: 26px; }
+    }
+    button { font-size: 16px; }
+  }
+  .bookingview-full-header .close-btn .fill { fill: $primary-color; }
+  .stepnav-review .stepnav-edit a, .stepnav-review .stepnav-edit button {
+    @include breakpoint(medium down) {
+      color: #fff;
+    }
+  }
+  .stepnav-review .stepnav-edit .stepnav-remove {
+    @include breakpoint(medium down) {
+      color: #000;
+    }
+  }
+  .review-button {
+    color: #fff;
+  }
+  .guestinfo-guest .button, .guestinfo-submit .button {
+    font-size: 16px;
+    @include breakpoint(large) { font-size: 18px; }
+  }
+  // .guestinfo-disclaimer a { font-size: rem-calc(14px); }
+  // .book-info-small .book-info-edit {
+  //   font-size: rem-calc(16);
+  //   line-height: 1.25;
+  //   @include breakpoint(large) {
+  //     font-size: rem-calc(14);
+  //     line-height: 1.29;
+  //   }
+  // }
+
+  //search
+  .searchwrapper {
+    @include breakpoint(small only) {
+      left: 28%;
+      width: 60%;
+    }
+    @include breakpoint(medium only) { left: 16.5%; }
+  }
+  &.search-focused {
+    .searchwrapper {
+      @include breakpoint(medium down) {
+        left: 0;
+        width: 100%;
+      }
+    }
+  }
+  .searchwrapper.fixed .fa-search {
+    @include breakpoint(large){
+      margin-left: 30px;
+    }
+  }
+  .search-field {
+    @include breakpoint(large){
+      border-right: 1px solid $gray-light;
+    }
+  }
+  .search-field input {
+    font-family: $knockout-lightweight;
+    font-size: rem-calc(20);
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    @include breakpoint(small only) { width: 80%; }
+  }
+
+  .search-submit button {
+    background: $primary-color;
+    color: white;
+    font-family: $knockout-lightweight;
+    font-weight: normal;
+    font-size: rem-calc(20);
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+
+    &:hover {
+      background: $hover;
+    }
+
+    @include breakpoint(large) { padding: 24px 0 21px; }
+  }
+
+  .search-field .search-code {
+    font-family: $knockout-lightweight;
+    font-size: rem-calc(14);
+    line-height: 1.29;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+  }
+
+  .searchconsole.fixed .fa-search {
+    @include breakpoint(large) {
+      margin-left: 20px;
+    }
+  }
+
+  .searchconsole.fixed .search-field .search-code {
+    @include breakpoint(large) {
+      padding-bottom: 11px;
+      padding-top: 3px;
+    }
+  }
+
+  .search-field .search-my-location {
+    font-family: $knockout-lightweight;
+    font-size: rem-calc(14);
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+  }
+
+  .search-dates {
+    .search-arrive, .search-depart, .spacer {
+      font-family: $knockout-lightweight;
+      font-size: rem-calc(20);
+      line-height: 1.2;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    .search-arrive {
+      &.active { border-bottom: 3px solid $primary-color; }
+    }
+
+    .spacer { line-height: 68px; }
+
+    .search-depart {
+      &.active { border-bottom: 3px solid $primary-color; }
+    }
+  }
+
+  .searchconsole.fixed .alert {
+    @include breakpoint(large) {
+      border-top: none;
+    }
+  }
+
+  .search-results .alert {
+    @include breakpoint(large) {
+      border-top: 1px solid $gray-light;
+    }
+
+    span { font-family: $proxima-nova-reg; font-size: rem-calc(12px); }
+    h4 { font-size: rem-calc(32px); color: black; }
+  }
+
+  &.search-focused .search-dates .spacer {
+    @include breakpoint(large) {
+      line-height: 89px;
+    }
+  }
+
+  // _search results console
+  .search-results {
+    ul li a {
+      @include breakpoint(large) {
+        padding: 18px 0 18px 180px;
+      }
+
+      &:hover {
+        @include breakpoint(large) {
+          padding-left: 195px;
+        }
+      }
+    }
+
+    h3 { font-size: rem-calc(12); margin-bottom: 0; }
+    span {
+      font-family: $knockout-lightweight;
+      font-size: rem-calc(20);
+      line-height: 1.2;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+    .highlight {
+      font-weight: normal;
+      color: black;
+    }
+    .close-results .fill { fill: $primary-color; }
+
+    .bookingview-ratecode .button.primary {
+      font-family: $knockout-lightweight;
+      font-size: rem-calc(16);
+    }
+  }
+
+  .show-results-panel .close-results .fill {
+    fill: $primary-color;
+  }
+
+  // _search results page
+  &.results-page {
+    .search-submit button {
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+        padding: 24px 0 22px;
+      }
+    }
+  }
+  .button.rates-cta-top {
+    font-family: $knockout-lightweight;
+    font-size: rem-calc(16);
+    color: $primary-color;
+    border: none;
+    border-bottom: 1px solid $gray-light;
+  }
+
+  .travel-guide-intro {
+    @include breakpoint(small only) {
+      margin-bottom: 5px;
+    }
+
+    h3 { font-family: $proxima-nova-semibold; }
+    h4 { text-transform: none; }
+    p {
+      font-family: $georgia;
+
+      @include breakpoint(small only) {
+        display: none;
+      }
+    }
+  }
+  .travel-guide-image {
+    position: relative;
+
+    @include breakpoint(small only) {
+      flex: 0 0 100%;
+      max-width: 100%;
+      margin-bottom: 0;
+    }
+  }
+  .travel-guide-image img { margin-bottom: 0; }
+  .travel-guide-image .caption {
+    position: absolute;
+    bottom: 0;
+    background: black;
+    color: white;
+    font-size: rem-calc(12);
+    padding: rem-calc(12 32);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .popular-cities .popular-cities-list li {
+    font-family: $knockout-lightweight;
+  }
+  .results-filters-wrapper .filter-buttons {
+    font-family: $knockout-lightweight;
+    font-size: rem-calc(12);
+  }
+  .results-filters-wrapper .filter-buttons .secondary {
+    color: black;
+
+    &:hover, &:focus {
+      color: white;
+    }
+  }
+  .results-filters-wrapper .mobile-filter-buttons h1 { text-transform: uppercase; }
+  .results-filters-wrapper .mobile-filter-buttons h1,
+  .results-filters-wrapper .mobile-filter-buttons .cancel-btn,
+  .results-filters-wrapper .mobile-filter-buttons .reset-btn,
+  .results-filters-wrapper h1 {
+    font-family: $knockout-lightweight;
+  }
+
+  .results-filters-wrapper .filter-options .button.secondary:focus { color: black; }
+
+  .results-filters .button.secondary:hover:focus,
+  .results-filters .button.secondary:focus { color: black; }
+
+  .filter-options .button.secondary:hover {
+    .fill { fill: white; }
+  }
+
+  .searchresults-wrapper .filter-options .button { font-family: $proxima-nova-semibold; }
+
+  .results-filters-wrapper .mobile-filter-buttons .cancel-btn,
+  .results-filters-wrapper .mobile-filter-buttons .reset-btn {
+    font-size: rem-calc(16px);
+    top: 22px;
+    letter-spacing: 0.3px;
+  }
+
+  .results-filters-wrapper .close-results,
+  .results-filters-wrapper .svg-close {
+    color: $primary-color;
+    fill: $primary-color;
+  }
+
+  .results-filters {
+    .filter-buttons {
+      span {
+        font-family: $knockout-lightweight;
+        font-size: rem-calc(16);
+        line-height: 1.25;
+        letter-spacing: 0.5px;
+      }
+    }
+
+    .label {
+      font-family: $proxima-nova-semibold;
+      font-size: rem-calc(12);
+      color: black;
+
+      &:hover {
+        border-bottom: none;
+      }
+    }
+
+    select { font-family: $georgia; }
+
+    .button {
+      font-family: $knockout-lightweight;
+      font-size: rem-calc(16);
+      line-height: 1.25;
+      letter-spacing: 0.5px;
+
+      &.primary:hover,
+      &.primary:focus,
+      &.secondary:hover {
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .applied-filters .button.secondary {
+    font-family: $proxima-nova-semibold;
+    font-size: rem-calc(12);
+
+    &:focus {
+      color: black;
+    }
+
+    &:hover {
+      .fill { fill: white; }
+    }
+
+    &:hover:focus {
+      .fill { fill: black; }
+    }
+  }
+
+  .rate-section-top button { font-size: 14px; }
+  .results { padding-top: 0; }
+
+  .reservations-card .card-hotel-name {
+    text-transform: uppercase;
+    font-family: $knockout-lightweight;
+    @include breakpoint(small only) {
+      font-size: rem-calc(18);
+    }
+  }
+  .reservations-card .previous-add-cart .fill { fill: white; }
+  .reservations-card .room-ratename { color: $gray-medium; }
+  .reservations-card .room-rateval { font-family: $knockout-lightweight; }
+  .results-cards .disclaimer { font-family: $georgia; font-size: rem-calc(14px); }
+
+  .travel-guide-intro h1 { font-family: $knockout-lightweight; }
+
+  .brand-travel-guide {
+    margin-bottom: 20px;
+
+    .travel-guide-image {
+      margin-bottom: 20px;
+      padding: rem-calc(0 40);
+
+      @include breakpoint(medium) { padding: 0; }
+    }
+    .travel-guide-image .caption {
+      background: none;
+      font-family: $knockout-lightweight;
+      font-size: rem-calc(20px);
+      padding: 0;
+      margin-bottom: 24px;
+      margin-left: 108px;
+    }
+
+    .travel-guide-intro {
+      margin-bottom: 30px;
+
+      @include breakpoint(medium) {
+        padding-left: 70px;
+      }
+
+      @include breakpoint(large) {
+        padding-left: 174px;
+      }
+
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+        padding-left: 70px;
+      }
+
+      .logo { width: 100px; margin-bottom: 20px; }
+    }
+
+    .travel-guide-intro h1 {
+      margin-bottom: rem-calc(20);
+      font-family: $knockout-lightweight;
+
+      @include breakpoint(small only) {
+        font-size: rem-calc(40px);
+      }
+    }
+
+    .travel-guide-intro p {
+      margin-bottom: rem-calc(30);
+
+      @include breakpoint(small only) {
+        text-align: center;
+        display: block;
+      }
+    }
+
+    .travel-guide-intro .button {
+      font-family: $knockout-lightweight;
+      font-size: rem-calc(14);
+      line-height: 1.29;
+      letter-spacing: 0.5px;
+      padding: rem-calc(12 30);
+    }
+  }
+
+  // _searchmap
+  &.search-map .header-logo { padding-left: 18px; }
+
+  .search-poi-map-container .results-filters .button {
+    font-family: $knockout-lightweight;
+  }
+  .search-poi-map-container .results-filters .button.secondary:hover {
+    color: white;
+  }
+  .search-poi-map-container .results-filters .button.secondary:focus,
+  .search-poi-map-container .results-filters .button.secondary:hover:focus {
+    color: black;
+  }
+  .search-infowindow .svg-cart .fill { fill: #fff; }
+  .search-infowindow .room-name,
+  .search-infowindow .room-rateval,
+  .search-poi-panel .search-poi-rateval { font-family: $knockout-lightweight; }
+  .search-poi-panel .search-poi-img-container { @include breakpoint(large) { margin-top: 5px; } }
+
+  .search-poi-map-container .poi_logo {
+    img {
+      width: 64px;
+      height: auto;
+    }
+
+    &.active img {
+      width: 108px;
+    }
+  }
+
+  // _footer
+  .footer .column h3, .footer .columns h3 { text-transform: uppercase; font-size: rem-calc(16); }
+  .footer-subscribe .submit, .mobile-newsletter {
+    background: $primary-color;
+    color: $white;
+    font-family: $knockout-lightweight;
+  }
+
+  .footer .column ul, .footer .columns ul {
+    font-weight: normal;
+  }
+
+}
+
+.mobile-spacer-dinopt {
+  width: 100%;
+  height: 5%;
+}
+
+.tripadvisor-page {
+  .breadcrumb { display: none; }
+  .spaced-panel {
+    position: relative;
+    @include breakpoint(large) { padding-top: rem-calc(40); }
+  }
+}
+.back-to { 
+  font-family: $knockout-welterweight;
+  font-size: rem-calc(16);
+  letter-spacing: 0.5px;
+  &::before {
+    top: 8px;
+  }
+}

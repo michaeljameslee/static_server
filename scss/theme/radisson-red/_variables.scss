@@ -1,0 +1,65 @@
+$theme: 'red';
+
+// ------------------------------------//
+//    Sizes
+// ------------------------------------//
+$active-border-width: 2px;
+$border-radius: 0;
+$card-border-radius: 0;
+
+// ------------------------------------//
+//    Colors
+// ------------------------------------//
+
+// Theme colors
+$crimson: #E62528;
+$hover:#CE0C0F;
+$tomato: #ee2d24;
+
+// General
+$primary-color: $crimson;
+$secondary-color: $crimson;
+$black: #000000;
+$white: #ffffff;
+
+// Color Settings
+$anchor-color: $secondary-color !default;
+$active-input-color: #000;  // border color for active inputs
+$shopping-cart: $black;
+
+$primary-text-cta: #fff;
+$primary-text-hover-cta: #fff;
+$primary-hover-cta: $hover;
+$secondary-text-cta: #000;
+$secondary-text-hover-cta: #fff;
+$secondary-hover-cta: $crimson;
+$breadcrumb-template-arrow: $crimson;
+
+// ------------------------------------//
+//    Fonts
+// ------------------------------------//
+$proxima-nova-thin: 'Proxima N W01 Thin Reg',  Arial, sans-serif !default;
+$proxima-nova-light: 'Proxima N W01 Light',  Arial, sans-serif !default;
+$proxima-nova-reg: 'Proxima N W01 Reg',  Arial, sans-serif !default;
+$proxima-nova-semibold: 'Proxima N W01 Smbd',  Arial, sans-serif !default;
+
+$georgia: "Georgia", serif;
+$arial: Arial,"Helvetica Neue",Helvetica,sans-serif;
+
+$knockout-lightweight: "Knockout 49 A", "Knockout 49 B";
+$knockout-welterweight: "Knockout 50 A", "Knockout 50 B";
+
+$fonts:(
+  'thin': $knockout-lightweight,
+  'light': $knockout-lightweight,
+  'regular': $knockout-lightweight,
+  'semibold': $proxima-nova-semibold,
+  'paragraph': $georgia,
+  'secondary-paragraph': $georgia,
+);
+
+// ------------------------------------//
+//    Links
+// ------------------------------------//
+$anchor-decoration: none;
+$anchor-decoration-hover: underline;

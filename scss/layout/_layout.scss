@@ -1,0 +1,876 @@
+// ------------------------------------//
+//    General layout styles
+// ------------------------------------//
+
+//FONTS & TEXTS MIXINS
+%hl-upper {
+  @include get-font('regular');
+  text-transform: uppercase;
+}
+@mixin contentText($font-size: 1rem) {
+  color: $gray-dark;
+  @include get-font('paragraph');
+  text-decoration: none;
+}
+.p_subt {
+  @include get-font('paragraph');
+  margin-bottom: 10px;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.pre-line {
+  white-space: pre-line;
+}
+
+// CONTAINERS
+.wrapper {
+  position: relative;
+  padding-top: map-get($header-height, small);
+  @include breakpoint(large) { padding-top: map-get($header-area-height, large); }
+
+  .web-extra &,
+  .blog & {
+    padding-top: map-get($header-height, small) + 47px;
+    @include breakpoint(large) { padding-top: map-get($header-area-height, large) + 40px; }
+  }
+}
+.main-content-area {
+  margin: 60px auto;
+
+  h1 {
+    margin-bottom: 40px;
+  }
+}
+.spaced-panel {
+  padding: rem-calc(40 16);
+  @include breakpoint(large) { padding: rem-calc(60px); }
+}
+.spaced-inside {
+  padding: rem-calc(0 16);
+  @include breakpoint(large) { padding: rem-calc(0 60); }
+}
+.nosidemargin, .row .row.nosidemargin {
+  margin-left: auto;
+  margin-right: auto;
+}
+.noleft {
+  padding-left: 0px;
+}
+.noright {
+  padding-right: 0px;
+}
+/* stylelint-disable declaration-no-important */
+/* Override an equally level style */
+@media screen and (min-width: 1020px) {
+  .big-noleft {
+    padding-left: 0px !important;
+  }
+}
+@media screen and (min-width: 40em) and (max-width: 1020px) {
+  .medium-noleft {
+    padding-left: 0px !important;
+  }
+}
+@media screen and (max-width: 40em) {
+  .small-noleft {
+    padding-left: 0px !important;
+  }
+}
+/* stylelint-enable declaration-no-important */
+
+.nospaced {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.side-std1 {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+.spaced-std1 {
+  padding-bottom: 60px;
+  padding-top: 60px;
+}
+@media screen and (max-width: 40em) {
+  .side-std1 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .spaced-std1 {
+    padding-bottom: 40px;
+    padding-top: 32px;
+  }
+}
+.spaced-20 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.spaced-30 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.spaced-40 {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.spaced-60 {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.downspace-4 {
+  margin-bottom: 4px;
+}
+.downspace-10 {
+  margin-bottom: 10px;
+}
+.downspace-20 {
+  margin-bottom: 20px;
+}
+.downspace-30 {
+  margin-bottom: 30px;
+}
+.downspace-32 {
+  margin-bottom: 32px;
+}
+.downspace-40 {
+  margin-bottom: 40px;
+}
+.downspace-50 {
+  margin-bottom: 50px;
+}
+.downspace-60 {
+  margin-bottom: 60px;
+}
+.upspace-20 {
+  margin-top: 20px;
+}
+.upspace-30 {
+  margin-top: 30px;
+}
+.upspace-40 {
+  margin-top: 40px;
+}
+.upspace-60 {
+  margin-top: 60px;
+}
+.centered {
+  text-align: center;
+}
+._border-up {
+  border-top: 1px solid $gray-light;
+}
+._border-down {
+  border-bottom: 1px solid $gray-light;
+}
+
+.allwidth {
+  max-width: none;
+}
+.fullwidth {
+  width: 100%;
+}
+.vcentered {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.short-desc, .long-desc {
+  display: none;
+  &.active { display: block; }
+}
+
+//CTAs
+.cta {
+  border: 2px solid $primary-color;
+  border-radius: 0px;
+  display: inline-block;
+  font-size: 1rem;
+  padding: 22px;
+  text-align: center;
+  &:hover {
+    transition: background .4s;
+  }
+}
+@include breakpoint(small only) {
+  .cta {
+    margin-bottom: 16px;
+    padding: 10px 0px;
+    text-align: center;
+    width: 100%;
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+  .notop {
+    margin-top: 0px;
+  }
+}
+@include breakpoint(medium) {
+  .cta {
+    margin-right: rem-calc(15);
+    padding: rem-calc(6 28);
+    min-width: rem-calc(120);
+  }
+}
+.cta-1 {
+  @extend .cta;
+  background-color: $primary-color;
+  color: $white;
+  &:hover {
+    border: 2px solid $primary-hover-cta;
+    background-color: $primary-hover-cta;
+    transition: background .4s;
+  }
+  &.menu {
+    @include breakpoint(small only) {
+      background-color: $white;
+      color: $black;
+      &:hover {
+        border: 2px solid $secondary-hover-cta;
+        background-color: $secondary-hover-cta;
+        color: $white;
+        transition: background .4s;
+      }
+    }
+  }
+}
+.cta-2 {
+  @extend .cta;
+  background-color: $white;
+  color: $black;
+
+  @include breakpoint(medium) { min-width: rem-calc(131); }
+
+  &:hover {
+    border: 2px solid $secondary-hover-cta;
+    background-color: $secondary-hover-cta;
+    color: $white;
+    transition: background .4s;
+  }
+}
+.cta-full {
+  color: $primary-text-cta;
+  @include get-font('semibold');
+  display: block;
+  margin-right: 0;
+  // margin-top: 41px;
+  padding-bottom: 19px;
+  padding-top: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+
+  @include breakpoint(small only) {
+    font-size: rem-calc(12);
+    margin-top: 32px;
+    padding-bottom: 16px;
+    padding-top: 16px;
+  }
+}
+.cta-text-gray {
+  color: $gray-dark;
+  font-family: Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.3em;
+}
+.cta-text-inline {
+  color: darken($primary-color, 35%);
+  font-family: Georgia, serif;
+  font-weight: 400;
+  letter-spacing: normal;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.cta-link {
+  color: $primary-color;
+  font-size: 1rem;
+  line-height: 1.3em;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.cta-big {
+  @extend .cta;
+  color: $white;
+  background-color: $primary-color;
+  font-size: 1.2rem;
+  max-width: 260px;
+  text-align: center;
+  width: 100%;
+  letter-spacing: 0.3px;
+}
+.roundbtn {
+  border-radius: 100%;
+}
+.info-expander,
+.toggle-expander {
+  @include small-link-with-caret;
+  display: inline-block;
+  line-height: 1.25;
+  letter-spacing: 0.3px;
+  margin: 0;
+  position: relative;
+  vertical-align: middle;
+  &::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 2px;
+    right: -20px;
+    transform: rotate(135deg);
+    width: 8px;
+    height: 8px;
+    border-top: 3px solid $secondary-color;
+    border-right: 3px solid $secondary-color;
+    transition: transform .4s;
+  }
+  &.active::after {
+    top: 8px;
+    transform: rotate(-45deg);
+    transition: transform .4s;
+  }
+  img {
+    height: auto;
+    margin-left: 12px;
+    width: 12px;
+  }
+}
+
+.info-expander {
+  font-family: map-get($fonts, 'regular');
+  text-transform: capitalize;
+}
+
+.toggle-expander.active {
+  &:after {
+    transform: rotate(315deg);
+    top: 6px;
+  }
+}
+
+//FORMS
+.field-errors, .parsley-errors-list {
+  color: $error-color;
+  display: block;
+  font-family: $proxima-nova-semibold;
+  font-size: rem-calc(12);
+  letter-spacing: 1px;
+  margin: 0;
+  padding: rem-calc(10 0);
+  text-transform: uppercase;
+  transform: translateY(rem-calc(-21));
+  @include breakpoint(large) {
+    letter-spacing: 0;
+    text-transform: none;
+  }
+}
+.parsley-errors-list {
+  list-style: none;
+}
+.form-errors {
+  margin-top: rem-calc(20);
+}
+
+.row.expand { max-width: none; }
+
+.coverfit {
+  overflow: hidden;
+  position: relative;
+  img {
+    height: auto;
+    left: 50%;
+    max-height: none;
+    max-width: none;
+    min-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+  }
+}
+
+.label {
+  font-size: rem-calc(12);
+  text-transform: uppercase;
+  &._subtitle {
+    color: $black;
+    font-weight: bold;
+  }
+  &._tag {
+    border: 1px solid $primary-color;
+    color: $black;
+    margin-right: 10px;
+    padding: 0 10px 1px;
+    border-radius: rem-calc(2);
+  }
+}
+.img-container {
+  @extend .coverfit;
+  display: inline-block;
+  min-height: 50px;
+  &._cover {
+    @extend .img-container;
+    height: 360px;
+  }
+  &._big {
+    @extend .img-container;
+    height: rem-calc(422);
+    width: 100%;
+    img {
+      min-height: rem-calc(422);
+    }
+  }
+  &._small {
+    @extend .img-container;
+    height: 195px;
+    width: 100%;
+    img {
+      min-height: 195px;
+    }
+  }
+  &._smallresp {
+    @extend .img-container;
+    height: 190px;
+    width: 100%;
+    img {
+      min-height: 190px;
+    }
+  }
+  img {
+    height: auto;
+    left: 0px;
+    min-height: 100%;
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 40em) and (max-width: 1020px) {
+  .img-container {
+    &._big {
+      height: 280px;
+    }
+    &._small {
+      height: 121px;
+    }
+    &._smallresp {
+      height: 121px;
+    }
+  }
+}
+@media screen and (max-width: 40em) {
+  .img-container {
+    &._big {
+      height: 280px;
+    }
+    &._smallresp {
+      height: 250px;
+    }
+  }
+}
+
+/* stylelint-disable declaration-no-important */
+//LIVEBOX
+.livebox {
+  background-color: $white;
+  display: none;
+  overflow: auto;
+  position: fixed;
+  width: 100%;
+  &._visible {
+    display: block;
+  }
+  &.attractions-map {
+    .spaced-panel:first-of-type {
+      @include breakpoint(large) { padding: 0; }
+    }
+  }
+  &.hero-gallery {
+    .std-content {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .gallery-img {
+      overflow: hidden;
+      position: relative;
+      @include breakpoint(medium) {
+        height: 160px;
+        margin-bottom: 40px;
+        margin-right: 40px;
+        width: 160px;
+      }
+      @include breakpoint(small only) {
+        height: 105px;
+        margin-bottom: 14px;
+        margin-right: 14px;
+        width: 105px;
+      }
+      img {
+        height: 100%;
+        left: 50%;
+        max-width: none;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: auto;
+      }
+    }
+  }
+  .bg-soft {
+    background-color: $gray-lightest;
+    padding: 60px 0px;
+  }
+  &:not(.attractions-map) {
+    .close {
+      color: $primary-color;
+      cursor: pointer;
+      font-size: 1.6rem;
+      height: 15px;
+      position: absolute;
+      top: 30px;
+      right: 41px;
+      width: 15px;
+      z-index: 1;
+      @include breakpoint(small only) {
+        color: #000000;
+        font-size: 1.6rem;
+        left: 40px;
+        right: initial;
+        top: 25px;
+      }
+    }
+  }
+  &.livebox-full {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    z-index: 300;
+    background: #fff;
+    @include breakpoint(large) {
+      // top: map-get($header-height, 'large') !important;
+      top: 70px !important;
+    }
+    @media all and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait){
+      height: auto;
+    }
+    .close {
+      @include breakpoint(small down) {
+        position: absolute;
+        top: 12px;
+        left: 15px;
+        right: auto;
+      }
+    }
+    .content-area {
+      padding: 0;
+      position: relative;
+      height: calc(100% - 64px);
+      @include breakpoint(large) { height: calc(100% - 60px); }
+    }
+  }
+  h2 {
+    display: block;
+    width: 100%;
+    @include breakpoint(medium) {
+      text-align: left;
+      padding: 60px 60px 8px;
+    }
+    @include breakpoint(small only) {
+      border-bottom: 1px solid $gray-light;
+      font-size: rem-calc(24);
+      letter-spacing: .5px;
+      line-height: 1.17;
+      margin-bottom: 0;
+      padding: 24px 16px 8px;
+      text-align: center;
+    }
+  }
+
+  @media screen and (max-width: 40em) {
+    ._mob-left {
+      color: $black;
+      left: 24px;
+      right: auto;
+    }
+  }
+  // livebox header area for map
+  .header-area {
+    height: 64px;
+    @include breakpoint(large) { display: none; }
+    @include breakpoint(medium down) {
+      border-bottom: 1px solid $gray-light;
+      display: block;
+      padding: 20px 16px;
+    }
+    h2, ._h2 {
+      @include get-font('regular');
+      font-size: rem-calc(22);
+      line-height: 1.18;
+      margin: 0 auto;
+      @include breakpoint(medium down) {
+        text-align: center;
+      }
+    }
+  }
+  // optional right icon
+  .header-area-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 24px;
+  }
+  .menu_header {
+    border-bottom: 1px solid $gray-light;
+    a {
+      font-size: rem-calc(14);
+      padding: 19px 0px;
+    }
+    div, ul {
+      display: inline-block;
+      text-align: center;
+    }
+    h3 {
+      font-size: inherit;
+      line-height: inherit;
+      margin-bottom: 0px;
+    }
+    .close {
+      top: 24px;
+    }
+    .menu_title {
+      padding: 20px 0px;
+    }
+    .tabs-title {
+      display: inline-block;
+      float: none;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      margin: 0px 50px;
+    }
+  }
+  /* stylelint-disable max-nesting-depth */
+  /* This styles only apply for mobile tabs of menus, couldn't helped this ones  */
+  /* stylelint-disable selector-no-qualifying-type */
+  /* Some rewrite to Foundation due to this particular module */
+  @media screen and (max-width: 40em) {
+    .menu_title {
+      border-bottom: 1px solid $gray-light;
+    }
+    .menu_header {
+      a[aria-selected="true"] {
+        border: none;
+      }
+      .tabs-title {
+        display: none;
+        text-align: center;
+        &.is-active {
+          display: inline-block;
+        }
+      }
+    }
+    .info-expander::after {
+      cursor: pointer;
+      top: -7px;
+      /* right: -50px; */
+    }
+  }
+  /* stylelint-enable max-nesting-depth */
+  /* stylelint-enable selector-no-qualifying-type */
+  @media screen and (min-width: 40em) {
+    .menu_title {
+      border-right: 1px solid $gray-light;
+    }
+  }
+  .std-content {
+    width: 100%;
+    @include breakpoint(medium) {
+      padding: 0px 60px 60px;
+    }
+    @include breakpoint(small only) {
+      padding: 0px 16px 24px;
+    }
+    p {
+      line-height: 1.5;
+    }
+    li {
+      margin-bottom: 5px;
+    }
+  }
+  .overlay {
+    background-color: $white;
+    margin: 0px auto;
+  }
+  @media screen and (max-width: 40em) {
+    .overlay {
+      width: 94%;
+    }
+  }
+  @media screen and (min-width: 40em) {
+    .overlay {
+      max-width: 75%;
+    }
+  }
+}
+/* stylelint-enable */
+
+// object-fit fallback for IE & Edge
+// for this to work you need to add the "cover-img" class to the targeted image
+// it is necessary to make sure the image is inside of a parent with relative positioning
+// if the parent is not alread set to position: relative, add the "cover" class
+
+// EXAMPLE (in this case figure needs to have a position: relative rule so I added the "cover" class)
+// <figure class="cover">
+//   <img class="cover-img" src="/image.jpg" alt="Cover image description" />
+// </figure>
+
+.cover { position: relative; }
+
+.cover-img {
+  object-fit: cover;
+  /*min-height: rem-calc(280);*/
+  min-height: rem-calc(410);
+  width: 100%;
+  height: 100%;
+}
+@media screen and (max-width: 40em) {
+  .cover-img {
+    min-height: rem-calc(280);
+  }
+}
+.no-objectfit .cover { overflow: hidden; }
+
+.no-objectfit .cover-img {
+  position: absolute;
+  max-width: none;
+  top: -50%;
+  left: 0;
+  height: 150%;
+
+  //top: 50%;
+  //left: 50%;
+  //transform: translate(-50%, -50%);
+  //width: auto;
+  //height: auto;
+  //min-width: 100%;
+  //min-height: 100%;
+
+  /*clip: rect(0px, 260px, 410px, 0px);*/
+}
+
+//OTHER GENERIC CLASSES
+.hidden {
+  display: none;
+}
+
+// ------------------------------------//
+//    Top Banner
+// ------------------------------------//
+// To use the top banner, add .show-banner to the body
+.top-banner {
+  background: $primary-color;
+  color: $primary-text-cta;
+  text-align: left;
+  padding: 14px 15px;
+  font-size: rem-calc(14px);
+  line-height: rem-calc(18px);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  @include breakpoint(large) {
+    font-size: rem-calc(16px);
+    line-height: rem-calc(20px);
+    text-align: center;
+    position: fixed;
+    padding: 20px;
+  }
+  .svg-close {
+    width: 16px;
+    height: 16px;
+    transform: translate(1px,2px);
+    margin-right: 12px;
+    @include breakpoint(large) { float: right; margin: 0; }
+    & .fill { fill: $primary-text-cta; }
+  }
+}
+.show-banner {
+  .header {
+    top: 48px;
+    @include breakpoint(large) { top: map-get($header-height, large); }
+  }
+  .wrapper {
+    @include breakpoint(large) {
+      /* stylelint-disable declaration-no-important */
+      /* some JS shenanigans adding padding-top to the booking funnel*/
+      padding-top: (map-get($header-height, large) * 2) !important;
+      /* stylelint-enable declaration-no-important */
+    }
+  }
+}
+
+.bottom-banner {
+  background: #fff;
+  color: #000;
+  padding: 40px 20px 20px;
+  font-size: rem-calc(13px);
+  @include breakpoint(large) {
+    padding: 20px 60px 20px 20px;
+    font-size: rem-calc(14px);
+    display: flex;
+  }
+  h3 {
+    @include get-font('regular');
+    @include breakpoint(large) {
+      font-size: rem-calc(22px);
+      line-height: rem-calc(26px);
+      width: 20%;
+      border-right: 1px solid $gray-light;
+      margin-right: 20px;
+      padding-right: 20px;
+      margin-bottom: 0;
+    }
+  }
+  .cb-enable {
+    margin: 0;
+    padding: 10px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    @include breakpoint(large) {
+      top: 50%;
+      right: 20px;
+      left: auto;
+      transform: translate(0,-50%);
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .svg { vertical-align: middle; }
+  }
+
+  p a {
+    color: #a22222;
+  }
+}
+
+.module-logo {
+  margin: 0 16px;
+  @include breakpoint(large) {
+    margin: 0 60px;
+  }
+  img {
+    width: 100px;
+    @include breakpoint(large) {
+      margin-top: 95px;
+      width: 130px;
+    }
+  }
+}

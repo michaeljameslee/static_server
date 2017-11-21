@@ -1,0 +1,345 @@
+/* These imports are required for Foundation to compile */
+/**
+ * Foundation for Sites by ZURB
+ * Version 6.4.4-rc1
+ * foundation.zurb.com
+ * Licensed under MIT Open Source
+ */
+/* mobile black */
+/*aka primary-gray-4 in comp */
+/*aka primary-gray-3 in comp */
+/*aka primary-gray-2 in comp */
+/*aka primary-gray-1 in comp */
+/* stylelint-disable selector-no-qualifying-type */
+/* Form error handling */
+input.err, [type='text'].err, [type='password'].err, [type='date'].err, [type='datetime'].err, [type='datetime-local'].err, [type='month'].err, [type='week'].err, [type='email'].err, [type='number'].err, [type='search'].err, [type='tel'].err, [type='time'].err, [type='url'].err, [type='color'].err, select.err, textarea.err {
+  border: 1px solid #cf1910;
+  color: #cf1910;
+  margin-bottom: 0; }
+
+/* stylelint-enable selector-no-qualifying-type */
+.valerr {
+  color: #cf1910;
+  display: none;
+  font-family: "Proxima N W01 Smbd", Arial, sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.33;
+  margin: 10px auto 1.25rem;
+  width: 100%; }
+
+.cta, .cta-1, .cta-2 {
+  border-radius: 2px;
+  color: #000000;
+  display: inline-block;
+  font-family: "Proxima N W01 Smbd", Arial, sans-serif;
+  font-size: 0.875rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase; }
+  .cta:hover, .cta-1:hover, .cta-2:hover {
+    color: #000000; }
+
+.cta-1 {
+  background-color: #1779ba; }
+  .cta-1:hover {
+    border: 2px solid #F9B912;
+    background-color: #F9B912; }
+
+.cta-2 {
+  background-color: #ffffff; }
+  .cta-2:hover {
+    border: 2px solid #ffc324;
+    background-color: #ffc324; }
+
+.cta-full {
+  display: block;
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+  line-height: 1.43; }
+  @media screen and (max-width: 39.9375em) {
+    .cta-full {
+      font-size: 0.75rem; } }
+
+.label {
+  font-family: "Proxima N W01 Reg", Arial, sans-serif; }
+  .label._subtitle, .label._tag {
+    font-family: "Proxima N W01 Smbd", Arial, sans-serif; }
+
+a .label, .label a {
+  color: #a0130c;
+  font-family: "Proxima N W01 Smbd", Arial, sans-serif;
+  font-size: 0.75rem;
+  font-weight: bold; }
+
+a:hover .label, .label a:hover {
+  border-bottom: 1px solid #cf1910; }
+
+.batch-link, a .batch-link, .batch-link a {
+  font-family: "Proxima N W01 Reg", Arial, sans-serif;
+  color: #cf1910; }
+  .batch-link:hover, a .batch-link:hover, .batch-link a:hover {
+    text-decoration: underline; }
+
+.info-expander::after {
+  top: 6px; }
+
+.info-expander.active::after {
+  top: 10px; }
+
+.offers-main .hero h2 {
+  font-family: "Proxima N W01 Light", Arial, sans-serif; }
+
+.offer-main .info-expander::after {
+  top: 4px; }
+
+.offer-main .info-expander.active::after {
+  top: 7px; }
+
+.offer-detail h2 {
+  font-size: 1.625rem; }
+
+@media print, screen and (min-width: 64em) {
+  .offer-detail ul {
+    overflow: auto; }
+    .offer-detail ul li {
+      display: inline-block;
+      float: left;
+      margin-right: 9%;
+      width: 40%; } }
+
+.offer-detail ul li {
+  font-size: 0.875rem;
+  margin-bottom: 11px; }
+
+.offer-locations h2 {
+  font-size: 2rem;
+  margin-bottom: 10px; }
+
+.offer-cardholder::after {
+  content: 'flickity';
+  display: none; }
+  @media print, screen and (min-width: 64em) {
+    .offer-cardholder::after {
+      content: ''; } }
+
+.offer-cardholder .card .card-label2-related-prop {
+  display: inline-block;
+  float: right;
+  width: 40%;
+  text-align: left; }
+
+@media screen and (max-width: 40em) {
+  .offer-title {
+    padding: 24px 0px 10px; }
+    .offer-title h1 {
+      font-size: 1.875rem;
+      margin: 0px auto 0.5rem; }
+    .offer-title h1, .offer-title h3, .offer-title p, .offer-title ul, .offer-title .offer-part-brand, .offer-title .offer-part-brands {
+      margin-left: 16px;
+      margin-right: 16px; }
+    .offer-title .feature {
+      font-size: 0.75rem; }
+    .offer-title hr {
+      margin: 24px 0; } }
+
+.card h3 {
+  color: #000000; }
+  @media print, screen and (min-width: 64em) {
+    .card h3 {
+      font-family: "Proxima N W01 Reg", Arial, sans-serif;
+      font-size: 1.375rem;
+      line-height: 1.18;
+      margin: 2px auto 8px; } }
+
+.card h4 {
+  color: #000000;
+  font-family: "Proxima N W01 Smbd", Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.25;
+  text-transform: capitalize; }
+
+.card p {
+  color: #454545;
+  font-size: 0.875rem;
+  line-height: 1.43; }
+
+.card .card-cart .fa-shopping-cart,
+.card .card-cart .svg-cart {
+  color: #000000;
+  fill: #000000;
+  width: 17px; }
+
+.card .card-label2 {
+  color: #767676;
+  font-family: "Proxima N W01 Smbd", Arial, sans-serif;
+  font-size: 0.75rem;
+  font-weight: bold;
+  line-height: 1.33;
+  text-transform: uppercase; }
+
+.card .card-price {
+  color: #000000;
+  font-family: "Proxima N W01 Reg", Arial, sans-serif;
+  font-size: 1.625rem;
+  line-height: 1.15; }
+
+.card .card-content .ta-logo {
+  bottom: auto; }
+
+@media print, screen and (min-width: 64em) {
+  .bl-hero .greeting .greeting-block {
+    background-image: url("/templates/main/images/card-bg.svg"); } }
+
+h1, ._h1 {
+  font-family: "Proxima N W01 Light", Arial, sans-serif;
+  line-height: 1.13; }
+  @media print, screen and (min-width: 64em) {
+    h1, ._h1 {
+      font-family: "Proxima N W01 Thin Reg", Arial, sans-serif;
+      line-height: 1.08; } }
+
+h2, ._h2 {
+  font-family: "Proxima N W01 Reg", Arial, sans-serif;
+  line-height: 1.625rem; }
+  @media print, screen and (min-width: 64em) {
+    h2, ._h2 {
+      font-family: "Proxima N W01 Light", Arial, sans-serif;
+      line-height: 2.625rem; } }
+
+h3, ._h3 {
+  font-family: "Proxima N W01 Reg", Arial, sans-serif;
+  line-height: 1.25rem; }
+  @media print, screen and (min-width: 64em) {
+    h3, ._h3 {
+      font-family: "Proxima N W01 Light", Arial, sans-serif;
+      line-height: 2.25rem; } }
+
+h4, ._h4 {
+  font-family: "Proxima N W01 Reg", Arial, sans-serif;
+  line-height: 1.125rem; }
+  @media print, screen and (min-width: 64em) {
+    h4, ._h4 {
+      font-family: "Proxima N W01 Light", Arial, sans-serif;
+      line-height: 1.875rem; } }
+
+h5, ._h5 {
+  font-family: "Proxima N W01 Reg", Arial, sans-serif;
+  line-height: 1.625rem; }
+  @media print, screen and (min-width: 64em) {
+    h5, ._h5 {
+      line-height: 1.625rem; } }
+
+h6, ._h6 {
+  font-family: "Proxima N W01 Reg", Arial, sans-serif;
+  line-height: 1.375rem; }
+  @media print, screen and (min-width: 64em) {
+    h6, ._h6 {
+      line-height: 1.375rem; } }
+
+@media print, screen and (min-width: 64em) {
+  a:focus {
+    outline-color: #1779ba; } }
+
+.button, .cta, .cta-1, .cta-2, .cta-1, .cta-2, .cta-big {
+  padding: 0.9375rem 1.875rem; }
+  @media print, screen and (min-width: 64em) {
+    .button, .cta, .cta-1, .cta-2, .cta-1, .cta-2, .cta-big {
+      padding: 0.6875rem 1.875rem; } }
+
+.button.primary {
+  color: #000;
+  border: 1px solid #1779ba; }
+
+.button.primary:hover, .button.primary:focus {
+  color: #000;
+  background-color: #1779ba;
+  transition: background .4s; }
+  @media print, screen and (min-width: 64em) {
+    .button.primary:hover, .button.primary:focus {
+      background-color: #F9B912;
+      border-color: #F9B912; } }
+
+@media print, screen and (min-width: 64em) {
+  button, .button:focus {
+    outline-color: #1779ba; } }
+
+.button[disabled], .button[disabled]:hover, .button.disabled, .button.disabled:hover, .button.disabled:focus {
+  background-color: #cdcdcd;
+  color: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  border: 1px solid #cdcdcd; }
+
+.button.hollow[disabled], .button.hollow[disabled]:hover {
+  background-color: #fff;
+  border-color: #cdcdcd;
+  color: #000;
+  opacity: 0.5; }
+
+.button.secondary {
+  color: #000;
+  background-color: #ffffff;
+  border: 1px solid #1779ba;
+  transition: background .4s; }
+  .button.secondary:hover, .button.secondary:focus {
+    color: #000;
+    background-color: #ffffff; }
+    @media print, screen and (min-width: 64em) {
+      .button.secondary:hover, .button.secondary:focus {
+        background-color: #1779ba; } }
+    .button.secondary:hover.disabled, .button.secondary:focus.disabled {
+      border: 1px solid #cdcdcd;
+      background: #ffffff;
+      color: rgba(0, 0, 0, 0.5); }
+      .button.secondary:hover.disabled .fill, .button.secondary:focus.disabled .fill {
+        fill: rgba(0, 0, 0, 0.5); }
+  .button.secondary.disabled {
+    border: 1px solid #cdcdcd;
+    background: #ffffff;
+    color: rgba(0, 0, 0, 0.5); }
+    .button.secondary.disabled .fill {
+      fill: rgba(0, 0, 0, 0.5); }
+
+.button.small {
+  font-family: "Proxima N W01 Smbd", Arial, sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  line-height: 1rem;
+  text-transform: uppercase; }
+
+.button.large {
+  font-family: "Proxima N W01 Smbd", Arial, sans-serif;
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+  line-height: 1.125rem;
+  text-transform: uppercase; }
+  @media print, screen and (min-width: 64em) {
+    .button.large {
+      padding: 1.25rem 1.875rem; } }
+
+[v-cloak] {
+  opacity: 0; }
+
+/* stylelint-disable selector-no-qualifying-type */
+/* sometimes you just need an hr without a margin */
+hr.no-margin {
+  margin: 0 auto; }
+
+/* stylelint-enable selector-no-qualifying-type */
+.svg-fill-primary {
+  fill: #1779ba; }
+
+.svg-fill-secondary {
+  fill: #767676; }
+
+.svg-fill-shopping-cart {
+  fill: #000000; }
+
+/* Hide content - needed for WAVE errors when <a> has a div underneath it */
+.hideContent {
+  display: none; }
+
+.testdiv {
+  width: 13em;
+  height: 3em;
+  margin-left: 5em;
+  background-color: blue; }

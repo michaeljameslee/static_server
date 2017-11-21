@@ -1,0 +1,270 @@
+.reservations-card {
+  margin-bottom: rem-calc(24);
+  @include breakpoint(large) {
+    flex: 0 0 46%;
+    max-width: 46%;
+    margin-bottom: 0;
+    transition: all 125ms ease;
+  }
+  &:not(.room-card):hover {
+    @include breakpoint(large) {
+      transform: translateY(-10px);
+      box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.1);
+    }
+  }
+  &.columns {
+    @include breakpoint(large) { margin-right: 4%; }
+  }
+  h4, h5 {
+    font-family: $proxima-nova-semibold;
+    font-size: rem-calc(12);
+    line-height: 1.33;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: rem-calc(10);
+  }
+  figure {
+    margin: 0;
+    background: none;
+    background-color: $true-black;
+    flex: 0 1 auto;
+    overflow: visible;
+    @include breakpoint(xlarge) { max-height: rem-calc(200); }
+    @include breakpoint(xxlarge) { max-height: initial; }
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: 4px 4px 0 0;
+      object-fit: cover;
+    }
+    figcaption {
+      position: absolute;
+      bottom: 12px;
+      left: 20px;
+      font-family: $proxima-nova-semibold;
+      font-size: rem-calc(10);
+      line-height: 1.4;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: $white;
+    }
+    .shadow { height: rem-calc(60); }
+  }
+  .check-out {
+    @include flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: rem-calc(40);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $true-black;
+    border-radius: 4px 4px 0 0;
+    @include breakpoint(large) { padding: rem-calc(0 10); }
+    p {
+      @include flex;
+      font-size: rem-calc(14);
+      line-height: 1.29;
+      color: $white;
+      margin: 0;
+    }
+    i {
+      font-size: rem-calc(16);
+      margin-right: rem-calc(8);
+    }
+  }
+  article {
+    max-width: 100%;
+    padding: rem-calc(22 35 20 20);
+    border-left: 1px solid $gray-light;
+    border-right: 1px solid $gray-light;
+    img {
+      width: 78px;
+      height: rem-calc(30);
+      margin-bottom: 11px;
+    }
+  }
+  .card-hotel-name {
+    @include breakpoint(large) { min-height: rem-calc(40); }
+  }
+  h6 {
+    font-size: rem-calc(22);
+    line-height: 1.18;
+  }
+  p {
+    font-size: rem-calc(18);
+    line-height: 1.22;
+    margin-bottom: 0;
+    word-wrap: break-word;
+  }
+  h5 {
+    color: $gray-medium;
+    margin-bottom: rem-calc(2);
+  }
+  footer {
+    padding: rem-calc(12px 18px);
+    border: 1px solid $gray-light;
+    border-radius: 0 0 4px 4px;
+    > .row {
+      min-height: rem-calc(28);
+      margin: 0;
+      flex-flow: initial;
+    }
+    .columns {
+      align-self: center;
+      &:first-child {
+        max-width: rem-calc(66);
+        margin-right: 10%;
+      }
+    }
+    h5 { margin-bottom: 0; }
+    img { height: 100%; }
+  }
+  &.upcoming-card, &.previous-card {
+    article {
+      min-height: rem-calc(128);
+      padding-bottom: rem-calc(20);
+
+      @include breakpoint(large) { min-height: rem-calc(100); }
+    }
+  }
+  &.previous-card {
+    article {
+      min-height: rem-calc(120);
+      @include breakpoint(large) { min-height: rem-calc(142); }
+      @include breakpoint(xlarge) { min-height: rem-calc(150); }
+    }
+  }
+  .previous-add-cart {
+    position: absolute;
+    right: 20px;
+    bottom: -20px;
+    @include flex;
+    justify-content: center;
+    align-items: center;
+    width: rem-calc(40);
+    height: rem-calc(40);
+    background-color: $primary-color;
+    border-radius: 50%;
+    font-size: rem-calc(18);
+    color: $true-black;
+    transition: all 125ms ease;
+    
+    img {
+      transition: transform 300ms;
+      width: auto;
+      height: auto;
+      min-height: auto;
+      max-width: 68%;
+    }
+
+    .svg-cart {
+      width: 17px;
+      transition: transform 300ms;
+    }
+
+    &:hover {
+      transform: scale(1.25);
+      transition: transform 300ms;
+
+      img, .svg-cart { transform: scale(0.8); }
+    }
+  }
+  &.room-card {
+    margin-bottom: rem-calc(32);
+    @include breakpoint(large) { margin-bottom: rem-calc(40); }
+    > .row { margin: 0; }
+    article, footer {
+      border: 0;
+      padding: 0;
+    }
+    p {
+      font-size: rem-calc(14);
+      line-height: 1.3;
+      @include breakpoint(large) {
+        font-size: rem-calc(18);
+        line-height: 1.2;
+      }
+    }
+    h5 {
+      margin-top: rem-calc(5);
+      margin-bottom: rem-calc(2);
+    }
+    h6 {
+      font-size: rem-calc(16);
+      line-height: 1.25;
+      @include breakpoint(large) {
+        font-size: rem-calc(26);
+        line-height: 1.15;
+      }
+    }
+  }
+  .room-card-info { padding-left: rem-calc(12); }
+  &.enhance-card {
+    width: rem-calc(314);
+    border-radius: 4px 4px 0 0;
+    margin-right: 2.5%;
+
+    @include breakpoint (small only) { margin-bottom: 0; }
+
+    @include breakpoint(large) {
+      flex: 0 0 48%;
+      margin-right: 4%;
+      margin-bottom: rem-calc(40);
+    }
+
+    @include breakpoint(xlarge) {
+      margin-right: 0;
+      flex: 0 0 30.45%;
+      margin-bottom: 0;
+    }
+    
+    article { min-height: rem-calc(208); }
+
+    figure {
+      img {
+        @include breakpoint(xlarge) { min-height: initial; }
+      }
+    }
+
+    p {
+      font-size: rem-calc(14);
+      line-height: 1.57;
+      color: $gray-dark;
+    }
+  }
+}
+.upcoming-card, .previous-card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4%;
+
+  @include breakpoint(xlarge) { flex: 0 0 29.125%; }
+
+  &:hover { cursor: pointer; }
+
+  article { flex: 0 1 100%; }
+  footer {
+    p {
+      font-size: rem-calc(22);
+      line-height: 1.18;
+      @include breakpoint(large) {
+        font-size: rem-calc(18);
+        line-height: 1.22;
+      }
+    }
+    .points-earned, .number-rooms {
+      font-size: rem-calc(14);
+      line-height: 1.57;
+      color: $near-black;
+    }
+  }
+  .ta-logo {
+    display: block;
+    width: rem-calc(95);
+    height: auto;
+    margin: rem-calc(14 0 0);
+  }
+}

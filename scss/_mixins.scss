@@ -1,0 +1,67 @@
+// ------------------------------------//
+//    Helpers
+// ------------------------------------//
+
+// Remove hash from hex color
+@function removeHash($input) {
+  @return unquote(str-slice(quote($input), 2));
+}
+
+// Keep important things on top with this zindex
+@function zIndex($element) {
+  @return index($elements, $element) + 210;
+}
+
+// Mixin to create triangles
+@mixin arrow($width, $side, $color){
+  @if ($side == top) { $side: bottom; }
+  @else if ($side == bottom) { $side: top; }
+  @else if ($side == left) { $side: left; }
+  @else if ($side == left) { $side: left; }
+  width: 0;
+  height: 0;
+  border-#{$side}: $width solid $color;
+
+  @if ($side == top or $side == bottom) { border-left: $width solid transparent; border-right: $width solid transparent; }
+  @else { border-top: $width solid transparent; border-bottom: $width solid transparent; }
+}
+
+
+
+// ------------------------------------//
+//    Flickity
+// ------------------------------------//
+
+@mixin flickity-gallery{
+  &::after {
+    content: 'flickity';
+    display: none;
+    @include breakpoint(large) { content: ''; }
+  }
+}
+
+
+// ------------------------------------ //
+//    card-hover-state                  //
+// ------------------------------------ //
+@mixin card-hover-state($shadow-opacity: 0.1) {
+  &:hover {
+    transform: translateY(-0.625rem);
+    transition: transform 0.5s ease;
+    box-shadow: 0 5px 15px 0 rgba(0,0,0,$shadow-opacity);
+  }
+
+  &:not(:hover) {
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+  }
+}
+
+// ------------------------------------ //
+//    vertical-align-content            //
+// ------------------------------------ //
+@mixin vertical-align-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

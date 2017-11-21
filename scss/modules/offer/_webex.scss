@@ -1,0 +1,105 @@
+.webex-offers {
+  .row {
+    margin: 0;
+    max-width: initial;
+  }
+  .back {
+    color: $black;
+    font-family: $proxima-nova-semibold;
+    font-size: rem-calc(12);
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 1.33;
+    text-transform: uppercase;
+    padding: 16px 0;
+    margin: 24px 0 24px 4px;
+    &::before {
+      border-right: 3px solid $secondary-color;
+      border-top: 3px solid $secondary-color;
+      content: "";
+      display: inline-block;
+      height: 8px;
+      margin-bottom: 1px;
+      margin-right: 12px;
+      transform: rotate(225deg);
+      transition: transform .4s;
+      width: 8px;
+    }
+    a {
+      color: inherit;
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+  .first-block {
+    margin-bottom: 24px;
+    h1 {
+      font-size: rem-calc(36);
+      line-height: rem-calc(40);
+    }
+  }
+  .second-block {
+    margin-bottom: 24px;
+  }
+
+  .home-featured-offers {
+    border-bottom: 1px solid $gray-light;
+    padding-bottom: 60px;
+    margin-bottom: 60px;
+    .first-block, .featured-cards, .featured-offers-cards, .second-block > h3, .third-block > h3, .third-block .main-desc {
+      padding-left: 60px;
+      padding-right: 60px;
+      @include breakpoint(medium down) {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+    }
+    .featured-cards > h3, .second-block > h3, .third-block .main-desc {
+      margin-bottom: 40px;
+      @include breakpoint (medium down) {
+        margin-bottom: 24px;
+      }
+    }
+    .row.featured-offers-cards {
+      height: initial;
+    }
+  }
+  .row.featured-offers-cards {
+    .account-special-offer {
+      width: initial;
+      margin-right: 0;
+      margin-top: 16px;
+    }
+  }
+  /* stylelint-disable max-nesting-depth */
+  /* Really need to disable it in here */
+  @media screen and (min-width: 64em) {
+    .row.featured-offers-cards {
+      .account-special-offer {
+        &:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1);
+          transition: all 125ms ease;
+        }
+        &:nth-of-type(4n+4) {
+          margin-right: 0;
+        }
+        img {
+          position: relative;
+        }
+      }
+    }
+    .twoup .account-special-offer figure {
+      max-height: 302px;
+      min-width: 560px;
+      width: 42vw;
+    }
+    .first-block {
+      .main-desc {
+        width: 760px;
+      }
+    }
+  }
+  /* stylelint-enable max-nesting-depth */
+}

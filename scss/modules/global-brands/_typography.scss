@@ -1,0 +1,140 @@
+/*doc
+---
+title: Typography
+name: global-brands-typography
+author: William Pansky [SG0301235]
+category: Global Brands
+---
+
+<p class="label loc">File location</p>
+scss/modules/global-brands/_global-brands.typography.scss
+
+Various typographic styles for the Global Brands carousel module; example:
+
+```
+// INFO TEXT / COLORED BACKGROUND (js applies brand color props)
+// ========================================================================
+.global-brands-item .top-brand-info {
+  background-color: inherit;
+  color: inherit;
+  padding: $gbrands-item-top-info-padding;
+  margin-bottom: $gbrands-item-top-info-margin-btm;
+
+  h3 {
+    color: inherit;
+    font-size: $gbrands-info-name-font-size;
+    line-height: $gbrands-info-name-line-height;
+  }
+
+  p {
+    color: inherit;
+    font-size: $gbrands-info-rate-font-size;
+    line-height: $gbrands-info-rate-line-height;
+  }
+
+  .button.secondary {
+    background-color: transparent;
+    border-color: inherit;
+    color: inherit;
+  }
+}
+```
+*/
+
+// PARAGRAPH TEXT
+// ========================================================================
+.global-brands p {
+  font-size: $gbrands-text-sm;
+  @include breakpoint(medium) { font-size: $gbrands-text-md; }
+}
+
+// Global Brands Item => Medium-8 => Entry Link
+// ("GO TO WEBSITE >" link)
+// ========================================================================
+.global-brands-item .medium-8 .entry-link {
+  color: $gbrands-item-link-color;
+  text-transform: $gbrands-item-link-text-transform;
+  font-size: $gbrands-item-link-font-size;
+  @include get-font('semibold');
+
+  // TODO: Turn arrow link into a mixin/include
+  &:after {
+    content: "";
+    display: inline-block;
+    transform: rotate(45deg);
+    width: .5rem;
+    height: .5rem;
+    border-top: .1875rem solid $error-color;
+    border-right: .1875rem solid $error-color;
+    margin-left: 8px;
+  }
+}
+
+// Global Brands Item => Brand Property Content 
+// (Lower-Left Property Name & Pricing)
+// ========================================================================
+.global-brands-item .brand-property-content {
+  color: white;
+  text-shadow: $gbrands-info-wrapper-text-shadow;
+  width: 100%;
+  padding: $gbrands-info-wrapper-padding-sm;
+  position: $gbrands-info-wrapper-position;
+  bottom: $gbrands-info-wrapper-bottom;
+  z-index: $gbrands-info-wrapper-z-index;
+
+  @include breakpoint(medium) {
+    padding: $gbrands-info-wrapper-padding-md;
+  }
+
+  p {
+    color: inherit;
+  }
+
+  .prop-name {
+    color: inherit;
+    font-size: $gbrands-info-name-font-size;
+    line-height: $gbrands-info-name-line-height;
+  }
+
+  .prop-rate {
+    color: inherit;
+    font-size: $gbrands-info-rate-font-size;
+    line-height: $gbrands-info-rate-line-height;
+  }
+}
+
+// INFO TEXT / COLORED BACKGROUND (js applies brand color props)
+// ========================================================================
+.global-brands-item .top-brand-info {
+  background-color: inherit;
+  color: inherit;
+  padding: $gbrands-item-top-info-padding;
+  margin-bottom: $gbrands-item-top-info-margin-btm;
+
+  h3 {
+    color: inherit;
+    font-size: $gbrands-info-name-font-size;
+    line-height: $gbrands-info-name-line-height;
+  }
+
+  p {
+    color: inherit;
+    font-size: $gbrands-info-rate-font-size;
+    line-height: $gbrands-info-rate-line-height;
+  }
+
+  .button.secondary {
+    background-color: transparent;
+    border-color: inherit;
+    color: inherit;
+    box-shadow: 0 1px 3px rgba(0,0,0,0), 0 1px 2px rgba(0,0,0,0);
+  }
+
+  .button.secondary:hover, 
+  .button.secondary:focus {
+    background-color: #fff;
+    border-color: #fff;
+    color: #000;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  }
+}

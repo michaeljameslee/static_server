@@ -1,0 +1,252 @@
+/*doc
+---
+title: Layout
+name: global-brands-layout
+author: William Pansky [SG0301235]
+category: Global Brands
+---
+
+<p class="label loc">File location</p>
+scss/modules/global-brands/_global-brands.layout.scss
+
+```html_example
+<div class="uk-inline uk-dark"> <!-- ignore this / used for tooltips -->
+    <div class="global-brands-content flickity-enabled is-draggable" tabindex="0">
+        <div class="global-brands-item row is-selected">
+            <div class="column small-12 medium-8">
+                <picture>
+                    <source media="(min-width: 1920px)" srcset="/uploads/5738/60/radisson-red-minneapolis-exterior.jpg">
+                    <source media="(min-width: 1280px)" srcset="/uploads/5738/59/radisson-red-minneapolis-exterior.jpg">
+                    <source media="(min-width: 896px)" srcset="/uploads/5738/58/radisson-red-minneapolis-exterior.jpg">
+                    <source media="(min-width: 628px)" srcset="/uploads/5738/57/radisson-red-minneapolis-exterior.jpg">
+                    <source media="(min-width: 375px)" srcset="/uploads/5738/56/radisson-red-minneapolis-exterior.jpg">
+                    <source media="(min-width: 320px)" srcset="/uploads/5738/55/radisson-red-minneapolis-exterior.jpg">
+                    <img itemprop="image" src="/uploads/5738/0/radisson-red-minneapolis-exterior.jpg" alt="" class="prop-img" data-type="mc-feat-img" data-picture="body/mixed/brand_mediafile">
+                </picture>
+                <div class="brand-property-content show-for-large">
+                    <h3 class="prop-name">Radisson RED Minneapolis</h3>
+                    <div class="prop-rate">From $100.00&nbsp;USD</div>
+                </div>
+                <div class="brand-property-content hide-for-large">
+                    <img src="/uploads/109/0/logo-radisson-red.svg" alt="Radisson Red" class="brand-logo">
+                    <p></p>
+                    <p>A new hotel philosophy that connects with an ageless millennial mindset through art, music and fashion. Forget everything you thought you knew about hotels. RED is creating new rules.</p>
+                    <p></p>
+                    <div class="entry-link info-go">Go to Website</div>
+                </div>
+                <div class="shadow"></div>
+            </div>
+            <div class="column small-12 medium-4 show-for-large">
+                <div class="top-brand-info" style="background: #e62528; color: #ffffff;">
+                    <h3>Hotels Born Bold</h3>
+                    <p></p>
+                    <p>A new hotel philosophy that connects with an ageless millennial mindset through art, music and fashion.
+                        Forget everything you thought you knew about hotels. RED is creating new rules.</p>
+                    <p></p>
+                    <a href="https://www.radissonred.com/" class="button secondary preethi" target="_blank">Learn More</a>
+                </div>
+                <div class="bottom-brand-image">
+                    <picture>
+                        <source media="(min-width: 1920px)" srcset="/uploads/149/60/radisson-redbrussels.jpg">
+                        <source media="(min-width: 1280px)" srcset="/uploads/149/59/radisson-redbrussels.jpg">
+                        <source media="(min-width: 896px)" srcset="/uploads/149/58/radisson-redbrussels.jpg">
+                        <source media="(min-width: 628px)" srcset="/uploads/149/57/radisson-redbrussels.jpg">
+                        <source media="(min-width: 375px)" srcset="/uploads/149/56/radisson-redbrussels.jpg">
+                        <source media="(min-width: 320px)" srcset="/uploads/149/55/radisson-redbrussels.jpg">
+                        <img itemprop="image" src="/uploads/149/0/radisson-redbrussels.jpg" alt="" class="prop-img" data-type="mc-feat-img" data-picture="body/mixed/property_mediafile">
+                    </picture>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ignore these / used for tooltips -->
+    <a class="uk-position-absolute uk-transform-center" title="The background color is applied via JavaScript depending on the brand." style="right: 0; top: 1%" href="#" uk-marker uk-tooltip></a>
+</div>
+```
+*/
+
+// GLOBAL-BRANDS LAYOUT ADJUSTMENTS
+// This mimics .global-brands-content.flickity-enabled, however this targets
+// the desktop-version with images and description
+// ========================================================================
+// .global-brands {
+//   width: 100vw;
+//   min-width: 100vw;
+//   max-width: 100vw;
+//   // margin-left: -#{$container-padding-sm};
+  
+//   @include breakpoint(large) {
+//     width: 100%;
+//     min-width: 100%;
+//     max-width: 100%;
+//     // margin-left: 0;
+//   }
+// }
+
+// GLOBAL BRANDS WRAPPER
+// ========================================================================
+.global-brands-wrapper {
+  margin-left: -#{$global-padding-exterior-sm};
+  @include breakpoint(large) { margin-left: 0; }
+}
+
+// CAROUSEL CONTENT WRAPPER
+// ========================================================================
+.global-brands-content {
+  display: $gbrands-wrapper-display-type;
+  height: $gbrands-wrapper-height-sm;
+  @include breakpoint(large) { height: $gbrands-wrapper-height-lg; }
+  overflow: $gbrands-wrapper-overflow;
+  
+  &:after {
+    content: 'flickity';
+    display: none;
+    @include breakpoint(large) { content: ''; }
+  }
+}
+
+// CAROUSEL CONTENT ITEM (images/text/etc)
+// ========================================================================
+.global-brands-item {
+  border-radius: $gbrands-item-border-radius;
+  min-height: $gbrands-wrapper-height-sm;
+  width: $gbrands-item-width;
+  max-width: $gbrands-item-max-width-sm;
+  padding: $gbrands-item-padding;
+  margin: $gbrands-item-margin;
+
+  &:last-child {
+    padding: $gbrands-item-padding-last;
+    margin: $gbrands-item-margin-last;
+  }
+
+  @media (min-width: 375px) {
+    width: $gbrands-item-max-width-375;
+    max-width: $gbrands-item-max-width-375;
+  }
+
+  @media (min-width: 412px) {
+    width: $gbrands-item-max-width-412;
+    max-width: $gbrands-item-max-width-412;
+  }
+
+  @media (min-width: 564px) {
+    width: $gbrands-item-max-width-564;
+    max-width: $gbrands-item-max-width-564;
+  }
+
+  @include breakpoint(medium) {
+    width: $gbrands-item-max-width-md;
+    max-width: $gbrands-item-max-width-md;
+  }
+
+  @media (min-width: 770px) {
+    width: $gbrands-item-max-width-770;
+    max-width: $gbrands-item-max-width-770;
+  }
+
+  @media (min-width: 970px) {
+    width: $gbrands-item-max-width-970;
+    max-width: $gbrands-item-max-width-970;
+  }
+
+  @include breakpoint(large) {
+    border-radius: 0;
+    height: $gbrands-wrapper-height-lg;
+    width: $gbrands-item-width;
+    max-width: $gbrands-item-max-width-lg;
+    padding: 0;
+    margin: 0;
+
+    &:last-child {
+      padding: 0;
+      margin: 0;
+    }
+  }
+} // end .global-brands-item
+
+//_____________________________________
+// Global Brands Item => Column
+.global-brands-item .column {
+  border-radius: $gbrands-item-border-radius;
+  @include breakpoint(large) { border-radius: 0; }
+  padding: 0;
+}
+
+//_____________________________________
+// Global Brands Item => Column Image
+.global-brands-item .column img {
+  border-radius: $gbrands-item-border-radius;
+  @include breakpoint(large) { border-radius: 0; }
+  width: 100%;
+}
+
+//_____________________________________
+// Global Brands Item => Medium-8
+.global-brands-item .medium-8 {
+  height: $gbrands-wrapper-height-sm;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  flex: 0 0 100%;
+
+  @include breakpoint(large) {
+    padding: rem-calc(0);
+    position: relative;
+    width: 100%;
+    max-width: 66.66667%; // from foundation's .medium-8
+    height: $gbrands-wrapper-height-lg;
+  }
+}
+
+//_____________________________________
+// Global Brands Item => Medium-8 => Image Class
+.global-brands-item .medium-8 .prop-img {
+  border-radius: $gbrands-item-border-radius;
+  @include breakpoint(large) { border-radius: 0; }
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+}
+
+//_____________________________________
+// Global Brands Item => Medium-8 => Shadow Fader
+.global-brands-item .medium-8 .shadow {
+  border-bottom-right-radius: $gbrands-item-border-radius;
+  border-bottom-left-radius: $gbrands-item-border-radius;
+  @include breakpoint(large) { border-radius: 0; }
+  height: $gbrands-item-shadow-height;
+}
+
+//_____________________________________
+// Global Brands Item => Medium-8 => Brand Logo
+.global-brands-item .medium-8 .brand-logo {
+  width: $gbrands-item-logo-width;
+}
+
+//_____________________________________
+// Global Brands Item => Medium-4
+.global-brands-item .medium-4 {
+  @include breakpoint(large) {
+    padding-left: rem-calc(10);
+  }
+}
+
+//_____________________________________
+// BOTTOM IMAGE
+.global-brands-item .bottom-brand-image {
+  height: $gbrands-item-bottom-img-height;
+  display: block;
+  overflow: hidden;
+}
+
+.global-brands-item .bottom-brand-image img:not(.brand-logo) {
+  height: 100%;
+  object-fit: cover;
+  transform: translateY(-25%);
+
+  @media (min-width: 1280px) {
+    transform: translateY(-10%);
+  }
+}

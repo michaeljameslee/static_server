@@ -1,0 +1,66 @@
+// ------------------------------------//
+// ------------------------------------//
+//    STYLES FOR LANGUAGES
+//    Used whenever translated strings
+//    cause visual problems.  Just add
+//    two letter language abbreviation
+//    before the class/selector that
+//    needs to be fixed.
+// ------------------------------------//
+
+//German (DE)
+@media screen and (min-width: 64em){
+  /*search results-filters*/
+  .de .results-filters {
+    flex: 0 0 75%;
+    max-width: 75%;
+    text-align: left;
+  }
+
+  .de .results-number{
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+
+  .de .results-filters .show-for-medium a {
+    width: auto;
+    padding-left: rem-calc(8);
+  }
+  .de .results-filters .show-for-medium .promo-code-trigger{
+    width: rem-calc(180);
+  }
+
+  //ways to redeem award nights directory refine btn
+  .de .our-hotels .first-block .button{
+    width: auto;
+  }
+}
+
+
+//French (FR)
+@media screen and (min-width: 64em){
+  /*search results-filters*/
+  .fr .results-filters {
+    flex: 0 0 75%;
+    max-width: 75%;
+    text-align: left;
+  }
+
+  .fr .results-number{
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+
+  .fr .results-filters .show-for-medium a {
+    width: auto;
+    padding-left: rem-calc(8);
+  }
+  .fr .results-filters .show-for-medium .promo-code-trigger{
+    width: rem-calc(220);
+  }
+
+  //ways to redeem award nights directory refine btn
+  .fr .our-hotels .first-block .button{
+    width: auto;
+  }
+}

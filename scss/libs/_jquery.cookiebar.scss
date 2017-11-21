@@ -1,0 +1,19 @@
+#cookie-bar { z-index: zIndex(modal); -webkit-backface-visibility: hidden;}
+#cookie-bar ul { list-style-type: none; margin: 0; }
+#cookie-bar li, #cookie-bar.modal-banner p { margin-bottom: 1rem; margin-right: 0; }
+#cookie-bar label { color: $black; font-size: rem-calc(14px); }
+#cookie-bar.fixed { position: fixed; top: 0; left: 0; width: 100%; }
+#cookie-bar.fixed.bottom { bottom: -1px; top: auto; }
+/*.on-step-review #cookie-bar.fixed.bottom {
+  bottom: auto; top: 64px;
+  @include breakpoint(large) { top: 60px; }
+}*/
+#cookie-bar p { margin: 0; padding: 0; color: #454545; font-size: rem-calc(14px);}
+/*#cookie-bar a { color: #ffffff; display: inline-block; border-radius: 3px; text-decoration: none; padding: 0 6px; margin-left: 8px; }*/
+/*#cookie-bar .cb-enable { background: #007700; }
+#cookie-bar .cb-enable: hover { background: #009900; }*/
+/*#cookie-bar .cb-disable { background: #990000; }
+#cookie-bar .cb-disable: hover { background: #bb0000; }*/
+#cookie-bar .cb-policy { background: #0033bb; }
+
+.logged-in #cookie-bar { top: 48px; }

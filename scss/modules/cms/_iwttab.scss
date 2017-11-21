@@ -1,0 +1,706 @@
+//
+// CMS Module: Image with Title, Text and Button
+// Note: all the kids are calling this "ewe tab". Because IwTTaB is a mouthful.
+//
+
+
+// card placeholder, used on many variants
+%iwttab-card {
+  @include flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: rem-calc(40);
+  padding: 0;
+
+  @include breakpoint(large) {
+    border-right: 1px solid $gray-light;
+    margin-bottom: 0;
+  }
+
+  &:last-child {
+    @include breakpoint(large) { border-right: 0; }
+  }
+
+  img {
+    margin-bottom: rem-calc(30);
+    @include breakpoint(large) { margin-bottom: rem-calc(20); }
+  }
+
+  // TODO: fix this to use modular stuff
+  .earn-go-img {
+    margin-bottom: rem-calc(24);
+    max-width: 75%;
+
+    @include breakpoint(large) {
+      margin-bottom: rem-calc(30);
+      max-width: rem-calc(230);
+    }
+
+    &.visa-img {
+      @include breakpoint(large) {
+        margin-bottom: rem-calc(53);
+        max-height: rem-calc(127);
+        max-width: rem-calc(200);
+      }
+    }
+  }
+
+  p { margin-bottom: 0; }
+} // end %iwttab-card
+
+.iwttab-full__icons-details p a{
+  color: darken(#ee2d24,10%);
+}
+
+// used to place a shortened horizontal bar below an item, as seen in app/login modules
+%iwttab-short-line-after {
+  position: relative;
+  &:after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: $primary-color;
+    margin: rem-calc(20) auto;
+    @include breakpoint(large) {
+      margin: rem-calc(20) 0;
+    }
+  }
+}
+
+// used to empower "alternative styling" of CTA links
+@mixin iwttab-card-cta {
+
+  &.button {
+    margin-top: rem-calc(20);
+  }
+
+
+  &--with-chevron {
+    color: $true-black;
+    line-height: 1.25;
+  }
+
+  &--with-chevron::after {
+    border-right: 3px solid $secondary-color;
+    border-top: 3px solid $secondary-color;
+    content: '';
+    display: inline-block;
+    height: 8px;
+    margin-bottom: 1px;
+    margin-left: 8px;
+    transform: rotate(45deg);
+    width: 8px;
+  }
+}
+
+// basic element for all variants/styles
+.iwttab {
+  border-bottom: 1px solid $gray-light;
+  position: relative;
+  &:last-child {
+    border-bottom: none;
+  }
+  @include breakpoint(large) { padding: rem-calc(60); }
+  @include breakpoint(xlarge) {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: rem-calc(1600);
+  }
+  &--without-separator {
+    border-bottom: none;
+  }
+  .button {
+    display: block;
+    width: 100%;
+    // max-width: 400px;
+    padding: rem-calc(16);
+    margin: rem-calc(24) auto;
+
+    @include breakpoint(large) {
+      padding: rem-calc(12 32);
+      // width: rem-calc(167);
+      margin: 0;
+      display: inline-block;
+      max-width: none;
+      width: auto;
+    }
+  }
+}
+
+// separate modules by a border
+.module-header .iwttab {
+  border-bottom: 1px solid $gray-light;
+}
+
+// Style: Two Images with Optional Title, Text and Button
+.iwttab-2-card {
+
+  margin-top: rem-calc(40);
+  text-align: center;
+
+  @include breakpoint(large) {
+    margin-top: 0;
+  }
+
+  &__header {
+    padding: rem-calc(0 16);
+    @include breakpoint(large) {
+      padding: 0;
+    }
+  }
+
+  &__description {
+
+    font-size: rem-calc(14);
+    color: $gray-dark;
+    margin: 0 auto;
+    max-width: rem-calc(400);
+    padding: rem-calc(0 16);
+    width: 80%;
+
+    @include breakpoint(large) {
+      margin: 0 auto;
+      max-width: rem-calc(635);
+      width: auto;
+      padding: 0;
+    }
+  }
+
+  &__card {
+    @extend %iwttab-card;
+  }
+  &__card-cta {
+    @include iwttab-card-cta;
+  }
+}
+
+// Style: Three Images with Title, Text and Button
+.iwttab-3-card {
+  margin-top: rem-calc(40);
+  text-align: center;
+
+  @include breakpoint(large) {
+    margin-top: 0;
+  }
+
+  &__header {
+    margin-bottom: rem-calc(8);
+    @include breakpoint(large) {
+      margin-bottom: rem-calc(32);
+    }
+  }
+
+  &__card {
+    @extend %iwttab-card;
+    margin-bottom: 0;
+
+    &:first-child {
+      margin-top: rem-calc(32);
+      @include breakpoint(large) {
+        margin-top: 0;
+      }
+    }
+    &:last-child {
+      margin-bottom: rem-calc(32);
+      @include breakpoint(large) {
+        margin-bottom: 0;
+      }
+    }
+
+    @include breakpoint(large) {
+      border-bottom: none;
+    }
+  }
+  &__card-cta {
+    @include iwttab-card-cta;
+  }
+
+  &__card-divider {
+    max-width: rem-calc(400);
+    width: 85%;
+    margin: rem-calc(32) auto;
+    display: block;
+    @include breakpoint(large) { display: none; }
+  }
+  &__card:last-child &__card-divider {
+    display: none;
+  }
+
+  &__card-image {
+    display: block;
+    margin: 0 auto;
+    @include breakpoint(medium) {
+      max-width: 300px;
+    }
+  }
+
+  &__card-description {
+    margin-bottom: rem-calc(24);
+    padding: rem-calc(0 16);
+
+    @include breakpoint(large) {
+      margin-bottom: rem-calc(20);
+      padding: rem-calc(0 120);
+    }
+  }
+}
+
+// Style: Four Images with Title, Text and Button
+.iwttab-4-card {
+  margin-top: rem-calc(40);
+  text-align: center;
+
+  @include breakpoint(large) {
+    margin-top: 0;
+  }
+
+  &__header {
+    margin-bottom: rem-calc(32);
+    @include breakpoint(large) {
+      margin-bottom: rem-calc(50);
+    }
+  }
+
+  &__description {
+    padding: rem-calc(0 16);
+
+    @include breakpoint(large) {
+      margin: 0 auto;
+      max-width: rem-calc(635);
+      padding: 0;
+    }
+  }
+
+  &__card {
+    @extend %iwttab-card;
+  }
+  &__card-cta {
+    @include iwttab-card-cta;
+  }
+
+  &__card-image {
+    width: 100px;
+
+    @include breakpoint(large) { width: auto; }
+  }
+  &__card-description {
+    font-size: rem-calc(14);
+    color: $gray-dark;
+    width: 80%;
+    max-width: rem-calc(400);
+    margin: 0 auto;
+  }
+}
+
+// Style: Image with Title, Text and Button (full-width)
+// Advanced Behavior: Club Carlson App
+.iwttab-full-clubcarlson-app {
+
+  padding: rem-calc(40 16 0);
+  position: relative;
+  text-align: center;
+
+  @include breakpoint(large) {
+    padding: rem-calc(60);
+    text-align: left;
+  }
+
+  &__header {
+    font-size: rem-calc(22);
+    line-height: 1.18;
+    margin-bottom: rem-calc(16);
+    text-align: center;
+    @extend %iwttab-short-line-after;
+
+    @include breakpoint(large) {
+      font-size: rem-calc(32);
+      line-height: 1.13;
+      margin-bottom: rem-calc(30);
+      text-align: left;
+    }
+  }
+
+  &__description {
+    color: $gray-dark;
+    font-size: rem-calc(12);
+    line-height: 1.67;
+
+    @include breakpoint(large) {
+      font-size: rem-calc(16);
+      line-height: 1.5;
+    }
+
+    p {
+      font-size: inherit;
+      line-height: inherit;
+    }
+  }
+
+  &__app-store-badges {
+    @include flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+
+    @include breakpoint(large) { justify-content: flex-start; }
+
+    li {
+      margin-right: rem-calc(10);
+
+      @include breakpoint(large) { margin-right: rem-calc(20); }
+    }
+    img {
+      width: 135px;
+      height: 40px;
+    }
+  }
+
+  &__container {
+    flex-direction: column;
+    max-width: 100%;
+    @include breakpoint(large) { flex-direction: row; }
+  }
+
+  &__content {
+    @include breakpoint(large) {
+      flex: 0 0 37.125%;
+      max-width: 37.125%;
+      padding: 0;
+    }
+
+    img {
+      display: block;
+      margin: 0 auto rem-calc(32);
+
+      @include breakpoint(large) { margin: rem-calc(0 0 30); }
+    }
+
+    p {
+      margin-bottom: rem-calc(16);
+
+      @include breakpoint(large) {
+        margin-bottom: rem-calc(20);
+        padding-right: rem-calc(24);
+      }
+    }
+  }
+
+
+  &__app-image {
+    margin: 0 auto;
+    max-width: 75%;
+
+    @include breakpoint(medium) { max-width: 50%; }
+
+    @include breakpoint(large) {
+      bottom: 0;
+      margin: 0;
+      max-height: 92%;
+      position: absolute;
+      right: 7.5%;
+      width: auto;
+    }
+
+    @include breakpoint(xlarge) { right: 12.5%; }
+
+    @media (min-width: 100em) { right: 25%; }
+  }
+}
+
+// Style: Image with Title, Text and Button (full-width)
+// Includes "hero" mode when module in header position
+.iwttab-full {
+  $iwttab-full-hero-image-width-on-large: 56.25%;
+
+  padding: 0 0 rem-calc(56);
+
+  @include breakpoint(large) {
+    padding: rem-calc(60);
+
+    &--hero {
+      padding: 0 0 rem-calc(60);
+    }
+  }
+
+  &--hero &__header {
+    @extend %iwttab-short-line-after;
+    &:after {
+      margin: rem-calc(20) 0;
+    }
+  }
+
+  > .row {
+    @include breakpoint(large) {
+      justify-content: space-between;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  @include breakpoint(large) {
+    .button {
+      font-size: rem-calc(14);
+      line-height: 1.57;
+      padding: rem-calc(21);
+      margin-right: rem-calc(15);
+    }
+  }
+
+  &__mobile-tagline {
+    font-family: $proxima-nova-reg;
+    font-size: rem-calc(22);
+    line-height: rem-calc(26);
+    margin-bottom: 24px;
+    text-transform: capitalize;
+  }
+
+  .iwttab-full__hotel-name {
+    font-size: rem-calc(12);
+    margin-top: 8px;
+
+    h3 {
+      font-size: inherit;
+    }
+  }
+
+  &:not(.user-logged-out) {
+    .iwttab-full__offer-date {
+      bottom: 12px;
+      color: white;
+      left: 24px;
+      position: absolute;
+      z-index: 1;
+    }
+
+    .iwttab-full__offer-card {
+      top: 0;
+
+      @media screen and (min-width: 64em) {
+        left: 120px;
+        top: 58%;
+      }
+    }
+
+    &__heading-container {
+      padding-bottom: 13px;
+    }
+
+    .iwttab-full__title-container {
+      color: black;
+      font-family: $proxima-nova-light;
+      font-size: rem-calc(32);
+      line-height: rem-calc(36);
+    }
+
+    .iwttab-full__arranger {
+      @media screen and (min-width: 64em) {
+        right: -51%;
+        top: 58%;
+      }
+    }
+
+  }
+
+  &__container { // formerly just .row
+  }
+
+  &__image-container { // formerly .intro-image
+    height: 280px;
+    order: 1;
+    padding: 0;
+    margin-bottom: rem-calc(32);
+    overflow: hidden;
+
+    @media (min-width: 500px) { height: calc(280px + 20px); }
+    @media (min-width: 560px) { height: calc(280px + 40px); }
+    @media (min-width: 600px) { height: calc(280px + 60px); }
+    @media (min-width: 640px) { height: calc(280px + 80px); }
+    @media (min-width: 770px) { height: calc(280px + 100px); }
+
+    @include breakpoint(large) {
+      flex: 0 0 50%;
+      max-width: 50%;
+      margin-bottom: 0;
+
+      &--left {
+        padding-right: rem-calc(60);
+        text-align: right;
+      }
+
+      &--right,
+      &--hero {
+        order: 2;
+        text-align: left;
+      }
+    }
+
+
+    @include breakpoint(xlarge) {
+      // min-height: rem-calc(420);
+    }
+
+    &--hero {
+      @include breakpoint(large) {
+        flex: 0 0 $iwttab-full-hero-image-width-on-large;
+        max-width: $iwttab-full-hero-image-width-on-large;
+
+      }
+    }
+
+    &--hero img {
+      height: 100%;
+      width: 100%;
+    }
+
+    &--right {
+
+      // @include breakpoint(large) { order: 1; }
+    }
+  }
+
+
+  &__content {
+    order: 2;
+
+    @include breakpoint(large) {
+      flex: 0 0 50%;
+      max-width: 50%;
+      padding: rem-calc(32 16 0);
+
+      &--left,
+      &--hero {
+        order: 1;
+        padding-right: rem-calc(60);
+      }
+    }
+
+    img {
+      margin: rem-calc(32) 0;
+      @include breakpoint(large) {
+        margin: rem-calc(40) 0 rem-calc(45);
+        width: rem-calc(130);
+      }
+    }
+
+    p {
+      font-size: rem-calc(16);
+      line-height: 1.5;
+      margin-bottom: 0;
+
+      @include breakpoint(large) { margin-bottom: rem-calc(30); }
+    }
+
+  }
+
+  &__content--hero {
+    @include breakpoint(large) {
+      padding: rem-calc(60) 0 0 rem-calc(60);
+      flex: 0 0 (90% - $iwttab-full-hero-image-width-on-large);
+      max-width: 90% - $iwttab-full-hero-image-width-on-large;
+    }
+  }
+}
+
+// Style: One Image with Title, Text and Button (Half Width)
+.iwttab-half {
+  &__card {
+    @extend %iwttab-card;
+    margin: rem-calc(40) 0 0;
+    &:last-child {
+      margin-bottom: rem-calc(40);
+    }
+  }
+  &__card-description {
+    font-size: rem-calc(14);
+    color: $gray-dark;
+    width: 80%;
+    max-width: rem-calc(400);
+    margin: 0 auto;
+    text-align: center;
+  }
+  &__card-cta {
+    @include iwttab-card-cta;
+  }
+}
+
+// Advanced Behavior: Login / Sign Up Form
+// (not technically a style, but it's in the module)
+.iwttab-login {
+  margin-top: rem-calc(40);
+  text-align: center;
+
+  @include breakpoint(large) {
+    margin-top: 0;
+    text-align: left;
+  }
+
+  &__header {
+    @extend %iwttab-short-line-after;
+  }
+
+  // description?
+  .clubcarlson-login-content {
+    p {
+      margin-bottom: rem-calc(16);
+
+      @include breakpoint(large) { margin-bottom: rem-calc(20); }
+    }
+  }
+
+  &__input {
+    margin: 0 auto;
+    width: 90%;
+    @include breakpoint(large) {
+      margin: 0;
+      width: auto;
+    }
+    &.password {
+      display: none;
+    }
+  }
+
+  &__description {
+    font-size: rem-calc(14);
+    color: $gray-dark;
+    width: 80%;
+    max-width: rem-calc(400);
+    margin: 0 auto;
+    text-align: center;
+    @include breakpoint(large) {
+      text-align: left;
+      width: auto;
+      max-width: none;
+    }
+  }
+
+  &__background {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background-image: url(../images/landing/cc-login-bg.svg);
+    background-repeat: no-repeat;
+    background-position: -25px 0;
+    background-size: 100% 100%;
+    @include breakpoint(medium) {
+      width: 90%;
+      height: 32%;
+    }
+    @media (min-width: 48em) {
+      width: 100%;
+      height: 35%;
+      background-size: 85% 100%;
+    }
+    @include breakpoint(large) {
+      left: auto;
+      right: 0;
+      width: 55%;
+      height: 100%;
+      background-size: contain;
+      background-position: 100% 100%;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+// ========================================================================
+// LARGE CARDS
+// Similar to offer cards, but larger in size;
+// often referred to as "TwoUp" cards
+// ========================================================================
+
+/*
+| Table of Contents
+__________________________
+|-- LARGE-CARD (TwoUp)
+|-- card-title
+|-- card-description
+*/
+
+.large-card .card-title {
+  font-size: $card-lg-title-font-size;
+  line-height: $card-lg-title-line-height;
+  margin-bottom: 8px;
+}
+
+.large-card .card-description p {
+  font-size: $card-lg-desc-font-size;
+  line-height: $card-lg-desc-line-height;
+}

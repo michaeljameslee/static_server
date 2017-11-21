@@ -1,0 +1,180 @@
+// ========================================================================
+// UTILITIES => MARGIN UTILS
+// ========================================================================
+
+/*doc
+---
+title: .margin-*
+name: margin
+category: Utilities
+author: William Pansky [SG0301235]
+---
+
+<p class="label loc">File location</p>
+scss/utilities/_margin.scss
+
+Use these classes to override and take control of margins (if necessary)
+
+```
+// MARGIN-TOP
+.margin-top {
+  margin-top: 1.5625rem;
+  @include breakpoint(medium) { margin-top: 40px; }
+  @include breakpoint(large) { margin-top: 40px; }
+
+  &\@m {
+    margin-top: 0;
+    @include breakpoint(medium) { margin-top: 40px; }
+    @include breakpoint(large) { margin-top: 40px; }
+  } // @m
+
+  &\@l {
+    margin-top: 0;
+    @include breakpoint(medium) { margin-top: 0; }
+    @include breakpoint(large) { margin-top: 40px; }
+  } // @l
+} // end margin-top
+
+// MARGIN-BOTTOM
+.margin-bottom {
+  margin-bottom: 1.5625rem;
+  @include breakpoint(medium) { margin-bottom: 40px; }
+  @include breakpoint(large) { margin-bottom: 40px; }
+
+  &\@m {
+    margin-bottom: 0;
+    @include breakpoint(medium) { margin-bottom: 40px; }
+    @include breakpoint(large) { margin-bottom: 40px; }
+  } // @m
+
+  &\@l {
+    margin-bottom: 0;
+    @include breakpoint(medium) { margin-bottom: 0; }
+    @include breakpoint(large) { margin-bottom: 40px; }
+  } // @l
+} // end margin-bottom
+
+.remove {
+  &-margin-top { margin-top: 0; }
+  &-margin-bottom { margin-bottom: 0; }
+}
+```
+*/
+
+/* stylelint-disable declaration-no-important */
+
+// MARGIN-TOP
+.margin-top {
+  margin-top: 1.5625rem;
+  @include breakpoint(medium) { margin-top: 40px; }
+  @include breakpoint(large) { margin-top: 40px; }
+
+  &\@m {
+    margin-top: 0;
+    @include breakpoint(medium) { margin-top: 40px; }
+    @include breakpoint(large) { margin-top: 40px; }
+  } // @m
+
+  &\@l {
+    margin-top: 0;
+    @include breakpoint(medium) { margin-top: 0; }
+    @include breakpoint(large) { margin-top: 40px; }
+  } // @l
+} // end margin-top
+
+// MARGIN-BOTTOM
+.margin-bottom {
+  margin-bottom: 1.5625rem;
+  @include breakpoint(medium) { margin-bottom: 40px; }
+  @include breakpoint(large) { margin-bottom: 40px; }
+
+  &\@m {
+    margin-bottom: 0;
+    @include breakpoint(medium) { margin-bottom: 40px; }
+    @include breakpoint(large) { margin-bottom: 40px; }
+  } // @m
+
+  &\@l {
+    margin-bottom: 0;
+    @include breakpoint(medium) { margin-bottom: 0; }
+    @include breakpoint(large) { margin-bottom: 40px; }
+  } // @l
+} // end margin-bottom
+
+// MARGIN-BOTTOM SMALL
+.margin-bottom-sm {
+  margin-bottom: .75rem !important;
+} // end margin-bottom-sm
+
+// MARGIN-BOTTOM MEDIUM
+.margin-bottom-md {
+  margin-bottom: 2.5rem !important;
+} // end margin-bottom-md
+
+// MARGIN-BOTTOM LARGE
+.margin-bottom-lg {
+  margin-bottom: 3.75rem !important;
+} // end margin-bottom-lg
+
+// MARGIN-TOP SMALL
+.margin-top-sm {
+  margin-top: .75rem !important;
+} // end margin-top-sm
+
+// MARGIN-TOP MEDIUM
+.margin-top-md {
+  margin-top: 2.5rem !important;
+} // end margin-top-md
+
+// MARGIN-TOP LARGE
+.margin-top-lg {
+  margin-top: 3.75rem !important;
+} // end margin-top-lg
+
+.remove {
+  &-margin-top { margin-top: 0; }
+}
+
+.remove-margin-bottom {
+  margin-bottom: 0 !important;
+
+  &\@m {
+    @include breakpoint(medium) { margin-bottom: 0 !important; }
+  } // @m
+
+  &\@l {
+    @include breakpoint(large) { margin-bottom: 0 !important; }
+  } // @l
+}
+
+.remove-padding {
+  padding: 0 !important;
+}
+
+.remove-padding-top {
+  padding-top: 0 !important;
+}
+
+.remove-padding-bottom {
+  padding-bottom: 0 !important;
+}
+
+.remove-border {
+  border: 0 !important;
+  &-top { border-top: 0 !important; }
+  &-right { border-right: 0 !important; }
+  &-bottom { border-bottom: 0 !important; }
+  &-left { border-left: 0 !important; }
+}
+
+/* stylelint-enable */
+
+.background-color {
+  &-primary {
+    background-color: $primary-color;
+  }
+
+  &-muted {
+    background-color: $gray-lightest;
+  }
+}

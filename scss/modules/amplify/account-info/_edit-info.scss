@@ -1,0 +1,195 @@
+// Edit Personal Information styles
+.edit-password {
+  .row .columns {
+    padding-bottom: 0;
+  }
+  .row.user-buttons {
+    margin-bottom: rem-calc(30);
+    margin-top: rem-calc(6);
+  }
+  .show-pass {
+    margin-bottom: 0;
+    padding-bottom: rem-calc(4);
+  }
+  .user-field-title {
+    margin-bottom: 0;
+    padding-bottom: rem-calc(4);
+  }
+}
+.edit-personal-info {
+  .columns.areacode-field {
+    @include breakpoint(large) { padding: rem-calc(0 10); }
+  }
+  .field-errors {
+    left: 0;
+    padding: 0;
+    position: relative;
+    text-transform: uppercase;
+    top: rem-calc(-15);
+    transform: none;
+  }
+  .first-name .user-field-input,
+  .last-name .user-field-input {
+    &.highlight-both { border: 1px solid $primary-color; }
+  }
+  .first-name .user-field-input {
+    border-radius: 1px 0 0 1px;
+    &:hover, &:focus { border-right: 1px solid $primary-color; }
+    &.highlight-both { border-right: 0; }
+  }
+  .first-name-wrapper {
+    padding-right: rem-calc(5);
+  }
+  .hide-for-large {
+    > .small-12.columns,
+    > .countrycode-field,
+    > .areacode-field {
+      flex-wrap: wrap;
+    }
+    .dropdown {
+      margin-bottom: 0;
+    }
+    .user-field-input {
+      margin-bottom: rem-calc(14);
+    }
+    .user-field-title {
+      padding-bottom: rem-calc(5);
+    }
+  }
+  .last-name .user-field-input {
+    @include breakpoint(large) { border-left: 0; }
+    border-radius: 0 1px 1px 0;
+    &:hover, &:focus { border-left: 1px solid $primary-color; }
+    &.highlight-both { border-left: 0; }
+  }
+  .last-name-wrapper {
+    padding-left: rem-calc(5);
+  }
+  .row {
+    @include breakpoint(large) { margin-bottom: 0; }
+  }
+  .row .columns {
+    border-bottom: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+  .row.user-buttons {
+    margin-top: rem-calc(16);
+  }
+  .user-country { margin-bottom: 0; }
+  .user-address-3 {
+    > div:not(:last-child) { padding-right: rem-calc(10); }
+    > div:first-child {
+      @include breakpoint(large) {
+        flex: 0 0 25%;
+        max-width: 25%;
+      }
+    }
+    > div:not(:first-child) {
+      @include breakpoint(large) {
+        flex: 0 0 37.5%;
+        max-width: 37.5%;
+      }
+    }
+  }
+}
+.user-country, .user-address-3 {
+  select {
+    margin-bottom: 0;
+    padding: rem-calc(8 24);
+    @include breakpoint(large) {
+      direction: ltr;
+      border: 1px solid $gray-light;
+      padding: rem-calc(0 40 0 20);
+    }
+    &:focus {
+      outline: 1px solid $primary-color;
+    }
+  }
+  option { direction: ltr; }
+}
+.user-field-input {
+  box-shadow: none;
+  margin-bottom: 0;
+  &:focus {
+    box-shadow: none;
+    border: 1px solid $primary-color;
+  }
+  &.has-error {
+    border: 1px solid $error-color;
+  }
+}
+.user-buttons {
+  .button {
+    width: 100%;
+    margin-right: rem-calc(8);
+    @include breakpoint(large) {
+      width: rem-calc(96);
+    }
+    &.secondary {
+      width: 100%;
+      margin-right: 0;
+      @include breakpoint(large) {
+        width: rem-calc(113);
+      }
+    }
+  }
+}
+
+.user-button-wrapper {
+  .row > .columns { display: block; }
+  .user-buttons > .columns {
+    @include flex;
+    @include breakpoint(large) { display: block; }
+  }
+}
+
+.user-password-wrapper {
+  .row > .columns { display: block; }
+  .user-buttons > .columns {
+    @include flex;
+    @include breakpoint(large) { display: block; }
+  }
+  .user-field-title {
+    float: left;
+    color: $gray-medium;
+    margin-bottom: rem-calc(10);
+  }
+  .user-current-password, .user-password-retype, .user-new-password {
+    i { padding-left: rem-calc(8); }
+    &.correct i { color: $success-green; }
+    &.incorrect i { color: $secondary-color; }
+  }
+  .password {
+    display: none;
+    &.visible { display: block; }
+  }
+  .showpassword, .hidepassword {
+    margin-bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .show-pass {
+    font-family: $proxima-nova-semibold;
+    font-size: rem-calc(12);
+    line-height: 1.33;
+    letter-spacing: 1px;
+    color: $secondary-color;
+    text-transform: uppercase;
+    margin-bottom: rem-calc(10);
+    &:hover { cursor: pointer; }
+  }
+  .user-password-retype {
+    @include breakpoint(large) {
+      margin-bottom: rem-calc(24);
+    }
+  }
+  .password-requirements {
+    border-top: 0;
+    color: $gray-dark;
+  }
+  .field-errors {
+    position: relative;
+    text-transform: uppercase;
+  }
+}

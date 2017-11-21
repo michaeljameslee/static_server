@@ -1,0 +1,114 @@
+/* CSS Document */
+.hero {
+  height: 410px;
+  width: 100%;
+
+  @include breakpoint(large) { overflow: hidden; }
+  .masthead, .cover {
+    height: 100%;
+    // background-color: $gray-dark;
+    img, source {
+      position: absolute;
+      top: 50%;
+      // transform: translateY(-50%);
+      width: 100%;
+    }
+  }
+}
+
+/* generic masthead styles (seen in our brands page) */
+.masthead-area {
+  .row {
+    max-width: 100%;
+  }
+  .cover {
+    position: relative;
+    min-height: 410px;
+    max-height: 410px;
+    width: 100%;
+
+    @include breakpoint(large) {
+      background-color: $gray-dark;
+      height: 410px;
+    }
+
+    &:after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: rgba(0,0,0,0.6);
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  .hero-content {
+    width: 100%;
+    padding: 32px 16px;
+    z-index: 10;
+    @include breakpoint (medium down){
+      position: absolute;
+      top: rem-calc(280);
+      height: rem-calc(170);
+      background-color: $white;
+    }
+
+    @include breakpoint(large) {
+      position: absolute;
+      top: 35%;
+      color: $white;
+      text-align: center;
+      padding: 0;
+    }
+
+    h1 {
+      font-size: rem-calc(38);
+      font-weight: 600;
+      line-height: 1.11;
+      margin-bottom: 15px;
+      @include breakpoint(medium down){
+        @include get-font('light');
+        font-size: rem-calc(30);
+        line-height: rem-calc(34);
+        color: $true-black;
+        font-weight: 300;
+      }
+    }
+
+    .hero-desc {
+      @include breakpoint(medium down){
+        @include get-font('regular');
+        font-size: rem-calc(12);
+        line-height: rem-calc(20);
+        color: $true-black;
+      }
+      @include breakpoint(large) {
+        width: 40%;
+        margin: 0 auto;
+      }
+    }
+
+    p {
+      font-size: rem-calc(16);
+      line-height: 1.5;
+    }
+  }
+}
+
+.standard-hero {
+  position: relative;
+
+  @include breakpoint(medium down) { height: auto; }
+
+  .cover {
+    @include breakpoint(large) {
+      height: 410px;
+      min-height: 410px;
+    }
+  }
+
+  .hero-content {
+    @include breakpoint(medium down) { padding: 32px 16px 0; }
+  }
+}

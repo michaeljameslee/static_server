@@ -1,0 +1,86 @@
+/* CSS Document */
+.home-hero { 
+  margin-bottom: 60px; 
+  @include breakpoint(medium down) {
+    height: 445px;
+    margin-bottom: 40px;
+    margin-top: 80px;
+  }
+
+  .masthead {
+    position: relative;
+    @include breakpoint(medium down) {
+      min-height: rem-calc(445px);
+    }
+
+    &:after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-image: linear-gradient(to top right, rgba(0,0,0,.4), transparent);
+      bottom: 0;
+    }
+  }
+
+  .masthead-video {
+    &:after {
+      content: none;
+    }
+  }
+}
+
+.hero-text {
+  color: white;
+  position: absolute;
+  top: 40%;
+  padding: 0 0 0 60px;
+  z-index: 10;
+
+  @include breakpoint(medium down) {
+    bottom: 24px;
+    padding: 0 0 0 16px;
+    top: auto;
+  }
+
+  p {
+    font-size: rem-calc(18);
+    line-height: 1.22;
+    margin-bottom: 5px;
+    text-shadow: $card-text-shadow;
+  }
+
+  h1, ._h1 {
+    font-size: rem-calc(38);
+    font-weight: 300;
+    line-height: 1.11;
+    margin-bottom: 15px;
+    text-shadow: $card-text-shadow;
+  }
+
+  & span, h3 {
+    text-shadow: $card-text-shadow;
+  }
+} // end .hero-text
+
+.hero-explore {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  z-index: 10;
+
+  a { color: white; text-decoration: none; }
+
+  span {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    line-height: 1.33;
+    font-size: 14px;
+    margin-bottom: 7px;
+  }
+}

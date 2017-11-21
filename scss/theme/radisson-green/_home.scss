@@ -1,0 +1,435 @@
+// layout
+.radisson {
+  .wrapper {
+    padding-top: 270px;
+    @include breakpoint(medium down) { padding-top: 222px; }
+  }
+
+  &.fixed-search .wrapper {
+    @include breakpoint(medium down) { padding-top: 114px; }
+  }
+
+  .club-carlson-home {
+    border-bottom: none;
+    padding: 0;
+
+    p {
+      @include breakpoint(large) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+  .cc-home-top-content {
+    background: #302d38;
+    color: white;
+    padding: rem-calc(60px 0);
+    margin-bottom: 20px;
+  }
+  .cc-perks-wrapper {
+    padding: rem-calc(0 20px);
+
+    @include breakpoint(large) {
+      padding: rem-calc(0 60px);
+    }
+
+    .column img, .columns img {
+      @include breakpoint(large) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+//masthead
+.brand-home-hero {
+  margin-bottom: 0;
+
+  .masthead {
+    &:after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-image: linear-gradient(to top right, rgba(0,0,0,.4), transparent);
+      bottom: 0;
+    }
+  }
+
+  .hero-text {
+    top: auto;
+    bottom: 40px;
+
+    span {
+      text-transform: uppercase;
+      font-size: rem-calc(12);
+      line-height: 1.33;
+      letter-spacing: 1px;
+      @include get-font('regular');
+    }
+
+    & span, h1 {
+      text-shadow: 2px 2px 7px #000;
+    }
+
+    h3 {
+      font-size: 2.375rem;
+      line-height: 1.11;
+    }
+  }
+
+  .button {
+    @include get-font('semibold');
+    color: $nav-grey;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+// carousel offers
+.brand-offers-carousel {
+  background-color: #eae8e1;
+  // padding: rem-calc(0 60px 60px);
+  // border-bottom: 1px solid $gray-light;
+  // margin-bottom: 60px;
+
+  // @include breakpoint(medium down) { padding: rem-calc(0 16px); }
+
+  h2 {
+    font-size: rem-calc(36);
+    font-weight: 300;
+    line-height: 1.13;
+    margin-bottom: 40px;
+  }
+
+  > .row { max-width: 100%; }
+  .column { padding: 0; }
+
+  .row { margin: 0; }
+  .brand-offers-content {
+    padding: rem-calc(60 40 0 0);
+
+    @include breakpoint(medium down) {
+      width: 100%;
+    }
+
+    @include breakpoint(large) {
+      width: 25%;
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    h1 {
+      font-size: rem-calc(38);
+      line-height: 1.11;
+      width: 85%;
+      font-weight: 100;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: rem-calc(16);
+      line-height: 1.5;
+      color: $gray-dark;
+      margin-bottom: rem-calc(30);
+    }
+
+    .button {
+      background: none;
+      border-radius: 0;
+      border: 1px solid #3a3745;
+      padding: 0;
+      width: 40px;
+      height: 40px;
+
+      &.button-prev {
+        border-right: none;
+      }
+
+      .fa {
+        color: #3a3745;
+        font-size: rem-calc(28);
+      }
+    }
+  } // end .brand-offers-content
+
+  .brand-offers-cards {
+    @include breakpoint(medium down) {
+      width: 100%;
+    }
+
+    @include breakpoint(large) {
+      width: 75%;
+      display: inline-block;
+      vertical-align: top;
+      padding-top: 40px;
+    }
+  }
+
+  .brand-offers-cards-carousel {
+    &::after {
+      content: 'flickity';
+      display: none;
+    }
+
+    .flickity-viewport {
+      height: 470px;
+    }
+  }
+
+  .card {
+    display: inline-block;
+
+    @include breakpoint(medium down) {
+      margin-right: 2.5%;
+    }
+
+    @include breakpoint(large) {
+      margin-right: 3.4%;
+      max-width: 48%;
+      width: 48%;
+    }
+
+    /* stylelint-disable declaration-no-important */
+    /* Need to override default width */
+    @include breakpoint(xlarge) {
+      max-width: 29%;
+      width: 29% !important;
+    }
+
+    /* stylelint-enable declaration-no-important */
+    @include card-hover-state(0.3);
+
+    .card-cover-img {
+      object-fit: cover;
+    }
+  } // end .card
+
+  .account-special-offer {
+    display: inline-block;
+    @include card-hover-state(0.15);
+
+    @include breakpoint(medium down) {
+      margin-right: 2.5%;
+      width: 83%;
+    }
+
+    @include breakpoint(large) {
+      margin-right: 3.4%;
+      max-width: 48%;
+      width: 48%;
+    }
+
+    @include breakpoint(xlarge) {
+      max-width: 29%;
+      width: 29%;
+    }
+
+    h3 {
+      font-size: rem-calc(22);
+      line-height: 1.18;
+      color: black;
+    }
+
+    .offer-hotel-title {
+      padding: 0 .5rem 0 1.1875rem;
+      font-size: rem-calc(10);
+      color: $gray-medium;
+      text-transform: uppercase;
+      @include get-font('semibold');
+
+      &-no-logo {
+        padding: 0;
+        font-size: rem-calc(14px);
+        width: 220px;
+        color: $gray-medium;
+        @include get-font('paragraph');
+      }
+    } // end .offer-hotel-title
+
+    .offer-hotel-info { 
+      padding: 0 1.25rem; 
+    }
+
+    .card-description {
+      font-size: 14px;
+    }
+
+    a .offer-content { 
+      color: $gray-dark; 
+    }
+
+    figure {
+      min-height: rem-calc(165);
+      max-height: rem-calc(165);
+      img {
+        height: 100%;
+        object-fit: cover;
+        max-height: initial;
+        min-height: rem-calc(165);
+        transform: translateY(0);
+      }
+    } // end figure img
+
+    .offer-content, 
+    .offer-hotel-info { 
+      background: white;
+    } // end .offer-content, .offer-hotel-info
+  } // end .account-special-offer
+} // end .brand-offers-carousel
+
+// featured offer
+.home-brand-hero {
+  position: relative;
+  margin-bottom: 60px;
+
+  .featured-offer {
+    background-color: white;
+    border-radius: 4px;
+    height: 330px;
+    left: 60px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 360px;
+    color: #000;
+    @include breakpoint(small only) {
+      height: 268px;
+      left: 50%;
+      position: absolute;
+      padding: 32px 24px;
+      top: 217px;
+      transform: translateX(-50%);
+      width: 91.46%;
+      border: 1px solid $gray-light;
+    }
+    &:hover, &:hover .label { text-decoration: none; border: 0; }
+    h2 {
+      font-size: rem-calc(32);
+      line-height: 1.13;
+      @include breakpoint(small only) {
+        font-size: rem-calc(30);
+      }
+    }
+    p {
+      color: $gray-dark;
+      font-size: rem-calc(16);
+    }
+    .brands {
+      @include label-text;
+      color: $gray-medium;
+      border-top: 1px solid $gray-light;
+      bottom: 0;
+      display: flex;
+      left: 0;
+      padding: 21px 40px;
+      position: absolute;
+      width: 100%;
+      @include breakpoint(small only) {
+        padding: 21px 24px;
+      }
+      img {
+        height: 25px;
+        margin-right: 20px;
+        width: auto;
+      }
+
+      .card-label1 {
+        margin-left: 3px;
+      }
+    }
+    .label {
+      font-size: rem-calc(12);
+      letter-spacing: 1px;
+      line-height: 1.33;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+// midsection hero
+.brand-mid-hero {
+  margin-bottom: 40px;
+
+  .mid-hero-wrapper{
+    background-size: cover;
+    width: 100%;
+    min-height: 585px;
+  }
+  .mid-hero-content {
+    width: 30%;
+    margin: 0 auto 0;
+    padding-top: 15%;
+    color: white;
+
+    @include breakpoint(medium down) {
+      width: 100%;
+      margin: 0 auto 0;
+      text-align: center;
+      color: white;
+    }
+
+    h2 {
+      font-size: rem-calc(52);
+      line-height: 1.08;
+
+      @include breakpoint(small only) {
+        font-size: rem-calc(36);
+      }
+    }
+    .mid-hero-desc {
+      font-size: rem-calc(16);
+      line-height: 1.5;
+
+      @include breakpoint(small only) {
+        padding: 0 10px;
+      }
+    }
+    p { @include get-font('regular'); }
+    .button {
+      @include get-font('semibold');
+      color: $nav-grey;
+
+      @include breakpoint(small only) {
+        width: 90%;
+      }
+    }
+  }
+}
+
+// meetings & events module
+.home-meetings-events {
+  margin-bottom: 60px;
+  padding: rem-calc(0 60px);
+  .row {
+    margin: 0;
+    max-width: 100%;
+  }
+  .column {
+    padding: 0;
+  }
+
+  .meetings-img {
+    padding-right: 60px;
+
+    img { width: 100%; }
+  }
+  @media screen and (max-width: 30em) {
+    .meetings-img {
+      padding-right: 0;
+      img { width: 100%; }
+    }
+  }
+  .button {
+    @include get-font('semibold');
+    color: $nav-grey;
+  }
+}
+
+// download carlson app
+.home-clubcarlson-app{
+  h2{
+    line-height: 2.25rem;
+    font-size: rem-calc(32);
+    font-family: $lola-regular;
+  }
+}
